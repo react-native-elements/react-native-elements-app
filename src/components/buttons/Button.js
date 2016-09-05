@@ -42,13 +42,16 @@ const Button = ({buttonStyle, title, onPress, icon, secondary, secondary2, secon
 
 styles = StyleSheet.create({
   button: {
-    padding: 30,
+    padding: 20,
     borderTopWidth: 1,
+    marginLeft: 15,
+    marginRight: 15,
     borderColor: '#ededed',
     backgroundColor: colors.primary,
     justifyContent: 'center',
     alignItems: 'center',
-    flexDirection: 'row'
+    flexDirection: 'row',
+    borderRadius: 5
   },
   text: {
     color: 'white',

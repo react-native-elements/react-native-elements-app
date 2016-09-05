@@ -7,9 +7,9 @@ import { View, StyleSheet, Platform } from 'react-native'
 import colors from 'HSColors'
 let styles = {}
 
-const Card = ({children, flexDirection}) => (
-  <View style={[styles.container]}>
-    <View style={[styles.wrapper, flexDirection && {flexDirection}]}>
+const Card = ({children, flexDirection, containerStyle, wrapperStyle}) => (
+  <View style={[styles.container, containerStyle && containerStyle]}>
+    <View style={[styles.wrapper, wrapperStyle && wrapperStyle, flexDirection && {flexDirection}]}>
       {children}
     </View>
   </View>

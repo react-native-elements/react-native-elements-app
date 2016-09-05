@@ -1,11 +1,9 @@
 import React, { Component } from 'react'
 import { ScrollView, View, StyleSheet, Platform } from 'react-native'
 import Text from 'HSText'
-import Card from 'HSCard'
 import Button from 'HSButton'
 import colors from 'HSColors'
 import fonts from 'HSFonts'
-import Divider from 'HSDivider'
 import Icon from 'react-native-vector-icons/MaterialIcons'
 
 let styles = {}
@@ -14,7 +12,7 @@ const log = () => {
   console.log('hello!')
 }
 
-class App extends Component {
+class Home extends Component {
   render () {
     return (
       <ScrollView>
@@ -23,33 +21,33 @@ class App extends Component {
           <Text style={styles.heading}>Buttons</Text>
         </View>
         <Button
+          buttonStyle={styles.button}
           onPress={log}
           title='PRIMARY BUTTON' />
         <Button
+          buttonStyle={styles.button}
           icon={{name: 'cached'}}
           title='PRIMARY WITH ICON' />
         <Button
           secondary
+          buttonStyle={styles.button}
           icon={{name: 'accessibility'}}
           title='SECONDARY BUTTON' />
         <Button
           secondary2
+          buttonStyle={styles.button}
           icon={{name: 'account-balance'}}
           title='SECONDARY2 BUTTON' />
         <Button
           secondary3
+          buttonStyle={styles.button}
           icon={{name: 'change-history'}}
           title='SECONDARY3 BUTTON' />
         <Button
+          buttonStyle={styles.button}
           icon={{name: 'code'}}
           backgroundColor={colors.grey1}
           title='ANOTHER BUTTON' />
-        <Button
-          buttonStyle={{backgroundColor: 'red'}}
-          title='CUSTOM BUTTON'
-          icon={{size: 18, name: 'explore'}}
-          fontSize={16}
-          />
       </ScrollView>
     )
   }
@@ -67,6 +65,9 @@ styles = StyleSheet.create({
   },
   titleContainer: {
   },
+  button: {
+    marginTop: 15
+  },
   title: {
     textAlign: 'center',
     color: colors.grey2,
@@ -78,4 +79,4 @@ styles = StyleSheet.create({
   }
 })
 
-export default App
+export default Home

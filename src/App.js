@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 import { StyleSheet, Platform } from 'react-native'
 import TabNavigator from 'react-native-tab-navigator'
-import HomeNav from './home/HomeNav'
 import Icon from 'react-native-vector-icons/MaterialIcons'
 import colors from 'HSColors'
 import fonts from 'HSFonts'
+
+import HomeNav from './home/HomeNav'
+import AboutNav from './about/AboutNav'
 
 let styles = {}
 
@@ -44,7 +46,7 @@ class App extends Component {
           renderIcon={() => <Icon style={{paddingBottom: 4}} color={colors.grey2} name='important-devices' size={26} />}
           renderSelectedIcon={() => <Icon color={colors.primary} name='important-devices' size={26} />}
           onPress={() => this.changeTab('about')}>
-          <HomeNav />
+          <AboutNav />
         </TabNavigator.Item>
         <TabNavigator.Item
           tabStyle={selectedTab !== 'contact' && { marginBottom: -6 }}

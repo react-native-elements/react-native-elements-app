@@ -56,7 +56,7 @@ const NavigationBar = () => {
 styles = StyleSheet.create({
   navBar: {
     height: 65,
-    backgroundColor: colors.dkGreyBg,
+    backgroundColor: colors.grey1,
     ...Platform.select({
       android: {
         height: 55

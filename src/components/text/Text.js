@@ -11,7 +11,6 @@ let styles = {}
 const TextElement = ({style, children, h1, h2, h3, h4}) => (
   <Text
     style={[
-      style && style,
       styles.text,
       h1 && {fontSize: 40},
       h2 && {fontSize: 34},
@@ -20,7 +19,8 @@ const TextElement = ({style, children, h1, h2, h3, h4}) => (
       h1 && styles.bold,
       h2 && styles.bold,
       h3 && styles.bold,
-      h4 && styles.bold
+      h4 && styles.bold,
+      style && style
     ]}>{children}</Text>
 )
 

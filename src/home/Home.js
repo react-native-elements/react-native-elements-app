@@ -44,7 +44,7 @@ class Home extends Component {
           icon={{name: 'change-history'}}
           title='SECONDARY3 BUTTON' />
         <Button
-          buttonStyle={styles.button}
+          buttonStyle={[styles.button, {marginBottom: 15}]}
           icon={{name: 'code'}}
           backgroundColor={colors.grey1}
           title='ANOTHER BUTTON' />

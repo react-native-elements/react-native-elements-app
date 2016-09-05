@@ -5,8 +5,9 @@ import Icon from 'react-native-vector-icons/MaterialIcons'
 import colors from 'HSColors'
 import fonts from 'HSFonts'
 
-import HomeNav from './home/HomeNav'
+import Home from './home/HomeRootContainer'
 import AboutNav from './about/AboutNav'
+import Contact from './contact/ContactRootContainer'
 
 let styles = {}
 
@@ -35,7 +36,7 @@ class App extends Component {
           renderIcon={() => <Icon color={colors.grey2} name='whatshot' size={26} />}
           renderSelectedIcon={() => <Icon color={colors.primary} name='whatshot' size={26} />}
           onPress={() => this.changeTab('home')}>
-          <HomeNav />
+          <Home />
         </TabNavigator.Item>
         <TabNavigator.Item
           tabStyle={selectedTab !== 'about' && { marginBottom: -6 }}
@@ -57,7 +58,7 @@ class App extends Component {
           renderIcon={() => <Icon style={{paddingBottom: 4}} color={colors.grey2} name='contacts' size={26} />}
           renderSelectedIcon={() => <Icon color={colors.primary} name='contacts' size={26} />}
           onPress={() => this.changeTab('contact')}>
-          <HomeNav />
+          <Contact />
         </TabNavigator.Item>
         <TabNavigator.Item
           tabStyle={selectedTab !== 'pricing' && { marginBottom: -6 }}
@@ -68,7 +69,7 @@ class App extends Component {
           renderIcon={() => <Icon style={{paddingBottom: 4}} color={colors.grey2} name='attach-money' size={26} />}
           renderSelectedIcon={() => <Icon color={colors.primary} name='attach-money' size={26} />}
           onPress={() => this.changeTab('pricing')}>
-          <HomeNav />
+          <Home />
         </TabNavigator.Item>
       </TabNavigator>
 

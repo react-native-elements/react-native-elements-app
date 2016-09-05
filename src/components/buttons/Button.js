@@ -2,7 +2,7 @@
  * @providesModule HSButton
  */
 
-import React from 'react'
+import React, { PropTypes } from 'react'
 import { TouchableHighlight, StyleSheet, View } from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialIcons'
 import colors from 'HSColors'
@@ -40,6 +40,13 @@ const Button = ({buttonStyle, title, onPress, icon, secondary, secondary2, secon
   </TouchableHighlight>
 )
 
+Button.propTypes = {
+  buttonStyle: PropTypes.any,
+  title: PropTypes.string,
+  onPress: PropTypes.any,
+  icon: PropTypes.object
+}
+
 styles = StyleSheet.create({
   button: {
     padding: 20,
@@ -51,7 +58,9 @@ styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'row',
-    borderRadius: 5
+    borderRadius: 5,
+    marginTop: 7.5,
+    marginBottom: 7.5
   },
   text: {
     color: 'white',

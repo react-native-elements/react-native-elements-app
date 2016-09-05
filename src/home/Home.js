@@ -22,29 +22,25 @@ class Home extends Component {
         </View>
         <Button
           buttonStyle={styles.button}
-          onPress={log}
+          onPress={() => log()}
           title='PRIMARY BUTTON' />
         <Button
-          buttonStyle={styles.button}
           icon={{name: 'cached'}}
           title='PRIMARY WITH ICON' />
         <Button
           secondary
-          buttonStyle={styles.button}
           icon={{name: 'accessibility'}}
           title='SECONDARY BUTTON' />
         <Button
           secondary2
-          buttonStyle={styles.button}
           icon={{name: 'account-balance'}}
           title='SECONDARY2 BUTTON' />
         <Button
           secondary3
-          buttonStyle={styles.button}
           icon={{name: 'change-history'}}
           title='SECONDARY3 BUTTON' />
         <Button
-          buttonStyle={[styles.button, {marginBottom: 15}]}
+          buttonStyle={[{marginBottom: 15}]}
           icon={{name: 'code'}}
           backgroundColor={colors.grey1}
           title='ANOTHER BUTTON' />

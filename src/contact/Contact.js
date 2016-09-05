@@ -26,7 +26,7 @@ class Contact extends Component {
         <Button
           onPress={() => console.log('fuck off')}
           icon={{name: 'done'}}
-          buttonStyle={{marginTop: 20}}
+          buttonStyle={{marginTop: 15}}
           title='SUBMIT' />
       </ScrollView>
     )

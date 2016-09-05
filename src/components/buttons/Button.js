@@ -1,18 +1,29 @@
+/**
+ * @providesModule HSButton
+ */
+
 import React from 'react'
 import { TouchableHighlight, StyleSheet, View } from 'react-native'
-import Text from '../text/Text'
 import Icon from 'react-native-vector-icons/MaterialIcons'
-import colors from '../../config/colors'
+import colors from 'HSColors'
+import Text from 'HSText'
 
 let styles = {}
 
-const Button = ({buttonStyle, title, onPress, icon, primary1, primary2, primary3, backgroundColor, color, fontSize, underlayColor}) => (
+const log = () => {
+  console.log('please attach method to this component')
+}
+
+const Button = ({buttonStyle, title, onPress, icon, secondary, secondary2, secondary3, primary1, primary2, primary3, backgroundColor, color, fontSize, underlayColor}) => (
   <TouchableHighlight
     underlayColor={underlayColor || 'transparent'}
-    onPress={onPress}>
+    onPress={onPress || log}>
     <View
       style={[
         styles.button,
+        secondary && {backgroundColor: colors.secondary},
+        secondary2 && {backgroundColor: colors.secondary2},
+        secondary3 && {backgroundColor: colors.secondary3},
         primary1 && {backgroundColor: colors.primary1},
         primary2 && {backgroundColor: colors.primary2},
         backgroundColor && {backgroundColor},

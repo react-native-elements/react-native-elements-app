@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
-import { ScrollView, View, StyleSheet, Dimensions } from 'react-native'
-import Text from '../components/text/Text'
-import Card from '../components/containers/Card'
-import colors from '../config/colors'
+import { ScrollView, View, StyleSheet, Platform } from 'react-native'
+import Text from 'HSText'
+import Card from 'HSCard'
+import Button from 'HSButton'
+import colors from 'HSColors'
+import fonts from 'HSFonts'
+import Divider from 'HSDivider'
 import Icon from 'react-native-vector-icons/MaterialIcons'
-import Button from '../components/buttons/Button'
 
 let styles = {}
 
@@ -16,20 +18,28 @@ class App extends Component {
   render () {
     return (
       <ScrollView>
-        <View style={{marginTop: 60, justifyContent: 'center', alignItems: 'center', padding: 30, backgroundColor: colors.primary2}}>
+        <View style={{marginTop: 60, justifyContent: 'center', alignItems: 'center', padding: 40, backgroundColor: colors.primary2}}>
           <Icon color='white' name='whatshot' size={62} />
+          <Text style={styles.heading}>Buttons</Text>
         </View>
         <Button
           onPress={log}
           title='PRIMARY BUTTON' />
         <Button
           icon={{name: 'cached'}}
-          primary1
-          title='BUTTON WITH ICON' />
+          title='PRIMARY WITH ICON' />
         <Button
-          icon={{name: 'announcement'}}
-          primary2
-          title='BUTTON WITH ICON' />
+          secondary
+          icon={{name: 'accessibility'}}
+          title='SECONDARY BUTTON' />
+        <Button
+          secondary2
+          icon={{name: 'account-balance'}}
+          title='SECONDARY2 BUTTON' />
+        <Button
+          secondary3
+          icon={{name: 'change-history'}}
+          title='SECONDARY3 BUTTON' />
         <Button
           icon={{name: 'code'}}
           backgroundColor={colors.grey1}
@@ -40,11 +50,6 @@ class App extends Component {
           icon={{size: 18, name: 'explore'}}
           fontSize={16}
           />
-        <View style={[styles.container]}>
-          <Card>
-            <Text>Hello</Text>
-          </Card>
-        </View>
       </ScrollView>
     )
   }
@@ -54,6 +59,22 @@ styles = StyleSheet.create({
   container: {
     flex: 1,
     margin: 15
+  },
+  heading: {
+    color: 'white',
+    marginTop: 10,
+    fontSize: 22
+  },
+  titleContainer: {
+  },
+  title: {
+    textAlign: 'center',
+    color: colors.grey2,
+    ...Platform.select({
+      ios: {
+        fontFamily: fonts.ios.black
+      }
+    })
   }
 })
 

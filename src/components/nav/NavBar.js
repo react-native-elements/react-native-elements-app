@@ -1,9 +1,13 @@
+/**
+ * @providesModule HSNavBar
+ */
+
 import React from 'react'
 import { Platform, Navigator, StyleSheet } from 'react-native'
-import NavTitleComponent from './NavTitleComponent'
-import NavTitleIcon from './NavTitleIcon'
+import NavTitleComponent from 'HSNavTitleComponent'
+import NavTitleIcon from 'HSNavTitleIcon'
+import colors from 'HSColors'
 import Icon from 'react-native-vector-icons/MaterialIcons'
-import colors from '../../config/colors'
 
 let styles = {}
 

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Navigator } from 'react-native'
 import Home from './Home'
-import navigationBar from '../components/nav/NavBar'
+import navigationBar from 'HSNavBar'
 
 const initialRoute = {component: Home}
 

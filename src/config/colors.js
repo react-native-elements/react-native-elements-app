@@ -1,7 +1,14 @@
+/**
+ * @providesModule HSColors
+ */
+
 export default {
   primary: '#397af8',
   primary1: '#4d86f7',
   primary2: '#6296f9',
+  secondary: '#8F0CE8',
+  secondary2: '#B21212',
+  secondary3: '#FFE20D',
   grey1: '#43484d',
   grey2: '#5e6977',
   grey3: '#86939e',

@@ -1,6 +1,10 @@
+/**
+ * @providesModule HSCard
+ */
+
 import React from 'react'
 import { View, StyleSheet, Platform } from 'react-native'
-import colors from '../../config/colors'
+import colors from 'HSColors'
 let styles = {}
 
 const Card = ({children, flexDirection}) => (

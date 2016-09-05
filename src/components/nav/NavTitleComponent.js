@@ -1,6 +1,10 @@
+/**
+ * @providesModule HSNavTitleComponent
+ */
+
 import React from 'react'
 import { View } from 'react-native'
-import Text from '../text/Text'
+import Text from 'HSText'
 
 const NavTitleComponent = () => (
   <View>

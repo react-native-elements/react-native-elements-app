@@ -6,8 +6,9 @@ import colors from 'HSColors'
 import fonts from 'HSFonts'
 
 import Home from './home/HomeRootContainer'
-import AboutNav from './about/AboutNav'
+import About from './about/AboutRootContainer'
 import Contact from './contact/ContactRootContainer'
+import Pricing from './pricing/PricingRootContainer'
 
 let styles = {}
 
@@ -36,7 +37,7 @@ class App extends Component {
           renderIcon={() => <Icon color={colors.grey2} name='whatshot' size={26} />}
           renderSelectedIcon={() => <Icon color={colors.primary} name='whatshot' size={26} />}
           onPress={() => this.changeTab('home')}>
-          <Home />
+          <About />
         </TabNavigator.Item>
         <TabNavigator.Item
           tabStyle={selectedTab !== 'about' && { marginBottom: -6 }}
@@ -47,7 +48,7 @@ class App extends Component {
           renderIcon={() => <Icon style={{paddingBottom: 4}} color={colors.grey2} name='important-devices' size={26} />}
           renderSelectedIcon={() => <Icon color={colors.primary} name='important-devices' size={26} />}
           onPress={() => this.changeTab('about')}>
-          <AboutNav />
+          <Home />
         </TabNavigator.Item>
         <TabNavigator.Item
           tabStyle={selectedTab !== 'contact' && { marginBottom: -6 }}
@@ -69,7 +70,7 @@ class App extends Component {
           renderIcon={() => <Icon style={{paddingBottom: 4}} color={colors.grey2} name='attach-money' size={26} />}
           renderSelectedIcon={() => <Icon color={colors.primary} name='attach-money' size={26} />}
           onPress={() => this.changeTab('pricing')}>
-          <Home />
+          <Pricing />
         </TabNavigator.Item>
       </TabNavigator>
 

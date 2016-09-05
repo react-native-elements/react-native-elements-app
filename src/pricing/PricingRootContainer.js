@@ -1,4 +1,4 @@
-import AboutNav from './AboutNav'
+import PricingNav from './PricingNav'
 import { connect } from 'react-redux'
 
 function mapStateToProps (state) {
@@ -10,4 +10,4 @@ function mapDispatchToProps (dispatch) {
 }
 
 // export default connect(mapStateToProps, mapDispatchToProps)(AboutNav)
-export default AboutNav
+export default PricingNav

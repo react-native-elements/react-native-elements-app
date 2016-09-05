@@ -24,7 +24,7 @@ class Contact extends Component {
         <FormLabel containerStyle={styles.labelContainerStyle}>Phone</FormLabel>
         <FormInput />
         <Button
-          onPress={() => console.log('fuck off')}
+          onPress={() => console.log('yo')}
           icon={{name: 'done'}}
           buttonStyle={{marginTop: 15}}
           title='SUBMIT' />

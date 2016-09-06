@@ -1,10 +1,8 @@
 import React, { Component } from 'react'
-import { ScrollView, View, StyleSheet, Platform } from 'react-native'
+import { ScrollView, View, StyleSheet } from 'react-native'
 import Text from 'HSText'
 import colors from 'HSColors'
 import PricingCard from 'HSPricingCard'
-import fonts from 'HSFonts'
-import Button from 'HSButton'
 import Icon from 'react-native-vector-icons/MaterialIcons'
 
 let styles = {}

@@ -26,3 +26,12 @@
 ##### Todo Major
 - [ ] Separate into separate installable NPM package
 
+
+## API
+
+Buttons
+
+| Prop | default | Type | Description |
+| ---- | ---- | ----| ---- |
+| buttonStyle | none | object | Add additional styling for button component |
+| title | none | string | Button title | 

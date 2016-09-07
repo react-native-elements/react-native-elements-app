@@ -3,9 +3,9 @@
 ![React Native UI Toolkit](http://i.imgur.com/80RWAyT.png)
 
 ### Included
-- [x] Buttons
+- [x] [Buttons](https://github.com/dabit3/react-native-hackathon-starter#buttons)
 - [x] Pricing Component
-- [x] Social Icons / Buttons 
+- [x] [Social Icons / Buttons](https://github.com/dabit3/react-native-hackathon-starter#social-icons--buttons)
 - [x] Card component
 - [x] [React Native Vector Icons](https://github.com/oblador/react-native-vector-icons)
 - [x] Form Elements

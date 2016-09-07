@@ -6,7 +6,7 @@
 - [x] [Buttons](https://github.com/dabit3/react-native-hackathon-starter#buttons)
 - [x] Pricing Component
 - [x] [Social Icons / Buttons](https://github.com/dabit3/react-native-hackathon-starter#social-icons--buttons)
-- [x] Card component
+- [x] [Card component](https://github.com/dabit3/react-native-hackathon-starter#card)
 - [x] [React Native Vector Icons](https://github.com/oblador/react-native-vector-icons)
 - [x] Form Elements
 - [x] Redux
@@ -82,6 +82,16 @@
 | style | none | object | button styling |
 | iconColor | white | string | icon color |
 | title | none | string | title if made into a button |
+
+## Forms
+
+![]()
+
+```
+<FormLabel containerStyle={styles.labelContainerStyle}>Name</FormLabel>
+<FormInput onChangeText={someFunction}/>
+
+```
 
 ## Card
 

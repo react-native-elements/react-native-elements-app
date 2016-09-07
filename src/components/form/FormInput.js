@@ -8,7 +8,47 @@ import colors from 'HSColors'
 
 let styles = {}
 
-const FormInput = ({containerStyle, inputStyle, onChangeText, value}) => (
+const FormInput = ({
+  containerStyle,
+  inputStyle,
+  value,
+  autoCapitalize,
+  autoCorrect,
+  autoFocus,
+  blurOnSubmit,
+  defaultValue,
+  editable,
+  keyboardType,
+  maxLength,
+  multiline,
+  onBlur,
+  onChange,
+  onChangeText,
+  onContentSizeChange,
+  onEndEditing,
+  onFocus,
+  onLayout,
+  onSelectionChange,
+  onSubmitEditing,
+  placeholder,
+  placeholderTextColor,
+  returnKeyType,
+  secureTextEntry,
+  selectTextOnFocus,
+  selectionColor,
+  inlineImageLeft,
+  inlineImagePadding,
+  numberOfLines,
+  returnKeyLabel,
+  underlineColorAndroid,
+  clearButtonMode,
+  clearTextOnFocus,
+  dataDetectorTypes,
+  enablesReturnKeyAutomatically,
+  keyboardAppearance,
+  onKeyPress,
+  selectionState
+}) => (
   <View style={[styles.container, containerStyle && containerStyle]}>
     <TextInput
       selectionColor={colors.grey3}

@@ -56,7 +56,7 @@
 
 ### Social Icons & Buttons
 
-![Social Icons](http://i.imgur.com/5CR551S.png)
+![Social Icons](http://i.imgur.com/k9jQh2u.png)
 
 ```
 /// Icon

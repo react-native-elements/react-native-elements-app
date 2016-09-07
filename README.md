@@ -1,4 +1,4 @@
-# React Native Hackathon Starter Project & UI Toolkit
+# 🔥🔥🔥 React Native Hackathon Starter Project & UI Toolkit 🔥🔥🔥
 
 ![React Native UI Toolkit](http://i.imgur.com/80RWAyT.png)
 
@@ -29,19 +29,19 @@
 
 ## API
 
-Button
+### Button
 
 ![Buttons](http://i.imgur.com/aZNhgFp.png)
 
 | Prop | default | Type | Description |
 | ---- | ---- | ----| ---- |
-| buttonStyle | none | object | Add additional styling for button component |
-| title | none | string | Button title | 
+| buttonStyle | none | object | add additional styling for button component |
+| title | none | string | button title | 
 | onPress | none | function | onPress method |
 | icon | none | string | [Material Icon Name](https://design.google.com/icons/) | 
 | secondary | false | boolean | secondary button flag |
-| backgroundColor | primary color | string (color) | Background color of button |
-| color | white | string(color) | Font color |
-| fontSize | 18 | number | Font size |
+| backgroundColor | primary color | string (color) | background color of button |
+| color | white | string(color) | font color |
+| fontSize | 18 | number | font size |
 | underlayColor | transparent | string(color) | underlay color for button press |
 | raised | false | boolean | flag to add raised button styling |

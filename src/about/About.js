@@ -4,6 +4,7 @@ import Text from 'HSText'
 import Card from 'HSCard'
 import colors from 'HSColors'
 import fonts from 'HSFonts'
+import SocialIcon from 'HSSocialIcon'
 import Icon from 'react-native-vector-icons/MaterialIcons'
 import Divider from 'HSDivider'
 
@@ -71,6 +72,55 @@ class About extends Component {
             <Text style={styles.fonts} h4>h4 Heading</Text>
             <Text style={styles.fonts} >Normal Text</Text>
           </Card>
+          <Card containerStyle={{marginTop: 15}}>
+            <Text style={styles.cardTitle}>Social Icons</Text>
+            <Divider style={styles.divider} />
+            <View style={styles.social}>
+              <SocialIcon
+              type='facebook'
+              />
+              <SocialIcon
+                type='twitter'
+              />
+              <SocialIcon
+                type='instagram'
+              />
+              <SocialIcon
+                type='tumblr'
+              />
+              <SocialIcon
+                type='youtube'
+              />
+            </View>
+          </Card>
+          <Card containerStyle={{marginTop: 15}}>
+            <Text style={styles.cardTitle}>Social Buttons</Text>
+            <Divider style={styles.divider} />
+            <View style={styles.socialButtons}>
+              <SocialIcon
+                title='Sign In With Facebook'
+                button
+                type='facebook'
+              />
+              <SocialIcon
+                title='Some Twitter Message'
+                button
+                type='twitter'
+              />
+              <SocialIcon
+                button
+                type='instagram'
+              />
+              <SocialIcon
+                button
+                type='tumblr'
+              />
+              <SocialIcon
+                button
+                type='youtube'
+              />
+            </View>
+          </Card>
         </View>
       </ScrollView>
     )
@@ -117,6 +167,10 @@ styles = StyleSheet.create({
   name: {
     fontSize: 16,
     marginTop: 5
+  },
+  social: {
+    flexDirection: 'row',
+    justifyContent: 'center'
   }
 })
 

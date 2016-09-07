@@ -28,6 +28,10 @@ class Home extends Component {
           icon={{name: 'cached'}}
           title='PRIMARY WITH ICON' />
         <Button
+          raised
+          icon={{name: 'cached'}}
+          title='RAISED WITH ICON' />
+        <Button
           secondary
           icon={{name: 'accessibility'}}
           title='SECONDARY BUTTON' />

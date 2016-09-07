@@ -3,7 +3,7 @@
  */
 
 import React, { PropTypes } from 'react'
-import { TouchableHighlight, StyleSheet, View } from 'react-native'
+import { TouchableHighlight, StyleSheet, View, Platform } from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialIcons'
 import colors from 'HSColors'
 import Text from 'HSText'
@@ -14,7 +14,7 @@ const log = () => {
   console.log('please attach method to this component')
 }
 
-const Button = ({buttonStyle, title, onPress, icon, secondary, secondary2, secondary3, primary1, primary2, primary3, backgroundColor, color, fontSize, underlayColor}) => (
+const Button = ({buttonStyle, title, onPress, icon, secondary, secondary2, secondary3, primary1, primary2, primary3, backgroundColor, color, fontSize, underlayColor, raised}) => (
   <TouchableHighlight
     underlayColor={underlayColor || 'transparent'}
     onPress={onPress || log}>
@@ -27,7 +27,8 @@ const Button = ({buttonStyle, title, onPress, icon, secondary, secondary2, secon
         primary1 && {backgroundColor: colors.primary1},
         primary2 && {backgroundColor: colors.primary2},
         backgroundColor && {backgroundColor},
-        buttonStyle && buttonStyle
+        buttonStyle && buttonStyle,
+        raised && styles.raised
       ]}
       >
       {
@@ -68,6 +69,19 @@ styles = StyleSheet.create({
   },
   icon: {
     marginRight: 10
+  },
+  raised: {
+    ...Platform.select({
+      ios: {
+        shadowColor: 'rgba(0,0,0, .4)',
+        shadowOffset: {height: 1, width: 1},
+        shadowOpacity: 1,
+        shadowRadius: 1
+      },
+      android: {
+        elevation: 2
+      }
+    })
   }
 })
 

@@ -9,6 +9,7 @@
 - [x] Redux
 - [x] Tabs
 - [x] Navigator Setup
+- [x] HTML style headings (h1, h2, etc...)
 
 #### Todo Soon
 - [ ] Add list element

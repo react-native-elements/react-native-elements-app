@@ -37,7 +37,7 @@ class App extends Component {
           renderIcon={() => <Icon color={colors.grey2} name='whatshot' size={26} />}
           renderSelectedIcon={() => <Icon color={colors.primary} name='whatshot' size={26} />}
           onPress={() => this.changeTab('home')}>
-          <About />
+          <Home />
         </TabNavigator.Item>
         <TabNavigator.Item
           tabStyle={selectedTab !== 'about' && { marginBottom: -6 }}
@@ -48,7 +48,7 @@ class App extends Component {
           renderIcon={() => <Icon style={{paddingBottom: 4}} color={colors.grey2} name='important-devices' size={26} />}
           renderSelectedIcon={() => <Icon color={colors.primary} name='important-devices' size={26} />}
           onPress={() => this.changeTab('about')}>
-          <Home />
+          <About />
         </TabNavigator.Item>
         <TabNavigator.Item
           tabStyle={selectedTab !== 'contact' && { marginBottom: -6 }}

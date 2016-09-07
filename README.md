@@ -71,3 +71,8 @@
   type='twitter'
 />
 ```
+
+| prop | default | type | description |
+| ---- | ---- | ----| ---- |
+| component | TouchableHighlight | React Native Component | Type of button |
+| type | none | social media type (facebook, twitter, google-plus-official, pinterest, linkedin, youtube, vimeo, tumblr, instagram, quora, foursquare, wordpress, stumbleupon) | social media type |

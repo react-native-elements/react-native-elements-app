@@ -12,7 +12,7 @@ let styles
 const colors = {
   facebook: '#3b5998',
   twitter: '#00aced',
-  googlePlus: '#dd4b39',
+  ['google-plus-official']: '#dd4b39',
   pinterest: '#cb2027',
   linkedIn: '#007bb6',
   youtube: '#bb0000',

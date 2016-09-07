@@ -18,11 +18,11 @@ class Contact extends Component {
           <Text style={styles.heading}>Forms</Text>
         </View>
         <FormLabel containerStyle={styles.labelContainerStyle}>Name</FormLabel>
-        <FormInput />
+        <FormInput placeholder='Please enter your name...' />
         <FormLabel containerStyle={styles.labelContainerStyle}>Address</FormLabel>
-        <FormInput />
+        <FormInput placeholder='Please enter your address...' />
         <FormLabel containerStyle={styles.labelContainerStyle}>Phone</FormLabel>
-        <FormInput />
+        <FormInput placeholder='Please enter your phone number...' />
         <Button
           onPress={() => console.log('yo')}
           icon={{name: 'done'}}

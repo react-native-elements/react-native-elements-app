@@ -27,9 +27,9 @@
 - [ ] Separate into separate installable NPM package
 
 
-## API
+# API
 
-### Button
+## Buttons
 
 ![Buttons](http://i.imgur.com/aZNhgFp.png)
 
@@ -54,7 +54,7 @@
 | underlayColor | transparent | string(color) | underlay color for button press |
 | raised | false | boolean | flag to add raised button styling |
 
-### Social Icons & Buttons
+## Social Icons & Buttons
 
 ![Social Icons](http://i.imgur.com/k9jQh2u.png)
 

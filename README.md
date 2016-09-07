@@ -31,7 +31,7 @@
 
 Button
 
-![Buttons](http://i.imgur.com/i3G88EEl.png)
+![Buttons](http://i.imgur.com/aZNhgFp.png)
 
 | Prop | default | Type | Description |
 | ---- | ---- | ----| ---- |

@@ -53,3 +53,21 @@
 | fontSize | 18 | number | font size |
 | underlayColor | transparent | string(color) | underlay color for button press |
 | raised | false | boolean | flag to add raised button styling |
+
+### Social Icons & Buttons
+
+![Social Icons](http://i.imgur.com/5CR551S.png)
+
+```
+/// Icon
+<SocialIcon
+  type='twitter'
+/>
+
+/// Button
+<SocialIcon
+  title='Some Twitter Message'
+  button
+  type='twitter'
+/>
+```

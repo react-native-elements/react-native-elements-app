@@ -7,10 +7,10 @@
 - [x] Pricing Component
 - [x] Social Icons / Buttons 
 - [x] Card component
-- [x] React Native Vector Icons
+- [x] [React Native Vector Icons](https://github.com/oblador/react-native-vector-icons)
 - [x] Form Elements
 - [x] Redux
-- [x] Tabs
+- [x] Tabs ([React Native TabNavigator](https://github.com/exponentjs/react-native-tab-navigator))
 - [x] Navigator Setup
 - [x] HTML style headings (h1, h2, etc...)
 

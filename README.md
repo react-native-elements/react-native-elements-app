@@ -66,13 +66,13 @@
 
 // Button
 <SocialIcon
-  title='Some Twitter Message'
+  title='Sign In With Facebook'
   button
-  type='twitter'
+  type='facebook'
 />
 ```
 
 | prop | default | type | description |
 | ---- | ---- | ----| ---- |
-| component | TouchableHighlight | React Native Component | Type of button |
+| component | TouchableHighlight | React Native Component | type of button |
 | type | none | social media type (facebook, twitter, google-plus-official, pinterest, linkedin, youtube, vimeo, tumblr, instagram, quora, foursquare, wordpress, stumbleupon) | social media type |

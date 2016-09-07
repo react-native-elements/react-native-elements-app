@@ -95,3 +95,13 @@
   }
 </Card>
 ```
+
+| prop | default | type | description |
+| ---- | ---- | ----| ---- |
+| flexDirection | column | string | flex direction (row or column) |
+| containerStyle | none | object | outer container style |
+| wrapperStyle | none | object | inner container style |
+| title | none | string | optional card title |
+| titleStyle | none | object | additional title styling (if title provided) |
+| dividerStyle | none | object | additional divider styling (if title provided) |
+

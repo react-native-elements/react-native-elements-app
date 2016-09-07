@@ -49,6 +49,7 @@
 | secondary | false | boolean | secondary button flag |
 | backgroundColor | primary color | string (color) | background color of button |
 | color | white | string(color) | font color |
+| textStyle | none | object | text styling |
 | fontSize | 18 | number | font size |
 | underlayColor | transparent | string(color) | underlay color for button press |
 | raised | false | boolean | flag to add raised button styling |

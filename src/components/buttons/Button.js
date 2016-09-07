@@ -14,7 +14,7 @@ const log = () => {
   console.log('please attach method to this component')
 }
 
-const Button = ({buttonStyle, title, onPress, icon, secondary, secondary2, secondary3, primary1, primary2, primary3, backgroundColor, color, fontSize, underlayColor, raised}) => (
+const Button = ({buttonStyle, title, onPress, icon, secondary, secondary2, secondary3, primary1, primary2, primary3, backgroundColor, color, fontSize, underlayColor, raised, textStyle}) => (
   <TouchableHighlight
     underlayColor={underlayColor || 'transparent'}
     onPress={onPress || log}>
@@ -34,7 +34,7 @@ const Button = ({buttonStyle, title, onPress, icon, secondary, secondary2, secon
       {
         icon && <Icon color={icon.color || 'white'} size={icon.size || 26} style={styles.icon} name={icon.name} />
       }
-      <Text style={[styles.text, color && {color}, fontSize && {fontSize}]}>
+      <Text style={[styles.text, textStyle && textStyle, color && {color}, fontSize && {fontSize}]}>
         {title}
       </Text>
     </View>
@@ -45,7 +45,8 @@ Button.propTypes = {
   buttonStyle: PropTypes.any,
   title: PropTypes.string,
   onPress: PropTypes.any,
-  icon: PropTypes.object
+  icon: PropTypes.object,
+  textStyle: PropTypes.any
 }
 
 styles = StyleSheet.create({

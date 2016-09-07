@@ -100,6 +100,13 @@ import FormInput from 'HSFormInput'
 
 ```
 
+##### This component inherits [all native TextInput props that come with a standard React Native TextInput element](https://facebook.github.io/react-native/docs/textinput.html), along with the following:
+
+| prop | default | type | description |
+| ---- | ---- | ----| ---- |
+| containerStyle | none | object | TextInput container styling |
+| inputStyle | none | object | TextInput styling |
+
 ## Card
 
 ![Card Component](http://i.imgur.com/eRaY7Ok.png)

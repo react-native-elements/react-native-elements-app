@@ -37,3 +37,11 @@ Button
 | ---- | ---- | ----| ---- |
 | buttonStyle | none | object | Add additional styling for button component |
 | title | none | string | Button title | 
+| onPress | none | function | onPress method |
+| icon | none | string | [Material Icon Name](https://design.google.com/icons/) | 
+| secondary | false | boolean | secondary button flag |
+| backgroundColor | primary color | string (color) | Background color of button |
+| color | white | string(color) | Font color |
+| fontSize | 18 | number | Font size |
+| underlayColor | transparent | string(color) | underlay color for button press |
+| raised | false | boolean | flag to add raised button styling |

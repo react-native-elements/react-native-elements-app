@@ -21,7 +21,6 @@
 - [ ] Add Profile Component
 - [ ] Add Picker
 - [ ] Add Search Bar
-- [ ] Add Tabs
 - [ ] Add Side Menu
 
 ##### Todo Major

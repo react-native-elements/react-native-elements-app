@@ -77,7 +77,7 @@ class About extends Component {
             <Divider style={styles.divider} />
             <View style={styles.social}>
               <SocialIcon
-              type='facebook'
+                type='facebook'
               />
               <SocialIcon
                 type='twitter'

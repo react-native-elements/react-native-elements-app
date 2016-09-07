@@ -1,4 +1,6 @@
-# React Native Hackathon Starter Project
+# React Native Hackathon Starter Project & UI Toolkit
+
+![React Native UI Toolkit](http://i.imgur.com/80RWAyT.png)
 
 ### Included
 - [x] Buttons

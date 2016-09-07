@@ -46,6 +46,17 @@ Button.propTypes = {
   title: PropTypes.string,
   onPress: PropTypes.any,
   icon: PropTypes.object,
+  secondary: PropTypes.bool,
+  secondary2: PropTypes.bool,
+  secondary3: PropTypes.bool,
+  primary1: PropTypes.bool,
+  primary2: PropTypes.bool,
+  primary3: PropTypes.bool,
+  backgroundColor: PropTypes.string,
+  color: PropTypes.string,
+  fontSize: PropTypes.number,
+  underlayColor: PropTypes.string,
+  raised: PropTypes.bool,
   textStyle: PropTypes.any
 }
 

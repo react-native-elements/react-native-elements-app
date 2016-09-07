@@ -40,7 +40,7 @@
   title='RAISED WITH ICON' />
 ```
 
-| Prop | default | Type | Description |
+| prop | default | type | description |
 | ---- | ---- | ----| ---- |
 | buttonStyle | none | object | add additional styling for button component |
 | title | none | string | button title | 

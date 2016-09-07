@@ -89,7 +89,7 @@ import SocialIcon from 'HSSocialIcon'
 
 ## Forms
 
-![TextInput](http://i.imgur.com/9idGiXr.png)
+![Forms](http://i.imgur.com/9idGiXr.png)
 
 ```
 import FormLabel from 'HSFormLabel'
@@ -99,6 +99,7 @@ import FormInput from 'HSFormInput'
 <FormInput onChangeText={someFunction}/>
 
 ```
+### FormInput
 
 ##### This component inherits [all native TextInput props that come with a standard React Native TextInput element](https://facebook.github.io/react-native/docs/textinput.html), along with the following:
 
@@ -106,6 +107,13 @@ import FormInput from 'HSFormInput'
 | ---- | ---- | ----| ---- |
 | containerStyle | none | object | TextInput container styling |
 | inputStyle | none | object | TextInput styling |
+
+### FormLabel
+
+| prop | default | type | description |
+| ---- | ---- | ----| ---- |
+| containerStyle | none | object | additional label container style |
+| labelStyle | none | object | additional label styling |
 
 ## Card
 

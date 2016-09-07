@@ -10,7 +10,7 @@ import Text from 'HSText'
 
 let styles = {}
 
-const FormLabel = ({containerStyle, inputStyle, onChangeText, children}) => (
+const FormLabel = ({containerStyle, inputStyle, children}) => (
   <View style={[styles.container, containerStyle && containerStyle]}>
     <Text style={styles.label}>{children.toUpperCase()}</Text>
   </View>

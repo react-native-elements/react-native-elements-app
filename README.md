@@ -85,7 +85,7 @@
 
 ## Card
 
-![Card Component](http://i.imgur.com/7kiWw5I.png)
+![Card Component](http://i.imgur.com/eRaY7Ok.png)
 
 ```
 <Card

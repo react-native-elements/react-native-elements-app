@@ -76,3 +76,9 @@
 | ---- | ---- | ----| ---- |
 | component | TouchableHighlight | React Native Component | type of button |
 | type | none | social media type (facebook, twitter, google-plus-official, pinterest, linkedin, youtube, vimeo, tumblr, instagram, quora, foursquare, wordpress, stumbleupon) | social media type |
+| button | false | boolean | creates button |
+| onPress | none | funciton | onPress method |
+| iconStyle | none | object | extra styling for icon component ([React Native Vector Icons](https://github.com/oblador/react-native-vector-icons)) |
+| style | none | object | button styling |
+| iconColor | white | string | icon color |
+| title | none | string | title if made into a button |

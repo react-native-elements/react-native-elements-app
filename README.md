@@ -3,6 +3,7 @@
 ### Included
 - [x] Buttons
 - [x] Pricing Component
+- [x] Social Icons / Buttons 
 - [x] Card component
 - [x] React Native Vector Icons
 - [x] Form Elements
@@ -15,7 +16,6 @@
 - [ ] Add list element
 - [ ] Add list item element
 - [ ] Add icons to TextInputs
-- [ ] Add Social Components
 - [ ] Add Profile Component
 - [ ] Add Picker
 - [ ] Add Search Bar

@@ -82,3 +82,16 @@
 | style | none | object | button styling |
 | iconColor | white | string | icon color |
 | title | none | string | title if made into a button |
+
+## Card
+
+![Card Component](http://i.imgur.com/7kiWw5I.png)
+
+```
+<Card
+  title='CARD WITH DIVIDER'>
+  {
+    users.map((u, i) => {}
+  }
+</Card>
+```

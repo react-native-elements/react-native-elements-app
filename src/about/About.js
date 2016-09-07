@@ -46,9 +46,8 @@ class About extends Component {
           <Text style={styles.heading}>Components</Text>
         </View>
         <View style={styles.container}>
-          <Card>
-            <Text style={styles.cardTitle}>CARD WITH DIVIDER</Text>
-            <Divider style={styles.divider} />
+          <Card
+            title='CARD WITH DIVIDER'>
             {
               users.map((u, i) => {
                 return (
@@ -63,18 +62,16 @@ class About extends Component {
               })
             }
           </Card>
-          <Card containerStyle={{marginTop: 15}}>
-            <Text style={styles.cardTitle}>FONTS</Text>
-            <Divider style={styles.divider} />
+          <Card containerStyle={{marginTop: 15}} title='FONTS'>
             <Text style={styles.fonts} h1>h1 Heading</Text>
             <Text style={styles.fonts} h2>h2 Heading</Text>
             <Text style={styles.fonts} h3>h3 Heading</Text>
             <Text style={styles.fonts} h4>h4 Heading</Text>
             <Text style={styles.fonts} >Normal Text</Text>
           </Card>
-          <Card containerStyle={{marginTop: 15}}>
-            <Text style={styles.cardTitle}>Social Icons</Text>
-            <Divider style={styles.divider} />
+          <Card
+            title='SOCIAL ICONS'
+            containerStyle={{marginTop: 15}}>
             <View style={styles.social}>
               <SocialIcon
                 type='facebook'
@@ -93,9 +90,9 @@ class About extends Component {
               />
             </View>
           </Card>
-          <Card containerStyle={{marginTop: 15}}>
-            <Text style={styles.cardTitle}>Social Buttons</Text>
-            <Divider style={styles.divider} />
+          <Card
+            containerStyle={{marginTop: 15}}
+            title='SOCIAL BUTTONS'>
             <View style={styles.socialButtons}>
               <SocialIcon
                 title='Sign In With Facebook'
@@ -129,8 +126,7 @@ class About extends Component {
 
 styles = StyleSheet.create({
   container: {
-    flex: 1,
-    margin: 15
+    flex: 1
   },
   headerContainer: {
     marginTop: 60,
@@ -146,14 +142,6 @@ styles = StyleSheet.create({
   },
   fonts: {
     marginBottom: 8
-  },
-  divider: {
-    marginBottom: 15
-  },
-  cardTitle: {
-    fontFamily: fonts.ios.bold,
-    textAlign: 'center',
-    marginBottom: 15
   },
   user: {
     flexDirection: 'row',

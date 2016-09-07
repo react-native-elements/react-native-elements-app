@@ -14,7 +14,7 @@ const colors = {
   twitter: '#00aced',
   ['google-plus-official']: '#dd4b39',
   pinterest: '#cb2027',
-  linkedIn: '#007bb6',
+  linkedin: '#007bb6',
   youtube: '#bb0000',
   vimeo: '#aad450',
   tumblr: '#32506d',

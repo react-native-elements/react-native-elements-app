@@ -59,12 +59,12 @@
 ![Social Icons](http://i.imgur.com/k9jQh2u.png)
 
 ```
-/// Icon
+// Icon
 <SocialIcon
   type='twitter'
 />
 
-/// Button
+// Button
 <SocialIcon
   title='Some Twitter Message'
   button

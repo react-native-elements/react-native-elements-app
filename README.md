@@ -29,7 +29,9 @@
 
 ## API
 
-Buttons
+Button
+
+![Buttons](http://i.imgur.com/i3G88EEl.png)
 
 | Prop | default | Type | Description |
 | ---- | ---- | ----| ---- |

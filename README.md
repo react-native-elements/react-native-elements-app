@@ -45,7 +45,7 @@
 | buttonStyle | none | object | add additional styling for button component |
 | title | none | string | button title | 
 | onPress | none | function | onPress method |
-| icon | none | object {name(string), color(string), size(string)} | [Material Icon Name](https://design.google.com/icons/) | 
+| icon | none | object {name(string), color(string), size(number)} | [Material Icon Name](https://design.google.com/icons/) | 
 | secondary | false | boolean | secondary button flag |
 | backgroundColor | primary color | string (color) | background color of button |
 | color | white | string(color) | font color |

@@ -3,10 +3,8 @@ import { ScrollView, View, StyleSheet, Image } from 'react-native'
 import Text from 'HSText'
 import Card from 'HSCard'
 import colors from 'HSColors'
-import fonts from 'HSFonts'
 import SocialIcon from 'HSSocialIcon'
 import Icon from 'react-native-vector-icons/MaterialIcons'
-import Divider from 'HSDivider'
 
 let styles = {}
 

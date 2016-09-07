@@ -34,6 +34,8 @@
 ![Buttons](http://i.imgur.com/aZNhgFp.png)
 
 ```
+import Button from 'HSButton'
+
 <Button
   raised
   icon={{name: 'cached'}}
@@ -59,6 +61,8 @@
 ![Social Icons](http://i.imgur.com/k9jQh2u.png)
 
 ```
+import SocialIcon from 'HSSocialIcon'
+
 // Icon
 <SocialIcon
   type='twitter'
@@ -85,9 +89,12 @@
 
 ## Forms
 
-![]()
+![TextInput](http://i.imgur.com/9idGiXr.png)
 
 ```
+import FormLabel from 'HSFormLabel'
+import FormInput from 'HSFormInput'
+
 <FormLabel containerStyle={styles.labelContainerStyle}>Name</FormLabel>
 <FormInput onChangeText={someFunction}/>
 
@@ -98,6 +105,8 @@
 ![Card Component](http://i.imgur.com/eRaY7Ok.png)
 
 ```
+import Card from 'HSCard'
+
 <Card
   title='CARD WITH DIVIDER'>
   {

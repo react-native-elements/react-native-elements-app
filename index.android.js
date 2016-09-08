@@ -1,15 +1,9 @@
 import React from 'react'
 import { AppRegistry } from 'react-native'
-import { Provider } from 'react-redux'
-import AppRootContainer from './src'
-import configureStore from './src/store/configureStore'
-
-const store = configureStore()
+import AppRootContainer from './src/AppRootContainer'
 
 const HackathonStarter = () => (
-  <Provider store={store}>
-    <AppRootContainer />
-  </Provider>
+  <AppRootContainer />
 )
 
 AppRegistry.registerComponent('HackathonStarter', () => HackathonStarter)

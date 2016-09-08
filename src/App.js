@@ -52,13 +52,25 @@ class App extends Component {
           <About />
         </TabNavigator.Item>
         <TabNavigator.Item
-          tabStyle={selectedTab !== 'contact' && { marginBottom: -6 }}
+          tabStyle={[
+            selectedTab !== 'contact' && { marginBottom: -6 },
+            selectedTab === 'contact' && Platform.OS === 'android' && {marginBottom: -3}
+          ]}
           titleStyle={[styles.titleStyle, {marginTop: -1}]}
-          selectedTitleStyle={[styles.titleSelected, {marginTop: -3, marginBottom: 7}]}
+          selectedTitleStyle={[
+            styles.titleSelected,
+            {marginBottom: 7},
+            Platform.OS === 'android' ? {marginTop: 1 } : {marginTop: -3}
+          ]}
           selected={selectedTab === 'contact'}
           title={selectedTab === 'contact' ? 'CONTACT' : null}
           renderIcon={() => <Icon style={{paddingBottom: 4}} color={colors.grey2} name='contacts' size={26} />}
-          renderSelectedIcon={() => <Icon color={colors.primary} name='contacts' size={26} />}
+          renderSelectedIcon={() => (
+              <Icon
+                color={colors.primary}
+                name='contacts'
+                size={Platform.OS === 'ios' ? 26 : 22 }  />
+            )}
           onPress={() => this.changeTab('contact')}>
           <Contact />
         </TabNavigator.Item>

@@ -27,6 +27,7 @@ class Contact extends Component {
         <RNEFormLabel containerStyle={styles.labelContainerStyle}>Phone</RNEFormLabel>
         <RNEFormInput placeholder='Please enter your phone number...' />
         <RNEButton
+          raised
           onPress={() => console.log('yo')}
           icon={{name: 'done'}}
           buttonStyle={{marginTop: 15}}

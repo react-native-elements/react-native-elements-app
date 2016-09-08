@@ -11,8 +11,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons'
 
 let styles = {}
 
-const NavigationBar = () => {
-  const src = require('image!logo')
+const NavigationBar = () => { 
   const LeftButton = (route, navigator, index, navState) => {
     if (index > 0) {
       const leftAction = navigator.pop
@@ -37,7 +36,7 @@ const NavigationBar = () => {
       )
     }
     return (
-      <NavTitleIcon src={src} />
+      <NavTitleIcon />
     )
   }
 

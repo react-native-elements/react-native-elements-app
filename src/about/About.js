@@ -55,7 +55,6 @@ class About extends Component {
                   <View key={i} style={styles.user}>
                     <Image
                       style={styles.image}
-                      resizeMode='center'
                       source={{uri: u.avatar}} />
                     <RNEText style={styles.name}>{u.name}</RNEText>
                   </View>
@@ -85,9 +84,6 @@ class About extends Component {
               />
               <RNESocialIcon
                 type='tumblr'
-              />
-              <RNESocialIcon
-                type='youtube'
               />
             </View>
           </RNECard>

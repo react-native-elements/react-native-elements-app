@@ -7,20 +7,20 @@ import { View, Image, StyleSheet } from 'react-native'
 
 let styles = {}
 
-const NavTitleIcon = ({src}) => (
-  <View>
+const NavTitleIcon = () => (
+  <View style={styles.iconContainer}>
     <Image
-      source={src}
+      source={require('image!logo')}
       style={styles.logo} />
   </View>
 )
 
 styles = StyleSheet.create({
-  container: {
+  iconContainer: {
   },
   logo: {
-    resizeMode: 'center',
-    marginTop: -15
+    marginTop: -15,
+    resizeMode: 'center'
   }
 })
 

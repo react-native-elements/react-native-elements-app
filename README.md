@@ -32,7 +32,7 @@ import Button from 'HSButton'
 ```
 
 
-### Included
+# Included
 - [x] [Buttons](https://github.com/dabit3/react-native-hackathon-starter#buttons)
 - [x] Pricing Component
 - [x] [Social Icons / Buttons](https://github.com/dabit3/react-native-hackathon-starter#social-icons--buttons)

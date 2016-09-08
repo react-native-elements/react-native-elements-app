@@ -150,21 +150,21 @@ render () {
 
 | prop | default | type | description |
 | ---- | ---- | ----| ---- |
-| onPress | none | function | onPress method for link (optional) |
-| title | none | string | main title for list item (required) |
-| icon | none | object {name, color, style} | icon configuration for left icon (optional) |
-| rightIcon | chevron | string | right icon (optional) ([material icon name](https://design.google.com/icons/)) |
 | avatar | none | string | left avatar (optional) |
 | avatarStyle | none | object (style) | avatar styling (optional) |
-| underlayColor | white | string | define underlay color for TouchableHighlight (optional) |
+| chevronColor | #bdc6cf | string | set chevron color |
+| containerStyle | none | object (style) | additional main container styling (optional) |
+| hideChevron | false | boolean | set if you do not want a chevron (optional) |
+| icon | none | object {name, color, style} | icon configuration for left icon (optional) |
+| onPress | none | function | onPress method for link (optional) |
+| rightIcon | chevron | string | right icon (optional) ([material icon name](https://design.google.com/icons/)) |
+| roundAvatar | false | boolan | make left avatar round |
 | subtitle | none | string | subtitle text (optional) |
 | subtitleStyle | none | object (style) | additional subtitle styling (optional ) |
-| containerStyle | none | object (style) | additional main container styling (optional) |
-| wrapperStyle | none | object (style) | additional wrapper styling (optional) |
+| title | none | string | main title for list item (required) |
 | titleStyle | none | object (style) | additional title styling (optional) |
-| hideChevron | false | boolean | set if you do not want a chevron (optional) |
-| chevronColor | #bdc6cf | string | set chevron color |
-| roundAvatar | false | boolan | make left avatar round |
+| wrapperStyle | none | object (style) | additional wrapper styling (optional) |
+| underlayColor | white | string | define underlay color for TouchableHighlight (optional) |
 
 ## Forms
 

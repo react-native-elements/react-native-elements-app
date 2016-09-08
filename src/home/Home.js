@@ -1,10 +1,13 @@
 import React, { Component } from 'react'
 import { ScrollView, View, StyleSheet, Platform } from 'react-native'
 import Text from 'HSText'
-import Button from 'HSButton'
 import colors from 'HSColors'
 import fonts from 'HSFonts'
 import Icon from 'react-native-vector-icons/MaterialIcons'
+
+import {
+  RNEButton
+} from 'react-native-elements'
 
 let styles = {}
 
@@ -20,30 +23,30 @@ class Home extends Component {
           <Icon color='white' name='whatshot' size={62} />
           <Text style={styles.heading}>Buttons</Text>
         </View>
-        <Button
+        <RNEButton
           buttonStyle={styles.button}
           onPress={() => log()}
           title='PRIMARY BUTTON' />
-        <Button
+        <RNEButton
           icon={{name: 'cached'}}
           title='PRIMARY WITH ICON' />
-        <Button
+        <RNEButton
           raised
           icon={{name: 'cached'}}
           title='RAISED WITH ICON' />
-        <Button
+        <RNEButton
           secondary
           icon={{name: 'accessibility'}}
           title='SECONDARY BUTTON' />
-        <Button
+        <RNEButton
           secondary2
           icon={{name: 'account-balance'}}
           title='SECONDARY2 BUTTON' />
-        <Button
+        <RNEButton
           secondary3
           icon={{name: 'change-history'}}
           title='SECONDARY3 BUTTON' />
-        <Button
+        <RNEButton
           buttonStyle={[{marginBottom: 15}]}
           icon={{name: 'code'}}
           backgroundColor={colors.grey1}

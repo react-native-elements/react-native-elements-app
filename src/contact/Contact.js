@@ -1,11 +1,14 @@
 import React, { Component } from 'react'
 import { ScrollView, View, StyleSheet } from 'react-native'
-import Text from 'HSText'
 import colors from 'HSColors'
-import FormInput from 'HSFormInput'
-import FormLabel from 'HSFormLabel'
-import Button from 'HSButton'
 import Icon from 'react-native-vector-icons/MaterialIcons'
+
+import {
+  RNEButton,
+  RNEText,
+  RNEFormInput,
+  RNEFormLabel
+} from 'react-native-elements'
 
 let styles = {}
 
@@ -15,15 +18,15 @@ class Contact extends Component {
       <ScrollView>
         <View style={styles.headingContainer}>
           <Icon color='white' name='pets' size={62} />
-          <Text style={styles.heading}>Forms</Text>
+          <RNEText style={styles.heading}>Forms</RNEText>
         </View>
-        <FormLabel containerStyle={styles.labelContainerStyle}>Name</FormLabel>
-        <FormInput placeholder='Please enter your name...' />
-        <FormLabel containerStyle={styles.labelContainerStyle}>Address</FormLabel>
-        <FormInput placeholder='Please enter your address...' />
-        <FormLabel containerStyle={styles.labelContainerStyle}>Phone</FormLabel>
-        <FormInput placeholder='Please enter your phone number...' />
-        <Button
+        <RNEFormLabel containerStyle={styles.labelContainerStyle}>Name</RNEFormLabel>
+        <RNEFormInput placeholder='Please enter your name...' />
+        <RNEFormLabel containerStyle={styles.labelContainerStyle}>Address</RNEFormLabel>
+        <RNEFormInput placeholder='Please enter your address...' />
+        <RNEFormLabel containerStyle={styles.labelContainerStyle}>Phone</RNEFormLabel>
+        <RNEFormInput placeholder='Please enter your phone number...' />
+        <RNEButton
           onPress={() => console.log('yo')}
           icon={{name: 'done'}}
           buttonStyle={{marginTop: 15}}

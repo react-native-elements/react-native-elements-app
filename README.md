@@ -53,10 +53,6 @@ import Button from 'HSButton'
 - [ ] Add Search Bar
 - [ ] Add Side Menu
 
-##### Todo Major
-- [ ] Separate into separate installable NPM package
-
-
 # API
 
 ## Buttons

@@ -1,9 +1,12 @@
 import React, { Component } from 'react'
 import { ScrollView, View, StyleSheet } from 'react-native'
-import Text from 'HSText'
 import colors from 'HSColors'
-import PricingCard from 'HSPricingCard'
 import Icon from 'react-native-vector-icons/MaterialIcons'
+
+import {
+  RNEPricingCard,
+  RNEText
+} from 'react-native-elements'
 
 let styles = {}
 
@@ -13,24 +16,24 @@ class Contact extends Component {
       <ScrollView>
         <View style={styles.headingContainer}>
           <Icon color='white' name='games' size={62} />
-          <Text style={styles.heading}>Pricing</Text>
+          <RNEText style={styles.heading}>Pricing</RNEText>
         </View>
         <View style={styles.container}>
-          <PricingCard
+          <RNEPricingCard
             color={colors.primary}
             title='Free'
             price='$0'
             info={['1 User', 'Basic Support', 'All Core Features']}
             button={{ title: 'GET STARTED', icon: 'flight-takeoff' }}
           />
-          <PricingCard
+          <RNEPricingCard
             color={colors.secondary}
             title='Starter'
             price='$19'
             info={['10 Users', 'Basic Support', 'All Core Features']}
             button={{ title: 'GET STARTED', icon: 'flight-takeoff' }}
           />
-          <PricingCard
+          <RNEPricingCard
             color={colors.secondary2}
             title='Enterprise'
             price='$49'

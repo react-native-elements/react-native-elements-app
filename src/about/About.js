@@ -1,10 +1,13 @@
 import React, { Component } from 'react'
 import { ScrollView, View, StyleSheet, Image } from 'react-native'
-import Text from 'HSText'
-import Card from 'HSCard'
 import colors from 'HSColors'
-import SocialIcon from 'HSSocialIcon'
 import Icon from 'react-native-vector-icons/MaterialIcons'
+
+import {
+  RNEText,
+  RNECard,
+  RNESocialIcon
+} from 'react-native-elements'
 
 let styles = {}
 
@@ -41,10 +44,10 @@ class About extends Component {
       <ScrollView>
         <View style={styles.headerContainer}>
           <Icon color='white' name='invert-colors' size={62} />
-          <Text style={styles.heading}>Components</Text>
+          <RNEText style={styles.heading}>Components</RNEText>
         </View>
         <View style={styles.container}>
-          <Card
+          <RNECard
             title='CARD WITH DIVIDER'>
             {
               users.map((u, i) => {
@@ -54,68 +57,68 @@ class About extends Component {
                       style={styles.image}
                       resizeMode='center'
                       source={{uri: u.avatar}} />
-                    <Text style={styles.name}>{u.name}</Text>
+                    <RNEText style={styles.name}>{u.name}</RNEText>
                   </View>
                 )
               })
             }
-          </Card>
-          <Card containerStyle={{marginTop: 15}} title='FONTS'>
-            <Text style={styles.fonts} h1>h1 Heading</Text>
-            <Text style={styles.fonts} h2>h2 Heading</Text>
-            <Text style={styles.fonts} h3>h3 Heading</Text>
-            <Text style={styles.fonts} h4>h4 Heading</Text>
-            <Text style={styles.fonts} >Normal Text</Text>
-          </Card>
-          <Card
+          </RNECard>
+          <RNECard containerStyle={{marginTop: 15}} title='FONTS'>
+            <RNEText style={styles.fonts} h1>h1 Heading</RNEText>
+            <RNEText style={styles.fonts} h2>h2 Heading</RNEText>
+            <RNEText style={styles.fonts} h3>h3 Heading</RNEText>
+            <RNEText style={styles.fonts} h4>h4 Heading</RNEText>
+            <RNEText style={styles.fonts} >Normal Text</RNEText>
+          </RNECard>
+          <RNECard
             title='SOCIAL ICONS'
             containerStyle={{marginTop: 15}}>
             <View style={styles.social}>
-              <SocialIcon
+              <RNESocialIcon
                 type='facebook'
               />
-              <SocialIcon
+              <RNESocialIcon
                 type='twitter'
               />
-              <SocialIcon
+              <RNESocialIcon
                 type='instagram'
               />
-              <SocialIcon
+              <RNESocialIcon
                 type='tumblr'
               />
-              <SocialIcon
+              <RNESocialIcon
                 type='youtube'
               />
             </View>
-          </Card>
-          <Card
+          </RNECard>
+          <RNECard
             containerStyle={{marginTop: 15}}
             title='SOCIAL BUTTONS'>
             <View style={styles.socialButtons}>
-              <SocialIcon
+              <RNESocialIcon
                 title='Sign In With Facebook'
                 button
                 type='facebook'
               />
-              <SocialIcon
+              <RNESocialIcon
                 title='Some Twitter Message'
                 button
                 type='twitter'
               />
-              <SocialIcon
+              <RNESocialIcon
                 button
                 type='instagram'
               />
-              <SocialIcon
+              <RNESocialIcon
                 button
                 type='tumblr'
               />
-              <SocialIcon
+              <RNESocialIcon
                 button
                 type='youtube'
               />
             </View>
-          </Card>
+          </RNECard>
         </View>
       </ScrollView>
     )

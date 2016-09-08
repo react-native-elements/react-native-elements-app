@@ -92,7 +92,7 @@ import SocialIcon from 'HSSocialIcon'
 
 ![Lists](http://i.imgur.com/D8Y4mp3l.png)
 
-#### Using Map Function
+#### Using Map Function. Implemented with icons.
 
 ```
 import List from 'HSList'
@@ -112,7 +112,7 @@ import ListItem from 'HSListItem'
 </List>
 ```
 
-#### With RN ListView implementation
+#### Using RN ListView. Implemented with avatars.
 
 ```
 renderRow (rowData, sectionID) {
@@ -136,21 +136,6 @@ render () {
     </List>
   )
 }
-
-<List>
-  {
-    list.map((l, i) => (
-      <ListItem
-        roundAvatar
-        avatar={l.avatar_url}
-        key={i}
-        onPress={log}
-        title={l.name}
-        subtitle={l.subtitle}
-      />
-    ))
-  }
-</List>
 
 ```
 

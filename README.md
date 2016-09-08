@@ -92,6 +92,8 @@ import SocialIcon from 'HSSocialIcon'
 
 ![Lists](http://i.imgur.com/D8Y4mp3l.png)
 
+#### Using Map Function
+
 ```
 import List from 'HSList'
 import ListItem from 'HSListItem'
@@ -108,10 +110,11 @@ import ListItem from 'HSListItem'
     ))
   }
 </List>
+```
 
+#### With RN ListView implementation
 
-// With RN ListView implementation
-
+```
 renderRow (rowData, sectionID) {
   return (
     <ListItem

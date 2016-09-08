@@ -9,6 +9,7 @@ import Home from './home/HomeRootContainer'
 import About from './about/AboutRootContainer'
 import Contact from './contact/ContactRootContainer'
 import Pricing from './pricing/PricingRootContainer'
+import More from './more/MoreRootContainer'
 
 let styles = {}
 
@@ -71,6 +72,17 @@ class App extends Component {
           renderSelectedIcon={() => <Icon color={colors.primary} name='attach-money' size={26} />}
           onPress={() => this.changeTab('pricing')}>
           <Pricing />
+        </TabNavigator.Item>
+        <TabNavigator.Item
+          tabStyle={selectedTab !== 'more' && { marginBottom: -6 }}
+          titleStyle={[styles.titleStyle, {marginTop: -1}]}
+          selectedTitleStyle={[styles.titleSelected, {marginTop: -3, marginBottom: 8}]}
+          selected={selectedTab === 'more'}
+          title={selectedTab === 'more' ? 'MORE' : null}
+          renderIcon={() => <Icon style={{paddingBottom: 4}} color={colors.grey2} name='list' size={26} />}
+          renderSelectedIcon={() => <Icon color={colors.primary} name='list' size={26} />}
+          onPress={() => this.changeTab('more')}>
+          <More />
         </TabNavigator.Item>
       </TabNavigator>
 

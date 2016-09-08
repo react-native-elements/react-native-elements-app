@@ -16,7 +16,7 @@ class Home extends Component {
   render () {
     return (
       <ScrollView>
-        <View style={{marginTop: 60, justifyContent: 'center', alignItems: 'center', padding: 40, backgroundColor: colors.primary2}}>
+        <View style={styles.hero}>
           <Icon color='white' name='whatshot' size={62} />
           <Text style={styles.heading}>Buttons</Text>
         </View>
@@ -62,6 +62,13 @@ styles = StyleSheet.create({
     color: 'white',
     marginTop: 10,
     fontSize: 22
+  },
+  hero: {
+    marginTop: 60,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 40,
+    backgroundColor: colors.primary2
   },
   titleContainer: {
   },

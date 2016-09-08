@@ -38,7 +38,7 @@ const ListItem = ({
           icon && icon.name && (
             <Icon
               size={28}
-              style={styles.icon}
+              style={[styles.icon, icon.style && icon.style]}
               name={icon.name}
               color={icon.color || colors.grey4}
             />

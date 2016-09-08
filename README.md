@@ -9,6 +9,8 @@ React Native Hackathon Starter Project & UI Toolkit
 - [x] [Card component](https://github.com/dabit3/react-native-hackathon-starter#card)
 - [x] [React Native Vector Icons](https://github.com/oblador/react-native-vector-icons)
 - [x] Form Elements
+- [x] List
+- [x] Linked List
 - [x] Redux
 - [x] Tabs ([React Native TabNavigator](https://github.com/exponentjs/react-native-tab-navigator))
 - [x] Navigator Setup
@@ -16,7 +18,6 @@ React Native Hackathon Starter Project & UI Toolkit
 
 #### Todo Soon
 - [ ] Add list element
-- [ ] Add list item element
 - [ ] Add icons to TextInputs
 - [ ] Add Profile Component
 - [ ] Add Picker

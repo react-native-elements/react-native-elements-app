@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, StyleSheet, ScrollView } from 'react-native'
+import { View, StyleSheet, ScrollView, ListView } from 'react-native'
 import Text from 'HSText'
 import Icon from 'react-native-vector-icons/MaterialIcons'
 import ListItem from 'HSListItem'
@@ -60,6 +60,24 @@ const list2 = [
 ]
 
 class More extends Component {
+  constructor () {
+    super()
+    const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2})
+    this.state = {
+      dataSource: ds.cloneWithRows(list1)
+    }
+    this.renderRow = this.renderRow.bind(this)
+  }
+  renderRow (rowData, sectionID) {
+    return (
+      <ListItem
+        key={sectionID}
+        onPress={log}
+        title={rowData.title}
+        icon={{name: rowData.icon}}
+      />
+    )
+  }
   render () {
     return (
       <ScrollView style={styles.mainContainer}>
@@ -68,16 +86,10 @@ class More extends Component {
           <Text style={styles.heading}>List</Text>
         </View>
         <List>
-        {
-          list1.map((l, i) => (
-            <ListItem
-              key={i}
-              onPress={log}
-              title={l.title}
-              icon={{name: l.icon}}
+          <ListView
+            renderRow={this.renderRow}
+            dataSource={this.state.dataSource}
             />
-          ))
-        }
         </List>
         <List containerStyle={{marginBottom: 20}}>
         {

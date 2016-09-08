@@ -96,10 +96,52 @@ import SocialIcon from 'HSSocialIcon'
 import List from 'HSList'
 import ListItem from 'HSListItem'
 
-// Can also replace map function with RN ListView implementation
+
+```
+
 <List>
   {
-    list2.map((l, i) => (
+    list1.map((l, i) => (
+      <ListItem
+        key={i}
+        onPress={log}
+        title={l.title}
+        icon={{name: l.icon}}
+      />
+    ))
+  }
+</List>
+
+```
+
+
+// With RN ListView implementation
+
+renderRow (rowData, sectionID) {
+  return (
+    <ListItem
+      key={sectionID}
+      onPress={log}
+      title={rowData.title}
+      icon={{name: rowData.icon}}
+    />
+  )
+}
+
+render () {  
+  return (
+    <List>
+      <ListView
+        renderRow={this.renderRow}
+        dataSource={this.state.dataSource}
+        />
+    </List>
+  )
+}
+
+<List>
+  {
+    list.map((l, i) => (
       <ListItem
         roundAvatar
         avatar={l.avatar_url}

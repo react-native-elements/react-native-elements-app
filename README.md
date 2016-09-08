@@ -1,5 +1,5 @@
 ![React Native Hackathon Starter & UI Toolkit](http://i.imgur.com/hLDj3Xs.png)
-## And UI Toolkit
+## React Native Starter Project and UI Boilerplate using [React Native Elements](https://github.com/dabit3/React-Native-Elements)
 
 ![React Native UI Toolkit](http://i.imgur.com/tqxDeoG.png)
 

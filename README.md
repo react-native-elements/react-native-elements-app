@@ -74,17 +74,17 @@ import Button from 'HSButton'
 
 | prop | default | type | description |
 | ---- | ---- | ----| ---- |
-| buttonStyle | none | object (style) | add additional styling for button component |
-| title | none | string | button title | 
-| onPress | none | function | onPress method |
-| icon | none | object {name(string), color(string), size(number)} | [Material Icon Name](https://design.google.com/icons/) | 
-| secondary | false | boolean | secondary button flag |
-| backgroundColor | primary color | string (color) | background color of button |
-| color | white | string(color) | font color |
-| textStyle | none | object (style) | text styling |
-| fontSize | 18 | number | font size |
-| underlayColor | transparent | string(color) | underlay color for button press |
-| raised | false | boolean | flag to add raised button styling |
+| buttonStyle | none | object (style) | add additional styling for button component (optional) |
+| title | none | string | button title (required) | 
+| onPress | none | function | onPress method (required) |
+| icon | none | object {name(string), color(string), size(number)} | [Material Icon Name](https://design.google.com/icons/) (optional) | 
+| secondary | false | boolean | secondary button flag (optional) |
+| backgroundColor | primary color | string (color) | background color of button (optional) |
+| color | white | string(color) | font color (optional) |
+| textStyle | none | object (style) | text styling (optional)  |
+| fontSize | 18 | number | font size (optional)  |
+| underlayColor | transparent | string(color) | underlay color for button press (optional)  |
+| raised | false | boolean | flag to add raised button styling (optional)  |
 
 ## Social Icons & Buttons
 
@@ -108,14 +108,14 @@ import SocialIcon from 'HSSocialIcon'
 
 | prop | default | type | description |
 | ---- | ---- | ----| ---- |
-| component | TouchableHighlight | React Native Component | type of button |
-| type | none | social media type (facebook, twitter, google-plus-official, pinterest, linkedin, youtube, vimeo, tumblr, instagram, quora, foursquare, wordpress, stumbleupon) | social media type |
-| button | false | boolean | creates button |
-| onPress | none | funciton | onPress method |
-| iconStyle | none | object (style) | extra styling for icon component ([React Native Vector Icons](https://github.com/oblador/react-native-vector-icons)) |
-| style | none | object (style) | button styling |
-| iconColor | white | string | icon color |
-| title | none | string | title if made into a button |
+| component | TouchableHighlight | React Native Component | type of button (optional)  |
+| type | none | social media type (facebook, twitter, google-plus-official, pinterest, linkedin, youtube, vimeo, tumblr, instagram, quora, foursquare, wordpress, stumbleupon) | social media type (required) |
+| button | false | boolean | creates button (optional) |
+| onPress | none | funciton | onPress method (optional) |
+| iconStyle | none | object (style) | extra styling for icon component ([React Native Vector Icons](https://github.com/oblador/react-native-vector-icons)) (optional) |
+| style | none | object (style) | button styling (optional) |
+| iconColor | white | string | icon color (optional) |
+| title | none | string | title if made into a button (optional) |
 
 ## Lists
 
@@ -182,6 +182,7 @@ render () {
 | avatar | none | string | left avatar (optional) |
 | avatarStyle | none | object (style) | avatar styling (optional) |
 | chevronColor | #bdc6cf | string | set chevron color |
+| component | View or TouchableHighlight if onPress method is added as prop | React Native element | replace element with custom element (optional) |
 | containerStyle | none | object (style) | additional main container styling (optional) |
 | hideChevron | false | boolean | set if you do not want a chevron (optional) |
 | icon | none | object {name, color, style} | icon configuration for left icon (optional) |

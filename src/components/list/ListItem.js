@@ -25,9 +25,13 @@ const ListItem = ({
   titleStyle,
   hideChevron,
   chevronColor,
-  roundAvatar
+  roundAvatar,
+  component
 }) => {
-  const Component = onPress ? TouchableHighlight : View
+  let Component = onPress ? TouchableHighlight : View
+  if (component) {
+    Component = component
+  }
   return (
     <Component
       onPress={onPress}

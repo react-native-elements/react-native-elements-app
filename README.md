@@ -96,9 +96,6 @@ import SocialIcon from 'HSSocialIcon'
 import List from 'HSList'
 import ListItem from 'HSListItem'
 
-
-```
-
 <List>
   {
     list1.map((l, i) => (
@@ -111,8 +108,6 @@ import ListItem from 'HSListItem'
     ))
   }
 </List>
-
-```
 
 
 // With RN ListView implementation

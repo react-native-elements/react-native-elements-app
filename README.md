@@ -214,15 +214,15 @@ import FormInput from 'HSFormInput'
 
 | prop | default | type | description |
 | ---- | ---- | ----| ---- |
-| containerStyle | none | object (style) | TextInput container styling |
-| inputStyle | none | object (style) | TextInput styling |
+| containerStyle | none | object (style) | TextInput container styling (optional) |
+| inputStyle | none | object (style) | TextInput styling (optional) |
 
 ### FormLabel
 
 | prop | default | type | description |
 | ---- | ---- | ----| ---- |
-| containerStyle | none | object (style) | additional label container style |
-| labelStyle | none | object (style) | additional label styling |
+| containerStyle | none | object (style) | additional label container style (optional) |
+| labelStyle | none | object (style) | additional label styling (optional) |
 
 ## Card
 

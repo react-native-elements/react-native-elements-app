@@ -248,3 +248,33 @@ import Card from 'HSCard'
 | titleStyle | none | object (style) | additional title styling (if title provided) |
 | dividerStyle | none | object (style) | additional divider styling (if title provided) |
 
+### Colors
+
+Colors are configured in `./src/config/colors`:
+
+````
+/**
+ * @providesModule HSColors
+ */
+
+export default {
+  primary: '#397af8',
+  primary1: '#4d86f7',
+  primary2: '#6296f9',
+  secondary: '#8F0CE8',
+  secondary2: '#00B233',
+  secondary3: '#00FF48',
+  grey1: '#43484d',
+  grey2: '#5e6977',
+  grey3: '#86939e',
+  grey4: '#bdc6cf',
+  grey5: '#e1e8ee',
+  dkGreyBg: '#232323',
+  greyOutline: '#cbd2d9'
+}
+
+
+```
+
+
+

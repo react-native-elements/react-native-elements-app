@@ -1,4 +1,4 @@
-# React Native Hackathon Starter Project & UI Toolkit
+![React Native Hackathon Starter & UI Toolkit](http://i.imgur.com/hLDj3Xs.png)
 
 ![React Native UI Toolkit](http://i.imgur.com/tqxDeoG.png)
 

@@ -46,12 +46,13 @@ import Button from 'HSButton'
 - [x] Navigator Setup
 - [x] HTML style headings (h1, h2, etc...)
 
-#### Todo Soon
+#### Roadmap
 - [ ] Add icons to TextInputs
 - [ ] Add Profile Component
 - [ ] Add Picker
 - [ ] Add Search Bar
 - [ ] Add Side Menu
+- [ ] Something you's like to see? Submit an [issue](https://github.com/dabit3/react-native-hackathon-starter/issues) or a [pull request](https://github.com/dabit3/react-native-hackathon-starter/pulls).
 
 # API
 

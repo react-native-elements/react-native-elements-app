@@ -79,7 +79,7 @@ class More extends Component {
           ))
         }
         </List>
-        <List>
+        <List containerStyle={{marginBottom: 20}}>
         {
           list2.map((l, i) => (
             <ListItem

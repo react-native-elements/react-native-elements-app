@@ -88,6 +88,32 @@ import SocialIcon from 'HSSocialIcon'
 | iconColor | white | string | icon color |
 | title | none | string | title if made into a button |
 
+## Lists
+
+![Lists](http://i.imgur.com/D8Y4mp3l.png)
+
+```
+import List from 'HSList'
+import ListItem from 'HSListItem'
+
+// Can also replace map function with RN ListView implementation
+<List>
+  {
+    list2.map((l, i) => (
+      <ListItem
+        roundAvatar
+        avatar={l.avatar_url}
+        key={i}
+        onPress={log}
+        title={l.name}
+        subtitle={l.subtitle}
+      />
+    ))
+  }
+</List>
+
+```
+
 ## Forms
 
 ![Forms](http://i.imgur.com/9idGiXr.png)

@@ -3,6 +3,35 @@
 
 ![React Native UI Toolkit](http://i.imgur.com/tqxDeoG.png)
 
+## Get Started
+
+1 clone Project
+
+```
+git clone git@github.com:dabit3/react-native-hackathon-starter.git
+```
+
+2 install dependencies
+
+```
+npm i
+```
+
+3 run project
+
+4 start using components
+
+```
+import Button from 'HSButton'
+
+<Button
+  raised
+  icon={{name: 'cached'}}
+  title='RAISED WITH ICON' />
+
+```
+
+
 ### Included
 - [x] [Buttons](https://github.com/dabit3/react-native-hackathon-starter#buttons)
 - [x] Pricing Component

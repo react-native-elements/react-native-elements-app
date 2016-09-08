@@ -248,7 +248,7 @@ import Card from 'HSCard'
 | titleStyle | none | object (style) | additional title styling (if title provided) |
 | dividerStyle | none | object (style) | additional divider styling (if title provided) |
 
-### Colors
+## Colors
 
 Colors are configured in `./src/config/colors`:
 

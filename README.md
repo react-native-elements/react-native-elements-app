@@ -132,7 +132,7 @@ render () {
       <ListView
         renderRow={this.renderRow}
         dataSource={this.state.dataSource}
-        />
+      />
     </List>
   )
 }

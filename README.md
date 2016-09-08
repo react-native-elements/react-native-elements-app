@@ -47,7 +47,6 @@ import Button from 'HSButton'
 - [x] HTML style headings (h1, h2, etc...)
 
 #### Todo Soon
-- [ ] Add list element
 - [ ] Add icons to TextInputs
 - [ ] Add Profile Component
 - [ ] Add Picker

@@ -4,9 +4,9 @@ import Icon from 'react-native-vector-icons/MaterialIcons'
 let styles
 
 import {
-  RNEList,
-  RNEListItem,
-  RNEText
+  List,
+  ListItem,
+  Text
 } from 'react-native-elements'
 
 const log = () => console.log('this is an example method')
@@ -73,7 +73,7 @@ class More extends Component {
   }
   renderRow (rowData, sectionID) {
     return (
-      <RNEListItem
+      <ListItem
         key={sectionID}
         onPress={log}
         title={rowData.title}
@@ -86,18 +86,18 @@ class More extends Component {
       <ScrollView style={styles.mainContainer}>
         <View style={styles.hero}>
           <Icon color='white' name='sentiment-very-satisfied' size={62} />
-          <RNEText style={styles.heading}>List</RNEText>
+          <Text style={styles.heading}>List</Text>
         </View>
-        <RNEList>
+        <List>
           <ListView
             renderRow={this.renderRow}
             dataSource={this.state.dataSource}
             />
-        </RNEList>
-        <RNEList containerStyle={{marginBottom: 20}}>
+        </List>
+        <List containerStyle={{marginBottom: 20}}>
         {
           list2.map((l, i) => (
-            <RNEListItem
+            <ListItem
               roundAvatar
               avatar={l.avatar_url}
               key={i}
@@ -107,7 +107,7 @@ class More extends Component {
             />
           ))
         }
-        </RNEList>
+        </List>
       </ScrollView>
     )
   }

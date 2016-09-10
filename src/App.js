@@ -5,7 +5,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons'
 import colors from 'HSColors'
 import fonts from 'HSFonts'
 
-import Home from './home/HomeRootContainer'
+import Home from './home/HomeNav'
 import About from './about/AboutRootContainer'
 import Contact from './contact/ContactRootContainer'
 import Pricing from './pricing/PricingRootContainer'
@@ -27,6 +27,7 @@ class App extends Component {
     })
   }
   render () {
+    const { toggleSideMenu } = this.props
     const { selectedTab } = this.state
     return (
       <TabNavigator>
@@ -38,7 +39,7 @@ class App extends Component {
           renderIcon={() => <Icon color={colors.grey2} name='whatshot' size={26} />}
           renderSelectedIcon={() => <Icon color={colors.primary} name='whatshot' size={26} />}
           onPress={() => this.changeTab('home')}>
-          <Home />
+          <Home toggleSideMenu={toggleSideMenu} />
         </TabNavigator.Item>
         <TabNavigator.Item
           tabStyle={selectedTab !== 'about' && { marginBottom: -6 }}
@@ -52,25 +53,13 @@ class App extends Component {
           <About />
         </TabNavigator.Item>
         <TabNavigator.Item
-          tabStyle={[
-            selectedTab !== 'contact' && { marginBottom: -6 },
-            selectedTab === 'contact' && Platform.OS === 'android' && {marginBottom: -3}
-          ]}
+          tabStyle={selectedTab !== 'contact' && { marginBottom: -6 }}
           titleStyle={[styles.titleStyle, {marginTop: -1}]}
-          selectedTitleStyle={[
-            styles.titleSelected,
-            {marginBottom: 7},
-            Platform.OS === 'android' ? {marginTop: 1 } : {marginTop: -3}
-          ]}
+          selectedTitleStyle={[styles.titleSelected, {marginTop: -3, marginBottom: 7}]}
           selected={selectedTab === 'contact'}
           title={selectedTab === 'contact' ? 'CONTACT' : null}
           renderIcon={() => <Icon style={{paddingBottom: 4}} color={colors.grey2} name='contacts' size={26} />}
-          renderSelectedIcon={() => (
-              <Icon
-                color={colors.primary}
-                name='contacts'
-                size={Platform.OS === 'ios' ? 26 : 22 }  />
-            )}
+          renderSelectedIcon={() => <Icon color={colors.primary} name='contacts' size={26} />}
           onPress={() => this.changeTab('contact')}>
           <Contact />
         </TabNavigator.Item>

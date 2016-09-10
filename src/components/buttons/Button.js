@@ -14,7 +14,7 @@ const log = () => {
   console.log('please attach method to this component')
 }
 
-const Button = ({buttonStyle, title, onPress, icon, secondary, secondary2, secondary3, primary1, primary2, primary3, backgroundColor, color, fontSize, underlayColor, raised, textStyle}) => (
+const Button = ({buttonStyle, title, onPress, icon, secondary, secondary2, secondary3, primary1, primary2, primary3, backgroundColor, color, fontSize, underlayColor, raised, textStyle, small}) => (
   <TouchableHighlight
     underlayColor={underlayColor || 'transparent'}
     onPress={onPress || log}>
@@ -28,13 +28,20 @@ const Button = ({buttonStyle, title, onPress, icon, secondary, secondary2, secon
         primary2 && {backgroundColor: colors.primary2},
         backgroundColor && {backgroundColor},
         buttonStyle && buttonStyle,
-        raised && styles.raised
+        raised && styles.raised,
+        small && styles.small
       ]}
       >
       {
-        icon && <Icon color={icon.color || 'white'} size={icon.size || 26} style={styles.icon} name={icon.name} />
+        icon && <Icon color={icon.color || 'white'} size={icon.size || small ? 18 : 26} style={styles.icon} name={icon.name} />
       }
-      <Text style={[styles.text, textStyle && textStyle, color && {color}, fontSize && {fontSize}]}>
+      <Text style={[
+        styles.text,
+        textStyle && textStyle,
+        color && {color},
+        fontSize && {fontSize},
+        small && styles.smallFont
+      ]}>
         {title}
       </Text>
     </View>
@@ -57,7 +64,8 @@ Button.propTypes = {
   fontSize: PropTypes.number,
   underlayColor: PropTypes.string,
   raised: PropTypes.bool,
-  textStyle: PropTypes.any
+  textStyle: PropTypes.any,
+  small: PropTypes.bool
 }
 
 styles = StyleSheet.create({
@@ -81,6 +89,12 @@ styles = StyleSheet.create({
   },
   icon: {
     marginRight: 10
+  },
+  small: {
+    padding: 12
+  },
+  smallFont: {
+    fontSize: 14
   },
   raised: {
     ...Platform.select({

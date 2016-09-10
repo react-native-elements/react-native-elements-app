@@ -4,9 +4,9 @@ import colors from 'HSColors'
 import Icon from 'react-native-vector-icons/MaterialIcons'
 
 import {
-  RNEText,
-  RNECard,
-  RNESocialIcon
+  Text,
+  Card,
+  SocialIcon
 } from 'react-native-elements'
 
 let styles = {}
@@ -41,13 +41,13 @@ const users = [
 class About extends Component {
   render () {
     return (
-      <ScrollView>
+      <ScrollView style={{backgroundColor: 'white'}}>
         <View style={styles.headerContainer}>
           <Icon color='white' name='invert-colors' size={62} />
-          <RNEText style={styles.heading}>Components</RNEText>
+          <Text style={styles.heading}>Components</Text>
         </View>
         <View style={styles.container}>
-          <RNECard
+          <Card
             title='CARD WITH DIVIDER'>
             {
               users.map((u, i) => {
@@ -55,66 +55,129 @@ class About extends Component {
                   <View key={i} style={styles.user}>
                     <Image
                       style={styles.image}
+                      resizeMode='center'
                       source={{uri: u.avatar}} />
-                    <RNEText style={styles.name}>{u.name}</RNEText>
+                    <Text style={styles.name}>{u.name}</Text>
                   </View>
                 )
               })
             }
-          </RNECard>
-          <RNECard containerStyle={{marginTop: 15}} title='FONTS'>
-            <RNEText style={styles.fonts} h1>h1 Heading</RNEText>
-            <RNEText style={styles.fonts} h2>h2 Heading</RNEText>
-            <RNEText style={styles.fonts} h3>h3 Heading</RNEText>
-            <RNEText style={styles.fonts} h4>h4 Heading</RNEText>
-            <RNEText style={styles.fonts} >Normal Text</RNEText>
-          </RNECard>
-          <RNECard
+          </Card>
+          <Card containerStyle={{marginTop: 15}} title='FONTS'>
+            <Text style={styles.fonts} h1>h1 Heading</Text>
+            <Text style={styles.fonts} h2>h2 Heading</Text>
+            <Text style={styles.fonts} h3>h3 Heading</Text>
+            <Text style={styles.fonts} h4>h4 Heading</Text>
+            <Text style={styles.fonts} >Normal Text</Text>
+          </Card>
+          <Card
             title='SOCIAL ICONS'
             containerStyle={{marginTop: 15}}>
             <View style={styles.social}>
-              <RNESocialIcon
-                type='facebook'
+              <SocialIcon
+                raised={false}
+                type='gitlab'
+                onPress={() => console.log('hi!')}
               />
-              <RNESocialIcon
-                type='twitter'
+              <SocialIcon
+                type='medium'
+                onPress={() => console.log('hi2!')}
               />
-              <RNESocialIcon
-                type='instagram'
+              <SocialIcon
+                type='github-alt'
+                onPress={() => console.log('hi3!')}
               />
-              <RNESocialIcon
-                type='tumblr'
+              <SocialIcon
+                type='twitch'
+              />
+              <SocialIcon
+                type='soundcloud'
               />
             </View>
-          </RNECard>
-          <RNECard
-            containerStyle={{marginTop: 15}}
+            <View style={styles.social}>
+              <SocialIcon
+                raised={false}
+                type='facebook'
+                onPress={() => console.log('hi!')}
+              />
+              <SocialIcon
+                type='twitter'
+                onPress={() => console.log('hi2!')}
+              />
+              <SocialIcon
+                type='instagram'
+                onPress={() => console.log('hi3!')}
+              />
+              <SocialIcon
+                raised={false}
+                type='codepen'
+              />
+              <SocialIcon
+                raised={false}
+                type='youtube'
+              />
+            </View>
+          </Card>
+          <Card
+            title='LIGHT SOCIAL ICONS'
+            containerStyle={{marginTop: 15}}>
+            <View style={styles.social}>
+              <SocialIcon
+                light
+                raised={false}
+                type='gitlab'
+                onPress={() => console.log('hi!')}
+              />
+              <SocialIcon
+                light
+                type='medium'
+                onPress={() => console.log('hi2!')}
+              />
+              <SocialIcon
+                light
+                type='github-alt'
+                onPress={() => console.log('hi3!')}
+              />
+              <SocialIcon
+                light
+                type='twitch'
+              />
+              <SocialIcon
+                light
+                type='soundcloud'
+              />
+            </View>
+          </Card>
+          <Card
+            containerStyle={{marginTop: 15, marginBottom: 15}}
             title='SOCIAL BUTTONS'>
             <View style={styles.socialButtons}>
-              <RNESocialIcon
+              <SocialIcon
+                button
+                type='medium'
+              />
+              <SocialIcon
+                button
+                type='twitch'
+              />
+              <SocialIcon
                 title='Sign In With Facebook'
                 button
                 type='facebook'
               />
-              <RNESocialIcon
+              <SocialIcon
                 title='Some Twitter Message'
                 button
                 type='twitter'
               />
-              <RNESocialIcon
+              <SocialIcon
+                light
                 button
+                title='Some Instagram Message'
                 type='instagram'
               />
-              <RNESocialIcon
-                button
-                type='tumblr'
-              />
-              <RNESocialIcon
-                button
-                type='youtube'
-              />
             </View>
-          </RNECard>
+          </Card>
         </View>
       </ScrollView>
     )

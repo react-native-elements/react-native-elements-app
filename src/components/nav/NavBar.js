@@ -3,7 +3,7 @@
  */
 
 import React from 'react'
-import { Platform, Navigator, StyleSheet } from 'react-native'
+import { Platform, Navigator, StyleSheet, TouchableHighlight } from 'react-native'
 import NavTitleComponent from 'HSNavTitleComponent'
 import NavTitleIcon from 'HSNavTitleIcon'
 import colors from 'HSColors'
@@ -11,8 +11,12 @@ import Icon from 'react-native-vector-icons/MaterialIcons'
 
 let styles = {}
 
-const NavigationBar = () => { 
+const NavigationBar = (toggleSideMenu) => {
+  const src = require('image!logo')
   const LeftButton = (route, navigator, index, navState) => {
+    if (route.name !== 'home') {
+      return null
+    }
     if (index > 0) {
       const leftAction = navigator.pop
       const leftIcon = 'chevron-left'
@@ -22,7 +26,18 @@ const NavigationBar = () => {
           name={leftIcon} size={28} />
       )
     }
-    return null
+    return (
+      <TouchableHighlight
+        style={{marginTop: 7, marginLeft: 9}}
+        onPress={toggleSideMenu}
+        underlayColor='transparent'>
+        <Icon
+          color='white'
+          name='menu'
+          size={28}
+        />
+      </TouchableHighlight>
+    )
   }
 
   const RightButton = (/* route, navigator, index, navState */) => {
@@ -36,7 +51,7 @@ const NavigationBar = () => {
       )
     }
     return (
-      <NavTitleIcon />
+      <NavTitleIcon src={src} />
     )
   }
 
@@ -55,7 +70,7 @@ const NavigationBar = () => {
 styles = StyleSheet.create({
   navBar: {
     height: 65,
-    backgroundColor: colors.dkGreyBg,
+    backgroundColor: colors.grey1,
     ...Platform.select({
       android: {
         height: 55

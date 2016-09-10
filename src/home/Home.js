@@ -2,11 +2,12 @@ import React, { Component } from 'react'
 import { ScrollView, View, StyleSheet, Platform } from 'react-native'
 import Text from 'HSText'
 import colors from 'HSColors'
+import socialColors from 'HSSocialColors'
 import fonts from 'HSFonts'
 import Icon from 'react-native-vector-icons/MaterialIcons'
 
 import {
-  RNEButton
+  Button
 } from 'react-native-elements'
 
 let styles = {}
@@ -17,39 +18,115 @@ const log = () => {
 
 class Home extends Component {
   render () {
+    console.log('props:::', this.props)
+    const { toggleSideMenu } = this.props
     return (
-      <ScrollView>
+      <ScrollView style={{backgroundColor: 'white'}}>
         <View style={styles.hero}>
           <Icon color='white' name='whatshot' size={62} />
           <Text style={styles.heading}>Buttons</Text>
         </View>
-        <RNEButton
-          buttonStyle={styles.button}
+        <Button
+          small
+          backgroundColor={socialColors.facebook}
           onPress={() => log()}
-          title='PRIMARY BUTTON' />
-        <RNEButton
-          icon={{name: 'cached'}}
-          title='PRIMARY WITH ICON' />
-        <RNEButton
-          raised
-          icon={{name: 'cached'}}
-          title='RAISED WITH ICON' />
-        <RNEButton
-          secondary
+          title='SMALL BUTTON'
+          buttonStyle={styles.button} />
+        <Button
+          small
+          backgroundColor={socialColors.stumbleupon}
           icon={{name: 'accessibility'}}
-          title='SECONDARY BUTTON' />
-        <RNEButton
-          secondary2
+          onPress={() => toggleSideMenu()}
+          title='TOGGLE SIDE MENU'/>
+        <Button
+          iconRight
+          small
+          backgroundColor={socialColors.quora}
+          icon={{name: 'invert-colors'}}
+          onPress={() => log()}
+          title='SMALL WITH RIGHT ICON'/>
+        <Button
+          iconRight
+          small
+          backgroundColor={socialColors.tumblr}
+          icon={{name: 'motorcycle'}}
+          onPress={() => log()}
+          title='SMALL WITH RIGHT ICON'/>
+        <Button
+          raised
+          small
+          backgroundColor={socialColors.foursquare}
+          icon={{name: 'card-travel'}}
+          onPress={() => log()}
+          title='SMALL BUTTON RAISED'/>
+        <Button
+          raised
+          small
+          backgroundColor={socialColors.vimeo}
+          icon={{name: 'touch-app'}}
+          onPress={() => log()}
+          title='SMALL BUTTON RAISED'/>
+        <Button
+          raised
+          small
+          backgroundColor={socialColors.twitter}
+          icon={{name: 'new-releases'}}
+          onPress={() => log()}
+          title='SMALL BUTTON RAISED'/>
+        <Button
+          raised
+          small
+          backgroundColor={socialColors.linkedin}
+          icon={{name: 'business'}}
+          onPress={() => log()}
+          title='SMALL BUTTON RAISED'/>
+        <Button
+          raised
+          small
+          backgroundColor={socialColors.pinterest}
+          icon={{name: 'send'}}
+          onPress={() => log()}
+          title='SMALL BUTTON RAISED'/>
+        <Button
+          raised
+          small
+          onPress={() => log()}
+          title='SMALL BUTTON RAISED'/>
+
+        <Button
+          onPress={() => log()}
+          backgroundColor={socialColors.facebook}
+          title='BUTTON' />
+        <Button
+          backgroundColor={socialColors.stumbleupon}
+          icon={{name: 'cached'}}
+          title='BUTTON WITH ICON' />
+        <Button
+          backgroundColor={socialColors.quora}
+          raised
+          icon={{name: 'album'}}
+          title='RAISED WITH ICON' />
+        <Button
+          raised
+          iconRight
+          backgroundColor={socialColors.tumblr}
+          icon={{name: 'accessibility'}}
+          title='RAISED RIGHT ICON' />
+        <Button
+          raised
+          iconRight
+          backgroundColor={socialColors.foursquare}
           icon={{name: 'account-balance'}}
-          title='SECONDARY2 BUTTON' />
-        <RNEButton
-          secondary3
+          title='RAISED RIGHT ICON' />
+        <Button
+          raised
+          backgroundColor={socialColors.vimeo}
           icon={{name: 'change-history'}}
-          title='SECONDARY3 BUTTON' />
-        <RNEButton
+          title='RAISED WITH ICON' />
+        <Button
           buttonStyle={[{marginBottom: 15}]}
           icon={{name: 'code'}}
-          backgroundColor={colors.grey1}
+          backgroundColor={socialColors.twitter}
           title='ANOTHER BUTTON' />
       </ScrollView>
     )

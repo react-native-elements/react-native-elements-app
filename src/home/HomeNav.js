@@ -3,7 +3,7 @@ import { Navigator } from 'react-native'
 import Home from './Home'
 import navigationBar from 'HSNavBar'
 
-const initialRoute = {component: Home}
+const initialRoute = {component: Home, name: 'home'}
 
 class HomeNav extends Component {
   constructor () {
@@ -11,14 +11,16 @@ class HomeNav extends Component {
     this.renderScene = this.renderScene.bind(this)
   }
   renderScene (route, navigator) {
+    const { toggleSideMenu } = this.props
     return (
-      <route.component navigator={navigator} {...route.passProps} />
+      <route.component toggleSideMenu={toggleSideMenu} navigator={navigator} {...route.passProps} />
     )
   }
   render () {
+    const { toggleSideMenu } = this.props
     return (
       <Navigator
-        navigationBar={navigationBar()}
+        navigationBar={navigationBar(toggleSideMenu)}
         initialRoute={initialRoute}
         renderScene={this.renderScene.bind(this)} />
     )

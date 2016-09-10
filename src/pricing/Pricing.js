@@ -4,8 +4,8 @@ import colors from 'HSColors'
 import Icon from 'react-native-vector-icons/MaterialIcons'
 
 import {
-  RNEPricingCard,
-  RNEText
+  PricingCard,
+  Text
 } from 'react-native-elements'
 
 let styles = {}
@@ -13,27 +13,27 @@ let styles = {}
 class Contact extends Component {
   render () {
     return (
-      <ScrollView>
+      <ScrollView style={{backgroundColor: 'white'}}>
         <View style={styles.headingContainer}>
           <Icon color='white' name='games' size={62} />
-          <RNEText style={styles.heading}>Pricing</RNEText>
+          <Text style={styles.heading}>Pricing</Text>
         </View>
         <View style={styles.container}>
-          <RNEPricingCard
+          <PricingCard
             color={colors.primary}
             title='Free'
             price='$0'
             info={['1 User', 'Basic Support', 'All Core Features']}
             button={{ title: 'GET STARTED', icon: 'flight-takeoff' }}
           />
-          <RNEPricingCard
+          <PricingCard
             color={colors.secondary}
             title='Starter'
             price='$19'
             info={['10 Users', 'Basic Support', 'All Core Features']}
             button={{ title: 'GET STARTED', icon: 'flight-takeoff' }}
           />
-          <RNEPricingCard
+          <PricingCard
             color={colors.secondary2}
             title='Enterprise'
             price='$49'

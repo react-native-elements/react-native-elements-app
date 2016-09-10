@@ -31,5 +31,5 @@ import Button from 'HSButton'
 
 ```
 
-The for React Native Elements is located [here](https://github.com/dabit3/React-Native-Elements).
+The API for React Native Elements is located [here](https://github.com/dabit3/React-Native-Elements).
 

@@ -19,17 +19,5 @@ npm i
 
 3 run project
 
-4 start using components
-
-```
-import Button from 'HSButton'
-
-<Button
-  raised
-  icon={{name: 'cached'}}
-  title='RAISED WITH ICON' />
-
-```
-
 The API for React Native Elements is located [here](https://github.com/dabit3/React-Native-Elements).
 

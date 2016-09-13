@@ -6,7 +6,8 @@ import Icon from 'react-native-vector-icons/MaterialIcons'
 import {
   Text,
   Card,
-  SocialIcon
+  SocialIcon,
+  ButtonGroup
 } from 'react-native-elements'
 
 let styles = {}
@@ -39,12 +40,31 @@ const users = [
 ]
 
 class About extends Component {
+  constructor () {
+    super()
+    this.state = {
+      selectedIndex: 0
+    }
+    this.updateIndex = this.updateIndex.bind(this)
+  }
+  updateIndex (selectedIndex) {
+    this.setState({selectedIndex})
+  }
   render () {
+    const buttons = ['Button1', 'Button2']
+    const { selectedIndex } = this.state
     return (
       <ScrollView style={{backgroundColor: 'white'}}>
         <View style={styles.headerContainer}>
           <Icon color='white' name='invert-colors' size={62} />
           <Text style={styles.heading}>Components</Text>
+        </View>
+        <View style={{marginTop: 20}}>
+          <ButtonGroup
+            textStyle={{fontSize: 13}}
+            onPress={this.updateIndex}
+            selectedIndex={selectedIndex}
+            buttons={buttons} />
         </View>
         <View style={styles.container}>
           <Card

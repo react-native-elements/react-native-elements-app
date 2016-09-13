@@ -6,7 +6,8 @@ let styles
 import {
   List,
   ListItem,
-  Text
+  Text,
+  SearchBar
 } from 'react-native-elements'
 
 const log = () => console.log('this is an example method')
@@ -86,7 +87,38 @@ class More extends Component {
       <ScrollView style={styles.mainContainer}>
         <View style={styles.hero}>
           <Icon color='white' name='sentiment-very-satisfied' size={62} />
-          <Text style={styles.heading}>List</Text>
+          <Text style={styles.heading}>Searchbar & List</Text>
+        </View>
+        <View style={{marginTop: 10, marginBottom: 0}}>
+          <SearchBar
+            placeholder='Type Here...' />
+        </View>
+        <View style={{marginTop: 10, marginBottom: 0}}>
+          <SearchBar
+            noIcon
+            placeholder='Type Here...' />
+        </View>
+        <View style={{marginTop: 10, marginBottom: 0}}>
+          <SearchBar
+            round
+            placeholder='Type Here...' />
+        </View>
+        <View style={{marginTop: 10, marginBottom: 0}}>
+          <SearchBar
+            lightTheme
+            placeholder='Type Here...' />
+        </View>
+        <View style={{marginTop: 10, marginBottom: 0}}>
+          <SearchBar
+            noIcon
+            lightTheme
+            placeholder='Type Here...' />
+        </View>
+        <View style={{marginTop: 10, marginBottom: 0}}>
+          <SearchBar
+            round
+            lightTheme
+            placeholder='Type Here...' />
         </View>
         <List>
           <ListView

@@ -17,7 +17,13 @@ git clone git@github.com:dabit3/react-native-hackathon-starter.git
 npm i
 ```
 
-3 run project
+3 link dependencies for react-native
+
+```
+rnpm link
+```
+
+4 run project
 
 The API for React Native Elements is located [here](https://github.com/dabit3/React-Native-Elements).
 

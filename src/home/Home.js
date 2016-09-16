@@ -18,115 +18,133 @@ const log = () => {
 
 class Home extends Component {
   render () {
-    console.log('props:::', this.props)
     const { toggleSideMenu } = this.props
     return (
-      <ScrollView style={{backgroundColor: 'white'}}>
+      <ScrollView
+        ref='ScrollView'
+        style={{backgroundColor: 'white'}}>
         <View style={styles.hero}>
           <Icon color='white' name='whatshot' size={62} />
           <Text style={styles.heading}>Buttons</Text>
         </View>
         <Button
+          fontFamily='Lato'
           small
-          backgroundColor={socialColors.facebook}
+          backgroundColor='#9C27B0'
           onPress={() => log()}
           title='SMALL BUTTON'
           buttonStyle={styles.button} />
         <Button
+          fontFamily='Lato'
           small
-          backgroundColor={socialColors.stumbleupon}
+          backgroundColor='#2196F3'
           icon={{name: 'accessibility'}}
           onPress={() => toggleSideMenu()}
           title='TOGGLE SIDE MENU'/>
         <Button
+          fontFamily='Lato'
           iconRight
           small
-          backgroundColor={socialColors.quora}
+          backgroundColor='#009688'
           icon={{name: 'invert-colors'}}
           onPress={() => log()}
           title='SMALL WITH RIGHT ICON'/>
         <Button
+          fontFamily='Lato'
           iconRight
           small
-          backgroundColor={socialColors.tumblr}
+          backgroundColor='#8BC34A'
           icon={{name: 'motorcycle'}}
           onPress={() => log()}
           title='SMALL WITH RIGHT ICON'/>
         <Button
+          fontFamily='Lato'
           raised
           small
-          backgroundColor={socialColors.foursquare}
+          backgroundColor='#FFC107'
           icon={{name: 'card-travel'}}
           onPress={() => log()}
           title='SMALL BUTTON RAISED'/>
         <Button
+          fontFamily='Lato'
           raised
           small
-          backgroundColor={socialColors.vimeo}
+          backgroundColor='#FF5722'
           icon={{name: 'touch-app'}}
           onPress={() => log()}
           title='SMALL BUTTON RAISED'/>
         <Button
+          fontFamily='Lato'
           raised
           small
-          backgroundColor={socialColors.twitter}
+          backgroundColor='#9E9E9E'
           icon={{name: 'new-releases'}}
           onPress={() => log()}
           title='SMALL BUTTON RAISED'/>
         <Button
+          fontFamily='Lato'
           raised
           small
-          backgroundColor={socialColors.linkedin}
+          backgroundColor='#E91E63'
           icon={{name: 'business'}}
           onPress={() => log()}
           title='SMALL BUTTON RAISED'/>
         <Button
+          fontFamily='Lato'
           raised
           small
-          backgroundColor={socialColors.pinterest}
+          backgroundColor='#3F51B5'
           icon={{name: 'send'}}
           onPress={() => log()}
           title='SMALL BUTTON RAISED'/>
         <Button
+          fontFamily='Lato'
           raised
           small
           onPress={() => log()}
           title='SMALL BUTTON RAISED'/>
 
         <Button
+          fontFamily='Lato'
           onPress={() => log()}
-          backgroundColor={socialColors.facebook}
+          backgroundColor='#9C27B0'
           title='BUTTON' />
         <Button
-          backgroundColor={socialColors.stumbleupon}
+          fontFamily='Lato'
+          backgroundColor='#2196F3'
           icon={{name: 'cached'}}
           title='BUTTON WITH ICON' />
         <Button
-          backgroundColor={socialColors.quora}
+          fontFamily='Lato'
+          backgroundColor='#009688'
           raised
           icon={{name: 'album'}}
           title='RAISED WITH ICON' />
         <Button
+          fontFamily='Lato'
           raised
           iconRight
-          backgroundColor={socialColors.tumblr}
+          backgroundColor='#8BC34A'
           icon={{name: 'accessibility'}}
           title='RAISED RIGHT ICON' />
         <Button
+          fontFamily='Lato'
           raised
           iconRight
-          backgroundColor={socialColors.foursquare}
+          backgroundColor='#FFC107'
           icon={{name: 'account-balance'}}
           title='RAISED RIGHT ICON' />
         <Button
+          fontFamily='Lato'
           raised
-          backgroundColor={socialColors.vimeo}
+          backgroundColor='#FF5722'
           icon={{name: 'change-history'}}
           title='RAISED WITH ICON' />
         <Button
+          fontFamily='Lato'
           buttonStyle={[{marginBottom: 15}]}
           icon={{name: 'code'}}
-          backgroundColor={socialColors.twitter}
+          backgroundColor='#9E9E9E'
           title='ANOTHER BUTTON' />
       </ScrollView>
     )

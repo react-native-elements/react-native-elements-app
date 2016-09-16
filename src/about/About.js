@@ -7,8 +7,11 @@ import {
   Text,
   Card,
   SocialIcon,
+  Divider,
   ButtonGroup
 } from 'react-native-elements'
+
+import * as RNElements from 'react-native-elements'
 
 let styles = {}
 
@@ -91,9 +94,156 @@ class About extends Component {
             <Text style={styles.fonts} >Normal Text</Text>
           </Card>
           <Card
+            title='ICONS'
+            containerStyle={{marginTop: 15}}>
+            <View style={[styles.social, {marginTop: 15, marginBottom: 15, justifyContent: 'space-around'}]}>
+              <RNElements.Icon
+                onPress={() => console.log('hello')}
+                type='font-awesome'
+                color='#e14329'
+                name='hashtag' />
+              <RNElements.Icon
+                onPress={() => console.log('hello')}
+                type='font-awesome'
+                color='#02b875'
+                name='rocket' />
+              <RNElements.Icon
+                onPress={() => console.log('hello')}
+                color='#000000'
+                name='snapchat-ghost'
+                type='font-awesome' />
+              <RNElements.Icon
+                color='#6441A5'
+                name='btc'
+                type='font-awesome'
+                onPress={() => console.log('hello')} />
+              <RNElements.Icon
+                color='#f50'
+                name='heartbeat'
+                type='font-awesome'
+                onPress={() => console.log('hello')} />
+            </View>
+             <View style={[styles.social,{marginTop: 15, marginBottom: 15, justifyContent: 'space-around'}]}>
+              <RNElements.Icon
+                name='rowing'
+                color='#673AB7'
+                onPress={() => console.log('hello')} />
+              <RNElements.Icon
+                name='g-translate'
+                color='#03A9F4'
+                onPress={() => console.log('hello')} />
+              <RNElements.Icon
+                color='#009688'
+                name='sc-telegram'
+                type='evilicon'
+                onPress={() => console.log('hello')} /> 
+              <RNElements.Icon
+                color='#8BC34A'
+                name='social-apple'
+                type='foundation'
+                onPress={() => console.log('hello')} />
+              <RNElements.Icon
+                color='#FFC107'
+                name='ios-american-football'
+                type='ionicon'
+                onPress={() => console.log('hello')} />
+             </View>
+
+             <View>
+              <View style={[styles.social,{ justifyContent: 'space-around'}]}>
+                <RNElements.Icon
+                  raised
+                  name='vpn-key'
+                  color='#E91E63'
+                  onPress={() => console.log('hello')} />
+                <RNElements.Icon
+                  raised
+                  name='ring-volume'
+                  color='#3F51B5'
+                  onPress={() => console.log('hello')} />
+                <RNElements.Icon
+                  raised
+                  color='#00BCD4'
+                  name='weekend'
+                  onPress={() => console.log('hello')} /> 
+                <RNElements.Icon
+                  raised
+                  color='#CDDC39'
+                  name='bubble-chart'
+                  onPress={() => console.log('hello')} />
+                <RNElements.Icon
+                  raised
+                  color='#FF5722'
+                  name='burst-mode'
+                  onPress={() => console.log('hello')} />
+              </View>
+             </View>
+
+             <View style={[styles.social,{ justifyContent: 'space-around'}]}>
+              <RNElements.Icon
+                reverse
+                raised
+                name='account-balance'
+                color='#673AB7'
+                onPress={() => console.log('hello')} />
+              <RNElements.Icon
+                reverse
+                raised
+                name='android'
+                color='#03A9F4'
+                onPress={() => console.log('hello')} />
+              <RNElements.Icon
+                reverse
+                raised
+                color='#009688'
+                name='code'
+                onPress={() => console.log('hello')} /> 
+              <RNElements.Icon
+                reverse
+                raised
+                color='#8BC34A'
+                name='card-travel'
+                onPress={() => console.log('hello')} />
+              <RNElements.Icon
+                reverse
+                raised
+                color='#FF9800'
+                name='extension'
+                onPress={() => console.log('hello')} />
+            </View>
+
+            <View style={[styles.social,{ justifyContent: 'space-around'}]}>
+              <RNElements.Icon
+                reverse
+                name='group-work'
+                color='#E91E63'
+                onPress={() => console.log('hello')} />
+              <RNElements.Icon
+                reverse
+                name='lightbulb-outline'
+                color='#3F51B5'
+                onPress={() => console.log('hello')} />
+              <RNElements.Icon
+                reverse
+                color='#00BCD4'
+                name='pets'
+                onPress={() => console.log('hello')} /> 
+              <RNElements.Icon
+                reverse
+                color='#CDDC39'
+                name='polymer'
+                onPress={() => console.log('hello')} />
+              <RNElements.Icon
+                reverse
+                color='#FF5722'
+                name='touch-app'
+                onPress={() => console.log('hello')} />
+            </View>
+          </Card>
+          <Card
             title='SOCIAL ICONS'
             containerStyle={{marginTop: 15}}>
-            <View style={styles.social}>
+            <View style={[styles.social, { marginTop: 13, justifyContent: 'space-around'}]}>
               <SocialIcon
                 raised={false}
                 type='gitlab'
@@ -114,7 +264,7 @@ class About extends Component {
                 type='soundcloud'
               />
             </View>
-            <View style={styles.social}>
+            <View style={[styles.social, { marginTop: 13, justifyContent: 'space-around'}]}>
               <SocialIcon
                 raised={false}
                 type='facebook'
@@ -141,7 +291,7 @@ class About extends Component {
           <Card
             title='LIGHT SOCIAL ICONS'
             containerStyle={{marginTop: 15}}>
-            <View style={styles.social}>
+            <View style={[styles.social, {justifyContent: 'space-around'}]}>
               <SocialIcon
                 light
                 raised={false}

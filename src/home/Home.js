@@ -33,12 +33,14 @@ class Home extends Component {
           title='SMALL BUTTON'
           buttonStyle={styles.button} />
         <Button
+          buttonStyle={styles.button}
           small
           backgroundColor={socialColors.stumbleupon}
           icon={{name: 'accessibility'}}
           onPress={() => toggleSideMenu()}
           title='TOGGLE SIDE MENU'/>
         <Button
+          buttonStyle={styles.button}
           iconRight
           small
           backgroundColor={socialColors.quora}
@@ -46,6 +48,7 @@ class Home extends Component {
           onPress={() => log()}
           title='SMALL WITH RIGHT ICON'/>
         <Button
+          buttonStyle={styles.button}
           iconRight
           small
           backgroundColor={socialColors.tumblr}
@@ -53,6 +56,7 @@ class Home extends Component {
           onPress={() => log()}
           title='SMALL WITH RIGHT ICON'/>
         <Button
+          buttonStyle={styles.button}
           raised
           small
           backgroundColor={socialColors.foursquare}
@@ -60,6 +64,7 @@ class Home extends Component {
           onPress={() => log()}
           title='SMALL BUTTON RAISED'/>
         <Button
+          buttonStyle={styles.button}
           raised
           small
           backgroundColor={socialColors.vimeo}
@@ -67,6 +72,7 @@ class Home extends Component {
           onPress={() => log()}
           title='SMALL BUTTON RAISED'/>
         <Button
+          buttonStyle={styles.button}
           raised
           small
           backgroundColor={socialColors.twitter}
@@ -74,6 +80,7 @@ class Home extends Component {
           onPress={() => log()}
           title='SMALL BUTTON RAISED'/>
         <Button
+          buttonStyle={styles.button}
           raised
           small
           backgroundColor={socialColors.linkedin}
@@ -81,6 +88,7 @@ class Home extends Component {
           onPress={() => log()}
           title='SMALL BUTTON RAISED'/>
         <Button
+          buttonStyle={styles.button}
           raised
           small
           backgroundColor={socialColors.pinterest}
@@ -88,43 +96,50 @@ class Home extends Component {
           onPress={() => log()}
           title='SMALL BUTTON RAISED'/>
         <Button
+          buttonStyle={styles.button}
           raised
           small
           onPress={() => log()}
           title='SMALL BUTTON RAISED'/>
 
         <Button
+          buttonStyle={styles.button}
           onPress={() => log()}
           backgroundColor={socialColors.facebook}
           title='BUTTON' />
         <Button
+          buttonStyle={styles.button}
           backgroundColor={socialColors.stumbleupon}
           icon={{name: 'cached'}}
           title='BUTTON WITH ICON' />
         <Button
+          buttonStyle={styles.button}
           backgroundColor={socialColors.quora}
           raised
           icon={{name: 'album'}}
           title='RAISED WITH ICON' />
         <Button
+          buttonStyle={styles.button}
           raised
           iconRight
           backgroundColor={socialColors.tumblr}
           icon={{name: 'accessibility'}}
           title='RAISED RIGHT ICON' />
         <Button
+          buttonStyle={styles.button}
           raised
           iconRight
           backgroundColor={socialColors.foursquare}
           icon={{name: 'account-balance'}}
           title='RAISED RIGHT ICON' />
         <Button
+          buttonStyle={styles.button}
           raised
           backgroundColor={socialColors.vimeo}
           icon={{name: 'change-history'}}
           title='RAISED WITH ICON' />
         <Button
-          buttonStyle={[{marginBottom: 15}]}
+          buttonStyle={[{marginBottom: 15, marginTop: 15}]}
           icon={{name: 'code'}}
           backgroundColor={socialColors.twitter}
           title='ANOTHER BUTTON' />

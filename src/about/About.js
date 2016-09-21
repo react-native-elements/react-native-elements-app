@@ -183,6 +183,7 @@ class About extends Component {
               <SocialIcon
                 title='Sign In With Facebook'
                 button
+                fontWeight='400'
                 type='facebook'
               />
               <SocialIcon

@@ -14,17 +14,26 @@ import {
 let styles = {}
 
 class Contact extends Component {
+  componentDidMount () {
+    console.log('refs:', this.refs)
+  }
   render () {
+    console.log('refs from Contact:', this.refs)
     return (
       <ScrollView style={{backgroundColor: 'white'}}>
         <View style={styles.headingContainer}>
           <Icon color='white' name='pets' size={62} />
           <Text style={styles.heading}>Forms</Text>
         </View>
-        <FormLabel containerStyle={styles.labelContainerStyle}>Name</FormLabel>
-        <FormInput placeholder='Please enter your name...' />
+        <FormLabel
+          containerStyle={styles.labelContainerStyle}>Name</FormLabel>
+        <FormInput
+        ref='form'
+        containerRef='containerRefYOYO'
+        textInputRef='textInputRefYOYOYO'
+        placeholder='Please enter your name...' />
         <FormLabel containerStyle={styles.labelContainerStyle}>Address</FormLabel>
-        <FormInput placeholder='Please enter your address...' />
+        <FormInput ref='form1' placeholder='Please enter your address...' />
         <FormLabel containerStyle={styles.labelContainerStyle}>Phone</FormLabel>
         <FormInput placeholder='Please enter your phone number...' />
         <Button

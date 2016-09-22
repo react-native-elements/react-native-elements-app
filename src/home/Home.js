@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import { ScrollView, View, StyleSheet, Platform } from 'react-native'
-import Text from 'HSText'
 import colors from 'HSColors'
 import socialColors from 'HSSocialColors'
 import fonts from 'HSFonts'
 import Icon from 'react-native-vector-icons/MaterialIcons'
 
 import {
+  Text,
   Button
 } from 'react-native-elements'
 

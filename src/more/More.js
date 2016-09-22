@@ -131,7 +131,7 @@ class More extends Component {
           list2.map((l, i) => (
             <ListItem
               roundAvatar
-              avatar={l.avatar_url}
+              avatar={{ uri: l.avatar_url }}
               key={i}
               onPress={log}
               title={l.name}
@@ -140,6 +140,11 @@ class More extends Component {
           ))
         }
         </List>
+        <ListItem
+          roundAvatar
+          title='Nader Dabit'
+          avatar={require('../images/avatar1.jpg')}
+         />
       </ScrollView>
     )
   }

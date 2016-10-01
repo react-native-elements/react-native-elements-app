@@ -78,7 +78,7 @@ class About extends Component {
                   <View key={i} style={styles.user}>
                     <Image
                       style={styles.image}
-                      resizeMode='center'
+                      resizeMode='cover'
                       source={{uri: u.avatar}} />
                     <Text style={styles.name}>{u.name}</Text>
                   </View>

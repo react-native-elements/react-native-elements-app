@@ -18,7 +18,6 @@ const log = () => {
 
 class Home extends Component {
   render () {
-    console.log('props:::', this.props)
     const { toggleSideMenu } = this.props
     return (
       <ScrollView style={{backgroundColor: 'white'}}>

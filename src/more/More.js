@@ -84,7 +84,7 @@ class More extends Component {
   }
   render () {
     return (
-      <ScrollView style={styles.mainContainer}>
+      <ScrollView keyboardShouldPersistTaps style={styles.mainContainer}>
         <View style={styles.hero}>
           <Icon color='white' name='sentiment-very-satisfied' size={62} />
           <Text style={styles.heading}>Searchbar & List</Text>

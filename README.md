@@ -20,7 +20,7 @@ npm i
 3 link dependencies for react-native
 
 ```
-rnpm link
+react-native link
 ```
 
 4 run project

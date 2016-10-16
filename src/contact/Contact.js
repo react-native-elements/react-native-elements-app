@@ -14,11 +14,7 @@ import {
 let styles = {}
 
 class Contact extends Component {
-  componentDidMount () {
-    console.log('refs:', this.refs)
-  }
   render () {
-    console.log('refs from Contact:', this.refs)
     return (
       <ScrollView style={{backgroundColor: 'white'}}>
         <View style={styles.headingContainer}>

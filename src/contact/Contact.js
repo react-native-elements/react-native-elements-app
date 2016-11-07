@@ -14,6 +14,9 @@ import {
 let styles = {}
 
 class Contact extends Component {
+  componentDidMount () {
+    this.refs.form2.focus()
+  }
   render () {
     return (
       <ScrollView style={{backgroundColor: 'white'}}>
@@ -24,7 +27,7 @@ class Contact extends Component {
         <FormLabel
           containerStyle={styles.labelContainerStyle}>Name</FormLabel>
         <FormInput
-        ref='form'
+        ref='form2'
         containerRef='containerRefYOYO'
         textInputRef='textInputRefYOYOYO'
         placeholder='Please enter your name...' />

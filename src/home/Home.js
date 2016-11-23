@@ -26,14 +26,12 @@ class Home extends Component {
           <Text style={styles.heading}>Buttons</Text>
         </View>
         <Button
-          small
           backgroundColor={socialColors.facebook}
           onPress={() => log()}
-          title='SMALL BUTTON'
+          title='BUTTON'
           buttonStyle={styles.button} />
         <Button
           buttonStyle={styles.button}
-          small
           backgroundColor={socialColors.stumbleupon}
           icon={{name: 'accessibility'}}
           onPress={() => toggleSideMenu()}
@@ -41,107 +39,106 @@ class Home extends Component {
         <Button
           buttonStyle={styles.button}
           iconRight
-          small
           backgroundColor={socialColors.quora}
           icon={{name: 'invert-colors'}}
           onPress={() => log()}
-          title='SMALL WITH RIGHT ICON'/>
+          title='BUTTON WITH RIGHT ICON'/>
         <Button
           buttonStyle={styles.button}
           iconRight
-          small
           backgroundColor={socialColors.tumblr}
           icon={{name: 'motorcycle'}}
           onPress={() => log()}
-          title='SMALL WITH RIGHT ICON'/>
+          title='BUTTON WITH RIGHT ICON'/>
         <Button
           buttonStyle={styles.button}
           raised
-          small
           backgroundColor={socialColors.foursquare}
           icon={{name: 'card-travel'}}
           onPress={() => log()}
-          title='SMALL BUTTON RAISED'/>
+          title='BUTTON RAISED'/>
         <Button
           buttonStyle={styles.button}
           raised
-          small
           backgroundColor={socialColors.vimeo}
           icon={{name: 'touch-app'}}
           onPress={() => log()}
-          title='SMALL BUTTON RAISED'/>
+          title='BUTTON RAISED'/>
         <Button
           buttonStyle={styles.button}
           raised
-          small
           backgroundColor={socialColors.twitter}
           icon={{name: 'new-releases'}}
           onPress={() => log()}
-          title='SMALL BUTTON RAISED'/>
+          title='BUTTON RAISED'/>
         <Button
           buttonStyle={styles.button}
           raised
-          small
           backgroundColor={socialColors.linkedin}
           icon={{name: 'business'}}
           onPress={() => log()}
-          title='SMALL BUTTON RAISED'/>
+          title='BUTTON RAISED'/>
         <Button
           buttonStyle={styles.button}
           raised
-          small
           backgroundColor={socialColors.pinterest}
           icon={{name: 'send'}}
           onPress={() => log()}
-          title='SMALL BUTTON RAISED'/>
+          title='BUTTON RAISED'/>
         <Button
           buttonStyle={styles.button}
           raised
-          small
           onPress={() => log()}
-          title='SMALL BUTTON RAISED'/>
+          title='BUTTON RAISED'/>
 
         <Button
+          large={true}
           buttonStyle={styles.button}
           onPress={() => log()}
           backgroundColor={socialColors.facebook}
-          title='BUTTON' />
+          title='LARGE BUTTON' />
         <Button
+          large={true}
           buttonStyle={styles.button}
           backgroundColor={socialColors.stumbleupon}
           icon={{name: 'cached'}}
-          title='BUTTON WITH ICON' />
+          title='LARGE BUTTON WITH ICON' />
         <Button
+          large={true}
           buttonStyle={styles.button}
           backgroundColor={socialColors.quora}
           raised
           icon={{name: 'album'}}
-          title='RAISED WITH ICON' />
+          title='LARGE RAISED WITH ICON' />
         <Button
+          large={true}
           buttonStyle={styles.button}
           raised
           iconRight
           backgroundColor={socialColors.tumblr}
           icon={{name: 'accessibility'}}
-          title='RAISED RIGHT ICON' />
+          title='LARGE RAISED RIGHT ICON' />
         <Button
+          large={true}
           buttonStyle={styles.button}
           raised
           iconRight
           backgroundColor={socialColors.foursquare}
           icon={{name: 'account-balance'}}
-          title='RAISED RIGHT ICON' />
+          title='LARGE RAISED RIGHT ICON' />
         <Button
+          large={true}
           buttonStyle={styles.button}
           raised
           backgroundColor={socialColors.vimeo}
           icon={{name: 'change-history'}}
-          title='RAISED WITH ICON' />
+          title='LARGE RAISED WITH ICON' />
         <Button
+          large={true}
           buttonStyle={[{marginBottom: 15, marginTop: 15}]}
           icon={{name: 'code'}}
           backgroundColor={socialColors.twitter}
-          title='ANOTHER BUTTON' />
+          title='LARGE ANOTHER BUTTON' />
       </ScrollView>
     )
   }

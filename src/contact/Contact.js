@@ -15,7 +15,7 @@ let styles = {}
 
 class Contact extends Component {
   componentDidMount () {
-    this.refs.form2.focus()
+    this.refs.form2.refs.textInputRef.focus()
   }
   render () {
     return (
@@ -27,10 +27,11 @@ class Contact extends Component {
         <FormLabel
           containerStyle={styles.labelContainerStyle}>Name</FormLabel>
         <FormInput
-        ref='form2'
-        containerRef='containerRefYOYO'
-        textInputRef='textInputRefYOYOYO'
-        placeholder='Please enter your name...' />
+          ref='form2'
+          containerRef='containerRefYOYO'
+          textInputRef='textInputRef'
+          placeholder='Please enter your name...'
+        />
         <FormLabel containerStyle={styles.labelContainerStyle}>Address</FormLabel>
         <FormInput ref='form1' placeholder='Please enter your address...' />
         <FormLabel containerStyle={styles.labelContainerStyle}>Phone</FormLabel>

@@ -3808,9 +3808,9 @@ react-deep-force-update@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/react-deep-force-update/-/react-deep-force-update-1.0.1.tgz#f911b5be1d2a6fe387507dd6e9a767aa2924b4c7"
 
-react-native-elements@0.6.4:
-  version "0.6.4"
-  resolved "https://registry.yarnpkg.com/react-native-elements/-/react-native-elements-0.6.4.tgz#92a4684e485b840d23aaf6a2c83654fdb868bdee"
+react-native-elements@0.7.0:
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/react-native-elements/-/react-native-elements-0.7.0.tgz#f3a7ea4de0b7ccae4c5fe8eba698a58bb4138ef1"
   dependencies:
     react-native-tab-navigator "^0.3.3"
 

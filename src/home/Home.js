@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { ScrollView, View, StyleSheet, Platform } from 'react-native'
+import { ScrollView, TouchableHighlight, View, StyleSheet, Platform, Image } from 'react-native'
 import colors from 'HSColors'
 import socialColors from 'HSSocialColors'
 import fonts from 'HSFonts'
@@ -7,7 +7,10 @@ import Icon from 'react-native-vector-icons/MaterialIcons'
 
 import {
   Text,
-  Button
+  Button,
+  Grid,
+  Col,
+  Row
 } from 'react-native-elements'
 
 let styles = {}
@@ -23,8 +26,23 @@ class Home extends Component {
       <ScrollView style={{backgroundColor: 'white'}}>
         <View style={styles.hero}>
           <Icon color='white' name='whatshot' size={62} />
-          <Text style={styles.heading}>Buttons</Text>
+          <Text style={styles.heading}>Buttons1</Text>
         </View>
+        <Grid style={{flex: 1, justifyContent: 'center', alignItems: 'center', alignSelf: 'center', padding: 10}}>
+          <Col size={0.25}>
+            <TouchableHighlight onPress={() => console.log("hello")}>
+              <Image source={require('../images/avatar1.jpg')} style={{height: 50, width: 50, borderRadius: 25,}}/>
+            </TouchableHighlight>
+          </Col>
+          <Col>
+            <Row size={0.75}>
+              <Text style={{fontSize: 22}}>Adam McArther</Text>
+            </Row>
+            <Row>
+              <Text style={{color: 'grey'}}>Freelance developer</Text>
+            </Row>
+          </Col>
+        </Grid>
         <Button
           backgroundColor={socialColors.facebook}
           onPress={() => log()}

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, StyleSheet, ScrollView, ListView } from 'react-native'
+import { View, Image, StyleSheet, ScrollView, ListView } from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialIcons'
 let styles
 
@@ -126,7 +126,7 @@ class More extends Component {
             dataSource={this.state.dataSource}
             />
         </List>
-        <List containerStyle={{marginBottom: 20}}>
+        <List>
         {
           list2.map((l, i) => (
             <ListItem
@@ -140,11 +140,19 @@ class More extends Component {
           ))
         }
         </List>
-        <ListItem
-          roundAvatar
-          title='Nader Dabit'
-          avatar={require('../images/avatar1.jpg')}
-         />
+        <List>
+          <ListItem
+            roundAvatar
+            title='Limited supply! Its like digital gold!'
+            subtitle={
+              <View style={styles.subtitleView}>
+                <Image source={require('../images/rating.png')} style={styles.ratingImage}/>
+                <Text style={styles.ratingText}>5 months ago</Text>
+              </View>
+            }
+            avatar={require('../images/avatar1.jpg')}
+          />
+        </List>
       </ScrollView>
     )
   }
@@ -168,6 +176,19 @@ styles = StyleSheet.create({
     alignItems: 'center',
     padding: 40,
     backgroundColor: '#69DDFF'
+  },
+  subtitleView: {
+    flexDirection: 'row',
+    paddingLeft: 10,
+    paddingTop: 5
+  },
+  ratingImage: {
+    height: 19.21,
+    width: 100
+  },
+  ratingText: {
+    paddingLeft: 10,
+    color: 'grey'
   }
 })
 

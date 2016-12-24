@@ -8,7 +8,8 @@ import {
   Card,
   SocialIcon,
   Divider,
-  ButtonGroup
+  ButtonGroup,
+  Slider
 } from 'react-native-elements'
 
 import * as RNElements from 'react-native-elements'
@@ -136,7 +137,7 @@ class About extends Component {
                 color='#009688'
                 name='sc-telegram'
                 type='evilicon'
-                onPress={() => console.log('hello')} /> 
+                onPress={() => console.log('hello')} />
               <RNElements.Icon
                 color='#8BC34A'
                 name='social-apple'
@@ -165,7 +166,7 @@ class About extends Component {
                   raised
                   color='#00BCD4'
                   name='weekend'
-                  onPress={() => console.log('hello')} /> 
+                  onPress={() => console.log('hello')} />
                 <RNElements.Icon
                   raised
                   color='#CDDC39'
@@ -197,7 +198,7 @@ class About extends Component {
                 raised
                 color='#009688'
                 name='code'
-                onPress={() => console.log('hello')} /> 
+                onPress={() => console.log('hello')} />
               <RNElements.Icon
                 reverse
                 raised
@@ -227,7 +228,7 @@ class About extends Component {
                 reverse
                 color='#00BCD4'
                 name='pets'
-                onPress={() => console.log('hello')} /> 
+                onPress={() => console.log('hello')} />
               <RNElements.Icon
                 reverse
                 color='#CDDC39'
@@ -349,6 +350,16 @@ class About extends Component {
               />
             </View>
           </Card>
+        {/* <Card
+          containerStyle={{marginTop: 15, marginBottom: 15}}
+          title='SLIDERS'>
+          <View>
+            <Slider
+              value={this.state.value}
+              onValueChange={(value) => this.setState({value})} />
+            <Text>Value: {this.state.value}</Text>
+          </View>
+        </Card> */}
         </View>
       </ScrollView>
     )

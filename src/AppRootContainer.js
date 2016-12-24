@@ -11,15 +11,17 @@ class AppRootContainer extends Component {
   constructor () {
     super()
     this.state = {
-      toggled: false
+      isOpen: false
     }
     this.toggleSideMenu = this.toggleSideMenu.bind(this)
   }
+
   toggleSideMenu () {
     this.setState({
-      toggled: !this.state.toggled
+      isOpen: !this.state.isOpen
     })
   }
+
   render () {
     const list = [
       {
@@ -48,6 +50,7 @@ class AppRootContainer extends Component {
         subtitle: 'CTO'
       }
     ]
+
     const MenuComponent = (
       <View style={{flex: 1, backgroundColor: '#ededed', paddingTop: 50}}>
         <List containerStyle={{marginBottom: 20}}>
@@ -66,12 +69,12 @@ class AppRootContainer extends Component {
         </List>
       </View>
     )
+
     return (
       <SideMenu
-        toggledContainerStyle={{borderLeftWidth: 1, borderLeftColor: '#ededed'}}
-        toggled={this.state.toggled}
-        MenuComponent={MenuComponent}>
-        <App toggleSideMenu={this.toggleSideMenu} />
+        isOpen={this.state.isOpen}
+        menu={MenuComponent}>
+        <App toggleSideMenu={this.toggleSideMenu.bind(this)} />
       </SideMenu>
     )
   }

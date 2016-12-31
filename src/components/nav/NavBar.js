@@ -12,7 +12,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons'
 let styles = {}
 
 const NavigationBar = (toggleSideMenu) => {
-  const src = require('image!logo')
+  const src = require('../../images/logo.png')
   const LeftButton = (route, navigator, index, navState) => {
     if (route.name !== 'home') {
       return null

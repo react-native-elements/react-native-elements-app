@@ -33,7 +33,7 @@ class Home extends Component {
         <Button
           buttonStyle={styles.button}
           backgroundColor={socialColors.stumbleupon}
-          icon={{name: 'accessibility'}}
+          icon={{name: 'account', type: 'material-community'}}
           onPress={() => toggleSideMenu()}
           title='TOGGLE SIDE MENU'/>
         <Button

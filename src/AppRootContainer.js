@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View } from 'react-native'
+import { View, StyleSheet, Image } from 'react-native'
 import App from './App'
 import {
   List,
@@ -23,6 +23,8 @@ class AppRootContainer extends Component {
   }
 
   render () {
+    const src = require('./images/logo.png')
+
     const list = [
       {
         name: 'Amy Farha',
@@ -52,7 +54,12 @@ class AppRootContainer extends Component {
     ]
 
     const MenuComponent = (
-      <View style={{flex: 1, backgroundColor: '#ededed', paddingTop: 50}}>
+      <View style={{flex: 1, backgroundColor: '#ededed', paddingTop: 30}}>
+        <View style={{backgroundColor: 'darkgrey', justifyContent: 'center', alignItems: 'center', alignSelf: 'center', padding: 10,}}>
+          <Image
+            source={src}
+            style={styles.logo} />
+        </View>
         <List containerStyle={{marginBottom: 20}}>
         {
           list.map((l, i) => (
@@ -79,5 +86,12 @@ class AppRootContainer extends Component {
     )
   }
 }
+
+styles = StyleSheet.create({
+  logo: {
+    width: 160,
+    height: 34
+  },
+})
 
 export default AppRootContainer

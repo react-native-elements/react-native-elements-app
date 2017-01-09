@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { ScrollView, View, StyleSheet, Image } from 'react-native'
+import { ScrollView, View, StyleSheet, Image, TouchableHighlight } from 'react-native'
 import colors from 'HSColors'
 import Icon from 'react-native-vector-icons/MaterialIcons'
 
@@ -9,7 +9,10 @@ import {
   SocialIcon,
   Divider,
   ButtonGroup,
-  Slider
+  Slider,
+  Grid,
+  Col,
+  Row
 } from 'react-native-elements'
 
 import * as RNElements from 'react-native-elements'
@@ -350,6 +353,26 @@ class About extends Component {
               />
             </View>
           </Card>
+          <Card
+            containerStyle={{marginTop: 15, marginBottom: 15}}
+            title='GRID LAYOUT'>
+            <Grid style={{flex: 1, justifyContent: 'center', alignItems: 'center', alignSelf: 'center', padding: 10}}>
+              <Col size={0.25}>
+                <TouchableHighlight onPress={() => console.log("hello")}>
+                  <Image source={require('../images/avatar1.jpg')} style={{height: 50, width: 50, borderRadius: 25,}}/>
+                </TouchableHighlight>
+              </Col>
+              <Col>
+                <Row size={0.75}>
+                  <Text style={{fontSize: 22}}>Adam McArther</Text>
+                </Row>
+                <Row>
+                  <Text style={{color: 'grey'}}>Freelance developer</Text>
+                </Row>
+              </Col>
+            </Grid>
+          </Card>
+
         {/* <Card
           containerStyle={{marginTop: 15, marginBottom: 15}}
           title='SLIDERS'>

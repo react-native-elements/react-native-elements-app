@@ -69,7 +69,7 @@ class AppRootContainer extends Component {
     return (
       <SideMenu
         toggledContainerStyle={{borderLeftWidth: 1, borderLeftColor: '#ededed'}}
-        toggled={this.state.toggled}
+        isOpen={this.state.toggled}
         MenuComponent={MenuComponent}>
         <App toggleSideMenu={this.toggleSideMenu} />
       </SideMenu>

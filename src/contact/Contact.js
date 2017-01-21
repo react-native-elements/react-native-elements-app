@@ -19,7 +19,7 @@ class Contact extends Component {
   }
   render () {
     return (
-      <ScrollView style={{backgroundColor: 'white'}} keyboardShouldPersistTaps={true}>
+      <ScrollView style={{backgroundColor: 'white'}} keyboardShouldPersistTaps="always">
         <View style={styles.headingContainer}>
           <Icon color='white' name='pets' size={62} />
           <Text style={styles.heading}>Forms</Text>

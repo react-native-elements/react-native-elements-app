@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { ScrollView, View, StyleSheet, Image } from 'react-native'
+import { ScrollView, View, StyleSheet, Image, TouchableHighlight } from 'react-native'
 import colors from 'HSColors'
 import Icon from 'react-native-vector-icons/MaterialIcons'
 
@@ -8,7 +8,11 @@ import {
   Card,
   SocialIcon,
   Divider,
-  ButtonGroup
+  ButtonGroup,
+  Slider,
+  Grid,
+  Col,
+  Row
 } from 'react-native-elements'
 
 import * as RNElements from 'react-native-elements'
@@ -136,7 +140,7 @@ class About extends Component {
                 color='#009688'
                 name='sc-telegram'
                 type='evilicon'
-                onPress={() => console.log('hello')} /> 
+                onPress={() => console.log('hello')} />
               <RNElements.Icon
                 color='#8BC34A'
                 name='social-apple'
@@ -165,7 +169,7 @@ class About extends Component {
                   raised
                   color='#00BCD4'
                   name='weekend'
-                  onPress={() => console.log('hello')} /> 
+                  onPress={() => console.log('hello')} />
                 <RNElements.Icon
                   raised
                   color='#CDDC39'
@@ -197,7 +201,7 @@ class About extends Component {
                 raised
                 color='#009688'
                 name='code'
-                onPress={() => console.log('hello')} /> 
+                onPress={() => console.log('hello')} />
               <RNElements.Icon
                 reverse
                 raised
@@ -227,7 +231,7 @@ class About extends Component {
                 reverse
                 color='#00BCD4'
                 name='pets'
-                onPress={() => console.log('hello')} /> 
+                onPress={() => console.log('hello')} />
               <RNElements.Icon
                 reverse
                 color='#CDDC39'
@@ -349,6 +353,36 @@ class About extends Component {
               />
             </View>
           </Card>
+          <Card
+            containerStyle={{marginTop: 15, marginBottom: 15}}
+            title='GRID LAYOUT'>
+            <Grid style={{flex: 1, justifyContent: 'center', alignItems: 'center', alignSelf: 'center', padding: 10}}>
+              <Col size={0.25}>
+                <TouchableHighlight onPress={() => console.log("hello")}>
+                  <Image source={require('../images/avatar1.jpg')} style={{height: 50, width: 50, borderRadius: 25,}}/>
+                </TouchableHighlight>
+              </Col>
+              <Col>
+                <Row size={0.75}>
+                  <Text style={{fontSize: 22}}>Adam McArther</Text>
+                </Row>
+                <Row>
+                  <Text style={{color: 'grey'}}>Freelance developer</Text>
+                </Row>
+              </Col>
+            </Grid>
+          </Card>
+
+        {/* <Card
+          containerStyle={{marginTop: 15, marginBottom: 15}}
+          title='SLIDERS'>
+          <View>
+            <Slider
+              value={this.state.value}
+              onValueChange={(value) => this.setState({value})} />
+            <Text>Value: {this.state.value}</Text>
+          </View>
+        </Card> */}
         </View>
       </ScrollView>
     )

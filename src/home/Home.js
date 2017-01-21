@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { ScrollView, View, StyleSheet, Platform } from 'react-native'
+import { ScrollView, TouchableHighlight, View, StyleSheet, Platform, Image } from 'react-native'
 import colors from 'HSColors'
 import socialColors from 'HSSocialColors'
 import fonts from 'HSFonts'
@@ -7,7 +7,10 @@ import Icon from 'react-native-vector-icons/MaterialIcons'
 
 import {
   Text,
-  Button
+  Button,
+  Grid,
+  Col,
+  Row
 } from 'react-native-elements'
 
 let styles = {}
@@ -23,7 +26,7 @@ class Home extends Component {
       <ScrollView style={{backgroundColor: 'white'}}>
         <View style={styles.hero}>
           <Icon color='white' name='whatshot' size={62} />
-          <Text style={styles.heading}>Buttons</Text>
+          <Text style={styles.heading}>Buttons1</Text>
         </View>
         <Button
           backgroundColor={socialColors.facebook}
@@ -33,7 +36,7 @@ class Home extends Component {
         <Button
           buttonStyle={styles.button}
           backgroundColor={socialColors.stumbleupon}
-          icon={{name: 'account-balance', type: 'material-community'}}
+          icon={{name: 'account', type: 'material-community'}}
           onPress={() => toggleSideMenu()}
           title='TOGGLE SIDE MENU'/>
         <Button

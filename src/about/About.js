@@ -50,13 +50,16 @@ class About extends Component {
   constructor () {
     super()
     this.state = {
-      selectedIndex: 0
+      selectedIndex: 0,
+      value: 0.5
     }
     this.updateIndex = this.updateIndex.bind(this)
   }
+
   updateIndex (selectedIndex) {
     this.setState({selectedIndex})
   }
+
   render () {
     const buttons = ['Button1', 'Button2']
     const { selectedIndex } = this.state
@@ -372,17 +375,16 @@ class About extends Component {
               </Col>
             </Grid>
           </Card>
-
-        {/* <Card
-          containerStyle={{marginTop: 15, marginBottom: 15}}
-          title='SLIDERS'>
-          <View>
-            <Slider
-              value={this.state.value}
-              onValueChange={(value) => this.setState({value})} />
-            <Text>Value: {this.state.value}</Text>
-          </View>
-        </Card> */}
+          <Card
+            containerStyle={{marginTop: 15, marginBottom: 15}}
+            title='SLIDERS'>
+            <View>
+              <Slider
+                value={this.state.value}
+                onValueChange={(value) => this.setState({value})} />
+              <Text>Value: {this.state.value}</Text>
+            </View>
+          </Card>
         </View>
       </ScrollView>
     )

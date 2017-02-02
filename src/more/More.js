@@ -141,6 +141,21 @@ class More extends Component {
         }
         </List>
         <List>
+        {
+          list2.map((l, i) => (
+            <ListItem
+              rightIcon={{ style: { marginLeft: 20 } }}
+              roundAvatar
+              avatar={{ uri: l.avatar_url }}
+              key={i}
+              onPress={log}
+              title={l.name}
+              subtitle={l.subtitle}
+            />
+          ))
+        }
+        </List>
+        <List>
           <ListItem
             roundAvatar
             title='Limited supply! Its like digital gold!'

@@ -10,9 +10,10 @@ import {
   Divider,
   ButtonGroup,
   Slider,
+  Tile,
   Grid,
   Col,
-  Row
+  Row,
 } from 'react-native-elements'
 
 import * as RNElements from 'react-native-elements'
@@ -383,6 +384,46 @@ class About extends Component {
                 value={this.state.value}
                 onValueChange={(value) => this.setState({value})} />
               <Text>Value: {this.state.value}</Text>
+            </View>
+          </Card>
+          <Card
+            containerStyle={{marginTop: 15, marginBottom: 15}}
+            title='TILES'>
+            <View>
+              <Tile
+                 imageSrc={{uri: 'http://www.drodd.com/images15/sunset21.jpg'}}
+                 title="When I admire the wonders of a sunset or the beauty of the moon, my soul expands in the worship of the creator."
+                 titleStyle={{fontSize: 20}}
+                 featured
+                 caption="Mahatma Gandhi"
+                 activeOpacity={1}
+                 width={310}
+              />
+            </View>
+            <View style={{paddingTop: 20}}>
+              <Tile
+                imageSrc={{uri: 'https://awildgeographer.files.wordpress.com/2015/02/john_muir_glacier.jpg'}}
+                icon={{name: 'heart', type: 'font-awesome', size: 60, color: 'red'}}
+                featured
+                activeOpacity={0.8}
+                onPress={() => { "Tile pressed" }}
+                width={310}
+              />
+            </View>
+            <View style={{paddingTop: 20}}>
+              <Tile
+                imageSrc={{uri: 'https://upload.wikimedia.org/wikipedia/commons/d/d6/Half_Dome_from_Glacier_Point,_Yosemite_NP_-_Diliff.jpg'}}
+                title="Half Dome, Yosemite"
+                titleStyle={{fontSize: 20}}
+                activeOpacity={1}
+                width={310}
+                contentContainerStyle={{height: 70}}
+              >
+                <View style={{flex: 1, flexDirection: 'row', justifyContent: 'space-between'}}>
+                  <Text style={{color: 'green'}}>Visit</Text>
+                  <Text style={{color: 'blue'}}>Find out More</Text>
+                </View>
+              </Tile>
             </View>
           </Card>
         </View>

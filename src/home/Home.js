@@ -26,7 +26,7 @@ class Home extends Component {
       <ScrollView style={{backgroundColor: 'white'}}>
         <View style={styles.hero}>
           <Icon color='white' name='whatshot' size={62} />
-          <Text style={styles.heading}>Buttons1</Text>
+          <Text style={styles.heading}>Buttons</Text>
         </View>
         <Button
           backgroundColor={socialColors.facebook}

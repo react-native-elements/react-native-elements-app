@@ -22,6 +22,12 @@ class AppRootContainer extends Component {
     })
   }
 
+  onSideMenuChange (isOpen: boolean) {
+    this.state = {
+      isOpen: isOpen
+    }
+  }
+
   render () {
     const src = require('./images/logo.png')
 
@@ -80,6 +86,7 @@ class AppRootContainer extends Component {
     return (
       <SideMenu
         isOpen={this.state.isOpen}
+        onChange={this.onSideMenuChange.bind(this)}
         menu={MenuComponent}>
         <App toggleSideMenu={this.toggleSideMenu.bind(this)} />
       </SideMenu>

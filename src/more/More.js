@@ -96,6 +96,7 @@ class More extends Component {
         <View style={{marginTop: 10, marginBottom: 0}}>
           <SearchBar
             noIcon
+            clearIcon
             placeholder='Type Here...' />
         </View>
         <View style={{marginTop: 10, marginBottom: 0}}>
@@ -106,6 +107,7 @@ class More extends Component {
         <View style={{marginTop: 10, marginBottom: 0}}>
           <SearchBar
             lightTheme
+            clearIcon
             placeholder='Type Here...' />
         </View>
         <View style={{marginTop: 10, marginBottom: 0}}>
@@ -118,6 +120,8 @@ class More extends Component {
           <SearchBar
             round
             lightTheme
+            clearIcon
+            textInputRef="searchBar3"
             placeholder='Type Here...' />
         </View>
         <List>

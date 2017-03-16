@@ -360,7 +360,7 @@ class About extends Component {
           <Card
             containerStyle={{marginTop: 15, marginBottom: 15}}
             title='GRID LAYOUT'>
-            <Grid style={{flex: 1, justifyContent: 'center', alignItems: 'center', alignSelf: 'center', padding: 10}}>
+            <Grid containerStyle={{flex: 1, justifyContent: 'center', alignItems: 'center', alignSelf: 'center', padding: 10}}>
               <Col size={0.25}>
                 <TouchableHighlight onPress={() => console.log("hello")}>
                   <Image source={require('../images/avatar1.jpg')} style={{height: 50, width: 50, borderRadius: 25,}}/>

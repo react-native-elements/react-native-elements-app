@@ -412,7 +412,7 @@ class About extends Component {
             </View>
             <View style={{paddingTop: 20}}>
               <Tile
-                imageSrc={{uri: 'https://upload.wikimedia.org/wikipedia/commons/d/d6/Half_Dome_from_Glacier_Point,_Yosemite_NP_-_Diliff.jpg'}}
+                imageSrc={{uri: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Half_Dome_from_Glacier_Point%2C_Yosemite_NP_-_Diliff.jpg/320px-Half_Dome_from_Glacier_Point%2C_Yosemite_NP_-_Diliff.jpg'}}
                 title="Half Dome, Yosemite"
                 titleStyle={{fontSize: 20}}
                 activeOpacity={1}

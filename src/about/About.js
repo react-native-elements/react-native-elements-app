@@ -14,6 +14,7 @@ import {
   Grid,
   Col,
   Row,
+  Avatar,
 } from 'react-native-elements'
 
 import * as RNElements from 'react-native-elements'
@@ -425,6 +426,48 @@ class About extends Component {
                 </View>
               </Tile>
             </View>
+          </Card>
+          <Card
+            containerStyle={{marginTop: 15, marginBottom: 15, height: 230, paddingLeft: 10}}
+            title='AVATARS'>
+            <Grid>
+              <Row>
+                <View style={{marginBottom: 30, marginRight: 28}}>
+                  <Avatar
+                    small
+                    rounded
+                    source={{uri: "https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg"}}
+                    onPress={() => console.log("Works!")}
+                    activeOpacity={0.7}
+                  />
+                </View>
+                <View style={{marginBottom: 50, marginRight: 45}}>
+                  <Avatar
+                    medium
+                    title="BP"
+                    onPress={() => console.log("Works!")}
+                    activeOpacity={0.7}
+                  />
+                </View>
+                <View style={{marginBottom: 70, marginRight: 80}}>
+                  <Avatar
+                    large
+                    icon={{type: 'home'}}
+                    onPress={() => console.log("Works!")}
+                    activeOpacity={0.7}
+                  />
+                </View>
+                <View style={{marginBottom: 50}}>
+                  <Avatar
+                    xlarge
+                    rounded
+                    source={{uri: "https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg"}}
+                    onPress={() => console.log("Works!")}
+                    activeOpacity={0.7}
+                  />
+                </View>
+              </Row>
+            </Grid>
           </Card>
         </View>
       </ScrollView>

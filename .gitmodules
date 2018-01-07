@@ -1,0 +1,3 @@
+[submodule "node_modules/react-native-elements"]
+	path = node_modules/react-native-elements
+	url = git@github.com:react-native-training/react-native-elements.git

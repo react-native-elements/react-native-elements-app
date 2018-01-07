@@ -10,7 +10,7 @@ export default {
     bold: 'System',
     boldItalic: 'System',
     black: 'System',
-    blackItalic: 'System'
+    blackItalic: 'System',
   },
   android: {
     regular: 'Roboto',
@@ -24,6 +24,6 @@ export default {
     bold: 'Roboto-Bold',
     boldItalic: 'Roboto-BoldItalic',
     condensed: 'RobotoCondensed-Regular',
-    condensedItalic: 'RobotoCondensed-Italic'
-  }
-}
+    condensedItalic: 'RobotoCondensed-Italic',
+  },
+};

@@ -15,5 +15,5 @@ export default {
   quora: '#a82400',
   foursquare: '#0072b1',
   wordpress: '#21759b',
-  stumbleupon: '#EB4823'
-}
+  stumbleupon: '#EB4823',
+};

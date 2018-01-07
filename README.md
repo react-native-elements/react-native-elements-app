@@ -1,39 +1,53 @@
-![React Native Hackathon Starter & UI Toolkit](http://i.imgur.com/kJA1dU0.png)
-### React Native Starter Project and UI Boilerplate using [React Native Elements](https://github.com/dabit3/React-Native-Elements)
-
 ![React Native UI Toolkit](http://i.imgur.com/tqxDeoG.png)
+
+# React Native Elements App
+
+## Demo App
+
+Run the pre built and configured [React Native Elements App](https://expo.io/@monte9/react-native-elements-app) on Expo which uses all of the React Native Elements components.
 
 ## Get Started
 
 1. Clone the project
 
 ```
-git clone git@github.com:dabit3/react-native-hackathon-starter.git
+git clone https://github.com/react-native-training/react-native-elements.git
 ```
 
-2. Install dependencies
+2. Open Examples directory
 
 ```
-npm install
+cd react-native-elements/example
 ```
 
-3. Link the dependencies
+3. Install dependencies
 
 ```
-react-native link
+yarn
 ```
 
-4. Run the app
+3. Open app with [Expo Desktop Client](https://docs.expo.io/versions/v16.0.0/index.html)
+  - If you have never used Expo before, click [here](https://docs.expo.io/versions/v16.0.0/introduction/installation.html) to install it.
+  - Then create a new account on the Expo Desktop client that you just installed. Follow [this](https://docs.expo.io/versions/v16.0.0/guides/up-and-running.html#create-an-account) if you need help.
+  - Then click `Project` -> `Open Project` and select the examples folder from Step 2 above.
+  - Finally run the app on simulator or your device.
 
-The API for React Native Elements is located [here](https://github.com/dabit3/React-Native-Elements).
+## Docs
 
-## Update (May '17)
+Click [here](https://react-native-training.github.io/react-native-elements/API/buttons/) to view the docs for React Native Elements.
 
-This library has been moved into [React Native Elements](https://github.com/react-native-training/react-native-elements) repo under `/example` folder.
+## Versions:
 
-We have reimplemented the entire app from scratch using [Expo](https://expo.io/) & [react-navigation](https://github.com/react-community/react-navigation) and also updated it to include all the latest component for RNE.
+-  ```"expo": "16.0.0"```
 
-- Here's the link to the app: https://expo.io/@monte9/react-native-elements-app
+- ```"react": "16.0.0-alpha.6"```
 
-- Also here's the new home for this repo: https://github.com/react-native-training/react-native-elements/tree/master/example
+- ```"react-native": "https://github.com/expo/react-native/archive/sdk-16.0.0.tar.gz"```
 
+- ```"react-native-elements": "^0.13.0"```
+
+or
+
+- ```"react-native-elements": "git://github.com/react-native-training/react-native-elements.git#next"```
+
+- ```"react-navigation": "^1.0.0-beta.9"```

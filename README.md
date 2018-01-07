@@ -2,28 +2,32 @@
 
 # React Native Elements App
 
-## Demo App
+This repo uses React Native Elements as a submodule through `/node_modules/react-native-elements`. Hence once you clone this repo, you can make changes to any RNE `/src` files, test these changes through the expo app and also commit directly to the main RNE repo.
 
-Run the pre built and configured [React Native Elements App](https://expo.io/@monte9/react-native-elements-app) on Expo which uses all of the React Native Elements components.
+## Expo app
+
+Click here to run the [React Native Elements App](https://expo.io/@monte9/react-native-elements-app) on Expo which uses all of the React Native Elements components.
 
 ## Get Started
 
 1. Clone the project
 
 ```
-git clone https://github.com/react-native-training/react-native-elements.git
+git clone https://github.com/react-native-training/react-native-hackathon-starter.git
 ```
 
-2. Open Examples directory
+2. Install node_modules
 
 ```
-cd react-native-elements/example
+npm install
 ```
 
-3. Install dependencies
+3. Verify submodule
 
 ```
-yarn
+cd node_modules/react-native-elements
+
+git branch -v (should show rne master branch)
 ```
 
 3. Open app with [Expo Desktop Client](https://docs.expo.io/versions/v16.0.0/index.html)
@@ -35,19 +39,3 @@ yarn
 ## Docs
 
 Click [here](https://react-native-training.github.io/react-native-elements/API/buttons/) to view the docs for React Native Elements.
-
-## Versions:
-
--  ```"expo": "16.0.0"```
-
-- ```"react": "16.0.0-alpha.6"```
-
-- ```"react-native": "https://github.com/expo/react-native/archive/sdk-16.0.0.tar.gz"```
-
-- ```"react-native-elements": "^0.13.0"```
-
-or
-
-- ```"react-native-elements": "git://github.com/react-native-training/react-native-elements.git#next"```
-
-- ```"react-navigation": "^1.0.0-beta.9"```

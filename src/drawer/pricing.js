@@ -30,10 +30,8 @@ PricingDrawerItem.navigationOptions = {
       name="attach-money"
       size={30}
       iconStyle={{
-        width: 50,
-        height: 50,
-        alignItems: 'center',
-        justifyContent: 'center',
+        width: 30,
+        height: 30
       }}
       type="material"
       color={tintColor}

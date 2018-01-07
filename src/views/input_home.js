@@ -1,11 +1,10 @@
 import Expo from 'expo';
 import React, { Component } from 'react';
-import { View, ScrollView, StyleSheet, Text, Dimensions} from 'react-native';
+import { View, ScrollView, StyleSheet, Text, Dimensions } from 'react-native';
+import { Input } from 'react-native-elements'
 
 import SimpleIcon from 'react-native-vector-icons/SimpleLineIcons';
 import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
-
-import Input from '../../v1/input/Input';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
 

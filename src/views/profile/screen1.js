@@ -2,10 +2,8 @@ import React, { Component } from 'react';
 import {
   StyleSheet, Text, View, Image, ScrollView, Dimensions, TouchableOpacity, StatusBar
 } from 'react-native';
-
+import { Button } from 'react-native-elements'
 import { Font, LinearGradient } from 'expo';
-
-import Button from '../../../v1/buttons/Button';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
 const SCREEN_HEIGHT = Dimensions.get('window').height;

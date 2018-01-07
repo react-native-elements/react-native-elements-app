@@ -84,15 +84,13 @@ Components.navigationOptions = {
   drawerLabel: 'Components',
   drawerIcon: ({ tintColor }) => (
     <Icon
-      name="settings-input-component"
+      name="settings"
       size={30}
       iconStyle={{
-        width: 50,
-        height: 50,
-        alignItems: 'center',
-        justifyContent: 'center',
+        width: 30,
+        height: 30
       }}
-      type="material-community"
+      type="material"
       color={tintColor}
     />
   ),

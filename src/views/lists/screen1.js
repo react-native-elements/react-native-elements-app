@@ -1,12 +1,10 @@
 import _ from 'lodash';
+
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, Dimensions, ScrollView } from 'react-native';
+import { Avatar, Button } from 'react-native-elements'
 
 import { Font } from 'expo';
-
-import Avatar from '../../../v1/avatar/Avatar';
-import Button from '../../../v1/buttons/Button';
-
 import Icon from 'react-native-vector-icons/Ionicons';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;

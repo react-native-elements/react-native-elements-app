@@ -18,11 +18,9 @@ ProfileDrawerItem.navigationOptions = {
     <Icon
       name="person"
       size={30}
-      style={{
-        width: 50,
-        height: 50,
-        alignItems: 'center',
-        justifyContent: 'center',
+      iconStyle={{
+        width: 30,
+        height: 30
       }}
       type="material"
       color={tintColor}

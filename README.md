@@ -81,5 +81,4 @@ In the meantime, here's a taste of what's to come.
 </div>
 
 ## Docs
-
 Click [here](https://react-native-training.github.io/react-native-elements/API/buttons/) to view the docs for React Native Elements.

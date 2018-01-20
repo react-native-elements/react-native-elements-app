@@ -1,21 +1,22 @@
-import Expo from 'expo';
 import React from 'react';
 import { StackNavigator } from 'react-navigation';
 import { Icon } from 'react-native-elements';
 
-import Ratings from '../views/ratings';
+import Profile from '../views/profile';
 
-const RatingsDrawerItem = StackNavigator({
-  Ratings: {
-    screen: Ratings,
+const ProfileDrawerItem = StackNavigator({
+    Playground: { screen: Profile }
   },
-});
+  {
+    headerMode: 'none'
+  }
+);
 
-RatingsDrawerItem.navigationOptions = {
-  drawerLabel: 'Ratings',
+ProfileDrawerItem.navigationOptions = {
+  drawerLabel: 'Profile',
   drawerIcon: ({ tintColor }) => (
     <Icon
-      name="star"
+      name="person"
       size={30}
       iconStyle={{
         width: 30,
@@ -27,4 +28,4 @@ RatingsDrawerItem.navigationOptions = {
   ),
 };
 
-export default RatingsDrawerItem;
+export default ProfileDrawerItem;

@@ -3,19 +3,21 @@ import React from 'react';
 import { StackNavigator } from 'react-navigation';
 import { Icon } from 'react-native-elements';
 
-import Ratings from '../views/ratings';
+import Lists from '../views/lists';
 
-const RatingsDrawerItem = StackNavigator({
-  Ratings: {
-    screen: Ratings,
-  },
-});
+const ListsDrawerItem = StackNavigator({
+  Playground: { screen: Lists }
+},
+  {
+    headerMode: 'none'
+  }
+);
 
-RatingsDrawerItem.navigationOptions = {
-  drawerLabel: 'Ratings',
+ListsDrawerItem.navigationOptions = {
+  drawerLabel: 'Lists',
   drawerIcon: ({ tintColor }) => (
     <Icon
-      name="star"
+      name="list"
       size={30}
       iconStyle={{
         width: 30,
@@ -27,4 +29,4 @@ RatingsDrawerItem.navigationOptions = {
   ),
 };
 
-export default RatingsDrawerItem;
+export default ListsDrawerItem;

@@ -3,19 +3,21 @@ import React from 'react';
 import { StackNavigator } from 'react-navigation';
 import { Icon } from 'react-native-elements';
 
-import Ratings from '../views/ratings';
+import Login from '../views/login';
 
-const RatingsDrawerItem = StackNavigator({
-  Ratings: {
-    screen: Ratings,
+const LoginDrawerItem = StackNavigator({
+  Playground: { screen: Login }
   },
-});
+  {
+    headerMode: 'none'
+  }
+);
 
-RatingsDrawerItem.navigationOptions = {
-  drawerLabel: 'Ratings',
+LoginDrawerItem.navigationOptions = {
+  drawerLabel: 'Login',
   drawerIcon: ({ tintColor }) => (
     <Icon
-      name="star"
+      name="email"
       size={30}
       iconStyle={{
         width: 30,
@@ -27,4 +29,4 @@ RatingsDrawerItem.navigationOptions = {
   ),
 };
 
-export default RatingsDrawerItem;
+export default LoginDrawerItem;

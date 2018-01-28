@@ -1,7 +1,7 @@
 import Expo from 'expo';
 import React, { Component } from 'react';
 import { View, ScrollView, StyleSheet, Text, Dimensions } from 'react-native';
-import { Input, SearchBar } from 'react-native-elements'
+import { Input, SearchBar, Icon } from 'react-native-elements'
 
 import SimpleIcon from 'react-native-vector-icons/SimpleLineIcons';
 import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -19,10 +19,19 @@ const dummySearchBarProps = {
 
 class InputHome extends Component {
   render() {
-    return <ScrollView style={styles.container} keyboardShouldPersistTaps="handled">
-        <SearchBar placeholder="Default searchbar" {...dummySearchBarProps} />
+    return (
+      <ScrollView style={styles.container} keyboardShouldPersistTaps="handled">
+        <View style={styles.headerContainer}>
+          <Icon color="white" name="search" size={62} />
+          <Text style={styles.heading}>Search Bars</Text>
+        </View>
         <SearchBar placeholder="iOS searchbar" platform="ios" {...dummySearchBarProps} />
         <SearchBar placeholder="Android searchbar" platform="android" {...dummySearchBarProps} />
+        <SearchBar placeholder="Default searchbar" {...dummySearchBarProps} />
+        <View style={[styles.headerContainer, {backgroundColor: '#616389'}]}>
+          <Icon color="white" name="input" size={62} />
+          <Text style={styles.heading}>Inputs</Text>
+        </View>
         <View style={styles.contentView}>
           <View style={{ backgroundColor: "#2F343B", width: SCREEN_WIDTH, alignItems: "center" }}>
             <Text
@@ -30,7 +39,8 @@ class InputHome extends Component {
                 fontSize: 30,
                 marginVertical: 10,
                 fontWeight: "300",
-                marginTop: 10
+                marginTop: 10,
+                color: "white"
               }}
             >
               Login
@@ -71,13 +81,26 @@ class InputHome extends Component {
             <Input containerStyle={{ borderRadius: 40, borderWidth: 1, borderColor: "rgba(110, 120, 170, 1)", height: 50, width: SCREEN_WIDTH - 50, marginTop: 10, marginBottom: 30 }} icon={<SimpleIcon name="lock" color="rgba(110, 120, 170, 1)" size={25} />} iconContainerStyle={{ marginLeft: 20 }} placeholder="Confirm Password" placeholderTextColor="rgba(110, 120, 170, 1)" inputStyle={{ marginLeft: 10, color: "white" }} autoCapitalize="none" keyboardAppearance="light" secureTextEntry={true} autoCorrect={false} keyboardType="default" returnKeyType="done" ref={input => (this.confirmPassword2Input = input)} blurOnSubmit={true} />
           </View>
         </View>
-      </ScrollView>;
+      </ScrollView>
+    )
   }
 }
 
 const styles = StyleSheet.create({
   container: {
     backgroundColor: 'white'
+  },
+  headerContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 40,
+    backgroundColor: '#B46486',
+  },
+  heading: {
+    color: 'white',
+    marginTop: 10,
+    fontSize: 22,
+    fontWeight: 'bold'
   },
   contentView: {
     flex: 1,

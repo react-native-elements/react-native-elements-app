@@ -310,7 +310,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: 40,
-    backgroundColor: colors.secondary,
+    backgroundColor: '#FD6B78',
   },
   heading: {
     color: 'white',

@@ -29,10 +29,14 @@ class Buttons extends Component {
           />
           <Button
             text="Add to Cart"
-            underlayColor="rgba(80,117,196,1)"
-            activeOpacity={0.4}
             textStyle={{fontWeight: 'bold', fontSize: 18}}
-            buttonStyle={{backgroundColor: 'rgba(90, 154, 230, 1)', height: 40, width: 200, borderWidth: 0, borderColor: 'transparent', borderRadius: 20}}
+            ButtonComponent={require('expo').LinearGradient}
+            linearGradientProps={{
+              colors: ['#FF9800', '#F44336'],
+              start: [1, 0],
+              end: [0.2, 0],
+            }}
+            buttonStyle={{height: 40, width: 200, borderWidth: 0, borderColor: 'transparent', borderRadius: 20}}
             containerStyle={{marginVertical: 10}}
             icon={
               <Icon
@@ -65,7 +69,7 @@ class Buttons extends Component {
             buttonStyle={{backgroundColor: 'rgba(92, 99,216, 1)', width: 300, height: 45, borderColor: 'transparent', borderWidth: 0, borderRadius: 5}}
             containerStyle={{marginTop: 20}}
           />
-          <View style={{flexDirection: 'row'}}>
+          <View style={{flexDirection: 'row', justifyContent: 'center'}}>
             <Button
               text="HOME"
               icon={
@@ -96,7 +100,7 @@ class Buttons extends Component {
               containerStyle={{marginTop: 20}}
             />
           </View>
-          <View style={{flexDirection: 'row'}}>
+          <View style={{flexDirection: 'row', justifyContent: 'center'}}>
             <Button
               text="Basic Button"
               buttonStyle={{backgroundColor: 'rgba(78, 116, 289, 1)', borderRadius: 3}}

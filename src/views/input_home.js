@@ -28,7 +28,7 @@ class InputHome extends Component {
         <SearchBar placeholder="iOS searchbar" platform="ios" {...dummySearchBarProps} />
         <SearchBar placeholder="Android searchbar" platform="android" {...dummySearchBarProps} />
         <SearchBar placeholder="Default searchbar" {...dummySearchBarProps} />
-        <View style={[styles.headerContainer, {backgroundColor: '#616389'}]}>
+        <View style={[styles.headerContainer, {backgroundColor: '#616389', marginTop: 20}]}>
           <Icon color="white" name="input" size={62} />
           <Text style={styles.heading}>Inputs</Text>
         </View>
@@ -94,7 +94,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: 40,
-    backgroundColor: '#B46486',
+    backgroundColor: '#B46486'
   },
   heading: {
     color: 'white',

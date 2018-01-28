@@ -13,13 +13,13 @@ class Buttons extends Component {
       selectedIndex: 0,
       selectedIndexes: [1, 2],
     };
-  } 
+  }
 
   render() {
     return (
       <ScrollView style={styles.container}>
         <View style={styles.contentView}>
-          <Button containerStyle={{marginVertical: 10}}/>
+          <Button containerStyle={{marginVertical: 10}} />
           <Button
             text ='LOG IN'
             buttonStyle={{height: 50, width: 250, backgroundColor: 'black', borderWidth: 2, borderColor: 'white', borderRadius: 30}}
@@ -39,7 +39,7 @@ class Buttons extends Component {
           <Button
             text="Add to Cart"
             textStyle={{fontWeight: 'bold', fontSize: 18}}
-            ButtonComponent={require('expo').LinearGradient}
+            ViewComponent={require('expo').LinearGradient}
             linearGradientProps={{
               colors: ['#FF9800', '#F44336'],
               start: [1, 0],

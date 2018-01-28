@@ -1,11 +1,20 @@
 import Expo from 'expo';
 import React, { Component } from 'react';
 import { View, ScrollView, StyleSheet } from 'react-native';
-import { Button } from 'react-native-elements'
+import { Button, ButtonGroup } from 'react-native-elements'
 
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 class Buttons extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      selectedIndex: 0,
+      selectedIndexes: [1, 2],
+    };
+  } 
+
   render() {
     return (
       <ScrollView style={styles.container}>
@@ -162,6 +171,21 @@ class Buttons extends Component {
               textStyle={{color: 'white', marginHorizontal: 20}}
             />
           </View>
+          <ButtonGroup
+            buttons={['SIMPLE', 'BUTTON', 'GROUP']}
+            selectedIndex={this.state.selectedIndex}
+            onPress={selectedIndex => {
+              this.setState({ selectedIndex });
+            }}
+          />
+          <ButtonGroup
+            buttons={['Multiple', 'Select', 'Button', 'Group']}
+            selectMultiple
+            selectedIndexes={this.state.selectedIndexes}
+            onPress={selectedIndexes => {
+              this.setState({ selectedIndexes });
+            }}
+          />
         </View>
       </ScrollView>
     );

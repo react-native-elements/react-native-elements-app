@@ -78,7 +78,7 @@ class Buttons extends Component {
             buttonStyle={{backgroundColor: 'rgba(92, 99,216, 1)', width: 300, height: 45, borderColor: 'transparent', borderWidth: 0, borderRadius: 5}}
             containerStyle={{marginTop: 20}}
           />
-          <View style={{flexDirection: 'row', justifyContent: 'center'}}>
+          <View style={{flexDirection: 'row', justifyContent: 'space-around'}}>
             <Button
               text="HOME"
               icon={
@@ -109,7 +109,7 @@ class Buttons extends Component {
               containerStyle={{marginTop: 20}}
             />
           </View>
-          <View style={{flexDirection: 'row', justifyContent: 'center'}}>
+          <View style={{flexDirection: 'row', justifyContent: 'space-around'}}>
             <Button
               text="Basic Button"
               buttonStyle={{backgroundColor: 'rgba(78, 116, 289, 1)', borderRadius: 3}}
@@ -122,7 +122,7 @@ class Buttons extends Component {
               textStyle={{color: 'rgba(78, 116, 289, 1)'}}
             />
           </View>
-          <View style={{justifyContent: 'center', alignItems: 'center', flexDirection: 'row'}}>
+          <View style={{justifyContent: 'space-around', alignItems: 'center', flexDirection: 'row'}}>
             <Button
               text="HOME"
               loading={true}
@@ -137,7 +137,7 @@ class Buttons extends Component {
               containerStyle={{marginTop: 20}}
             />
           </View>
-          <View style={{flexDirection: 'row'}}>
+          <View style={{flexDirection: 'row', justifyContent: 'space-around'}}>
             <Button
               text="Light"
               buttonStyle={{backgroundColor: 'rgba(244, 244, 244, 1)', width: null, height: 40, borderRadius: 3}}
@@ -157,7 +157,7 @@ class Buttons extends Component {
               textStyle={{color: 'white', marginHorizontal: 20}}
             />
           </View>
-          <View style={{flexDirection: 'row', justifyContent: 'center', alignItems: 'center', marginBottom: 20}}>
+          <View style={{flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center', marginBottom: 20}}>
             <Button
               text="Secondary"
               buttonStyle={{backgroundColor: 'rgba(127, 220, 103, 1)', width: null, height: 40}}

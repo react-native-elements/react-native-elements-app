@@ -3,7 +3,7 @@ import {
   StyleSheet, Text, View, Image, ScrollView, Dimensions, TouchableOpacity, StatusBar
 } from 'react-native';
 import { Button } from 'react-native-elements'
-import { Font, LinearGradient } from 'expo';
+import { Font } from 'expo';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
 const SCREEN_HEIGHT = Dimensions.get('window').height;
@@ -173,6 +173,7 @@ export default class LoginScreen1 extends Component {
                 </View>
               </View>
               <Button
+                ButtonComponent={require('expo').LinearGradient}
                 containerStyle={{ marginVertical: 20 }}
                 style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}
                 buttonStyle={{ height: 55, width: SCREEN_WIDTH - 40, borderRadius: 30, justifyContent: 'center', alignItems: 'center' }}

@@ -205,10 +205,11 @@ class Icons extends Component {
           ))}
         </List>
         <List>
-          <ListItem title="Name" textInputProps={{ placeholder: 'Type what your name' }} />
+          <ListItem title="Name" textInputProps={{ placeholder: 'Type your name' }} />
           <ListItem title="Switch that please 😲" switchProps={{}} />
           <ListItem title="Check that please 😢" checkBoxProps={{ value: true }} />
           <ListItem title="With a Badge !" badgeProps={{ value: '12' }} />
+          <ListItem title="This thing is checked 😎" checkmark />
         </List>
         <List>
           <ListItem

@@ -10,21 +10,20 @@ import Pricing from './src/drawer/pricing';
 import Login from './src/drawer/login';
 import Profile from './src/drawer/profile';
 import Lists from './src/drawer/lists';
+import Settings from './src/drawer/settings';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
 
 const CustomDrawerContentComponent = props => (
   <View style={{ flex: 1, backgroundColor: '#43484d' }}>
-    <View
-      style={{ marginTop: 40, justifyContent: 'center', alignItems: 'center' }}
-    >
+    <View style={{ marginTop: 40, justifyContent: 'center', alignItems: 'center' }}>
       <Image
         source={require('./src/images/logo.png')}
         style={{ width: SCREEN_WIDTH * 0.57 }}
         resizeMode="contain"
       />
     </View>
-    <View style={{marginLeft: 10}}>
+    <View style={{ marginLeft: 10 }}>
       <DrawerItems {...props} />
     </View>
   </View>
@@ -35,15 +34,15 @@ const MainRoot = DrawerNavigator(
   {
     Login: {
       path: '/login',
-      screen: Login
+      screen: Login,
     },
     Profile: {
       path: '/profile',
-      screen: Profile
+      screen: Profile,
     },
     Lists: {
       path: '/lists',
-      screen: Lists
+      screen: Lists,
     },
     Components: {
       path: '/components',
@@ -56,7 +55,11 @@ const MainRoot = DrawerNavigator(
     Pricing: {
       path: '/pricing',
       screen: Pricing,
-    }
+    },
+    Settings: {
+      path: '/settings',
+      screen: Settings,
+    },
   },
   {
     initialRouteName: 'Components',

@@ -17,6 +17,7 @@
   },
   "scripts": {
     "postinstall": "git submodule update",
-    "clean-install": "rm -rf node_modules && npm cache clean --force && watchman watch-del-all && npm install"
+    "clean-install":
+      "rm -rf node_modules && npm cache clean --force && watchman watch-del-all && npm install"
   }
 }

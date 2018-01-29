@@ -1,16 +1,29 @@
 import Expo from 'expo';
 import React, { Component } from 'react';
-import { View, ScrollView, StyleSheet } from 'react-native';
-import { Button } from 'react-native-elements'
+import { View, Text, ScrollView, StyleSheet } from 'react-native';
+import { Button, ButtonGroup } from 'react-native-elements'
 
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 class Buttons extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      selectedIndex: 0,
+      selectedIndexes: [0, 2, 3]
+    };
+  }
+
   render() {
     return (
       <ScrollView style={styles.container}>
         <View style={styles.contentView}>
-          <Button containerStyle={{marginVertical: 10}}/>
+          <View style={styles.headerContainer}>
+            <Icon color="white" name="rocket" size={62} />
+            <Text style={styles.heading}>Buttons</Text>
+          </View>
+          <Button containerStyle={{marginVertical: 10}} />
           <Button
             text ='LOG IN'
             buttonStyle={{height: 50, width: 250, backgroundColor: 'black', borderWidth: 2, borderColor: 'white', borderRadius: 30}}
@@ -29,10 +42,14 @@ class Buttons extends Component {
           />
           <Button
             text="Add to Cart"
-            underlayColor="rgba(80,117,196,1)"
-            activeOpacity={0.4}
             textStyle={{fontWeight: 'bold', fontSize: 18}}
-            buttonStyle={{backgroundColor: 'rgba(90, 154, 230, 1)', height: 40, width: 200, borderWidth: 0, borderColor: 'transparent', borderRadius: 20}}
+            ViewComponent={require('expo').LinearGradient}
+            linearGradientProps={{
+              colors: ['#FF9800', '#F44336'],
+              start: [1, 0],
+              end: [0.2, 0],
+            }}
+            buttonStyle={{height: 40, width: 200, borderWidth: 0, borderColor: 'transparent', borderRadius: 20}}
             containerStyle={{marginVertical: 10}}
             icon={
               <Icon
@@ -65,7 +82,7 @@ class Buttons extends Component {
             buttonStyle={{backgroundColor: 'rgba(92, 99,216, 1)', width: 300, height: 45, borderColor: 'transparent', borderWidth: 0, borderRadius: 5}}
             containerStyle={{marginTop: 20}}
           />
-          <View style={{flexDirection: 'row'}}>
+          <View style={{flexDirection: 'row', justifyContent: 'space-around'}}>
             <Button
               text="HOME"
               icon={
@@ -96,7 +113,7 @@ class Buttons extends Component {
               containerStyle={{marginTop: 20}}
             />
           </View>
-          <View style={{flexDirection: 'row'}}>
+          <View style={{flexDirection: 'row', justifyContent: 'space-around'}}>
             <Button
               text="Basic Button"
               buttonStyle={{backgroundColor: 'rgba(78, 116, 289, 1)', borderRadius: 3}}
@@ -109,7 +126,7 @@ class Buttons extends Component {
               textStyle={{color: 'rgba(78, 116, 289, 1)'}}
             />
           </View>
-          <View style={{justifyContent: 'center', alignItems: 'center', flexDirection: 'row'}}>
+          <View style={{justifyContent: 'space-around', alignItems: 'center', flexDirection: 'row'}}>
             <Button
               text="HOME"
               loading={true}
@@ -124,7 +141,7 @@ class Buttons extends Component {
               containerStyle={{marginTop: 20}}
             />
           </View>
-          <View style={{flexDirection: 'row'}}>
+          <View style={{flexDirection: 'row', justifyContent: 'space-around'}}>
             <Button
               text="Light"
               buttonStyle={{backgroundColor: 'rgba(244, 244, 244, 1)', width: null, height: 40, borderRadius: 3}}
@@ -144,7 +161,7 @@ class Buttons extends Component {
               textStyle={{color: 'white', marginHorizontal: 20}}
             />
           </View>
-          <View style={{flexDirection: 'row', justifyContent: 'center', alignItems: 'center', marginBottom: 20}}>
+          <View style={{flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center', marginBottom: 20}}>
             <Button
               text="Secondary"
               buttonStyle={{backgroundColor: 'rgba(127, 220, 103, 1)', width: null, height: 40}}
@@ -158,6 +175,27 @@ class Buttons extends Component {
               textStyle={{color: 'white', marginHorizontal: 20}}
             />
           </View>
+          <View style={[styles.headerContainer, { backgroundColor: '#292C44'}]}>
+            <Icon color="white" name="wrench" size={62} />
+            <Text style={styles.heading}>Button Groups</Text>
+          </View>
+          <ButtonGroup
+            buttons={['SIMPLE', 'BUTTON', 'GROUP']}
+            selectedIndex={this.state.selectedIndex}
+            onPress={selectedIndex => {
+              this.setState({ selectedIndex });
+            }}
+            containerStyle={{ marginBottom: 20 }}
+          />
+          <ButtonGroup
+            buttons={['Multiple', 'Select', 'Button', 'Group']}
+            selectMultiple
+            selectedIndexes={this.state.selectedIndexes}
+            onPress={selectedIndexes => {
+              this.setState({ selectedIndexes });
+            }}
+            containerStyle={{ marginBottom: 20 }}
+          />
         </View>
       </ScrollView>
     );
@@ -169,9 +207,21 @@ const styles = StyleSheet.create({
     backgroundColor: 'white'
   },
   contentView: {
-    flex: 1,
-    marginTop: 10
-  }
+    flex: 1
+  },
+  headerContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 40,
+    backgroundColor: '#4F80E1',
+    marginBottom: 20
+  },
+  heading: {
+    color: 'white',
+    marginTop: 10,
+    fontSize: 22,
+    fontWeight: 'bold'
+  },
 });
 
 export default Buttons;

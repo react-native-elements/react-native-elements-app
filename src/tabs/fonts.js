@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
 import { StackNavigator } from 'react-navigation';
+import { Icon } from 'react-native-elements';
 
 import FontsHome from '../views/fonts_home';
 import FontsDetails from '../views/fonts_detail';
@@ -19,8 +20,17 @@ const FontsTab = StackNavigator({
   Home: {
     screen: FontsTabView,
     path: '/',
-    navigationOptions: () => ({
+    navigationOptions: ({ navigation }) => ({
       title: 'Fonts',
+      headerLeft: (
+        <Icon
+          name="menu"
+          size={30}
+          type="entypo"
+          style={{ paddingLeft: 10 }}
+          onPress={() => navigation.navigate('DrawerOpen')}
+        />
+      ),
     }),
   },
   Detail: {

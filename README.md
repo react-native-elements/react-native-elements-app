@@ -2,24 +2,24 @@
 
 # React Native Elements App
 
-This repo uses React Native Elements as a submodule through `/node_modules/react-native-elements`. Hence once you clone this repo, you can make changes to any RNE `/src` files, test these changes through the expo app and also commit directly to the main RNE repo.
+This is the Demo app for [React Native Elements UI kit](https://github.com/react-native-training/react-native-elements) built with [Expo](https://expo.io/). In this app you will find examples on how to use various components as well as Production-ready screens which showcase how to combine multiple components to built entire views in your app.
 
-## Expo app
+This repo uses React Native Elements as a submodule through `/node_modules/react-native-elements`. Hence once you clone this repo, you can make changes to any RNE `/src` files, test these changes through this example app and also commit directly to the main RNE repo.
 
-Click here to run the [React Native Elements App](https://expo.io/@monte9/react-native-elements-app) on Expo which uses all of the React Native Elements components.
+### [Expo App](https://expo.io/@monte9/react-native-elements-app))
 
 ## Get Started
 
 1. Clone the project
 
 ```
-git clone https://github.com/react-native-training/react-native-hackathon-starter.git
+git clone --recursive https://github.com/react-native-training/react-native-elements-app.git
 ```
 
 2. Install node_modules
 
 ```
-npm install
+cd react-native-elements-app && npm install
 ```
 
 3. Verify submodule
@@ -27,7 +27,7 @@ npm install
 ```
 cd node_modules/react-native-elements
 
-git branch -v (should show rne master branch)
+git branch -v (should show master branch of react-native-elements)
 ```
 
 3. Open app with [Expo Desktop Client](https://docs.expo.io/versions/v16.0.0/index.html)
@@ -81,5 +81,4 @@ In the meantime, here's a taste of what's to come.
 </div>
 
 ## Docs
-
 Click [here](https://react-native-training.github.io/react-native-elements/API/buttons/) to view the docs for React Native Elements.

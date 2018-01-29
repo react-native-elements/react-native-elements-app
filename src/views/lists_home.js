@@ -141,7 +141,7 @@ class Icons extends Component {
       <ScrollView>
         <View style={styles.headerContainer}>
           <Icon color="white" name="invert-colors" size={62} />
-          <Text style={styles.heading}>Lists & More</Text>
+          <Text style={styles.heading}>Lists</Text>
         </View>
         <List>
           {list2.map((l, i) => (
@@ -191,13 +191,9 @@ class Icons extends Component {
         <List>
           <ListView renderRow={this.renderRow} dataSource={this.state.dataSource} />
         </List>
-        <View style={{ marginTop: 20 }}>
-          <ButtonGroup
-            textStyle={{ fontSize: 13 }}
-            onPress={this.updateIndex}
-            selectedIndex={selectedIndex}
-            buttons={buttons}
-          />
+        <View style={[styles.headerContainer, {backgroundColor: '#18CDCA', marginTop: 20}]}>
+          <Icon color="white" name="hdd-o" size={62} type="font-awesome" />
+          <Text style={styles.heading}>Cards</Text>
         </View>
         <View style={styles.container}>
           <Card title="CARD WITH DIVIDER">
@@ -305,7 +301,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: 40,
-    backgroundColor: colors.secondary,
+    backgroundColor: '#FD6B78'
   },
   heading: {
     color: 'white',

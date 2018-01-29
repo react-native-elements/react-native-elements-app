@@ -135,7 +135,11 @@ export default class Settings extends React.PureComponent {
 
   renderSectionHeader = () => <View style={{ height: 30 }} />;
 
-  ItemSeparatorComponent = () => <Divider style={{ marginLeft: 58 }} />;
+  ItemSeparatorComponent = () => (
+    <View style={{ backgroundColor: 'white' }}>
+      <Divider style={{ marginLeft: 58 }} />
+    </View>
+  );
 
   render() {
     return (

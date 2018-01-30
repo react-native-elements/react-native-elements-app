@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, StyleSheet, SectionList } from 'react-native';
 
-import { ListItem, Divider } from 'react-native-elements';
+import { ListItem, Divider, SearchBar } from 'react-native-elements';
 
 const ORANGE = '#FF9500';
 const BLUE = '#007AFF';
@@ -133,17 +133,25 @@ export default class Settings extends React.PureComponent {
     />
   );
 
-  renderSectionHeader = () => <View style={{ height: 30 }} />;
+  renderSectionHeader = () => <View style={styles.headerSection} />;
 
   ItemSeparatorComponent = () => (
-    <View style={{ backgroundColor: 'white' }}>
-      <Divider style={{ marginLeft: 58 }} />
+    <View style={styles.separatorComponent}>
+      <Divider style={styles.separator} />
+    </View>
+  );
+
+  ListHeaderComponent = () => (
+    <View>
+      <SearchBar platform="ios" placeholder="Search" />
+      <Divider />
     </View>
   );
 
   render() {
     return (
       <SectionList
+        ListHeaderComponent={this.ListHeaderComponent}
         contentContainerStyle={styles.containerStyle}
         sections={sections}
         renderItem={this.renderItem}
@@ -159,5 +167,14 @@ export default class Settings extends React.PureComponent {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: '#EFEFF4',
+  },
+  separatorComponent: {
+    backgroundColor: 'white',
+  },
+  separator: {
+    marginLeft: 58,
+  },
+  headerSection: {
+    height: 30,
   },
 });

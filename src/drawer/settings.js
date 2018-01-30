@@ -10,6 +10,10 @@ const SettingsDrawerItem = StackNavigator({
     screen: Settings,
     navigationOptions: ({ navigation }) => ({
       title: 'Settings',
+      headerStyle: {
+        borderBottomWidth: 0,
+        backgroundColor: '#f5f5f5',
+      },
       headerLeft: (
         <Icon
           name="menu"

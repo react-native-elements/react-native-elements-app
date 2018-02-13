@@ -39,7 +39,6 @@ class Buttons extends Component {
           <Button
             text="Add to Cart"
             textStyle={{fontWeight: 'bold', fontSize: 18}}
-            ViewComponent={require('expo').LinearGradient}
             linearGradientProps={{
               colors: ['#FF9800', '#F44336'],
               start: [1, 0],

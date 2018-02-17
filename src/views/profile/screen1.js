@@ -33,8 +33,8 @@ class CustomButton extends Component {
 
     return (
       <Button
-        text={title}
-        textStyle={{ fontSize: 15, color: 'white', fontFamily: 'regular' }}
+        title={title}
+        titleStyle={{ fontSize: 15, color: 'white', fontFamily: 'regular' }}
         buttonStyle={selected ? { backgroundColor: 'rgba(213, 100, 140, 1)', borderRadius: 100, width: 127 } : { borderWidth: 1, borderColor: 'white', borderRadius: 30, width: 127, backgroundColor: 'transparent' }}
         containerStyle={{ marginRight: 10 }}
         onPress={() => this.setState({ selected: !selected })}
@@ -182,8 +182,8 @@ export default class LoginScreen1 extends Component {
                   start: [1, 0],
                   end: [0.2, 0]
                 }}
-                text="Message Theresa"
-                textStyle={{ fontFamily: 'regular', fontSize: 20, color: 'white', textAlign: 'center' }}
+                title="Message Theresa"
+                titleStyle={{ fontFamily: 'regular', fontSize: 20, color: 'white', textAlign: 'center' }}
                 onPress={() => console.log('Message Theresa')}
                 activeOpacity={0.5}
               />

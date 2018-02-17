@@ -1,6 +1,6 @@
 import Expo from 'expo';
 import React, { Component } from 'react';
-import { View, ScrollView, StyleSheet } from 'react-native';
+import { View, Text, ScrollView, StyleSheet } from 'react-native';
 import { Button, ButtonGroup } from 'react-native-elements'
 
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -11,7 +11,7 @@ class Buttons extends Component {
     super(props);
     this.state = {
       selectedIndex: 0,
-      selectedIndexes: [1, 2],
+      selectedIndexes: [0, 2, 3]
     };
   }
 
@@ -19,6 +19,10 @@ class Buttons extends Component {
     return (
       <ScrollView style={styles.container}>
         <View style={styles.contentView}>
+          <View style={styles.headerContainer}>
+            <Icon color="white" name="rocket" size={62} />
+            <Text style={styles.heading}>Buttons</Text>
+          </View>
           <Button containerStyle={{marginVertical: 10}} />
           <Button
             title='LOG IN'
@@ -171,12 +175,17 @@ class Buttons extends Component {
               titleStyle={{color: 'white', marginHorizontal: 20}}
             />
           </View>
+          <View style={[styles.headerContainer, { backgroundColor: '#292C44'}]}>
+            <Icon color="white" name="wrench" size={62} />
+            <Text style={styles.heading}>Button Groups</Text>
+          </View>
           <ButtonGroup
             buttons={['SIMPLE', 'BUTTON', 'GROUP']}
             selectedIndex={this.state.selectedIndex}
             onPress={selectedIndex => {
               this.setState({ selectedIndex });
             }}
+            containerStyle={{ marginBottom: 20 }}
           />
           <ButtonGroup
             buttons={['Multiple', 'Select', 'Button', 'Group']}
@@ -185,6 +194,7 @@ class Buttons extends Component {
             onPress={selectedIndexes => {
               this.setState({ selectedIndexes });
             }}
+            containerStyle={{ marginBottom: 20 }}
           />
         </View>
       </ScrollView>
@@ -197,9 +207,21 @@ const styles = StyleSheet.create({
     backgroundColor: 'white'
   },
   contentView: {
-    flex: 1,
-    marginTop: 10
-  }
+    flex: 1
+  },
+  headerContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 40,
+    backgroundColor: '#4F80E1',
+    marginBottom: 20
+  },
+  heading: {
+    color: 'white',
+    marginTop: 10,
+    fontSize: 22,
+    fontWeight: 'bold'
+  },
 });
 
 export default Buttons;

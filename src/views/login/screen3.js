@@ -154,16 +154,18 @@ export default class LoginScreen2 extends Component {
                     clear
                     activeOpacity={0.7}
                     onPress={() => this.selectCategory(0)}
-                    textStyle={[styles.categoryText, isLoginPage && styles.selectedCategoryText]}
-                    text={'Login'}
+                    containerStyle={{flex: 1}}
+                    titleStyle={[styles.categoryText, isLoginPage && styles.selectedCategoryText]}
+                    title={'Login'}
                   />
                   <Button
                     disabled={isLoading}
                     clear
                     activeOpacity={0.7}
                     onPress={() => this.selectCategory(1)}
-                    textStyle={[styles.categoryText, isSignUpPage && styles.selectedCategoryText]}
-                    text={'Sign up'}
+                    containerStyle={{flex: 1}}
+                    titleStyle={[styles.categoryText, isSignUpPage && styles.selectedCategoryText]}
+                    title={'Sign up'}
                   />
                 </View>
                 <View style={styles.rowSelector}>
@@ -252,9 +254,9 @@ export default class LoginScreen2 extends Component {
                       buttonStyle={styles.loginButton}
                       containerStyle={{marginTop: 32, flex: 0}}
                       activeOpacity={0.8}
-                      text={isLoginPage ? 'LOGIN' : 'SIGN UP'}
+                      title={isLoginPage ? 'LOGIN' : 'SIGN UP'}
                       onPress={isLoginPage ? this.login : this.signUp}
-                      textStyle={styles.loginTextButton}
+                      titleStyle={styles.loginTextButton}
                       loading={isLoading}
                       disabled={isLoading}
                     />
@@ -262,8 +264,8 @@ export default class LoginScreen2 extends Component {
               </KeyboardAvoidingView>
               <View style={styles.helpContainer}>
                 <Button
-                  text={'Need help ?'}
-                  textStyle={{color: 'white'}}
+                  title={'Need help ?'}
+                  titleStyle={{color: 'white'}}
                   buttonStyle={{backgroundColor: 'transparent'}}
                   underlayColor='transparent'
                   onPress={() => console.log('Account created')}

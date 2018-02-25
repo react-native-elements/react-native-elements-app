@@ -241,7 +241,7 @@ export default class LoginScreen3 extends Component {
             </View>
             <Button
               loading={isLoading}
-              text="SIGNUP"
+              title="SIGNUP"
               containerStyle={{ flex: -1 }}
               buttonStyle={styles.signUpButton}
               linearGradientProps={{
@@ -249,7 +249,7 @@ export default class LoginScreen3 extends Component {
                 start: [1, 0],
                 end: [0.2, 0],
               }}
-              textStyle={styles.signUpButtonText}
+              titleStyle={styles.signUpButtonText}
               onPress={this.signup}
               disabled={isLoading}
             />
@@ -259,8 +259,8 @@ export default class LoginScreen3 extends Component {
               Already have an account.
             </Text>
             <Button
-              text="Login here"
-              textStyle={styles.loginHereText}
+              title="Login here"
+              titleStyle={styles.loginHereText}
               containerStyle={{ flex: -1 }}
               buttonStyle={{ backgroundColor: 'transparent' }}
               underlayColor="transparent"

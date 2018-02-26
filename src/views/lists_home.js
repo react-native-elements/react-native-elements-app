@@ -211,7 +211,7 @@ class Icons extends Component {
             buttons: ['Flower', 'Coco'],
           }} />
           <ListItem title="Check that please 😢" checkBoxProps={{ value: true }} />
-          <ListItem title="With a Badge !" badgeProps={{ value: '12' }} />
+          <ListItem title="With a Badge ! 😻" badgeProps={{ value: '12' }} />
           <ListItem title="This thing is checked 😎" checkmark />
         </List>
         <List>

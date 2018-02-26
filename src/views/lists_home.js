@@ -207,6 +207,9 @@ class Icons extends Component {
         <List>
           <ListItem title="Name" textInputProps={{ placeholder: 'Type your name' }} />
           <ListItem title="Switch that please 😲" switchProps={{}} />
+          <ListItem title="Choose 🤯" buttonGroupProps={{
+            buttons: ['Flower', 'Coco'],
+          }} />
           <ListItem title="Check that please 😢" checkBoxProps={{ value: true }} />
           <ListItem title="With a Badge !" badgeProps={{ value: '12' }} />
           <ListItem title="This thing is checked 😎" checkmark />

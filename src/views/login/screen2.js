@@ -244,7 +244,6 @@ export default class LoginScreen3 extends Component {
               title="SIGNUP"
               containerStyle={{ flex: -1 }}
               buttonStyle={styles.signUpButton}
-              ViewComponent={require('expo').LinearGradient}
               linearGradientProps={{
                 colors: ['#FF9800', '#F44336'],
                 start: [1, 0],

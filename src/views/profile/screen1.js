@@ -173,7 +173,6 @@ export default class LoginScreen1 extends Component {
                 </View>
               </View>
               <Button
-                ViewComponent={require('expo').LinearGradient}
                 containerStyle={{ marginVertical: 20 }}
                 style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}
                 buttonStyle={{ height: 55, width: SCREEN_WIDTH - 40, borderRadius: 30, justifyContent: 'center', alignItems: 'center' }}

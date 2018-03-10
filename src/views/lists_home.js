@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 import Expo from 'expo';
 import React, { Component } from 'react';
 import {
@@ -103,6 +105,39 @@ const list2 = [
     subtitle: 'CTO',
   },
 ];
+
+const list3 = [
+  {
+    image_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
+    icon: null,
+    title: null,
+  },
+  {
+    image_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
+    icon: null,
+    title: null,
+  },
+  {
+    image_url: null,
+    icon: null,
+    title: 'LR',
+  },
+  {
+    image_url: null,
+    icon: {name: 'user', type: 'font-awesome'},
+    title: null,
+  },
+  {
+    image_url: null,
+    icon: {name: 'user-female', type: 'simple-line-icon'},
+    title: null,
+  },
+  {
+    image_url: null,
+    icon: {name: 'baidu', type: 'entypo'},
+    title: null,
+  },
+]
 
 class Icons extends Component {
   constructor() {
@@ -286,11 +321,23 @@ class Icons extends Component {
             containerStyle={{
               marginTop: 15,
               marginBottom: 15,
-              height: 230,
-              paddingLeft: 10,
             }}
             title="AVATARS"
           >
+            {_.chunk(list3, 3).map((chunk, chunkIndex) => (
+              <View style={{ flexDirection: 'row', justifyContent: 'space-around', marginBottom: 10 }} key={chunkIndex}>
+                {chunk.map((l, i) => (
+                  <Avatar
+                    large
+                    rounded
+                    source={l.image_url ? { uri: l.image_url } : null}
+                    icon={l.icon}
+                    title={l.title}
+                    key={`${chunkIndex}-${i}`}
+                  />
+                ))}
+              </View>
+            ))}
           </Card>
         </View>
       </ScrollView>

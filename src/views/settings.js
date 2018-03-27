@@ -114,11 +114,18 @@ const sections = [
 
 export default class Settings extends React.PureComponent {
   renderItem = ({
-    item: { title, backgroundColor, icon, rightTitle, hideDisclosure, checkbox },
+    item: {
+      title,
+      backgroundColor,
+      icon,
+      rightTitle,
+      hideDisclosure,
+      checkbox,
+    },
   }) => (
     <ListItem
       containerStyle={{ paddingVertical: 8 }}
-      switchProps={checkbox && {}}
+      switch={checkbox && {}}
       key={title}
       disclosure={!hideDisclosure}
       rightTitle={rightTitle}
@@ -127,7 +134,12 @@ export default class Settings extends React.PureComponent {
         name: icon,
         size: 20,
         color: 'white',
-        containerStyle: { backgroundColor, width: 28, height: 28, borderRadius: 6 },
+        containerStyle: {
+          backgroundColor,
+          width: 28,
+          height: 28,
+          borderRadius: 6,
+        },
       }}
       title={title}
     />

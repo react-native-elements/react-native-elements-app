@@ -78,26 +78,31 @@ const list2 = [
     name: 'Amy Farha',
     avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
     subtitle: 'Vice President',
+    linearGradientColors: ['#FF9800', '#F44336'],
   },
   {
     name: 'Chris Jackson',
     avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
     subtitle: 'Vice Chairman',
+    linearGradientColors: ['#3F51B5', '#2196F3'],
   },
   {
     name: 'Amanda Martin',
     avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg',
     subtitle: 'CEO',
+    linearGradientColors: ['#FFD600', '#FF9800'],
   },
   {
     name: 'Christy Thomas',
     avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/kfriedson/128.jpg',
     subtitle: 'Lead Developer',
+    linearGradientColors: ['#4CAF50', '#8BC34A'],
   },
   {
     name: 'Melissa Jones',
     avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/nuraika/128.jpg',
     subtitle: 'CTO',
+    linearGradientColors: ['#F44336', '#E91E63'],
   },
 ];
 
@@ -232,7 +237,47 @@ class Icons extends Component {
         <List>
           <ListView renderRow={this.renderRow} dataSource={this.state.dataSource} />
         </List>
-        <View style={[styles.headerContainer, { backgroundColor: '#18CDCA', marginTop: 20 }]}>
+        <View
+          style={[
+            styles.headerContainer,
+            { backgroundColor: '#FF9800', marginTop: 20 },
+          ]}
+        >
+          <Icon color="white" name="magic" size={62} type="font-awesome" />
+          <Text style={styles.heading}>Magic</Text>
+        </View>
+        <View style={{ backgroundColor: '#ECEFF1', paddingVertical: 8 }}>
+          {list2.map((l, i) => (
+            <ListItem
+              roundAvatar
+              leftAvatar={{ source: { uri: l.avatar_url } }}
+              key={i}
+              scaleProps={{
+                friction: 90,
+                tension: 100,
+                activeScale: 0.95,
+              }}
+              linearGradientProps={{
+                colors: l.linearGradientColors,
+                start: [1, 0],
+                end: [0.2, 0],
+              }}
+              onPress={log}
+              title={l.name}
+              titleProps={{ style: { color: 'white', fontWeight: 'bold' } }}
+              subtitleProps={{ style: { color: 'white' } }}
+              subtitle={l.subtitle}
+              disclosureColor="white"
+              disclosure
+              containerStyle={{
+                marginHorizontal: 16,
+                marginVertical: 8,
+                borderRadius: 8,
+              }}
+            />
+          ))}
+        </View>
+        <View style={[styles.headerContainer, { backgroundColor: '#18CDCA' }]}>
           <Icon color="white" name="hdd-o" size={62} type="font-awesome" />
           <Text style={styles.heading}>Cards</Text>
         </View>

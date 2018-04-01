@@ -1,6 +1,6 @@
 import React from 'react';
 import Expo, { AppLoading, Asset, Font } from 'expo';
-import { FontAwesome } from '@expo/vector-icons';
+import { FontAwesome, Ionicons } from '@expo/vector-icons';
 import { View, Image, Dimensions } from 'react-native';
 import { DrawerNavigator, DrawerItems } from 'react-navigation';
 
@@ -111,7 +111,7 @@ export default class AppContainer extends React.Component {
       require('./assets/images/user-student.png'),
     ]);
 
-    const fontAssets = cacheFonts([FontAwesome.font]);
+    const fontAssets = cacheFonts([FontAwesome.font, Ionicons.font]);
 
     await Promise.all([...imageAssets, ...fontAssets]);
   }

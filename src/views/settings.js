@@ -129,7 +129,7 @@ export default class Settings extends React.PureComponent {
       key={title}
       disclosure={!hideDisclosure}
       rightTitle={rightTitle}
-      icon={{
+      leftIcon={{
         type: 'ionicon',
         name: icon,
         size: 20,

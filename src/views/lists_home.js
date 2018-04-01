@@ -229,7 +229,7 @@ class Icons extends Component {
           />
           <ListItem
             title="Check that please 😢"
-            checkBox={{ value: true }}
+            checkBox={{ checked: true }}
             bottomDivider
           />
           <ListItem
@@ -248,7 +248,7 @@ class Icons extends Component {
                 <Text style={styles.ratingText}>5 months ago</Text>
               </View>
             }
-            leftAvatar={{ source: require('../images/avatar1.jpg') }}
+            leftAvatar={{ source: require('../../assets/images/avatar1.jpg') }}
           />
         </List>
         <List>

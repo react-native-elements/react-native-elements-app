@@ -2,17 +2,21 @@ import _ from 'lodash';
 
 import Expo from 'expo';
 import React, { Component } from 'react';
-import { View, ScrollView, StyleSheet, Image, TouchableHighlight, ListView } from 'react-native';
+import {
+  View,
+  ScrollView,
+  StyleSheet,
+  Image,
+  TouchableHighlight,
+  ListView,
+} from 'react-native';
 
 import {
   Text,
   Card,
   ButtonGroup,
   Tile,
-  Col,
-  Row,
   Icon,
-  List,
   ListItem,
   Avatar,
 } from 'react-native-elements';
@@ -36,7 +40,8 @@ const users = [
   },
   {
     name: 'talhaconcepts',
-    avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/talhaconcepts/128.jpg',
+    avatar:
+      'https://s3.amazonaws.com/uifaces/faces/twitter/talhaconcepts/128.jpg',
   },
   {
     name: 'andy vitale',
@@ -76,13 +81,15 @@ const list1 = [
 const list2 = [
   {
     name: 'Amy Farha',
-    avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
+    avatar_url:
+      'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
     subtitle: 'Vice President',
     linearGradientColors: ['#FF9800', '#F44336'],
   },
   {
     name: 'Chris Jackson',
-    avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
+    avatar_url:
+      'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
     subtitle: 'Vice Chairman',
     linearGradientColors: ['#3F51B5', '#2196F3'],
   },
@@ -94,13 +101,15 @@ const list2 = [
   },
   {
     name: 'Christy Thomas',
-    avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/kfriedson/128.jpg',
+    avatar_url:
+      'https://s3.amazonaws.com/uifaces/faces/twitter/kfriedson/128.jpg',
     subtitle: 'Lead Developer',
     linearGradientColors: ['#4CAF50', '#8BC34A'],
   },
   {
     name: 'Melissa Jones',
-    avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/nuraika/128.jpg',
+    avatar_url:
+      'https://s3.amazonaws.com/uifaces/faces/twitter/nuraika/128.jpg',
     subtitle: 'CTO',
     linearGradientColors: ['#F44336', '#E91E63'],
   },
@@ -108,12 +117,14 @@ const list2 = [
 
 const list3 = [
   {
-    image_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
+    image_url:
+      'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
     icon: null,
     title: null,
   },
   {
-    image_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
+    image_url:
+      'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
     icon: null,
     title: null,
   },
@@ -124,20 +135,20 @@ const list3 = [
   },
   {
     image_url: null,
-    icon: {name: 'user', type: 'font-awesome'},
+    icon: { name: 'user', type: 'font-awesome' },
     title: null,
   },
   {
     image_url: null,
-    icon: {name: 'user-female', type: 'simple-line-icon'},
+    icon: { name: 'user-female', type: 'simple-line-icon' },
     title: null,
   },
   {
     image_url: null,
-    icon: {name: 'baidu', type: 'entypo'},
+    icon: { name: 'baidu', type: 'entypo' },
     title: null,
   },
-]
+];
 
 class Icons extends Component {
   constructor() {
@@ -184,7 +195,7 @@ class Icons extends Component {
           <Icon color="white" name="invert-colors" size={62} />
           <Text style={styles.heading}>Lists</Text>
         </View>
-        <List>
+        <View style={styles.list}>
           {list2.map((l, i) => (
             <ListItem
               leftAvatar={{ rounded: true, source: { uri: l.avatar_url } }}
@@ -196,12 +207,16 @@ class Icons extends Component {
               bottomDivider
             />
           ))}
-        </List>
-        <List>
+        </View>
+        <View style={styles.list}>
           {list2.map((l, i) => (
             <ListItem
               key={i}
-              leftIcon={{ name: 'user-circle-o', type: 'font-awesome', color: 'blue' }}
+              leftIcon={{
+                name: 'user-circle-o',
+                type: 'font-awesome',
+                color: 'blue',
+              }}
               title={l.name}
               titleStyle={{ color: 'red' }}
               subtitle={l.subtitle}
@@ -211,8 +226,8 @@ class Icons extends Component {
               bottomDivider
             />
           ))}
-        </List>
-        <List>
+        </View>
+        <View style={styles.list}>
           <ListItem
             title="Name"
             input={{ placeholder: 'Type your name' }}
@@ -238,22 +253,28 @@ class Icons extends Component {
             bottomDivider
           />
           <ListItem title="This thing is checked 😎" checkmark bottomDivider />
-        </List>
-        <List>
+        </View>
+        <View style={styles.list}>
           <ListItem
             title="Limited supply! Its like digital gold!"
             subtitle={
               <View style={styles.subtitleView}>
-                <Image source={require('../images/rating.png')} style={styles.ratingImage} />
+                <Image
+                  source={require('../images/rating.png')}
+                  style={styles.ratingImage}
+                />
                 <Text style={styles.ratingText}>5 months ago</Text>
               </View>
             }
             leftAvatar={{ source: require('../../assets/images/avatar1.jpg') }}
           />
-        </List>
-        <List>
-          <ListView renderRow={this.renderRow} dataSource={this.state.dataSource} />
-        </List>
+        </View>
+        <View style={styles.list}>
+          <ListView
+            renderRow={this.renderRow}
+            dataSource={this.state.dataSource}
+          />
+        </View>
         <View
           style={[
             styles.headerContainer,
@@ -301,7 +322,11 @@ class Icons extends Component {
             {users.map((u, i) => {
               return (
                 <View key={i} style={styles.user}>
-                  <Image style={styles.image} resizeMode="cover" source={{ uri: u.avatar }} />
+                  <Image
+                    style={styles.image}
+                    resizeMode="cover"
+                    source={{ uri: u.avatar }}
+                  />
                   <Text style={styles.name}>{u.name}</Text>
                 </View>
               );
@@ -322,7 +347,10 @@ class Icons extends Component {
             </Text>
             <Text style={styles.fonts}>Normal Text</Text>
           </Card>
-          <Card containerStyle={{ marginTop: 15, marginBottom: 15 }} title="TILES">
+          <Card
+            containerStyle={{ marginTop: 15, marginBottom: 15 }}
+            title="TILES"
+          >
             <View>
               <Tile
                 imageSrc={{
@@ -340,7 +368,8 @@ class Icons extends Component {
             <View style={{ paddingTop: 20 }}>
               <Tile
                 imageSrc={{
-                  uri: 'https://awildgeographer.files.wordpress.com/2015/02/john_muir_glacier.jpg',
+                  uri:
+                    'https://awildgeographer.files.wordpress.com/2015/02/john_muir_glacier.jpg',
                 }}
                 icon={{
                   name: 'heart',
@@ -366,13 +395,15 @@ class Icons extends Component {
                 titleStyle={{ fontSize: 20 }}
                 activeOpacity={1}
                 width={310}
-                contentContainerStyle={{ height: 70 }}>
+                contentContainerStyle={{ height: 70 }}
+              >
                 <View
                   style={{
                     flex: 1,
                     flexDirection: 'row',
                     justifyContent: 'space-between',
-                  }}>
+                  }}
+                >
                   <Text style={{ color: 'green' }}>Visit</Text>
                   <Text style={{ color: 'blue' }}>Find out More</Text>
                 </View>
@@ -387,7 +418,14 @@ class Icons extends Component {
             title="AVATARS"
           >
             {_.chunk(list3, 3).map((chunk, chunkIndex) => (
-              <View style={{ flexDirection: 'row', justifyContent: 'space-around', marginBottom: 10 }} key={chunkIndex}>
+              <View
+                style={{
+                  flexDirection: 'row',
+                  justifyContent: 'space-around',
+                  marginBottom: 10,
+                }}
+                key={chunkIndex}
+              >
                 {chunk.map((l, i) => (
                   <Avatar
                     large
@@ -410,6 +448,12 @@ class Icons extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+  },
+  list: {
+    marginTop: 20,
+    borderTopWidth: 1,
+    borderColor: colors.greyOutline,
+    backgroundColor: '#fff',
   },
   headerContainer: {
     justifyContent: 'center',

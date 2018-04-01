@@ -9,9 +9,8 @@
     "orientation": "portrait",
     "primaryColor": "#cccccc",
     "icon": "./assets/icons/icon.png",
-    "loading": {
-      "icon": "./assets/icons/loading.png",
-      "hideExponentText": false
+    "splash": {
+      "image": "./assets/icons/loading.png"
     },
     "packagerOpts": {
       "assetExts": [

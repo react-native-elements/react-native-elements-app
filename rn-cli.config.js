@@ -1,7 +1,7 @@
-const metroBundler = require('metro-bundler');
+const blacklist = require('metro/src/blacklist');
 
 module.exports = {
   getBlacklistRE: function () {
-    return metroBundler.createBlacklist([/node_modules\/react-native-elements\/node_modules\/.*/]);
+    return blacklist([/node_modules\/react-native-elements\/node_modules\/.*/]);
   }
 };

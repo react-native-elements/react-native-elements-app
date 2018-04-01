@@ -18,7 +18,7 @@ const sections = [
         title: 'Airplane Mode',
         icon: 'ios-plane',
         backgroundColor: ORANGE,
-        hideDisclosure: true,
+        hideChevron: true,
         checkbox: true,
       },
       {
@@ -119,15 +119,15 @@ export default class Settings extends React.PureComponent {
       backgroundColor,
       icon,
       rightTitle,
-      hideDisclosure,
+      hideChevron,
       checkbox,
     },
   }) => (
     <ListItem
       containerStyle={{ paddingVertical: 8 }}
-      switch={checkbox && {}}
+      switch={checkbox && { value: true }}
       key={title}
-      disclosure={!hideDisclosure}
+      chevron={!hideChevron}
       rightTitle={rightTitle}
       leftIcon={{
         type: 'ionicon',
@@ -160,9 +160,12 @@ export default class Settings extends React.PureComponent {
     </View>
   );
 
+  keyExtractor = (item, index) => index
+
   render() {
     return (
       <SectionList
+        keyExtractor={this.keyExtractor}
         ListHeaderComponent={this.ListHeaderComponent}
         contentContainerStyle={styles.containerStyle}
         sections={sections}

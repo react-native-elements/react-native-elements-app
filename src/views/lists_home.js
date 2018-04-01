@@ -2,14 +2,7 @@ import _ from 'lodash';
 
 import Expo from 'expo';
 import React, { Component } from 'react';
-import {
-  View,
-  ScrollView,
-  StyleSheet,
-  Image,
-  TouchableHighlight,
-  ListView,
-} from 'react-native';
+import { View, ScrollView, StyleSheet, Image, TouchableHighlight, ListView } from 'react-native';
 
 import {
   Text,
@@ -21,8 +14,10 @@ import {
   Icon,
   List,
   ListItem,
-  Avatar
+  Avatar,
 } from 'react-native-elements';
+
+import { FontAwesome, MaterialIcons } from '@expo/vector-icons';
 
 import colors from 'HSColors';
 
@@ -83,26 +78,31 @@ const list2 = [
     name: 'Amy Farha',
     avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
     subtitle: 'Vice President',
+    linearGradientColors: ['#FF9800', '#F44336'],
   },
   {
     name: 'Chris Jackson',
     avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
     subtitle: 'Vice Chairman',
+    linearGradientColors: ['#3F51B5', '#2196F3'],
   },
   {
     name: 'Amanda Martin',
     avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg',
     subtitle: 'CEO',
+    linearGradientColors: ['#FFD600', '#FF9800'],
   },
   {
     name: 'Christy Thomas',
     avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/kfriedson/128.jpg',
     subtitle: 'Lead Developer',
+    linearGradientColors: ['#4CAF50', '#8BC34A'],
   },
   {
     name: 'Melissa Jones',
     avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/nuraika/128.jpg',
     subtitle: 'CTO',
+    linearGradientColors: ['#F44336', '#E91E63'],
   },
 ];
 
@@ -166,7 +166,9 @@ class Icons extends Component {
         key={sectionID}
         onPress={log}
         title={rowData.title}
-        icon={{ name: rowData.icon }}
+        leftIcon={{ name: rowData.icon }}
+        chevron
+        bottomDivider
       />
     );
   }
@@ -185,53 +187,112 @@ class Icons extends Component {
         <List>
           {list2.map((l, i) => (
             <ListItem
-              roundAvatar
-              avatar={{ uri: l.avatar_url }}
+              leftAvatar={{ rounded: true, source: { uri: l.avatar_url } }}
               key={i}
               onPress={log}
               title={l.name}
               subtitle={l.subtitle}
+              chevron
+              bottomDivider
             />
           ))}
         </List>
         <List>
-          {
-            list2.map((l, i) => (
-              <ListItem
-                key={i}
-                leftIcon={{ name: 'user-circle-o', type: 'font-awesome', style: {color: 'blue'} }}
-                title={l.name}
-                titleStyle={{color: 'red'}}
-                subtitle={l.subtitle}
-                rightTitle='11:00am'
-                rightTitleStyle={{color: 'green'}}
-              />
-            ))
-          }
+          {list2.map((l, i) => (
+            <ListItem
+              key={i}
+              leftIcon={{ name: 'user-circle-o', type: 'font-awesome', color: 'blue' }}
+              title={l.name}
+              titleStyle={{ color: 'red' }}
+              subtitle={l.subtitle}
+              rightTitle="11:00am"
+              rightTitleStyle={{ color: 'green' }}
+              rightSubtitle="12:00am"
+              bottomDivider
+            />
+          ))}
         </List>
         <List>
           <ListItem
-            roundAvatar
+            title="Name"
+            input={{ placeholder: 'Type your name' }}
+            chevron
+            bottomDivider
+          />
+          <ListItem title="Switch that please 😲" switch={{}} bottomDivider />
+          <ListItem
+            title="Choose 🤯"
+            buttonGroup={{
+              buttons: ['Flower', 'Coco'],
+            }}
+            bottomDivider
+          />
+          <ListItem
+            title="Check that please 😢"
+            checkBox={{ checked: true }}
+            bottomDivider
+          />
+          <ListItem
+            title="With a Badge ! 😻"
+            badge={{ value: '12' }}
+            bottomDivider
+          />
+          <ListItem title="This thing is checked 😎" checkmark bottomDivider />
+        </List>
+        <List>
+          <ListItem
             title="Limited supply! Its like digital gold!"
             subtitle={
               <View style={styles.subtitleView}>
-                <Image
-                  source={require('../images/rating.png')}
-                  style={styles.ratingImage}
-                />
+                <Image source={require('../images/rating.png')} style={styles.ratingImage} />
                 <Text style={styles.ratingText}>5 months ago</Text>
               </View>
             }
-            avatar={require('../images/avatar1.jpg')}
+            leftAvatar={{ source: require('../../assets/images/avatar1.jpg') }}
           />
         </List>
         <List>
-          <ListView
-            renderRow={this.renderRow}
-            dataSource={this.state.dataSource}
-          />
+          <ListView renderRow={this.renderRow} dataSource={this.state.dataSource} />
         </List>
-        <View style={[styles.headerContainer, {backgroundColor: '#18CDCA', marginTop: 20}]}>
+        <View
+          style={[
+            styles.headerContainer,
+            { backgroundColor: '#FF9800', marginTop: 20 },
+          ]}
+        >
+          <Icon color="white" name="magic" size={62} type="font-awesome" />
+          <Text style={styles.heading}>Magic</Text>
+        </View>
+        <View style={{ backgroundColor: '#ECEFF1', paddingVertical: 8 }}>
+          {list2.map((l, i) => (
+            <ListItem
+              leftAvatar={{ rounded: true, source: { uri: l.avatar_url } }}
+              key={i}
+              scaleProps={{
+                friction: 90,
+                tension: 100,
+                activeScale: 0.95,
+              }}
+              linearGradientProps={{
+                colors: l.linearGradientColors,
+                start: [1, 0],
+                end: [0.2, 0],
+              }}
+              title={l.name}
+              titleStyle={{ color: 'white', fontWeight: 'bold' }}
+              subtitleStyle={{ color: 'white' }}
+              subtitle={l.subtitle}
+              chevronColor="white"
+              chevron
+              containerStyle={{
+                marginHorizontal: 16,
+                marginVertical: 8,
+                borderRadius: 8,
+              }}
+            />
+          ))}
+        </View>
+        <View style={[styles.headerContainer, { backgroundColor: '#18CDCA' }]}>
           <Icon color="white" name="hdd-o" size={62} type="font-awesome" />
           <Text style={styles.heading}>Cards</Text>
         </View>
@@ -240,31 +301,33 @@ class Icons extends Component {
             {users.map((u, i) => {
               return (
                 <View key={i} style={styles.user}>
-                  <Image
-                    style={styles.image}
-                    resizeMode="cover"
-                    source={{ uri: u.avatar }}
-                  />
+                  <Image style={styles.image} resizeMode="cover" source={{ uri: u.avatar }} />
                   <Text style={styles.name}>{u.name}</Text>
                 </View>
               );
             })}
           </Card>
           <Card containerStyle={{ marginTop: 15 }} title="FONTS">
-            <Text style={styles.fonts} h1>h1 Heading</Text>
-            <Text style={styles.fonts} h2>h2 Heading</Text>
-            <Text style={styles.fonts} h3>h3 Heading</Text>
-            <Text style={styles.fonts} h4>h4 Heading</Text>
+            <Text style={styles.fonts} h1>
+              h1 Heading
+            </Text>
+            <Text style={styles.fonts} h2>
+              h2 Heading
+            </Text>
+            <Text style={styles.fonts} h3>
+              h3 Heading
+            </Text>
+            <Text style={styles.fonts} h4>
+              h4 Heading
+            </Text>
             <Text style={styles.fonts}>Normal Text</Text>
           </Card>
-          <Card
-            containerStyle={{ marginTop: 15, marginBottom: 15 }}
-            title="TILES"
-          >
+          <Card containerStyle={{ marginTop: 15, marginBottom: 15 }} title="TILES">
             <View>
               <Tile
                 imageSrc={{
-                  uri: 'https://static1.squarespace.com/static/5477887ae4b07c97883111ab/5478c08fe4b0fa4e5a552532/57e101f3579fb32aef30d4af/1491426124625/Porthmeor+Sunset+21.jpg',
+                  uri:
+                    'https://static1.squarespace.com/static/5477887ae4b07c97883111ab/5478c08fe4b0fa4e5a552532/57e101f3579fb32aef30d4af/1491426124625/Porthmeor+Sunset+21.jpg',
                 }}
                 title="When I admire the wonders of a sunset or the beauty of the moon, my soul expands in the worship of the creator."
                 titleStyle={{ fontSize: 20 }}
@@ -296,21 +359,20 @@ class Icons extends Component {
             <View style={{ paddingTop: 20 }}>
               <Tile
                 imageSrc={{
-                  uri: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Half_Dome_from_Glacier_Point%2C_Yosemite_NP_-_Diliff.jpg/320px-Half_Dome_from_Glacier_Point%2C_Yosemite_NP_-_Diliff.jpg',
+                  uri:
+                    'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Half_Dome_from_Glacier_Point%2C_Yosemite_NP_-_Diliff.jpg/320px-Half_Dome_from_Glacier_Point%2C_Yosemite_NP_-_Diliff.jpg',
                 }}
                 title="Half Dome, Yosemite"
                 titleStyle={{ fontSize: 20 }}
                 activeOpacity={1}
                 width={310}
-                contentContainerStyle={{ height: 70 }}
-              >
+                contentContainerStyle={{ height: 70 }}>
                 <View
                   style={{
                     flex: 1,
                     flexDirection: 'row',
                     justifyContent: 'space-between',
-                  }}
-                >
+                  }}>
                   <Text style={{ color: 'green' }}>Visit</Text>
                   <Text style={{ color: 'blue' }}>Find out More</Text>
                 </View>
@@ -353,7 +415,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: 40,
-    backgroundColor: '#FD6B78'
+    backgroundColor: '#FD6B78',
   },
   heading: {
     color: 'white',

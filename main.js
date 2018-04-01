@@ -109,6 +109,7 @@ export default class AppContainer extends React.Component {
       require('./assets/images/user-cool.png'),
       require('./assets/images/user-hp.png'),
       require('./assets/images/user-student.png'),
+      require('./assets/images/avatar1.jpg'),
     ]);
 
     const fontAssets = cacheFonts([FontAwesome.font, Ionicons.font]);

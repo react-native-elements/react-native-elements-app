@@ -1,4 +1,4 @@
-![React Native UI Toolkit](http://i.imgur.com/tqxDeoG.png)
+![React Native Elements App](https://user-images.githubusercontent.com/5962998/37248832-a7060286-24b1-11e8-94a8-847ab6ded4ec.png)
 
 # React Native Elements App
 

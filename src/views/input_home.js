@@ -1,7 +1,7 @@
 import Expo from 'expo';
 import React, { Component } from 'react';
 import { View, ScrollView, StyleSheet, Text, Dimensions } from 'react-native';
-import { Input, SearchBar, Icon } from 'react-native-elements'
+import { Input, SearchBar, Icon, Button } from 'react-native-elements'
 
 import SimpleIcon from 'react-native-vector-icons/SimpleLineIcons';
 import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -28,9 +28,59 @@ class InputHome extends Component {
         <SearchBar placeholder="iOS searchbar" platform="ios" {...dummySearchBarProps} />
         <SearchBar placeholder="Android searchbar" platform="android" {...dummySearchBarProps} />
         <SearchBar placeholder="Default searchbar" {...dummySearchBarProps} />
-        <View style={[styles.headerContainer, {backgroundColor: '#616389', marginTop: 20}]}>
+        <View style={[styles.headerContainer, { backgroundColor: '#616389', marginTop: 20 }]}>
           <Icon color="white" name="input" size={62} />
           <Text style={styles.heading}>Inputs</Text>
+        </View>
+        <View style={{ alignItems: 'center', marginBottom: 16 }}>
+          <Input
+            containerStyle={{ width: '90%' }}
+            placeholder="Input with label"
+            label="LABEL"
+            labelStyle={{ marginTop: 16 }}
+          />
+          <Input containerStyle={styles.inputContainerStyle} placeholder="Simple input" />
+          <Input
+            leftIcon={
+              <Icon
+                name="map-marker"
+                type="font-awesome"
+                color='#86939e'
+                size={25}
+              />
+            }
+            containerStyle={styles.inputContainerStyle}
+            placeholder="Input with left icon"
+          />
+          <Input
+            rightIcon={
+              <Icon
+                name="chevron-right"
+                type="entypo"
+                color='#86939e'
+                size={25}
+              />
+            }
+            containerStyle={styles.inputContainerStyle}
+            placeholder="Input with right icon"
+          />
+          <Input
+            containerStyle={styles.inputContainerStyle}
+            placeholder="Input with error message"
+            errorMessage="Invalid input"
+          />
+          <Input
+            containerStyle={[styles.inputContainerStyle]}
+            placeholder="Shake input"
+            ref={ref => this.shakeInput = ref}
+            rightIcon={
+              <Button
+                title="Shake"
+                onPress={() => this.shakeInput && this.shakeInput.shake()}
+              />
+            }
+            errorMessage="Shake me on error !"
+          />
         </View>
         <View style={styles.contentView}>
           <View style={{ backgroundColor: "#2F343B", width: SCREEN_WIDTH, alignItems: "center" }}>
@@ -132,6 +182,10 @@ const styles = StyleSheet.create({
     borderBottomColor: 'transparent',
     borderTopWidth: 25,
     borderTopColor: 'transparent'
+  },
+  inputContainerStyle: {
+    marginTop: 16,
+    width: '90%',
   },
 });
 

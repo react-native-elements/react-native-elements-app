@@ -1,6 +1,6 @@
 import Expo from 'expo';
 import React from 'react';
-import { TabNavigator } from 'react-navigation';
+import { TabNavigator, StackNavigator } from 'react-navigation';
 import { Icon } from 'react-native-elements';
 
 import ButtonsTab from '../tabs/buttons';
@@ -96,4 +96,13 @@ Components.navigationOptions = {
   ),
 };
 
-export default Components;
+// Workaround to avoid crashing when you come back on Components screen
+// and you were not on the Buttons tab
+export default StackNavigator(
+  {
+    ComponentsTabs: { screen: Components },
+  },
+  {
+    headerMode: 'none',
+  }
+);

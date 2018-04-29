@@ -30,9 +30,9 @@ cd node_modules/react-native-elements
 git branch -v (should show master branch of react-native-elements)
 ```
 
-3. Open app with [Expo Desktop Client](https://docs.expo.io/versions/v16.0.0/index.html)
-  - If you have never used Expo before, click [here](https://docs.expo.io/versions/v16.0.0/introduction/installation.html) to install it.
-  - Then create a new account on the Expo Desktop client that you just installed. Follow [this](https://docs.expo.io/versions/v16.0.0/guides/up-and-running.html#create-an-account) if you need help.
+3. Open app with [Expo Desktop Client](https://docs.expo.io/versions/latest/index.html)
+  - If you have never used Expo before, click [here](https://docs.expo.io/versions/latest/introduction/installation.html) to install it.
+  - Then create a new account on the Expo Desktop client that you just installed. Follow [this](https://docs.expo.io/versions/latest/guides/up-and-running.html#create-an-account) if you need help.
   - Then click `Project` -> `Open Project` and select the examples folder from Step 2 above.
   - Finally run the app on simulator or your device.
 

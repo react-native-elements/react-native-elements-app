@@ -9,7 +9,8 @@ import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 const SCREEN_WIDTH = Dimensions.get('window').width;
 
 const dummySearchBarProps = {
-  showLoading: true,
+  // showLoading: true,
+  cancelIcon:{ type: 'font-awesome', name: 'chevron-left' },
   onFocus: () => console.log("focus"),
   onBlur: () => console.log("blur"),
   onCancel: () => console.log("cancel"),
@@ -28,6 +29,9 @@ class InputHome extends Component {
         <SearchBar placeholder="iOS searchbar" platform="ios" {...dummySearchBarProps} />
         <SearchBar placeholder="Android searchbar" platform="android" {...dummySearchBarProps} />
         <SearchBar placeholder="Default searchbar" {...dummySearchBarProps} />
+        <SearchBar placeholder="Default rounded searchbar" {...dummySearchBarProps} round />
+        <SearchBar placeholder="Default light searchbar" {...dummySearchBarProps} lightTheme />
+        <SearchBar placeholder="Default light rounded searchbar" {...dummySearchBarProps} lightTheme round />
         <View style={[styles.headerContainer, { backgroundColor: '#616389', marginTop: 20 }]}>
           <Icon color="white" name="input" size={62} />
           <Text style={styles.heading}>Inputs</Text>

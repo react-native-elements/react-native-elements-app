@@ -174,7 +174,7 @@ export default class LoginScreen2 extends Component {
                 </View>
                 <View style={styles.formContainer}>
                   <Input
-                    icon={
+                    leftIcon={
                       <Icon
                         name='envelope-o'
                         color='rgba(0, 0, 0, 0.38)'
@@ -195,11 +195,10 @@ export default class LoginScreen2 extends Component {
                     ref={input => this.emailInput = input}
                     onSubmitEditing={() => this.passwordInput.focus()}
                     onChangeText={email => this.setState({ email })}
-                    displayError={!isEmailValid}
-                    errorMessage='Please enter a valid email address'
+                    errorMessage={isEmailValid ? null : 'Please enter a valid email address'}
                   />
                   <Input
-                    icon={
+                    leftIcon={
                       <SimpleIcon
                         name='lock'
                         color='rgba(0, 0, 0, 0.38)'
@@ -220,8 +219,7 @@ export default class LoginScreen2 extends Component {
                     ref={input => this.passwordInput = input}
                     onSubmitEditing={() => isSignUpPage ? this.confirmationInput.focus() : this.login()}
                     onChangeText={(password) => this.setState({password})}
-                    displayError={!isPasswordValid}
-                    errorMessage='Please enter at least 8 characters'
+                    errorMessage={isPasswordValid ? null : 'Please enter at least 8 characters'}
                   />
                   {isSignUpPage &&
                     <Input
@@ -247,8 +245,7 @@ export default class LoginScreen2 extends Component {
                       ref={input => this.confirmationInput = input}
                       onSubmitEditing={this.signUp}
                       onChangeText={passwordConfirmation => this.setState({ passwordConfirmation })}
-                      displayError={!isConfirmationValid}
-                      errorMessage='Please enter the same password'
+                      errorMessage={isConfirmationValid ? null : 'Please enter the same password'}
                     />}
                     <Button
                       buttonStyle={styles.loginButton}

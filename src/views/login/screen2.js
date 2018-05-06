@@ -177,7 +177,7 @@ export default class LoginScreen3 extends Component {
                 selected={selectedType === 'teacher'}
               />
             </View>
-            <View>
+            <View style={{width: '80%', alignItems: 'center'}}>
               <FormInput
                 refInput={input => (this.usernameInput = input)}
                 icon="user"
@@ -185,8 +185,7 @@ export default class LoginScreen3 extends Component {
                 onChangeText={username => this.setState({ username })}
                 placeholder="Username"
                 returnKeyType="next"
-                displayError={!usernameValid}
-                errorMessage="Your username can't be blank"
+                errorMessage={usernameValid ? null : 'Your username can\'t be blank'}
                 onSubmitEditing={() => {
                   this.validateUsername()
                   this.emailInput.focus()
@@ -200,8 +199,7 @@ export default class LoginScreen3 extends Component {
                 placeholder="Email"
                 keyboardType="email-address"
                 returnKeyType="next"
-                displayError={!emailValid}
-                errorMessage="Please enter a valid email address"
+                errorMessage={emailValid ? null : 'Please enter a valid email address'}
                 onSubmitEditing={() => {
                   this.validateEmail()
                   this.passwordInput.focus()
@@ -215,8 +213,7 @@ export default class LoginScreen3 extends Component {
                 placeholder="Password"
                 secureTextEntry
                 returnKeyType="next"
-                displayError={!passwordValid}
-                errorMessage="Please enter at least 8 characters"
+                errorMessage={passwordValid ? null : 'Please enter at least 8 characters'}
                 onSubmitEditing={() => {
                   this.validatePassword()
                   this.confirmationPasswordInput.focus()
@@ -230,8 +227,7 @@ export default class LoginScreen3 extends Component {
                   this.setState({ confirmationPassword })}
                 placeholder="Confirm Password"
                 secureTextEntry
-                displayError={!confirmationPasswordValid}
-                errorMessage="The password fields are not identics"
+                errorMessage={confirmationPasswordValid ? null : 'The password fields are not identics'}
                 returnKeyType="go"
                 onSubmitEditing={() => {
                   this.validateConfirmationPassword()
@@ -302,8 +298,8 @@ export const FormInput = props => {
     <Input
       {...otherProps}
       ref={refInput}
-      containerStyle={styles.inputContainer}
-      icon={<Icon name={icon} color="#7384B4" size={18} />}
+      inputContainerStyle={styles.inputContainer}
+      leftIcon={<Icon name={icon} color="#7384B4" size={18} />}
       inputStyle={styles.inputStyle}
       autoFocus={false}
       autoCapitalize="none"

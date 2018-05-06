@@ -101,14 +101,14 @@ class InputHome extends Component {
             </Text>
             <View style={styles.overlay}>
               <View style={styles.triangleLeft} />
-              <Input containerStyle={{ borderWidth: 1, borderColor: "white", borderLeftWidth: 0, height: 50, width: SCREEN_WIDTH - 80, backgroundColor: "white" }} icon={<MaterialIcon name="email-outline" color="black" size={25} />} placeholder="Email" placeholderTextColor="black" autoCapitalize="none" autoCorrect={false} keyboardAppearance="light" keyboardType="email-address" returnKeyType="next" ref={input => (this.emailInput = input)} onSubmitEditing={() => {
-                this.passwordInput.focus();
-              }} blurOnSubmit={false} />
+              <Input inputContainerStyle={{ borderWidth: 1, borderColor: "white", borderLeftWidth: 0, height: 50, width: SCREEN_WIDTH - 80, backgroundColor: "white" }} leftIcon={<MaterialIcon name="email-outline" color="black" size={25} />} placeholder="Email" placeholderTextColor="black" autoCapitalize="none" autoCorrect={false} keyboardAppearance="light" keyboardType="email-address" returnKeyType="next" ref={input => (this.emailInput = input)} onSubmitEditing={() => {
+                  this.passwordInput.focus();
+                }} blurOnSubmit={false} />
               <View style={styles.triangleRight} />
             </View>
             <View style={[styles.overlay, { marginBottom: 30, marginTop: 1 }]}>
               <View style={styles.triangleLeft} />
-              <Input containerStyle={{ borderWidth: 1, borderColor: "white", borderLeftWidth: 0, height: 50, width: SCREEN_WIDTH - 80, backgroundColor: "white" }} icon={<SimpleIcon name="lock" color="black" size={25} />} placeholder="Password" placeholderTextColor="black" autoCapitalize="none" keyboardAppearance="light" secureTextEntry={true} autoCorrect={false} keyboardType="default" returnKeyType="done" ref={input => (this.passwordInput = input)} blurOnSubmit={true} />
+              <Input inputContainerStyle={{ borderWidth: 1, borderColor: "white", borderLeftWidth: 0, height: 50, width: SCREEN_WIDTH - 80, backgroundColor: "white" }} leftIcon={<SimpleIcon name="lock" color="black" size={25} />} placeholder="Password" placeholderTextColor="black" autoCapitalize="none" keyboardAppearance="light" secureTextEntry={true} autoCorrect={false} keyboardType="default" returnKeyType="done" ref={input => (this.passwordInput = input)} blurOnSubmit={true} />
               <View style={styles.triangleRight} />
             </View>
           </View>
@@ -123,16 +123,16 @@ class InputHome extends Component {
             >
               Sign up
             </Text>
-            <Input containerStyle={{ borderRadius: 40, borderWidth: 1, borderColor: "rgba(110, 120, 170, 1)", height: 50, width: SCREEN_WIDTH - 50, marginVertical: 10 }} icon={<SimpleIcon name="user" color="rgba(110, 120, 170, 1)" size={25} />} iconContainerStyle={{ marginLeft: 20 }} placeholder="Username" placeholderTextColor="rgba(110, 120, 170, 1)" inputStyle={{ marginLeft: 10, color: "white" }} autoCapitalize="none" autoCorrect={false} keyboardAppearance="light" keyboardType="email-address" returnKeyType="next" ref={input => (this.usernameInput = input)} onSubmitEditing={() => {
-              this.email2Input.focus();
-            }} blurOnSubmit={false} />
-            <Input containerStyle={{ borderRadius: 40, borderWidth: 1, borderColor: "rgba(110, 120, 170, 1)", height: 50, width: SCREEN_WIDTH - 50, marginVertical: 10 }} icon={<MaterialIcon name="email-outline" color="rgba(110, 120, 170, 1)" size={25} />} iconContainerStyle={{ marginLeft: 20 }} placeholder="Email" placeholderTextColor="rgba(110, 120, 170, 1)" inputStyle={{ marginLeft: 10, color: "white" }} autoCapitalize="none" autoCorrect={false} keyboardAppearance="light" keyboardType="email-address" returnKeyType="next" ref={input => (this.email2Input = input)} onSubmitEditing={() => {
-              this.password2Input.focus();
-            }} blurOnSubmit={false} />
-            <Input containerStyle={{ borderRadius: 40, borderWidth: 1, borderColor: "rgba(110, 120, 170, 1)", height: 50, width: SCREEN_WIDTH - 50, marginVertical: 10 }} icon={<SimpleIcon name="lock" color="rgba(110, 120, 170, 1)" size={25} />} iconContainerStyle={{ marginLeft: 20 }} placeholder="Password" placeholderTextColor="rgba(110, 120, 170, 1)" inputStyle={{ marginLeft: 10, color: "white" }} autoCapitalize="none" keyboardAppearance="light" secureTextEntry={true} autoCorrect={false} keyboardType="default" returnKeyType="next" ref={input => (this.password2Input = input)} onSubmitEditing={() => {
-              this.confirmPassword2Input.focus();
-            }} blurOnSubmit={false} />
-            <Input containerStyle={{ borderRadius: 40, borderWidth: 1, borderColor: "rgba(110, 120, 170, 1)", height: 50, width: SCREEN_WIDTH - 50, marginTop: 10, marginBottom: 30 }} icon={<SimpleIcon name="lock" color="rgba(110, 120, 170, 1)" size={25} />} iconContainerStyle={{ marginLeft: 20 }} placeholder="Confirm Password" placeholderTextColor="rgba(110, 120, 170, 1)" inputStyle={{ marginLeft: 10, color: "white" }} autoCapitalize="none" keyboardAppearance="light" secureTextEntry={true} autoCorrect={false} keyboardType="default" returnKeyType="done" ref={input => (this.confirmPassword2Input = input)} blurOnSubmit={true} />
+            <Input inputContainerStyle={{ borderRadius: 40, borderWidth: 1, borderColor: "rgba(110, 120, 170, 1)", height: 50, width: SCREEN_WIDTH - 50, marginVertical: 10 }} leftIcon={<SimpleIcon name="user" color="rgba(110, 120, 170, 1)" size={25} />} iconContainerStyle={{ marginLeft: 20 }} placeholder="Username" placeholderTextColor="rgba(110, 120, 170, 1)" inputStyle={{ marginLeft: 10, color: "white" }} autoCapitalize="none" autoCorrect={false} keyboardAppearance="light" keyboardType="email-address" returnKeyType="next" ref={input => (this.usernameInput = input)} onSubmitEditing={() => {
+                this.email2Input.focus();
+              }} blurOnSubmit={false} />
+            <Input inputContainerStyle={{ borderRadius: 40, borderWidth: 1, borderColor: "rgba(110, 120, 170, 1)", height: 50, width: SCREEN_WIDTH - 50, marginVertical: 10 }} leftIcon={<MaterialIcon name="email-outline" color="rgba(110, 120, 170, 1)" size={25} />} iconContainerStyle={{ marginLeft: 20 }} placeholder="Email" placeholderTextColor="rgba(110, 120, 170, 1)" inputStyle={{ marginLeft: 10, color: "white" }} autoCapitalize="none" autoCorrect={false} keyboardAppearance="light" keyboardType="email-address" returnKeyType="next" ref={input => (this.email2Input = input)} onSubmitEditing={() => {
+                this.password2Input.focus();
+              }} blurOnSubmit={false} />
+            <Input inputContainerStyle={{ borderRadius: 40, borderWidth: 1, borderColor: "rgba(110, 120, 170, 1)", height: 50, width: SCREEN_WIDTH - 50, marginVertical: 10 }} leftIcon={<SimpleIcon name="lock" color="rgba(110, 120, 170, 1)" size={25} />} iconContainerStyle={{ marginLeft: 20 }} placeholder="Password" placeholderTextColor="rgba(110, 120, 170, 1)" inputStyle={{ marginLeft: 10, color: "white" }} autoCapitalize="none" keyboardAppearance="light" secureTextEntry={true} autoCorrect={false} keyboardType="default" returnKeyType="next" ref={input => (this.password2Input = input)} onSubmitEditing={() => {
+                this.confirmPassword2Input.focus();
+              }} blurOnSubmit={false} />
+            <Input inputContainerStyle={{ borderRadius: 40, borderWidth: 1, borderColor: "rgba(110, 120, 170, 1)", height: 50, width: SCREEN_WIDTH - 50, marginTop: 10, marginBottom: 30 }} leftIcon={<SimpleIcon name="lock" color="rgba(110, 120, 170, 1)" size={25} />} iconContainerStyle={{ marginLeft: 20 }} placeholder="Confirm Password" placeholderTextColor="rgba(110, 120, 170, 1)" inputStyle={{ marginLeft: 10, color: "white" }} autoCapitalize="none" keyboardAppearance="light" secureTextEntry={true} autoCorrect={false} keyboardType="default" returnKeyType="done" ref={input => (this.confirmPassword2Input = input)} blurOnSubmit={true} />
           </View>
         </View>
       </ScrollView>

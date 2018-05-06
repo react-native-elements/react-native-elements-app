@@ -70,81 +70,71 @@ export default class LoginScreen1 extends Component {
               </View>
             </View>
             <View style={styles.loginInput}>
-              <View style={{marginVertical: 10}}>
-                <Input
-                  width={230}
-                  icon={
-                    <Icon
-                      name='user-o'
-                      color='rgba(171, 189, 219, 1)'
-                      size={25}
-                    />
-                  }
-                  onChangeText={email => this.setState({email})}
-                  value={email}
-                  inputStyle={{marginLeft: 10, color: 'white'}}
-                  keyboardAppearance="light"
-                  placeholder="Email"
-                  autoFocus={false}
-                  autoCapitalize="none"
-                  autoCorrect={false}
-                  keyboardType="email-address"
-                  returnKeyType="next"
-                  ref={ input => this.emailInput = input }
-                  onSubmitEditing={() => {
-                    this.setState({email_valid: this.validateEmail(email)});
-                    this.passwordInput.focus();
-                  }}
-                  blurOnSubmit={false}
-                  placeholderTextColor="white"
-                  displayError={!email_valid}
-                  errorStyle={{textAlign: 'center', fontSize: 12}}
-                  errorMessage="Please enter a valid email address"
-                />
-              </View>
-              <View style={{marginVertical: 10}}>
-                <Input
-                  width={230}
-                  icon={
-                    <Icon
-                      name='lock'
-                      color='rgba(171, 189, 219, 1)'
-                      size={25}
-                    />
-                  }
-                  onChangeText={(password) => this.setState({password})}
-                  value={password}
-                  inputStyle={{marginLeft: 10, color: 'white'}}
-                  secureTextEntry={true}
-                  keyboardAppearance="light"
-                  placeholder="Password"
-                  autoCapitalize="none"
-                  autoCorrect={false}
-                  keyboardType="default"
-                  returnKeyType="done"
-                  ref={ input => this.passwordInput = input}
-                  blurOnSubmit={true}
-                  placeholderTextColor="white"
-                  displayError={false}
-                  errorStyle={{textAlign: 'center', fontSize: 12}}
-                  errorMessage="The email and password you entered did not match out records. Please try again!"
-                />
-              </View>
-            </View>
-            <View style={styles.loginButton}>
-              <Button
-                title='LOG IN'
-                activeOpacity={1}
-                underlayColor="transparent"
-                onPress={this.submitLoginCredentials.bind(this)}
-                loading={showLoading}
-                loadingProps={{size: 'small', color: 'white'}}
-                disabled={ !email_valid && password.length < 8}
-                buttonStyle={{height: 50, width: 250, backgroundColor: 'transparent', borderWidth: 2, borderColor: 'white', borderRadius: 30}}
+              <Input
+                leftIcon={
+                  <Icon
+                    name='user-o'
+                    color='rgba(171, 189, 219, 1)'
+                    size={25}
+                  />
+                }
                 containerStyle={{marginVertical: 10}}
-                titleStyle={{fontWeight: 'bold', color: 'white'}}
+                onChangeText={email => this.setState({email})}
+                value={email}
+                inputStyle={{marginLeft: 10, color: 'white'}}
+                keyboardAppearance="light"
+                placeholder="Email"
+                autoFocus={false}
+                autoCapitalize="none"
+                autoCorrect={false}
+                keyboardType="email-address"
+                returnKeyType="next"
+                ref={ input => this.emailInput = input }
+                onSubmitEditing={() => {
+                  this.setState({email_valid: this.validateEmail(email)});
+                  this.passwordInput.focus();
+                }}
+                blurOnSubmit={false}
+                placeholderTextColor="white"
+                errorStyle={{textAlign: 'center', fontSize: 12}}
+                errorMessage={email_valid ? null : "Please enter a valid email address"}
+              />
+              <Input
+                leftIcon={
+                  <Icon
+                    name='lock'
+                    color='rgba(171, 189, 219, 1)'
+                    size={25}
+                  />
+                }
+                containerStyle={{marginVertical: 10}}
+                onChangeText={(password) => this.setState({password})}
+                value={password}
+                inputStyle={{marginLeft: 10, color: 'white'}}
+                secureTextEntry={true}
+                keyboardAppearance="light"
+                placeholder="Password"
+                autoCapitalize="none"
+                autoCorrect={false}
+                keyboardType="default"
+                returnKeyType="done"
+                ref={ input => this.passwordInput = input}
+                blurOnSubmit={true}
+                placeholderTextColor="white"
               />
             </View>
+            <Button
+              title='LOG IN'
+              activeOpacity={1}
+              underlayColor="transparent"
+              onPress={this.submitLoginCredentials.bind(this)}
+              loading={showLoading}
+              loadingProps={{size: 'small', color: 'white'}}
+              disabled={ !email_valid && password.length < 8}
+              buttonStyle={{height: 50, width: 250, backgroundColor: 'transparent', borderWidth: 2, borderColor: 'white', borderRadius: 30}}
+              containerStyle={{marginVertical: 10}}
+              titleStyle={{fontWeight: 'bold', color: 'white'}}
+            />
             <View style={styles.footerView}>
               <Text style={{color: 'grey'}}>
                 New here?
@@ -184,12 +174,12 @@ const styles = StyleSheet.create({
     marginTop: 150,
     backgroundColor: 'transparent',
     width: 250,
-    height: 350,
-    justifyContent: 'center',
-    alignItems: 'center'
+    height: 400,
   },
   loginTitle: {
     flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   travelText: {
     color: 'white',
@@ -205,9 +195,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center'
-  },
-  loginButton: {
-    flex: 1,
   },
   footerView: {
     marginTop: 20,

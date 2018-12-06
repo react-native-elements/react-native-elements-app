@@ -15,11 +15,7 @@ export default class Login extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <ScrollView
-          horizontal
-          pagingEnabled
-          decelerationRate={0.993}
-        >
+        <ScrollView horizontal pagingEnabled decelerationRate={0.993}>
           <LoginScreen3 />
           <LoginScreen1 />
           <LoginScreen2 />
@@ -33,6 +29,6 @@ export default class Login extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'black'
-  }
+    backgroundColor: 'black',
+  },
 });

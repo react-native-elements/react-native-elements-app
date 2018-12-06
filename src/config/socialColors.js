@@ -1,7 +1,3 @@
-/**
- * @providesModule HSSocialColors
- */
-
 export default {
   facebook: '#3b5998',
   twitter: '#00aced',

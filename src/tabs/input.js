@@ -1,5 +1,4 @@
-import Expo from 'expo';
-import React, { Component } from 'react';
+import React from 'react';
 
 import { StackNavigator } from 'react-navigation';
 import { Icon } from 'react-native-elements';
@@ -7,9 +6,7 @@ import { Icon } from 'react-native-elements';
 import InputHome from '../views/input_home';
 import InputDetails from '../views/input_details';
 
-const InputTabView = ({ navigation }) => (
-  <InputHome navigation={navigation} />
-);
+const InputTabView = ({ navigation }) => <InputHome navigation={navigation} />;
 
 const InputDetailTabView = ({ navigation }) => (
   <InputDetails
@@ -29,7 +26,7 @@ const InputTab = StackNavigator({
           name="menu"
           size={30}
           type="entypo"
-          style={{ paddingLeft: 10 }}
+          containerStyle={{ marginLeft: 10 }}
           onPress={() => navigation.navigate('DrawerOpen')}
         />
       ),

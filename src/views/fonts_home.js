@@ -1,15 +1,7 @@
-import Expo from 'expo';
 import React, { Component } from 'react';
-import {
-  View,
-  ScrollView,
-  StyleSheet,
-  Platform,
-  Image,
-  TouchableHighlight,
-} from 'react-native';
+import { ScrollView, StyleSheet, Platform } from 'react-native';
 
-import { Text, Card, Divider, Icon } from 'react-native-elements';
+import { Text } from 'react-native-elements';
 
 const iOS_fonts = [
   'Academy Engraved LET',
@@ -318,8 +310,6 @@ const android_fonts = [
 
 class Fonts extends Component {
   render() {
-    const { navigation } = this.props;
-
     const fonts = Platform.OS === 'ios' ? iOS_fonts : android_fonts;
 
     return (

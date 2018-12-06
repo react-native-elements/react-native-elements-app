@@ -1,4 +1,3 @@
-import Expo from 'expo';
 import React from 'react';
 import { TabNavigator, StackNavigator } from 'react-navigation';
 import { Icon } from 'react-native-elements';
@@ -88,7 +87,7 @@ Components.navigationOptions = {
       size={30}
       iconStyle={{
         width: 30,
-        height: 30
+        height: 30,
       }}
       type="material"
       color={tintColor}

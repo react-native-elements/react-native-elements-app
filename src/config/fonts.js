@@ -1,7 +1,3 @@
-/**
- * @providesModule HSFonts
- */
-
 export default {
   ios: {
     regular: 'System',

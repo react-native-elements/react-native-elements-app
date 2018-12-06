@@ -1,7 +1,4 @@
-import Expo from 'expo';
-import React, { Component } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
-
+import React from 'react';
 import { StackNavigator } from 'react-navigation';
 import { Icon } from 'react-native-elements';
 
@@ -30,7 +27,7 @@ const ButtonsTab = StackNavigator({
           name="menu"
           size={30}
           type="entypo"
-          style={{ paddingLeft: 10 }}
+          containerStyle={{ marginLeft: 10 }}
           onPress={() => navigation.navigate('DrawerOpen')}
         />
       ),

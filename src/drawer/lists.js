@@ -1,15 +1,15 @@
-import Expo from 'expo';
 import React from 'react';
 import { StackNavigator } from 'react-navigation';
 import { Icon } from 'react-native-elements';
 
 import Lists from '../views/lists';
 
-const ListsDrawerItem = StackNavigator({
-  Playground: { screen: Lists }
-},
+const ListsDrawerItem = StackNavigator(
   {
-    headerMode: 'none'
+    Playground: { screen: Lists },
+  },
+  {
+    headerMode: 'none',
   }
 );
 
@@ -21,7 +21,7 @@ ListsDrawerItem.navigationOptions = {
       size={30}
       iconStyle={{
         width: 30,
-        height: 30
+        height: 30,
       }}
       type="material"
       color={tintColor}

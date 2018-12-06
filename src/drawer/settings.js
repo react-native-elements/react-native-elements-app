@@ -1,4 +1,3 @@
-import Expo from 'expo';
 import React from 'react';
 import { StackNavigator } from 'react-navigation';
 import { Icon } from 'react-native-elements';

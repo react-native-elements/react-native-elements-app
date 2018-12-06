@@ -1,29 +1,18 @@
 import _ from 'lodash';
 
-import Expo from 'expo';
 import React, { Component } from 'react';
-import {
-  View,
-  ScrollView,
-  StyleSheet,
-  Image,
-  TouchableHighlight,
-  ListView,
-} from 'react-native';
+import { View, ScrollView, StyleSheet, Image, ListView } from 'react-native';
 
 import {
   Text,
   Card,
-  ButtonGroup,
   Tile,
   Icon,
   ListItem,
   Avatar,
 } from 'react-native-elements';
 
-import { FontAwesome, MaterialIcons } from '@expo/vector-icons';
-
-import colors from 'HSColors';
+import colors from '../config/colors';
 
 const users = [
   {

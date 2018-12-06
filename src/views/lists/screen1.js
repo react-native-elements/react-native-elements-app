@@ -1,7 +1,14 @@
 import _ from 'lodash';
 
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, Dimensions, ScrollView } from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  Dimensions,
+  ScrollView,
+  SafeAreaView,
+} from 'react-native';
 import { Avatar, Button } from 'react-native-elements';
 
 import { Font } from 'expo';
@@ -136,7 +143,7 @@ export default class ListsScreen1 extends Component {
         key={index}
         style={{
           height: 60,
-          marginHorizontal: 20,
+          marginHorizontal: 10,
           marginTop: 10,
           backgroundColor: 'white',
           borderRadius: 5,
@@ -202,7 +209,9 @@ export default class ListsScreen1 extends Component {
     return (
       <View>
         {this.state.fontLoaded ? (
-          <View style={{ flex: 1, backgroundColor: 'rgba(241,240,241,1)' }}>
+          <SafeAreaView
+            style={{ flex: 1, backgroundColor: 'rgba(241,240,241,1)' }}
+          >
             <View style={styles.statusBar} />
             <View style={styles.navBar}>
               <Text style={styles.nameHeader}>Growing</Text>
@@ -284,7 +293,7 @@ export default class ListsScreen1 extends Component {
                     alignItems: 'center',
                   }}
                 >
-                  <View style={{ flex: 1 }}>
+                  <View style={{ flex: 1, alignItems: 'center' }}>
                     <Button
                       title="View Profile"
                       buttonStyle={{
@@ -302,7 +311,7 @@ export default class ListsScreen1 extends Component {
                       underlayColor="transparent"
                     />
                   </View>
-                  <View style={{ flex: 1 }}>
+                  <View style={{ flex: 1, alignItems: 'center' }}>
                     <Button
                       title="Add User"
                       buttonStyle={{
@@ -324,7 +333,7 @@ export default class ListsScreen1 extends Component {
               </View>
               {this.renderListCards()}
             </ScrollView>
-          </View>
+          </SafeAreaView>
         ) : (
           <Text>Loading...</Text>
         )}

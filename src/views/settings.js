@@ -132,6 +132,8 @@ export default class Settings extends React.PureComponent {
           width: 28,
           height: 28,
           borderRadius: 6,
+          alignItems: 'center',
+          justifyContent: 'center',
         },
       }}
       title={title}

@@ -3,17 +3,16 @@ import {
   StyleSheet,
   Text,
   View,
+  SafeAreaView,
   Image,
   ScrollView,
   Dimensions,
-  TouchableOpacity,
   StatusBar,
 } from 'react-native';
 import { Button } from 'react-native-elements';
 import { Font } from 'expo';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
-const SCREEN_HEIGHT = Dimensions.get('window').height;
 
 const IMAGE_SIZE = SCREEN_WIDTH - 80;
 
@@ -86,7 +85,7 @@ export default class LoginScreen1 extends Component {
 
   render() {
     return (
-      <View style={{ flex: 1 }}>
+      <SafeAreaView style={{ flex: 1 }}>
         <StatusBar barStyle="light-content" />
         {this.state.fontLoaded ? (
           <View style={{ flex: 1, backgroundColor: 'rgba(47,44,60,1)' }}>
@@ -308,7 +307,7 @@ export default class LoginScreen1 extends Component {
         ) : (
           <Text>Loading...</Text>
         )}
-      </View>
+      </SafeAreaView>
     );
   }
 }

@@ -10,11 +10,7 @@ export default class Lists extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <ScrollView
-          horizontal
-          pagingEnabled
-          decelerationRate={0.993}
-        >
+        <ScrollView horizontal pagingEnabled decelerationRate={0.993}>
           <ListsScreen1 />
           <ListsScreen2 />
           <ListsScreen3 />
@@ -28,6 +24,6 @@ export default class Lists extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'black'
-  }
+    backgroundColor: 'black',
+  },
 });

@@ -4,11 +4,12 @@ import { Icon } from 'react-native-elements';
 
 import Profile from '../views/profile';
 
-const ProfileDrawerItem = StackNavigator({
-    Playground: { screen: Profile }
+const ProfileDrawerItem = StackNavigator(
+  {
+    Playground: { screen: Profile },
   },
   {
-    headerMode: 'none'
+    headerMode: 'none',
   }
 );
 
@@ -20,7 +21,7 @@ ProfileDrawerItem.navigationOptions = {
       size={30}
       iconStyle={{
         width: 30,
-        height: 30
+        height: 30,
       }}
       type="material"
       color={tintColor}

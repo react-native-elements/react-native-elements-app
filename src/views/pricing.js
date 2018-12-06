@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { ScrollView, View, StyleSheet, Platform } from 'react-native';
-import colors from 'HSColors';
+import colors from '../config/colors';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import { PricingCard, Text } from 'react-native-elements';

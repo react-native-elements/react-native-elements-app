@@ -1,5 +1,5 @@
 import React from 'react';
-import Expo, { AppLoading, Asset, Font } from 'expo';
+import { registerRootComponent, AppLoading, Asset, Font } from 'expo';
 import { FontAwesome, Ionicons } from '@expo/vector-icons';
 import { View, Image, Dimensions } from 'react-native';
 import { DrawerNavigator, DrawerItems } from 'react-navigation';
@@ -16,7 +16,9 @@ const SCREEN_WIDTH = Dimensions.get('window').width;
 
 const CustomDrawerContentComponent = props => (
   <View style={{ flex: 1, backgroundColor: '#43484d' }}>
-    <View style={{ marginTop: 40, justifyContent: 'center', alignItems: 'center' }}>
+    <View
+      style={{ marginTop: 40, justifyContent: 'center', alignItems: 'center' }}
+    >
       <Image
         source={require('./src/images/logo.png')}
         style={{ width: SCREEN_WIDTH * 0.57 }}
@@ -28,7 +30,6 @@ const CustomDrawerContentComponent = props => (
     </View>
   </View>
 );
-
 
 const MainRoot = DrawerNavigator(
   {
@@ -123,15 +124,12 @@ export default class AppContainer extends React.Component {
         <AppLoading
           startAsync={this._loadAssetsAsync}
           onFinish={() => this.setState({ isReady: true })}
-          // onError={console.warn}
         />
       );
     }
 
-    return (
-      <MainRoot />
-    );
+    return <MainRoot />;
   }
 }
 
-Expo.registerRootComponent(AppContainer);
+registerRootComponent(AppContainer);

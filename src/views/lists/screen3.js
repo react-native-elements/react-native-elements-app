@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, Text, ImageBackground, Dimensions } from 'react-native';
+import {
+  StyleSheet,
+  View,
+  Text,
+  ImageBackground,
+  Dimensions,
+} from 'react-native';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
 const SCREEN_HEIGHT = Dimensions.get('window').height;
@@ -10,13 +16,8 @@ export default class ListsScreen2 extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <ImageBackground
-          source={BG_IMAGE}
-          style={styles.bgImage}
-        >
-          <Text style={styles.loginText}>
-            Lists Screen 3
-          </Text>
+        <ImageBackground source={BG_IMAGE} style={styles.bgImage}>
+          <Text style={styles.loginText}>Lists Screen 3</Text>
         </ImageBackground>
       </View>
     );
@@ -34,12 +35,12 @@ const styles = StyleSheet.create({
     width: SCREEN_WIDTH,
     height: SCREEN_HEIGHT,
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   loginText: {
     color: 'white',
     fontSize: 30,
     fontWeight: 'bold',
-    backgroundColor: 'transparent'
-  }
+    backgroundColor: 'transparent',
+  },
 });

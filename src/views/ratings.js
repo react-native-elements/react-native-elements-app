@@ -18,16 +18,48 @@ class Ratings extends React.Component {
           <Text style={styles.subtitleText}>gestures for the win!</Text>
         </View>
         <ScrollView style={styles.viewContainer}>
-          <Text style={[styles.titleText, { marginTop: 30, color: '#e74c3c', fontSize: 22 }]}>Airbnb-style Tap Ratings</Text>
+          <Text
+            style={[
+              styles.titleText,
+              { marginTop: 30, color: '#e74c3c', fontSize: 22 },
+            ]}
+          >
+            Airbnb-style Tap Ratings
+          </Text>
           <AirbnbRating />
           <AirbnbRating
             count={11}
-            reviews={['Terrible', 'Bad', 'Meh', 'OK', 'Good', 'Hmm...', 'Very Good', 'Wow', 'Amazing', 'Unbelievable', 'Jesus']}
+            reviews={[
+              'Terrible',
+              'Bad',
+              'Meh',
+              'OK',
+              'Good',
+              'Hmm...',
+              'Very Good',
+              'Wow',
+              'Amazing',
+              'Unbelievable',
+              'Jesus',
+            ]}
             defaultRating={11}
             size={20}
           />
-          <Text style={[styles.titleText, { marginTop: 30, color: '#9b59b6', fontSize: 22 }]}>Whatsapp-style Swipe Ratings</Text>
-          <View style={{ justifyContent: 'center', alignItems: 'center', marginBottom: 30 }}>
+          <Text
+            style={[
+              styles.titleText,
+              { marginTop: 30, color: '#9b59b6', fontSize: 22 },
+            ]}
+          >
+            Whatsapp-style Swipe Ratings
+          </Text>
+          <View
+            style={{
+              justifyContent: 'center',
+              alignItems: 'center',
+              marginBottom: 30,
+            }}
+          >
             <Rating
               showRating
               imageSize={40}
@@ -101,7 +133,7 @@ const styles = StyleSheet.create({
     color: '#34495e',
   },
   viewContainer: {
-    flex: 1
+    flex: 1,
   },
 });
 

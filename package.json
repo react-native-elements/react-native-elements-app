@@ -4,21 +4,29 @@
   "description": "Demo app for React Native Elements UI Library",
   "author": "Monte Thakkar",
   "private": true,
-  "main": "main.js",
+  "main": "node_modules/expo/AppEntry.js",
   "dependencies": {
     "@expo/vector-icons": "6.3.0",
-    "expo": "26.0.0",
+    "expo": "^31.0.2",
     "lodash": "^4.17.4",
-    "react": "16.3.0-alpha.1",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-26.0.0.tar.gz",
-    "react-native-touchable-scale": "2.0.0",
-    "react-native-elements": "^1.0.0-beta3",
+    "react": "16.5.0",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-31.0.0.tar.gz",
+    "react-native-elements": "^1.0.0-beta7",
     "react-native-ratings": "^5.3.0",
+    "react-native-touchable-scale": "2.0.0",
     "react-navigation": "1.5.8"
   },
   "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "eject": "expo eject",
+    "prettify": "prettier --write 'src/**/*.js'",
     "postinstall": "git submodule update",
-    "clean-install":
-      "rm -rf node_modules && npm cache clean --force && watchman watch-del-all && npm install"
+    "clean-install": "rm -rf node_modules && npm cache clean --force && watchman watch-del-all && npm install"
+  },
+  "devDependencies": {
+    "babel-preset-expo": "^5.0.0",
+    "prettier": "^1.15.3"
   }
 }

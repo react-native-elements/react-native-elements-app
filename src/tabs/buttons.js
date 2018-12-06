@@ -1,6 +1,4 @@
-import Expo from 'expo';
-import React, { Component } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import React from 'react';
 
 import { StackNavigator } from 'react-navigation';
 import { Icon } from 'react-native-elements';

@@ -114,14 +114,7 @@ const sections = [
 
 export default class Settings extends React.PureComponent {
   renderItem = ({
-    item: {
-      title,
-      backgroundColor,
-      icon,
-      rightTitle,
-      hideChevron,
-      checkbox,
-    },
+    item: { title, backgroundColor, icon, rightTitle, hideChevron, checkbox },
   }) => (
     <ListItem
       containerStyle={{ paddingVertical: 8 }}
@@ -160,7 +153,7 @@ export default class Settings extends React.PureComponent {
     </View>
   );
 
-  keyExtractor = (item, index) => index
+  keyExtractor = (item, index) => index;
 
   render() {
     return (

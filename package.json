@@ -22,7 +22,6 @@
     "ios": "expo start --ios",
     "eject": "expo eject",
     "prettify": "prettier --write 'src/**/*.js'",
-    "postinstall": "git submodule update",
     "clean-install": "rm -rf node_modules && npm cache clean --force && watchman watch-del-all && npm install"
   },
   "devDependencies": {

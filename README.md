@@ -17,19 +17,23 @@ git clone https://github.com/react-native-training/react-native-elements-app.git
 2. Install dependencies
 
 ```
-# Using npm
-cd react-native-elements-app && npm install
+cd react-native-elements-app
 
-# Using yarn
-cd react-native-elements-app && yarn
+# Using npm or yarn
+npm install OR yarn
 ```
 
-3. Open app with [Expo Desktop Client](https://docs.expo.io/versions/latest/index.html)
+3. Run the app locally
 
-- If you have never used Expo before, click [here](https://docs.expo.io/versions/latest/introduction/installation) to install it.
-- Then create a new account on the Expo Desktop client that you just installed. Follow [this](https://docs.expo.io/versions/latest/workflow/up-and-running) if you need help.
-- Then run `expo start` in the `react-native-elements-app` directory.
-- Finally run the app on simulator or your device.
+```
+npm start - this should pop up Expo Dev Tools, a control panel for developing your app, in your default web browser.
+
+To open the app in the iOS simulator you can press the i in the terminal or Run on iOS simulator in Dev Tools.
+
+To open the app in the Android emulator, first boot it up and then press a in the terminal or Run on Android device/emulator in Dev Tools.
+```
+
+We use expo to build and run the app. For more information follow the guide on Expo [here](https://docs.expo.io/versions/latest/workflow/up-and-running#start-the-development-server).
 
 ## Major contributors:
 
@@ -37,13 +41,7 @@ cd react-native-elements-app && yarn
 - @iRoachie 💯
 - @martinezguillaume 🎸
 
-## RNE Ecosystem:
-
-It's a platform that connects small teams/anyone that needs help developing their RN app to open source contributors that are willing to build complex UI screens & animated interactions for 💰. It's built on top of RNE & Open Collective.
-
-If this sounds interesting and you would like to participate, please leave an 👍 on this comment. More details coming soon.
-
-In the meantime, here's a taste of what's to come.
+## Screenshots:
 
 <div style="display: flex; flex-direction: row; margin-bottom: 20px">
 <img src="https://user-images.githubusercontent.com/7840686/32702785-b1d9114e-c7a0-11e7-9999-6c6a00d432ec.gif" width="300" />
@@ -56,4 +54,4 @@ In the meantime, here's a taste of what's to come.
 
 ## Docs
 
-Click [here](https://react-native-training.github.io/react-native-elements) to view the docs for React Native Elements.
+Click [here](https://react-native-training.github.io/react-native-elements) to get started with React Native Elements.

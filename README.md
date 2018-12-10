@@ -4,8 +4,6 @@
 
 This is the Demo app for [React Native Elements UI kit](https://github.com/react-native-training/react-native-elements) built with [Expo](https://expo.io/). In this app you will find examples on how to use various components as well as Production-ready screens which showcase how to combine multiple components to built entire views in your app.
 
-This repo uses React Native Elements as a submodule through `/node_modules/react-native-elements`. Hence once you clone this repo, you can make changes to any RNE `/src` files, test these changes through this example app and also commit directly to the main RNE repo.
-
 ### [Try it on Expo](https://expo.io/@monte9/react-native-elements-app)
 
 ## Get Started
@@ -13,35 +11,34 @@ This repo uses React Native Elements as a submodule through `/node_modules/react
 1. Clone the project
 
 ```
-git clone --recursive https://github.com/react-native-training/react-native-elements-app.git
+git clone https://github.com/react-native-training/react-native-elements-app.git
 ```
 
-2. Install node_modules
+2. Install dependencies
 
 ```
+# Using npm
 cd react-native-elements-app && npm install
-```
 
-3. Verify submodule
-
-```
-cd node_modules/react-native-elements
-
-git branch -v (should show master branch of react-native-elements)
+# Using yarn
+cd react-native-elements-app && yarn
 ```
 
 3. Open app with [Expo Desktop Client](https://docs.expo.io/versions/latest/index.html)
-  - If you have never used Expo before, click [here](https://docs.expo.io/versions/latest/introduction/installation) to install it.
-  - Then create a new account on the Expo Desktop client that you just installed. Follow [this](https://docs.expo.io/versions/latest/workflow/up-and-running) if you need help.
-  - Then click `Project` -> `Open Project` and select the examples folder from Step 2 above.
-  - Finally run the app on simulator or your device.
+
+- If you have never used Expo before, click [here](https://docs.expo.io/versions/latest/introduction/installation) to install it.
+- Then create a new account on the Expo Desktop client that you just installed. Follow [this](https://docs.expo.io/versions/latest/workflow/up-and-running) if you need help.
+- Then run `expo start` in the `react-native-elements-app` directory.
+- Finally run the app on simulator or your device.
 
 ## Major contributors:
+
 - @xavier-villelegier 🔥
 - @iRoachie 💯
 - @martinezguillaume 🎸
 
 ## RNE Ecosystem:
+
 It's a platform that connects small teams/anyone that needs help developing their RN app to open source contributors that are willing to build complex UI screens & animated interactions for 💰. It's built on top of RNE & Open Collective.
 
 If this sounds interesting and you would like to participate, please leave an 👍 on this comment. More details coming soon.
@@ -58,4 +55,5 @@ In the meantime, here's a taste of what's to come.
 </div>
 
 ## Docs
+
 Click [here](https://react-native-training.github.io/react-native-elements) to view the docs for React Native Elements.

@@ -6,12 +6,12 @@
   "private": true,
   "main": "node_modules/expo/AppEntry.js",
   "dependencies": {
-    "@expo/vector-icons": "6.3.0",
-    "expo": "^31.0.2",
+    "@expo/vector-icons": "^9.0.0",
+    "expo": "^32.0.0",
     "lodash": "^4.17.4",
     "react": "16.5.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-31.0.0.tar.gz",
-    "react-native-elements": "^1.0.0-beta7",
+    "react-native-elements": "^1.0.0-beta8",
     "react-native-ratings": "^5.3.0",
     "react-native-touchable-scale": "2.0.0",
     "react-navigation": "1.5.8"
@@ -22,7 +22,7 @@
     "ios": "expo start --ios",
     "eject": "expo eject",
     "prettify": "prettier --write 'src/**/*.js'",
-    "clean-install": "rm -rf node_modules && npm cache clean --force && watchman watch-del-all && npm install"
+    "clean-install": "rm -rf node_modules && npm cache clean --force && watchman watch-del-all && yarn"
   },
   "devDependencies": {
     "babel-preset-expo": "^5.0.0",

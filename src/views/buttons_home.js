@@ -22,7 +22,10 @@ class Buttons extends Component {
             <Text style={styles.heading}>Buttons</Text>
           </View>
           <View style={{ alignItems: 'center' }}>
-            <Button containerStyle={{ marginVertical: 10 }} />
+            <Button
+              title={`Welcome to\nReact Native Elements`}
+              containerStyle={{ marginVertical: 10 }}
+            />
             <Button
               title="LOG IN"
               buttonStyle={{
@@ -61,7 +64,12 @@ class Buttons extends Component {
                 borderRadius: 20,
               }}
               containerStyle={{ marginVertical: 10, height: 40, width: 200 }}
-              icon={<Icon name="arrow-right" size={15} color="white" />}
+              icon={{
+                name: 'arrow-right',
+                type: 'font-awesome',
+                size: 15,
+                color: 'white',
+              }}
               iconRight
               iconContainerStyle={{ marginLeft: 5 }}
             />
@@ -104,7 +112,12 @@ class Buttons extends Component {
             <View style={styles.buttonsContainer}>
               <Button
                 title="HOME"
-                icon={<Icon name="home" size={15} color="white" />}
+                icon={{
+                  name: 'home',
+                  type: 'font-awesome',
+                  size: 15,
+                  color: 'white',
+                }}
                 iconContainerStyle={{ marginRight: 10 }}
                 titleStyle={{ fontWeight: '700' }}
                 buttonStyle={{
@@ -117,7 +130,12 @@ class Buttons extends Component {
               />
               <Button
                 title="PROFILE"
-                icon={<Icon name="user" size={15} color="white" />}
+                icon={{
+                  name: 'user',
+                  type: 'font-awesome',
+                  size: 15,
+                  color: 'white',
+                }}
                 iconRight
                 iconContainerStyle={{ marginLeft: 10 }}
                 titleStyle={{ fontWeight: '700' }}

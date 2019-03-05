@@ -4,13 +4,13 @@ import { FontAwesome, Ionicons } from '@expo/vector-icons';
 import { View, Image, Dimensions } from 'react-native';
 import { DrawerNavigator, DrawerItems } from 'react-navigation';
 
-import Components from './src/drawer/components';
-import Ratings from './src/drawer/ratings';
-import Pricing from './src/drawer/pricing';
-import Login from './src/drawer/login';
-import Profile from './src/drawer/profile';
-import Lists from './src/drawer/lists';
-import Settings from './src/drawer/settings';
+import Components from './drawer/components';
+import Ratings from './drawer/ratings';
+import Pricing from './drawer/pricing';
+import Login from './drawer/login';
+import Profile from './drawer/profile';
+import Lists from './drawer/lists';
+import Settings from './drawer/settings';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
 
@@ -20,7 +20,7 @@ const CustomDrawerContentComponent = props => (
       style={{ marginTop: 40, justifyContent: 'center', alignItems: 'center' }}
     >
       <Image
-        source={require('./src/images/logo.png')}
+        source={require('./images/logo.png')}
         style={{ width: SCREEN_WIDTH * 0.57 }}
         resizeMode="contain"
       />

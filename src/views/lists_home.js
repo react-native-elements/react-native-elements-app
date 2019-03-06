@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 import React, { Component } from 'react';
-import { View, ScrollView, StyleSheet, Image, ListView, Platform } from 'react-native';
+import { View, ScrollView, StyleSheet, Image, ListView } from 'react-native';
 
 import {
   Text,

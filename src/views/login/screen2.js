@@ -12,10 +12,8 @@ import {
   Text,
   View,
 } from 'react-native';
-import { Font } from 'expo';
-import { Input, Button } from 'react-native-elements';
-
-import Icon from 'react-native-vector-icons/SimpleLineIcons';
+import { cacheFonts } from "../../helpers/AssetsCaching";
+import { Input, Button, Icon } from 'react-native-elements';
 
 // Enable LayoutAnimation on Android
 UIManager.setLayoutAnimationEnabledExperimental &&
@@ -56,7 +54,7 @@ export default class LoginScreen3 extends Component {
   }
 
   async componentDidMount() {
-    await Font.loadAsync({
+    await cacheFonts({
       light: require('../../assets/fonts/Ubuntu-Light.ttf'),
       bold: require('../../assets/fonts/Ubuntu-Bold.ttf'),
       lightitalic: require('../../assets/fonts/Ubuntu-Light-Italic.ttf'),
@@ -312,7 +310,7 @@ export const FormInput = props => {
       {...otherProps}
       ref={refInput}
       inputContainerStyle={styles.inputContainer}
-      leftIcon={<Icon name={icon} color="#7384B4" size={18} />}
+      leftIcon={<Icon name={icon} type={"simple-line-icon"} color="#7384B4" size={18} />}
       inputStyle={styles.inputStyle}
       autoFocus={false}
       autoCapitalize="none"

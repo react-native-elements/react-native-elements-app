@@ -6,10 +6,9 @@ import {
   ImageBackground,
   Dimensions,
 } from 'react-native';
-import { Input, Button } from 'react-native-elements';
+import { Input, Button, Icon } from 'react-native-elements';
 
-import { Font } from 'expo';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import {cacheFonts} from "../../helpers/AssetsCaching";
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
 const SCREEN_HEIGHT = Dimensions.get('window').height;
@@ -31,7 +30,7 @@ export default class LoginScreen1 extends Component {
   }
 
   async componentDidMount() {
-    await Font.loadAsync({
+    await cacheFonts({
       georgia: require('../../assets/fonts/Georgia.ttf'),
       regular: require('../../assets/fonts/Montserrat-Regular.ttf'),
       light: require('../../assets/fonts/Montserrat-Light.ttf'),
@@ -77,6 +76,7 @@ export default class LoginScreen1 extends Component {
                   leftIcon={
                     <Icon
                       name="user-o"
+                      type="font-awesome"
                       color="rgba(171, 189, 219, 1)"
                       size={25}
                     />
@@ -108,6 +108,7 @@ export default class LoginScreen1 extends Component {
                   leftIcon={
                     <Icon
                       name="lock"
+                      type="font-awesome"
                       color="rgba(171, 189, 219, 1)"
                       size={25}
                     />

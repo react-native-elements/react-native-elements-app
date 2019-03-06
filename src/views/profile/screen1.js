@@ -10,7 +10,7 @@ import {
   StatusBar,
 } from 'react-native';
 import { Button } from 'react-native-elements';
-import { Font } from 'expo';
+import { cacheFonts } from '../../helpers/AssetsCaching';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
 
@@ -73,7 +73,7 @@ export default class LoginScreen1 extends Component {
   }
 
   async componentDidMount() {
-    await Font.loadAsync({
+    await cacheFonts({
       georgia: require('../../assets/fonts/Georgia.ttf'),
       regular: require('../../assets/fonts/Montserrat-Regular.ttf'),
       light: require('../../assets/fonts/Montserrat-Light.ttf'),

@@ -10,11 +10,8 @@ import {
   UIManager,
   KeyboardAvoidingView,
 } from 'react-native';
-import { Font } from 'expo';
-import { Input, Button } from 'react-native-elements';
-
-import Icon from 'react-native-vector-icons/FontAwesome';
-import SimpleIcon from 'react-native-vector-icons/SimpleLineIcons';
+import { cacheFonts } from '../../helpers/AssetsCaching';
+import { Input, Button, Icon } from 'react-native-elements';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
 const SCREEN_HEIGHT = Dimensions.get('window').height;
@@ -58,7 +55,7 @@ export default class LoginScreen2 extends Component {
   }
 
   async componentDidMount() {
-    await Font.loadAsync({
+    await cacheFonts({
       georgia: require('../../assets/fonts/Georgia.ttf'),
       regular: require('../../assets/fonts/Montserrat-Regular.ttf'),
       light: require('../../assets/fonts/Montserrat-Light.ttf'),
@@ -106,7 +103,7 @@ export default class LoginScreen2 extends Component {
         isEmailValid: this.validateEmail(email) || this.emailInput.shake(),
         isPasswordValid: password.length >= 8 || this.passwordInput.shake(),
         isConfirmationValid:
-          password == passwordConfirmation || this.confirmationInput.shake(),
+          password === passwordConfirmation || this.confirmationInput.shake(),
       });
     }, 1500);
   }
@@ -176,6 +173,7 @@ export default class LoginScreen2 extends Component {
                     leftIcon={
                       <Icon
                         name="envelope-o"
+                        type="font-awesome"
                         color="rgba(0, 0, 0, 0.38)"
                         size={25}
                         style={{ backgroundColor: 'transparent' }}
@@ -202,8 +200,9 @@ export default class LoginScreen2 extends Component {
                   />
                   <Input
                     leftIcon={
-                      <SimpleIcon
+                      <Icon
                         name="lock"
+                        type="simple-line-icon"
                         color="rgba(0, 0, 0, 0.38)"
                         size={25}
                         style={{ backgroundColor: 'transparent' }}
@@ -238,8 +237,9 @@ export default class LoginScreen2 extends Component {
                   {isSignUpPage && (
                     <Input
                       icon={
-                        <SimpleIcon
+                        <Icon
                           name="lock"
+                          type="simple-line-icon"
                           color="rgba(0, 0, 0, 0.38)"
                           size={25}
                           style={{ backgroundColor: 'transparent' }}

@@ -26,7 +26,5 @@ module.exports = override(
   ]),
   addBabelPlugins(
     "@babel/plugin-proposal-class-properties",
-//    "@babel/plugin-proposal-export-default-from", //"^7.2.0",
-//    "@babel/plugin-transform-modules-commonjs", //"^7.2.0",
   ),
 );

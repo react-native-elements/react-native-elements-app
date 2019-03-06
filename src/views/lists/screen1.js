@@ -9,10 +9,9 @@ import {
   ScrollView,
   SafeAreaView,
 } from 'react-native';
-import { Avatar, Button } from 'react-native-elements';
+import { Avatar, Button, Icon } from 'react-native-elements';
 
-import { Font } from 'expo';
-import Icon from 'react-native-vector-icons/Ionicons';
+import { cacheFonts } from '../../helpers/AssetsCaching';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
 
@@ -65,7 +64,7 @@ export default class ListsScreen1 extends Component {
   }
 
   async componentDidMount() {
-    await Font.loadAsync({
+    await cacheFonts({
       georgia: require('../../assets/fonts/Georgia.ttf'),
       regular: require('../../assets/fonts/Montserrat-Regular.ttf'),
       light: require('../../assets/fonts/Montserrat-Light.ttf'),
@@ -92,7 +91,7 @@ export default class ListsScreen1 extends Component {
             marginLeft: 10,
           }}
         >
-          <Icon name="md-arrow-dropup" color="green" size={25} />
+          <Icon name="md-arrow-dropup" type="ionicon" color="green" size={25} />
           <Text
             style={{
               color: 'green',
@@ -119,7 +118,7 @@ export default class ListsScreen1 extends Component {
             marginLeft: 10,
           }}
         >
-          <Icon name="md-arrow-dropdown" color="red" size={25} />
+          <Icon name="md-arrow-dropdown" type="ionicon" color="red" size={25} />
           <Text
             style={{
               color: 'red',
@@ -192,7 +191,7 @@ export default class ListsScreen1 extends Component {
               marginHorizontal: 10,
             }}
           >
-            <Icon name="md-person-add" color="gray" size={20} />
+            <Icon name="md-person-add" type="ionicon" color="gray" size={20} />
           </View>
         </View>
       </View>

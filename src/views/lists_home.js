@@ -175,9 +175,11 @@ class Icons extends Component {
   }
 
   render() {
+/*
     const { navigation } = this.props;
     const buttons = ['Button1', 'Button2'];
     const { selectedIndex } = this.state;
+*/
 
     return (
       <ScrollView>

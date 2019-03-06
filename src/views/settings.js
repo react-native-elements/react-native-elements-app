@@ -16,7 +16,7 @@ const sections = [
     data: [
       {
         title: 'Airplane Mode',
-        icon: 'ios-plane',
+        icon: 'ios-airplane',
         backgroundColor: ORANGE,
         hideChevron: true,
         checkbox: true,
@@ -40,7 +40,7 @@ const sections = [
       {
         title: 'Personal Hotspot',
         backgroundColor: GREEN,
-        icon: 'ios-radio-outline',
+        icon: 'ios-radio',
         rightTitle: 'Off',
       },
     ],
@@ -84,7 +84,7 @@ const sections = [
       {
         title: 'Sounds',
         backgroundColor: RED,
-        icon: 'ios-volume-up',
+        icon: 'ios-volume-high',
       },
       {
         title: 'Touch ID & Code',

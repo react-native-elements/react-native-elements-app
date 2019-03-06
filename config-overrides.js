@@ -1,17 +1,21 @@
 const path = require("path");
 const {override, addBabelPlugins, babelInclude} = require("customize-cra");
 
+const modulesPath = path.resolve(__dirname, "node_modules");
+
 module.exports = override(
   babelInclude([
     path.resolve("src"),
-    path.resolve("node_modules/react-native-elements"),
-    path.resolve("node_modules/react-native-ratings"),
-    path.resolve("node_modules/react-native-status-bar-height"),
-    path.resolve("node_modules/react-native-vector-icons"),
+    path.resolve(modulesPath, "react-native-elements"),
+    path.resolve(modulesPath, "react-native-ratings"),
+    path.resolve(modulesPath, "react-native-status-bar-height"),
+    path.resolve(modulesPath, "react-native-vector-icons"),
   ]),
   addBabelPlugins(
     "@babel/plugin-proposal-class-properties",
-//        "@babel/plugin-transform-modules-commonjs",
+//    "@babel/plugin-proposal-export-default-from",
+//    "@babel/plugin-transform-modules-commonjs",
   ),
 );
+// "@babel/plugin-proposal-export-default-from": "^7.2.0",
 // "@babel/plugin-transform-modules-commonjs": "^7.2.0",

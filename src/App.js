@@ -1,8 +1,8 @@
 import React from 'react';
-import { registerRootComponent, AppLoading, Asset, Font } from 'expo';
-import { FontAwesome, Ionicons } from '@expo/vector-icons';
-import { View, Image, Dimensions } from 'react-native';
+import AppLoading from "./components/AppLoading";
+import { View, Text, Image, Dimensions } from 'react-native';
 import { DrawerNavigator, DrawerItems } from 'react-navigation';
+import {cacheAssets,cacheFonts} from "./helpers/AssetsCaching";
 
 import Components from './drawer/components';
 import Ratings from './drawer/ratings';
@@ -82,40 +82,29 @@ const MainRoot = DrawerNavigator(
   }
 );
 
-function cacheImages(images) {
-  return images.map(image => {
-    if (typeof image === 'string') {
-      return Image.prefetch(image);
-    } else {
-      return Asset.fromModule(image).downloadAsync();
-    }
-  });
-}
-
-function cacheFonts(fonts) {
-  return fonts.map(font => Font.loadAsync(font));
-}
-
 export default class AppContainer extends React.Component {
   state = {
     isReady: false,
   };
 
   async _loadAssetsAsync() {
-    const imageAssets = cacheImages([
-      require('./assets/images/bg_screen1.jpg'),
-      require('./assets/images/bg_screen2.jpg'),
-      require('./assets/images/bg_screen3.jpg'),
-      require('./assets/images/bg_screen4.jpg'),
-      require('./assets/images/user-cool.png'),
-      require('./assets/images/user-hp.png'),
-      require('./assets/images/user-student.png'),
-      require('./assets/images/avatar1.jpg'),
+    const imageAssets = cacheAssets([
+      require("./assets/images/bg_screen1.jpg"),
+      require("./assets/images/bg_screen2.jpg"),
+      require("./assets/images/bg_screen3.jpg"),
+      require("./assets/images/bg_screen4.jpg"),
+      require("./assets/images/user-cool.png"),
+      require("./assets/images/user-hp.png"),
+      require("./assets/images/user-student.png"),
+      require("./assets/images/avatar1.jpg"),
     ]);
 
-    const fontAssets = cacheFonts([FontAwesome.font, Ionicons.font]);
+    const fontAssets = cacheFonts({
+      "FontAwesome": require("@expo/vector-icons/fonts/FontAwesome.ttf"),
+      "Ionicons": require("@expo/vector-icons/fonts/Ionicons.ttf"),
+    });
 
-    await Promise.all([...imageAssets, ...fontAssets]);
+    await Promise.all([imageAssets, fontAssets]);
   }
 
   render() {
@@ -131,5 +120,3 @@ export default class AppContainer extends React.Component {
     return <MainRoot />;
   }
 }
-
-registerRootComponent(AppContainer);

@@ -9,6 +9,7 @@
     "@babel/polyfill": "^7.2.5",
     "@expo/vector-icons": "^9.0.0",
     "expo": "^32.0.0",
+    "expo-linear-gradient": "^3.0.0",
     "lodash": "^4.17.4",
     "prop-types": "^15.7.2",
     "react": "16.5.0",

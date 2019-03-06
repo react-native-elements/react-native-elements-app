@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 import React, { Component } from 'react';
-import { View, ScrollView, StyleSheet, Image, ListView } from 'react-native';
+import { View, ScrollView, StyleSheet, Image, ListView, Platform } from 'react-native';
 
 import {
   Text,
@@ -13,6 +13,7 @@ import {
 } from 'react-native-elements';
 import {ListItem} from "../components/ListItem";
 import TouchableScale from 'react-native-touchable-scale';
+import {LinearGradient} from "../components/LinearGradient";
 
 import colors from '../config/colors';
 
@@ -291,6 +292,7 @@ class Icons extends Component {
                 start: [1, 0],
                 end: [0.2, 0],
               }}
+              ViewComponent={LinearGradient}
               title={l.name}
               titleStyle={{ color: 'white', fontWeight: 'bold' }}
               subtitleStyle={{ color: 'white' }}

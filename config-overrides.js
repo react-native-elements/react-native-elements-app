@@ -24,6 +24,7 @@ module.exports = override(
     path.resolve(modulesPath, "react-navigation"),
     path.resolve(modulesPath, "react-native-tab-view"),
     path.resolve(modulesPath, "react-native-touchable-scale"),
+    path.resolve(modulesPath, "expo-linear-gradient"),
   ]),
   addBabelPlugins(
     "@babel/plugin-proposal-class-properties",

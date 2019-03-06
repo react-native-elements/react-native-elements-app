@@ -7,6 +7,7 @@ import {
   TouchableHighlight,
   View,
 } from 'react-native';
+import PadView from "./PadView";
 
 import { renderNode, nodeType } from 'react-native-elements/src/helpers';
 import { ViewPropTypes, TextPropTypes, withTheme } from 'react-native-elements/src/config';
@@ -349,27 +350,6 @@ ListItem.propTypes = {
 ListItem.defaultProps = {
   pad: 16,
   title: '',
-};
-
-const PadView = React.forwardRef(({ children, pad, Component, ...props }, ref) => {
-  const childrens = React.Children.toArray(children);
-  const { length } = childrens;
-  const Container = Component || View;
-  return (
-    <Container ref={ref} {...props}>
-      {React.Children.map(
-        childrens,
-        (child, index) =>
-          child && [child, index !== length - 1 && <View width={pad} />]
-      )}
-    </Container>
-  );
-});
-
-PadView.propTypes = {
-  children: PropTypes.node,
-  pad: PropTypes.number,
-  Component: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
 };
 
 export { ListItem };

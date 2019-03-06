@@ -1,5 +1,9 @@
 import React from "react";
 import App from "./App";
-import {registerRootComponent} from "expo";
+import {KeepAwake,registerRootComponent} from "expo";
+
+if(__DEV__) {
+  KeepAwake.activate();
+}
 
 registerRootComponent(App);

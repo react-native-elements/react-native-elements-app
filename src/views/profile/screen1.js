@@ -74,10 +74,10 @@ export default class LoginScreen1 extends Component {
 
   async componentDidMount() {
     await cacheFonts({
-      georgia: require('../../assets/fonts/Georgia.ttf'),
-      regular: require('../../assets/fonts/Montserrat-Regular.ttf'),
-      light: require('../../assets/fonts/Montserrat-Light.ttf'),
-      bold: require('../../assets/fonts/Montserrat-Bold.ttf'),
+      georgia: require('../../../assets/fonts/Georgia.ttf'),
+      regular: require('../../../assets/fonts/Montserrat-Regular.ttf'),
+      light: require('../../../assets/fonts/Montserrat-Light.ttf'),
+      bold: require('../../../assets/fonts/Montserrat-Bold.ttf'),
     });
 
     this.setState({ fontLoaded: true });

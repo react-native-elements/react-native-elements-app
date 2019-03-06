@@ -19,9 +19,9 @@ import { Input, Button, Icon } from 'react-native-elements';
 UIManager.setLayoutAnimationEnabledExperimental &&
   UIManager.setLayoutAnimationEnabledExperimental(true);
 
-const USER_COOL = require('../../assets/images/user-cool.png');
-const USER_STUDENT = require('../../assets/images/user-student.png');
-const USER_HP = require('../../assets/images/user-hp.png');
+const USER_COOL = require('../../../assets/images/user-cool.png');
+const USER_STUDENT = require('../../../assets/images/user-student.png');
+const USER_HP = require('../../../assets/images/user-hp.png');
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
 const SCREEN_HEIGHT = Dimensions.get('window').height;
@@ -55,9 +55,9 @@ export default class LoginScreen3 extends Component {
 
   async componentDidMount() {
     await cacheFonts({
-      light: require('../../assets/fonts/Ubuntu-Light.ttf'),
-      bold: require('../../assets/fonts/Ubuntu-Bold.ttf'),
-      lightitalic: require('../../assets/fonts/Ubuntu-Light-Italic.ttf'),
+      light: require('../../../assets/fonts/Ubuntu-Light.ttf'),
+      bold: require('../../../assets/fonts/Ubuntu-Bold.ttf'),
+      lightitalic: require('../../../assets/fonts/Ubuntu-Light-Italic.ttf'),
     });
 
     this.setState({ fontLoaded: true });

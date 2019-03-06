@@ -10,7 +10,7 @@ import {
 const SCREEN_WIDTH = Dimensions.get('window').width;
 const SCREEN_HEIGHT = Dimensions.get('window').height;
 
-const BG_IMAGE = require('../../assets/images/wallpaper_2.jpg');
+const BG_IMAGE = require('../../../assets/images/wallpaper_2.jpg');
 
 export default class ListsScreen2 extends Component {
   render() {

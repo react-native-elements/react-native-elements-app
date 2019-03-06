@@ -9,9 +9,9 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "primaryColor": "#cccccc",
-    "icon": "./src/assets/icons/icon.png",
+    "icon": "./assets/icons/icon.png",
     "splash": {
-      "image": "./src/assets/icons/loading.png"
+      "image": "./assets/icons/loading.png"
     },
     "updates": {
       "fallbackToCacheTimeout": 0

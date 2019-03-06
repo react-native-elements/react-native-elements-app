@@ -259,7 +259,7 @@ class Icons extends Component {
                 <Text style={styles.ratingText}>5 months ago</Text>
               </View>
             }
-            leftAvatar={{ source: require('../assets/images/avatar1.jpg') }}
+            leftAvatar={{ source: require('../../assets/images/avatar1.jpg') }}
           />
         </View>
         <View style={styles.list}>

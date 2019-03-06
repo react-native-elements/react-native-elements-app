@@ -1,6 +1,6 @@
 const path = require("path");
 const webpack = require("webpack");
-const {override, addBabelPlugins, babelInclude} = require("customize-cra");
+const {override, addBabelPlugins, babelInclude, removeModuleScopePlugin} = require("customize-cra");
 
 const modulesPath = path.resolve(__dirname, "node_modules");
 
@@ -13,6 +13,7 @@ const add__DEV__ = config => {
 
 module.exports = override(
   add__DEV__,
+  removeModuleScopePlugin(),
   babelInclude([
     path.resolve("src"),
     path.resolve(modulesPath, "react-native-elements"),

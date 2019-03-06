@@ -89,14 +89,14 @@ export default class AppContainer extends React.Component {
 
   async _loadAssetsAsync() {
     const imageAssets = cacheAssets([
-      require("./assets/images/bg_screen1.jpg"),
-      require("./assets/images/bg_screen2.jpg"),
-      require("./assets/images/bg_screen3.jpg"),
-      require("./assets/images/bg_screen4.jpg"),
-      require("./assets/images/user-cool.png"),
-      require("./assets/images/user-hp.png"),
-      require("./assets/images/user-student.png"),
-      require("./assets/images/avatar1.jpg"),
+      require("../assets/images/bg_screen1.jpg"),
+      require("../assets/images/bg_screen2.jpg"),
+      require("../assets/images/bg_screen3.jpg"),
+      require("../assets/images/bg_screen4.jpg"),
+      require("../assets/images/user-cool.png"),
+      require("../assets/images/user-hp.png"),
+      require("../assets/images/user-student.png"),
+      require("../assets/images/avatar1.jpg"),
     ]);
 
     const fontAssets = cacheFonts({

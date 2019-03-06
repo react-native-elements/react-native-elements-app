@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { View, Text, ScrollView, StyleSheet } from 'react-native';
-import { Button, ButtonGroup } from 'react-native-elements';
+import { Button, ButtonGroup, Icon } from 'react-native-elements';
 
-import Icon from 'react-native-vector-icons/FontAwesome';
+import {LinearGradient} from "../components/LinearGradient";
 
 class Buttons extends Component {
   constructor(props) {
@@ -18,7 +18,7 @@ class Buttons extends Component {
       <ScrollView style={styles.container}>
         <View style={styles.contentView}>
           <View style={styles.headerContainer}>
-            <Icon color="white" name="rocket" size={62} />
+            <Icon color="white" name="rocket" type="font-awesome" size={62} />
             <Text style={styles.heading}>Buttons</Text>
           </View>
           <View style={{ alignItems: 'center' }}>
@@ -58,6 +58,7 @@ class Buttons extends Component {
                 start: [1, 0],
                 end: [0.2, 0],
               }}
+              ViewComponent={LinearGradient}
               buttonStyle={{
                 borderWidth: 0,
                 borderColor: 'transparent',
@@ -227,7 +228,7 @@ class Buttons extends Component {
           <View
             style={[styles.headerContainer, { backgroundColor: '#292C44' }]}
           >
-            <Icon color="white" name="wrench" size={62} />
+            <Icon color="white" name="wrench" type="font-awesome" size={62} />
             <Text style={styles.heading}>Button Groups</Text>
           </View>
           <ButtonGroup

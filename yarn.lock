@@ -299,7 +299,7 @@
     "@babel/helper-plugin-utils" "^7.0.0"
     "@babel/plugin-syntax-decorators" "^7.2.0"
 
-"@babel/plugin-proposal-export-default-from@^7.0.0", "@babel/plugin-proposal-export-default-from@^7.2.0":
+"@babel/plugin-proposal-export-default-from@^7.0.0":
   version "7.2.0"
   resolved "https://registry.yarnpkg.com/@babel/plugin-proposal-export-default-from/-/plugin-proposal-export-default-from-7.2.0.tgz#737b0da44b9254b6152fe29bb99c64e5691f6f68"
   integrity sha512-NVfNe7F6nsasG1FnvcFxh2FN0l04ZNe75qTOAVOILWPam0tw9a63RtT/Dab8dPjedZa4fTQaQ83yMMywF9OSug==
@@ -4549,6 +4549,11 @@ expo-font-interface@~2.0.0:
   integrity sha512-5tEGjUwOLd5h6vTR3xfNc6jXTRKzLVnGpIjns+L2aArIIktmlZU3Y/gzueY8AkB6J6SB5DYSLlybp5kQrUOImw==
   dependencies:
     expo-core "~2.0.0"
+
+expo-font@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/expo-font/-/expo-font-3.0.1.tgz#abcb55241ee9b3e377abaa37dfe6fe73da3ee88e"
+  integrity sha512-4vdiTsDmkf5yGSVDCtJZHHrzc1eYfmFAgmHtsCp1iCqA+9F5wdFhfpuSh/7lUacW31ufpoNVgK0rivaSi1pngQ==
 
 expo-font@~2.0.0:
   version "2.0.0"

@@ -1,15 +1,17 @@
 import React from 'react';
 import AppLoading from "./components/AppLoading";
-import { View, Text, Image, Dimensions } from 'react-native';
+import { View, Image, Dimensions } from 'react-native';
 import { DrawerNavigator, DrawerItems } from 'react-navigation';
 import {cacheAssets,cacheFonts} from "./helpers/AssetsCaching";
 
 import Components from './drawer/components';
 import Ratings from './drawer/ratings';
 import Pricing from './drawer/pricing';
+/*
 import Login from './drawer/login';
 import Profile from './drawer/profile';
 import Lists from './drawer/lists';
+*/
 import Settings from './drawer/settings';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
@@ -33,6 +35,7 @@ const CustomDrawerContentComponent = props => (
 
 const MainRoot = DrawerNavigator(
   {
+/*
     Login: {
       path: '/login',
       screen: Login,
@@ -45,6 +48,7 @@ const MainRoot = DrawerNavigator(
       path: '/lists',
       screen: Lists,
     },
+*/
     Components: {
       path: '/components',
       screen: Components,
@@ -102,6 +106,8 @@ export default class AppContainer extends React.Component {
     const fontAssets = cacheFonts({
       "FontAwesome": require("@expo/vector-icons/fonts/FontAwesome.ttf"),
       "Ionicons": require("@expo/vector-icons/fonts/Ionicons.ttf"),
+      "Entypo": require("@expo/vector-icons/fonts/Entypo.ttf"),
+      "Material Design Icons": require("@expo/vector-icons/fonts/MaterialCommunityIcons.ttf"),
     });
 
     await Promise.all([imageAssets, fontAssets]);

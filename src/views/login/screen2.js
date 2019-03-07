@@ -15,6 +15,8 @@ import {
 import { cacheFonts } from "../../helpers/AssetsCaching";
 import { Input, Button, Icon } from 'react-native-elements';
 
+import {LinearGradient} from "../../components/LinearGradient";
+
 // Enable LayoutAnimation on Android
 UIManager.setLayoutAnimationEnabledExperimental &&
   UIManager.setLayoutAnimationEnabledExperimental(true);
@@ -255,6 +257,7 @@ export default class LoginScreen3 extends Component {
               start: [1, 0],
               end: [0.2, 0],
             }}
+            ViewComponent={LinearGradient}
             titleStyle={styles.signUpButtonText}
             onPress={this.signup}
             disabled={isLoading}

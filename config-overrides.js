@@ -1,19 +1,23 @@
 const path = require("path");
 const webpack = require("webpack");
-const {override, addBabelPlugins, babelInclude, removeModuleScopePlugin} = require("customize-cra");
+const {override, addBabelPlugins, babelInclude, removeModuleScopePlugin, useEslintRc} = require("customize-cra");
 
 const modulesPath = path.resolve(__dirname, "node_modules");
 
-const add__DEV__ = config => {
-  config.plugins.push(new webpack.DefinePlugin({
-    __DEV__: (process.env.NODE_ENV === "development")
-  }));
+const registerGlobals = vars => config => {
+  config.plugins.push(new webpack.DefinePlugin(vars));
   return config;
 };
 
 module.exports = override(
-  add__DEV__,
   removeModuleScopePlugin(),
+
+  // Don't forget to add your globals into .eslintrc
+  useEslintRc(),
+  registerGlobals({
+    __DEV__: (process.env.NODE_ENV === "development")
+  }),
+
   babelInclude([
     path.resolve("src"),
     path.resolve(modulesPath, "react-native-elements"),

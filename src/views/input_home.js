@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import { View, ScrollView, StyleSheet, Text, Dimensions } from 'react-native';
 import { Input, SearchBar, Icon, Button } from 'react-native-elements';
 
-import SimpleIcon from 'react-native-vector-icons/SimpleLineIcons';
-import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
-
 const SCREEN_WIDTH = Dimensions.get('window').width;
 
 const dummySearchBarProps = {
@@ -128,7 +125,7 @@ class InputHome extends Component {
                   backgroundColor: 'white',
                 }}
                 leftIcon={
-                  <MaterialIcon name="email-outline" color="black" size={25} />
+                  <Icon name="email-outline" type="material-community" color="black" size={25} />
                 }
                 placeholder="Email"
                 placeholderTextColor="black"
@@ -156,7 +153,7 @@ class InputHome extends Component {
                   width: SCREEN_WIDTH - 80,
                   backgroundColor: 'white',
                 }}
-                leftIcon={<SimpleIcon name="lock" color="black" size={25} />}
+                leftIcon={<Icon name="lock" type="simple-line-icon" color="black" size={25} />}
                 placeholder="Password"
                 placeholderTextColor="black"
                 autoCapitalize="none"
@@ -198,8 +195,9 @@ class InputHome extends Component {
                 marginVertical: 10,
               }}
               leftIcon={
-                <SimpleIcon
+                <Icon
                   name="user"
+                  type="simple-line-icon"
                   color="rgba(110, 120, 170, 1)"
                   size={25}
                 />
@@ -229,8 +227,9 @@ class InputHome extends Component {
                 marginVertical: 10,
               }}
               leftIcon={
-                <MaterialIcon
+                <Icon
                   name="email-outline"
+                  type="material-community"
                   color="rgba(110, 120, 170, 1)"
                   size={25}
                 />
@@ -260,8 +259,9 @@ class InputHome extends Component {
                 marginVertical: 10,
               }}
               leftIcon={
-                <SimpleIcon
+                <Icon
                   name="lock"
+                  type="simple-line-icon"
                   color="rgba(110, 120, 170, 1)"
                   size={25}
                 />
@@ -293,8 +293,9 @@ class InputHome extends Component {
                 marginBottom: 30,
               }}
               leftIcon={
-                <SimpleIcon
+                <Icon
                   name="lock"
+                  type="simple-line-icon"
                   color="rgba(110, 120, 170, 1)"
                   size={25}
                 />

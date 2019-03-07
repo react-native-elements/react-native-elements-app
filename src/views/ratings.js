@@ -106,7 +106,7 @@ class Ratings extends React.Component {
 
 Ratings.navigationOptions = {
   title: 'Ratings Component',
-  header: null,
+//  header: null,
 };
 
 const styles = StyleSheet.create({

@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 import { View, ScrollView, StyleSheet, Text, Dimensions } from 'react-native';
-import { Input, SearchBar, Icon, Button } from 'react-native-elements';
+import {
+  Input,
+  SearchBar,
+  Icon,
+  Button,
+  ThemeProvider,
+} from 'react-native-elements';
 
 import SimpleIcon from 'react-native-vector-icons/SimpleLineIcons';
 import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -64,6 +70,7 @@ class InputHome extends Component {
                 size={25}
               />
             }
+            leftIconContainerStyle={{ marginLeft: 0, marginRight: 10 }}
             containerStyle={styles.inputContainerStyle}
             placeholder="Input with left icon"
           />
@@ -130,6 +137,10 @@ class InputHome extends Component {
                 leftIcon={
                   <MaterialIcon name="email-outline" color="black" size={25} />
                 }
+                leftIconContainerStyle={{
+                  marginRight: 10,
+                }}
+                containerStyle={{ paddingHorizontal: 0 }}
                 placeholder="Email"
                 placeholderTextColor="black"
                 autoCapitalize="none"
@@ -156,6 +167,10 @@ class InputHome extends Component {
                   width: SCREEN_WIDTH - 80,
                   backgroundColor: 'white',
                 }}
+                leftIconContainerStyle={{
+                  marginRight: 10,
+                }}
+                containerStyle={{ paddingHorizontal: 0 }}
                 leftIcon={<SimpleIcon name="lock" color="black" size={25} />}
                 placeholder="Password"
                 placeholderTextColor="black"
@@ -171,148 +186,123 @@ class InputHome extends Component {
               <View style={styles.triangleRight} />
             </View>
           </View>
-          <View
-            style={{
-              backgroundColor: 'rgba(46, 50, 72, 1)',
-              width: SCREEN_WIDTH,
-              alignItems: 'center',
+
+          <ThemeProvider
+            theme={{
+              Input: {
+                containerStyle: {
+                  width: SCREEN_WIDTH - 50,
+                },
+                inputContainerStyle: {
+                  borderRadius: 40,
+                  borderWidth: 1,
+                  borderColor: 'rgba(110, 120, 170, 1)',
+                  height: 50,
+                  marginVertical: 10,
+                },
+                placeholderTextColor: 'rgba(110, 120, 170, 1)',
+                inputStyle: {
+                  marginLeft: 10,
+                  color: 'white',
+                },
+                keyboardAppearance: 'light',
+                blurOnSubmit: false,
+              },
             }}
           >
-            <Text
+            <View
               style={{
-                color: 'white',
-                fontSize: 30,
-                marginVertical: 10,
-                fontWeight: '300',
+                backgroundColor: 'rgba(46, 50, 72, 1)',
+                width: SCREEN_WIDTH,
+                alignItems: 'center',
+                paddingBottom: 30,
               }}
             >
-              Sign up
-            </Text>
-            <Input
-              inputContainerStyle={{
-                borderRadius: 40,
-                borderWidth: 1,
-                borderColor: 'rgba(110, 120, 170, 1)',
-                height: 50,
-                width: SCREEN_WIDTH - 50,
-                marginVertical: 10,
-              }}
-              leftIcon={
-                <SimpleIcon
-                  name="user"
-                  color="rgba(110, 120, 170, 1)"
-                  size={25}
-                />
-              }
-              iconContainerStyle={{ marginLeft: 20 }}
-              placeholder="Username"
-              placeholderTextColor="rgba(110, 120, 170, 1)"
-              inputStyle={{ marginLeft: 10, color: 'white' }}
-              autoCapitalize="none"
-              autoCorrect={false}
-              keyboardAppearance="light"
-              keyboardType="email-address"
-              returnKeyType="next"
-              ref={input => (this.usernameInput = input)}
-              onSubmitEditing={() => {
-                this.email2Input.focus();
-              }}
-              blurOnSubmit={false}
-            />
-            <Input
-              inputContainerStyle={{
-                borderRadius: 40,
-                borderWidth: 1,
-                borderColor: 'rgba(110, 120, 170, 1)',
-                height: 50,
-                width: SCREEN_WIDTH - 50,
-                marginVertical: 10,
-              }}
-              leftIcon={
-                <MaterialIcon
-                  name="email-outline"
-                  color="rgba(110, 120, 170, 1)"
-                  size={25}
-                />
-              }
-              iconContainerStyle={{ marginLeft: 20 }}
-              placeholder="Email"
-              placeholderTextColor="rgba(110, 120, 170, 1)"
-              inputStyle={{ marginLeft: 10, color: 'white' }}
-              autoCapitalize="none"
-              autoCorrect={false}
-              keyboardAppearance="light"
-              keyboardType="email-address"
-              returnKeyType="next"
-              ref={input => (this.email2Input = input)}
-              onSubmitEditing={() => {
-                this.password2Input.focus();
-              }}
-              blurOnSubmit={false}
-            />
-            <Input
-              inputContainerStyle={{
-                borderRadius: 40,
-                borderWidth: 1,
-                borderColor: 'rgba(110, 120, 170, 1)',
-                height: 50,
-                width: SCREEN_WIDTH - 50,
-                marginVertical: 10,
-              }}
-              leftIcon={
-                <SimpleIcon
-                  name="lock"
-                  color="rgba(110, 120, 170, 1)"
-                  size={25}
-                />
-              }
-              iconContainerStyle={{ marginLeft: 20 }}
-              placeholder="Password"
-              placeholderTextColor="rgba(110, 120, 170, 1)"
-              inputStyle={{ marginLeft: 10, color: 'white' }}
-              autoCapitalize="none"
-              keyboardAppearance="light"
-              secureTextEntry={true}
-              autoCorrect={false}
-              keyboardType="default"
-              returnKeyType="next"
-              ref={input => (this.password2Input = input)}
-              onSubmitEditing={() => {
-                this.confirmPassword2Input.focus();
-              }}
-              blurOnSubmit={false}
-            />
-            <Input
-              inputContainerStyle={{
-                borderRadius: 40,
-                borderWidth: 1,
-                borderColor: 'rgba(110, 120, 170, 1)',
-                height: 50,
-                width: SCREEN_WIDTH - 50,
-                marginTop: 10,
-                marginBottom: 30,
-              }}
-              leftIcon={
-                <SimpleIcon
-                  name="lock"
-                  color="rgba(110, 120, 170, 1)"
-                  size={25}
-                />
-              }
-              iconContainerStyle={{ marginLeft: 20 }}
-              placeholder="Confirm Password"
-              placeholderTextColor="rgba(110, 120, 170, 1)"
-              inputStyle={{ marginLeft: 10, color: 'white' }}
-              autoCapitalize="none"
-              keyboardAppearance="light"
-              secureTextEntry={true}
-              autoCorrect={false}
-              keyboardType="default"
-              returnKeyType="done"
-              ref={input => (this.confirmPassword2Input = input)}
-              blurOnSubmit={true}
-            />
-          </View>
+              <Text
+                style={{
+                  color: 'white',
+                  fontSize: 30,
+                  marginVertical: 10,
+                  fontWeight: '300',
+                }}
+              >
+                Sign up
+              </Text>
+              <Input
+                leftIcon={
+                  <SimpleIcon
+                    name="user"
+                    color="rgba(110, 120, 170, 1)"
+                    size={25}
+                  />
+                }
+                placeholder="Username"
+                autoCapitalize="none"
+                autoCorrect={false}
+                keyboardType="email-address"
+                returnKeyType="next"
+                ref={input => (this.usernameInput = input)}
+                onSubmitEditing={() => {
+                  this.email2Input.focus();
+                }}
+              />
+              <Input
+                leftIcon={
+                  <MaterialIcon
+                    name="email-outline"
+                    color="rgba(110, 120, 170, 1)"
+                    size={25}
+                  />
+                }
+                placeholder="Email"
+                autoCapitalize="none"
+                autoCorrect={false}
+                keyboardType="email-address"
+                returnKeyType="next"
+                ref={input => (this.email2Input = input)}
+                onSubmitEditing={() => {
+                  this.password2Input.focus();
+                }}
+              />
+              <Input
+                leftIcon={
+                  <SimpleIcon
+                    name="lock"
+                    color="rgba(110, 120, 170, 1)"
+                    size={25}
+                  />
+                }
+                placeholder="Password"
+                autoCapitalize="none"
+                secureTextEntry={true}
+                autoCorrect={false}
+                keyboardType="default"
+                returnKeyType="next"
+                ref={input => (this.password2Input = input)}
+                onSubmitEditing={() => {
+                  this.confirmPassword2Input.focus();
+                }}
+              />
+              <Input
+                leftIcon={
+                  <SimpleIcon
+                    name="lock"
+                    color="rgba(110, 120, 170, 1)"
+                    size={25}
+                  />
+                }
+                placeholder="Confirm Password"
+                autoCapitalize="none"
+                keyboardAppearance="light"
+                secureTextEntry={true}
+                autoCorrect={false}
+                keyboardType="default"
+                returnKeyType="done"
+                ref={input => (this.confirmPassword2Input = input)}
+                blurOnSubmit
+              />
+            </View>
+          </ThemeProvider>
         </View>
       </ScrollView>
     );

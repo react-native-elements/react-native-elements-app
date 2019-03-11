@@ -141,7 +141,7 @@ export default class LoginScreen2 extends Component {
                 <View style={{ flexDirection: 'row' }}>
                   <Button
                     disabled={isLoading}
-                    clear
+                    type="clear"
                     activeOpacity={0.7}
                     onPress={() => this.selectCategory(0)}
                     containerStyle={{ flex: 1 }}
@@ -153,7 +153,7 @@ export default class LoginScreen2 extends Component {
                   />
                   <Button
                     disabled={isLoading}
-                    clear
+                    type="clear"
                     activeOpacity={0.7}
                     onPress={() => this.selectCategory(1)}
                     containerStyle={{ flex: 1 }}

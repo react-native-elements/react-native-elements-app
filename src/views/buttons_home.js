@@ -72,7 +72,7 @@ class Buttons extends Component {
                 color: 'white',
               }}
               iconRight
-              iconContainerStyle={{ marginLeft: 5 }}
+              iconContainerStyle={{ marginLeft: 10, marginRight: -10 }}
             />
             <Button
               title="Request an agent"
@@ -160,10 +160,9 @@ class Buttons extends Component {
               <Button
                 title="Outline Button"
                 buttonStyle={{
-                  backgroundColor: 'white',
                   borderColor: 'rgba(78, 116, 289, 1)',
-                  borderWidth: 1,
                 }}
+                type="outline"
                 titleStyle={{ color: 'rgba(78, 116, 289, 1)' }}
               />
             </View>
@@ -183,7 +182,7 @@ class Buttons extends Component {
               />
               <Button
                 title="Clear Button"
-                clear
+                type="clear"
                 titleStyle={{ color: 'rgba(78, 116, 289, 1)' }}
               />
             </View>

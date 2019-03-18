@@ -6,10 +6,22 @@ import Lists from '../views/lists';
 
 const ListsDrawerItem = StackNavigator(
   {
-    Playground: { screen: Lists },
-  },
-  {
-    headerMode: 'none',
+    Playground: {
+      screen: Lists,
+
+      navigationOptions: ({ navigation }) => ({
+        title: 'Lists',
+        headerLeft: (
+          <Icon
+            name="menu"
+            size={30}
+            type="entypo"
+            iconStyle={{ paddingLeft: 10 }}
+            onPress={() => navigation.navigate('DrawerOpen')}
+          />
+        ),
+      }),
+    },
   }
 );
 

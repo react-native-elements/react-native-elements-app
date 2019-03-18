@@ -6,10 +6,22 @@ import Login from '../views/login';
 
 const LoginDrawerItem = StackNavigator(
   {
-    Playground: { screen: Login },
-  },
-  {
-    headerMode: 'none',
+    Playground: {
+      screen: Login,
+
+      navigationOptions: ({ navigation }) => ({
+        title: 'Login',
+        headerLeft: (
+          <Icon
+            name="menu"
+            size={30}
+            type="entypo"
+            iconStyle={{ paddingLeft: 10 }}
+            onPress={() => navigation.navigate('DrawerOpen')}
+          />
+        ),
+      }),
+    },
   }
 );
 

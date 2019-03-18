@@ -6,10 +6,22 @@ import Profile from '../views/profile';
 
 const ProfileDrawerItem = StackNavigator(
   {
-    Playground: { screen: Profile },
-  },
-  {
-    headerMode: 'none',
+    Playground: {
+      screen: Profile,
+
+      navigationOptions: ({ navigation }) => ({
+        title: 'Profile',
+        headerLeft: (
+          <Icon
+            name="menu"
+            size={30}
+            type="entypo"
+            iconStyle={{ paddingLeft: 10 }}
+            onPress={() => navigation.navigate('DrawerOpen')}
+          />
+        ),
+      }),
+    },
   }
 );
 

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { StackNavigator } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation';
 import { Icon } from 'react-native-elements';
 
 import FontsHome from '../views/fonts_home';
@@ -14,7 +14,7 @@ const FontsDetailTabView = ({ navigation }) => (
   <FontsDetails banner="Fonts Detail" navigation={navigation} />
 );
 
-const FontsTab = StackNavigator({
+const FontsTab = createStackNavigator({
   Home: {
     screen: FontsTabView,
     path: '/',
@@ -26,7 +26,7 @@ const FontsTab = StackNavigator({
           size={30}
           type="entypo"
           containerStyle={{ marginLeft: 10 }}
-          onPress={() => navigation.navigate('DrawerOpen')}
+          onPress={navigation.toggleDrawer}
         />
       ),
     }),

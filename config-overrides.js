@@ -1,6 +1,6 @@
 const path = require("path");
 const webpack = require("webpack");
-const {override, addBabelPlugins, babelInclude, removeModuleScopePlugin} = require("customize-cra");
+const {override, addBabelPlugins, babelInclude, removeModuleScopePlugin, addWebpackAlias} = require("customize-cra");
 
 const modulesPath = path.resolve(__dirname, "node_modules");
 
@@ -33,8 +33,13 @@ module.exports = override(
     path.resolve(modulesPath, "react-native-tab-view"),
     path.resolve(modulesPath, "react-native-touchable-scale"),
     path.resolve(modulesPath, "expo-linear-gradient"),
+    path.resolve(modulesPath, "@react-navigation", "native"),
+    path.resolve(modulesPath, "react-native-gesture-handler-web"),
   ]),
   addBabelPlugins(
     "@babel/plugin-proposal-class-properties",
   ),
+  addWebpackAlias({
+    "react-native-gesture-handler": "react-native-gesture-handler-web",
+  })
 );

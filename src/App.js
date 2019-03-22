@@ -1,7 +1,7 @@
 import React from 'react';
 import AppLoading from "./components/AppLoading";
 import { View, Image, Dimensions } from 'react-native';
-import { DrawerNavigator, DrawerItems } from 'react-navigation';
+import { createAppContainer, createDrawerNavigator, DrawerItems } from 'react-navigation';
 import {cacheAssets,cacheFonts} from "./helpers/AssetsCaching";
 
 import Components from './drawer/components';
@@ -12,7 +12,7 @@ import Profile from './drawer/profile';
 import Lists from './drawer/lists';
 import Settings from './drawer/settings';
 
-const SCREEN_WIDTH = Dimensions.get('window').width;
+const WINDOW_WIDTH = Dimensions.get('window').width;
 
 const CustomDrawerContentComponent = props => (
   <View style={{ flex: 1, backgroundColor: '#43484d' }}>
@@ -21,7 +21,7 @@ const CustomDrawerContentComponent = props => (
     >
       <Image
         source={require('./images/logo.png')}
-        style={{ width: SCREEN_WIDTH * 0.57 }}
+        style={{ width: Math.min(WINDOW_WIDTH * 0.57, 200) }}
         resizeMode="contain"
       />
     </View>
@@ -31,7 +31,7 @@ const CustomDrawerContentComponent = props => (
   </View>
 );
 
-const MainRoot = DrawerNavigator(
+const MainRoot = createAppContainer(createDrawerNavigator(
   {
     Login: {
       path: '/login',
@@ -74,13 +74,10 @@ const MainRoot = DrawerNavigator(
         marginLeft: 0,
       },
     },
-    drawerWidth: SCREEN_WIDTH * 0.8,
+    drawerWidth: Math.min(WINDOW_WIDTH * 0.8, 300),
     contentComponent: CustomDrawerContentComponent,
-    drawerOpenRoute: 'DrawerOpen',
-    drawerCloseRoute: 'DrawerClose',
-    drawerToggleRoute: 'DrawerToggle',
   }
-);
+));
 
 export default class AppContainer extends React.Component {
   state = {

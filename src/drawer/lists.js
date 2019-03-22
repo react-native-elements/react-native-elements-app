@@ -1,10 +1,10 @@
 import React from 'react';
-import { StackNavigator } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation';
 import { Icon } from 'react-native-elements';
 
 import Lists from '../views/lists';
 
-const ListsDrawerItem = StackNavigator(
+const ListsDrawerItem = createStackNavigator(
   {
     Playground: {
       screen: Lists,
@@ -17,7 +17,7 @@ const ListsDrawerItem = StackNavigator(
             size={30}
             type="entypo"
             iconStyle={{ paddingLeft: 10 }}
-            onPress={() => navigation.navigate('DrawerOpen')}
+            onPress={navigation.toggleDrawer}
           />
         ),
       }),

@@ -2,11 +2,17 @@
 
 # React Native Elements App
 
-This is the Demo app for [React Native Elements UI kit](https://github.com/react-native-training/react-native-elements) built with [Expo](https://expo.io/). In this app you will find examples on how to use various components as well as Production-ready screens which showcase how to combine multiple components to built entire views in your app.
+This is the Demo app for [React Native Elements](https://github.com/react-native-training/react-native-elements) built with [Expo](https://expo.io/). In this app you will find examples on on how to use various RNE components as well as production-ready screens.
 
-### [Try it on Expo](https://expo.io/@monte9/react-native-elements-app)
+This app also work on the `web` platform using [React Native Web](). You can checkout the [live website here](). If you are looking to build a React Native mobile app & also reuse the code to deploy on web, this repo can be used as a great starting point.
 
-## Get Started
+Also the RNE team runs and maintains this project, so if you need any help developing your app with React Native Elements, someone on our team can help you out as well. Feel free to reach out to [@monte9]().
+
+## Demo
+
+**[Mobile App](https://expo.io/@monte9/react-native-elements-app)** | **[Web App]()**
+
+### Run it locally
 
 1. Clone the project
 
@@ -20,38 +26,64 @@ git clone https://github.com/react-native-training/react-native-elements-app.git
 cd react-native-elements-app
 
 # Using npm or yarn
-npm install OR yarn
+yarn || npm install
 ```
 
-3. Run the app locally
+3. Run the mobile app (uses [Expo]())
 
 ```
-npm start - this should pop up Expo Dev Tools, a control panel for developing your app, in your default web browser.
+# Install the expo-cli
+npm install -g expo-cli
 
-To open the app in the iOS simulator you can press the i in the terminal or Run on iOS simulator in Dev Tools.
-
-To open the app in the Android emulator, first boot it up and then press a in the terminal or Run on Android device/emulator in Dev Tools.
+yarn native || npm run native
 ```
 
-We use expo to build and run the app. For more information follow the guide on Expo [here](https://docs.expo.io/versions/latest/workflow/up-and-running#start-the-development-server).
+4. Run the web app (uses [CRA]())
+
+```
+yarn web || npm run web
+```
+
+### Deploying it
+
+_Coming soon_
+
+### Ejecting
+
+1. The mobile app is built using Expo. If you would like to eject, you can run the following command:
+
+```
+yarn eject:native || npm run eject:native
+```
+
+We highly recommend you read the [official Expo ejection docs](https://docs.expo.io/versions/latest/expokit/eject/) before proceeding.
+
+2. The web app is built using Creact React App. If you would like to eject, you can run the following command:
+
+```
+yarn eject:web || npm run eject:web
+```
+
+We highly recommend you read the [official CRA ejection docs](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#npm-run-eject) before proceeding.
 
 ## Major contributors:
 
+- @oxyii 💪🏼
 - @xavier-villelegier 🔥
-- @iRoachie 💯
 - @martinezguillaume 🎸
+- @iRoachie 💯
+- @monte9 🤓
 
-## Screenshots:
+## React Native Elements
 
-<div style="display: flex; flex-direction: row; margin-bottom: 20px">
-<img src="https://user-images.githubusercontent.com/7840686/32702785-b1d9114e-c7a0-11e7-9999-6c6a00d432ec.gif" width="300" />
-<img src="https://user-images.githubusercontent.com/7840686/32702789-b6bbdce6-c7a0-11e7-8034-8144274fbdae.gif" width="300" />
-</div>
-<div style="display: flex; flex-direction: row; margin-top: 20px">
-<img src="https://user-images.githubusercontent.com/7840686/32702791-b947eedc-c7a0-11e7-8e8c-7dff1bd80564.gif" width="300" />
-<img width="300" alt="screen shot 2017-11-12 at 11 51 39 am" src="https://user-images.githubusercontent.com/7840686/32702796-bfd38c8e-c7a0-11e7-8042-06851bdbf0ae.png">
-</div>
+This app is built using [React Native Elements](). RNE is a UI toolkit for React Native that provides you with production ready UI components so that you can focus on building the part that makes your app unique as opposed to reinvent the UI wheel.
 
-## Docs
+You can install `react-native-elements` in your app using:
 
-Click [here](https://react-native-training.github.io/react-native-elements) to get started with React Native Elements.
+```
+yarn add react-native-elements || npm install react-native-elements --save
+```
+
+## Feedback
+
+In case you run into any problems while running this app or have additional questions, please create a new issue on this repo and we will follow up with you.

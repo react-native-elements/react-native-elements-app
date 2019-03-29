@@ -10,7 +10,8 @@ import {
   StatusBar,
 } from 'react-native';
 import { Button } from 'react-native-elements';
-import { Font } from 'expo';
+import { cacheFonts } from '../../helpers/AssetsCaching';
+import { LinearGradient } from "../../components/LinearGradient";
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
 
@@ -44,17 +45,17 @@ class CustomButton extends Component {
         buttonStyle={
           selected
             ? {
-                backgroundColor: 'rgba(213, 100, 140, 1)',
-                borderRadius: 100,
-                width: 127,
-              }
+              backgroundColor: 'rgba(213, 100, 140, 1)',
+              borderRadius: 100,
+              width: 127,
+            }
             : {
-                borderWidth: 1,
-                borderColor: 'white',
-                borderRadius: 30,
-                width: 127,
-                backgroundColor: 'transparent',
-              }
+              borderWidth: 1,
+              borderColor: 'white',
+              borderRadius: 30,
+              width: 127,
+              backgroundColor: 'transparent',
+            }
         }
         containerStyle={{ marginRight: 10 }}
         onPress={() => this.setState({ selected: !selected })}
@@ -73,7 +74,7 @@ export default class LoginScreen1 extends Component {
   }
 
   async componentDidMount() {
-    await Font.loadAsync({
+    await cacheFonts({
       georgia: require('../../../assets/fonts/Georgia.ttf'),
       regular: require('../../../assets/fonts/Montserrat-Regular.ttf'),
       light: require('../../../assets/fonts/Montserrat-Light.ttf'),
@@ -292,6 +293,7 @@ export default class LoginScreen1 extends Component {
                   start: [1, 0],
                   end: [0.2, 0],
                 }}
+                ViewComponent={LinearGradient}
                 title="Message Theresa"
                 titleStyle={{
                   fontFamily: 'regular',

@@ -12,10 +12,10 @@ import {
   Text,
   View,
 } from 'react-native';
-import { Font } from 'expo';
-import { Input, Button } from 'react-native-elements';
+import { cacheFonts } from "../../helpers/AssetsCaching";
+import { Input, Button, Icon } from 'react-native-elements';
 
-import Icon from 'react-native-vector-icons/SimpleLineIcons';
+import {LinearGradient} from "../../components/LinearGradient";
 
 // Enable LayoutAnimation on Android
 UIManager.setLayoutAnimationEnabledExperimental &&
@@ -56,7 +56,7 @@ export default class LoginScreen3 extends Component {
   }
 
   async componentDidMount() {
-    await Font.loadAsync({
+    await cacheFonts({
       light: require('../../../assets/fonts/Ubuntu-Light.ttf'),
       bold: require('../../../assets/fonts/Ubuntu-Bold.ttf'),
       lightitalic: require('../../../assets/fonts/Ubuntu-Light-Italic.ttf'),
@@ -97,7 +97,7 @@ export default class LoginScreen3 extends Component {
 
   validateEmail() {
     const { email } = this.state;
-    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     const emailValid = re.test(email);
     LayoutAnimation.easeInEaseOut();
     this.setState({ emailValid });
@@ -257,6 +257,7 @@ export default class LoginScreen3 extends Component {
               start: [1, 0],
               end: [0.2, 0],
             }}
+            ViewComponent={LinearGradient}
             titleStyle={styles.signUpButtonText}
             onPress={this.signup}
             disabled={isLoading}
@@ -312,7 +313,7 @@ export const FormInput = props => {
       {...otherProps}
       ref={refInput}
       inputContainerStyle={styles.inputContainer}
-      leftIcon={<Icon name={icon} color="#7384B4" size={18} />}
+      leftIcon={<Icon name={icon} type={"simple-line-icon"} color="#7384B4" size={18} />}
       inputStyle={styles.inputStyle}
       autoFocus={false}
       autoCapitalize="none"

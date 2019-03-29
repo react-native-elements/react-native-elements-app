@@ -1,5 +1,5 @@
 import React from 'react';
-import { StackNavigator } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation';
 import { Icon } from 'react-native-elements';
 
 import ButtonsHome from '../views/buttons_home';
@@ -16,7 +16,7 @@ const ButtonsDetailTabView = ({ navigation }) => (
   />
 );
 
-const ButtonsTab = StackNavigator({
+const ButtonsTab = createStackNavigator({
   Buttons: {
     screen: ButtonsTabView,
     path: '/',
@@ -28,7 +28,7 @@ const ButtonsTab = StackNavigator({
           size={30}
           type="entypo"
           containerStyle={{ marginLeft: 10 }}
-          onPress={() => navigation.navigate('DrawerOpen')}
+          onPress={navigation.toggleDrawer}
         />
       ),
     }),

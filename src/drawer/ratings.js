@@ -1,12 +1,25 @@
 import React from 'react';
-import { StackNavigator } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation';
 import { Icon } from 'react-native-elements';
 
 import Ratings from '../views/ratings';
 
-const RatingsDrawerItem = StackNavigator({
+const RatingsDrawerItem = createStackNavigator({
   Ratings: {
     screen: Ratings,
+
+    navigationOptions: ({ navigation }) => ({
+      title: 'Ratings',
+      headerLeft: (
+        <Icon
+          name="menu"
+          size={30}
+          type="entypo"
+          iconStyle={{ paddingLeft: 10 }}
+          onPress={navigation.toggleDrawer}
+        />
+      ),
+    }),
   },
 });
 

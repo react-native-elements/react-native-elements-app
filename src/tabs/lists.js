@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { StackNavigator } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation';
 import { Icon } from 'react-native-elements';
 
 import ListsHome from '../views/lists_home';
@@ -14,7 +14,7 @@ const ListsDetailTabView = ({ navigation }) => (
   <ListsDetails banner="Lists Detail" navigation={navigation} />
 );
 
-const ListsTab = StackNavigator({
+const ListsTab = createStackNavigator({
   Home: {
     screen: ListsTabView,
     path: '/',
@@ -26,7 +26,7 @@ const ListsTab = StackNavigator({
           size={30}
           type="entypo"
           containerStyle={{ marginLeft: 10 }}
-          onPress={() => navigation.navigate('DrawerOpen')}
+          onPress={navigation.toggleDrawer}
         />
       ),
     }),

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { StackNavigator } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation';
 import { Icon } from 'react-native-elements';
 
 import InputHome from '../views/input_home';
@@ -15,7 +15,7 @@ const InputDetailTabView = ({ navigation }) => (
   />
 );
 
-const InputTab = StackNavigator({
+const InputTab = createStackNavigator({
   Input: {
     screen: InputTabView,
     path: '/',
@@ -27,7 +27,7 @@ const InputTab = StackNavigator({
           size={30}
           type="entypo"
           containerStyle={{ marginLeft: 10 }}
-          onPress={() => navigation.navigate('DrawerOpen')}
+          onPress={navigation.toggleDrawer}
         />
       ),
     }),

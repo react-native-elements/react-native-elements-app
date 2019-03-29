@@ -8,10 +8,12 @@ import {
   Card,
   Tile,
   Icon,
-  ListItem,
+//  ListItem,
   Avatar,
 } from 'react-native-elements';
+import {ListItem} from "../components/ListItem";
 import TouchableScale from 'react-native-touchable-scale';
+import {LinearGradient} from "../components/LinearGradient";
 
 import colors from '../config/colors';
 
@@ -175,9 +177,11 @@ class Icons extends Component {
   }
 
   render() {
+/*
     const { navigation } = this.props;
     const buttons = ['Button1', 'Button2'];
     const { selectedIndex } = this.state;
+*/
 
     return (
       <ScrollView>
@@ -288,6 +292,7 @@ class Icons extends Component {
                 start: [1, 0],
                 end: [0.2, 0],
               }}
+              ViewComponent={LinearGradient}
               title={l.name}
               titleStyle={{ color: 'white', fontWeight: 'bold' }}
               subtitleStyle={{ color: 'white' }}

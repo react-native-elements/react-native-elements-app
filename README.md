@@ -44,13 +44,23 @@ yarn native || npm run native
 yarn web || npm run web
 ```
 
-### Deploying it
+### Deploy Web app
 
-1. The web app is built using CRA and hosted on Github Pages. You can deploy the app using:
+First you must build the web app using:
+
+```
+yarn build:web
+```
+
+Once you have built it, you can see generated `build` folder.
+
+This folder can be hosted as static website. For example you can publish on [Github Pages](https://pages.github.com/) via [gh-pages](https://github.com/tschaub/gh-pages) cli.
 
 ```
 yarn deploy
 ```
+
+**Note:** don't forget to add or change "homepage" key in your package.json
 
 ### Ejecting
 
@@ -72,11 +82,11 @@ We highly recommend you read the [official CRA ejection docs](https://github.com
 
 ## Major contributors:
 
-- @oxyii 💪🏼
-- @xavier-villelegier 🔥
-- @martinezguillaume 🎸
-- @iRoachie 💯
-- @monte9 🤓
+- [@oxyii]() 💪🏼
+- [@xavier-villelegier]() 🔥
+- [@martinezguillaume]() 🎸
+- [@iRoachie]() 💯
+- [@monte9]() 🤓
 
 ## React Native Elements
 

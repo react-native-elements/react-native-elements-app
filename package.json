@@ -31,7 +31,7 @@
   "scripts": {
     "web": "react-app-rewired start",
     "native": "expo start",
-    "predeploy": "react-app-rewired build",
+    "build:web": "react-app-rewired build",
     "deploy": "gh-pages -d build",
     "build:android": "expo ba",
     "build:ios": "expo bi",

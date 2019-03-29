@@ -46,7 +46,11 @@ yarn web || npm run web
 
 ### Deploying it
 
-_Coming soon_
+1. The web app is built using CRA and hosted on Github Pages. You can deploy the app using:
+
+```
+yarn deploy
+```
 
 ### Ejecting
 

@@ -4,13 +4,13 @@
 
 This is the Demo app for [React Native Elements](https://github.com/react-native-training/react-native-elements) built with [Expo](https://expo.io/). In this app you will find examples on on how to use various RNE components as well as production-ready screens.
 
-This app also work on the `web` platform using [React Native Web](). You can checkout the [live website here](). If you are looking to build a React Native mobile app & also reuse the code to deploy on web, this repo can be used as a great starting point.
+This app also work on the `web` platform using [React Native Web](https://github.com/necolas/react-native-web). You can checkout the [live website here](https://react-native-elements.github.io/react-native-elements-app). If you are looking to build a React Native mobile app & also reuse the code to deploy on web, this repo can be used as a great starting point.
 
 Also the RNE team runs and maintains this project, so if you need any help developing your app with React Native Elements, someone on our team can help you out as well. Feel free to reach out to [@monte9]().
 
 ## Demo
 
-**[Mobile App](https://expo.io/@monte9/react-native-elements-app)** | **[Web App]()**
+**[Mobile App](https://expo.io/@monte9/react-native-elements-app)** | **[Web App](https://react-native-elements.github.io/react-native-elements-app)**
 
 ### Run it locally
 
@@ -29,7 +29,7 @@ cd react-native-elements-app
 yarn || npm install
 ```
 
-3. Run the mobile app (uses [Expo]())
+3. Run the mobile app (uses [Expo](https://expo.io/learn))
 
 ```
 # Install the expo-cli
@@ -38,7 +38,7 @@ npm install -g expo-cli
 yarn native || npm run native
 ```
 
-4. Run the web app (uses [CRA]())
+4. Run the web app (uses [CRA](https://facebook.github.io/create-react-app/docs/getting-started))
 
 ```
 yarn web || npm run web
@@ -82,15 +82,15 @@ We highly recommend you read the [official CRA ejection docs](https://github.com
 
 ## Major contributors:
 
-- [@oxyii]() 💪🏼
-- [@xavier-villelegier]() 🔥
-- [@martinezguillaume]() 🎸
-- [@iRoachie]() 💯
-- [@monte9]() 🤓
+- [@oxyii](https://github.com/oxyii) 💪🏼
+- [@xavier-villelegier](https://github.com/xavier-villelegier) 🔥
+- [@martinezguillaume](https://github.com/martinezguillaume) 🎸
+- [@iRoachie](https://github.com/iRoachie) 💯
+- [@monte9](https://github.com/monte9) 🤓
 
 ## React Native Elements
 
-This app is built using [React Native Elements](). RNE is a UI toolkit for React Native that provides you with production ready UI components so that you can focus on building the part that makes your app unique as opposed to reinvent the UI wheel.
+This app is built using [React Native Elements](https://github.com/react-native-training/react-native-elements). RNE is a UI toolkit for React Native that provides you with production ready UI components so that you can focus on building the part that makes your app unique as opposed to reinvent the UI wheel.
 
 You can install `react-native-elements` in your app using:
 

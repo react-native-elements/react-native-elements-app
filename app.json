@@ -1,4 +1,6 @@
 {
+  "name": "react-native-elements-app",
+  "displayName": "React Native Elements",
   "expo": {
     "name": "react-native-elements-app",
     "slug": "react-native-elements-app",

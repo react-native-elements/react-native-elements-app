@@ -36,7 +36,7 @@
     "build:android": "expo ba",
     "build:ios": "expo bi",
     "eject:web": "react-scripts eject",
-    "eject:native": "expo eject",
+    "eject:native": "expo eject --eject-method plain",
     "prettify": "prettier --write 'src/**/*.js'",
     "clean-install": "rm -rf node_modules && npm cache clean --force && watchman watch-del-all && yarn"
   },

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, ScrollView, StyleSheet } from 'react-native';
 import { Button, ButtonGroup, Icon } from 'react-native-elements';
 
-import {LinearGradient} from "../components/LinearGradient";
+import { LinearGradient } from '../components/LinearGradient';
 
 class Buttons extends Component {
   constructor(props) {

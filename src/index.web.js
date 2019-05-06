@@ -1,13 +1,11 @@
-import "@babel/polyfill";
+import '@babel/polyfill';
 
-import React from "react";
-import App from "./App";
-import ReactDOM from "react-dom";
-import * as serviceWorker from "./serviceWorker";
+import React from 'react';
+import App from './App';
+import ReactDOM from 'react-dom';
+import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<App/>, document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById('root'));
 
-if(__DEV__)
-  serviceWorker.unregister();
-else
-  serviceWorker.register();
+if (__DEV__) serviceWorker.unregister();
+else serviceWorker.register();

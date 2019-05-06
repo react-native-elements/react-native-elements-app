@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 import { Input, Button, Icon } from 'react-native-elements';
 
-import {cacheFonts} from "../../helpers/AssetsCaching";
+import { cacheFonts } from '../../helpers/AssetsCaching';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
 const SCREEN_HEIGHT = Dimensions.get('window').height;

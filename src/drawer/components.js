@@ -1,5 +1,8 @@
 import React from 'react';
-import { createBottomTabNavigator, createStackNavigator } from 'react-navigation';
+import {
+  createBottomTabNavigator,
+  createStackNavigator,
+} from 'react-navigation';
 import { Icon } from 'react-native-elements';
 
 import ButtonsTab from '../tabs/buttons';
@@ -101,6 +104,6 @@ export default createStackNavigator(
           color={tintColor}
         />
       ),
-    }
+    },
   }
 );

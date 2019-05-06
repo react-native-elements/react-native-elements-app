@@ -8,12 +8,12 @@ import {
   Card,
   Tile,
   Icon,
-//  ListItem,
+  //  ListItem,
   Avatar,
 } from 'react-native-elements';
-import {ListItem} from "../components/ListItem";
+import { ListItem } from '../components/ListItem';
 import TouchableScale from 'react-native-touchable-scale';
-import {LinearGradient} from "../components/LinearGradient";
+import { LinearGradient } from '../components/LinearGradient';
 
 import colors from '../config/colors';
 
@@ -177,7 +177,7 @@ class Icons extends Component {
   }
 
   render() {
-/*
+    /*
     const { navigation } = this.props;
     const buttons = ['Button1', 'Button2'];
     const { selectedIndex } = this.state;

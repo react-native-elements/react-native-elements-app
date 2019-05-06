@@ -4,26 +4,24 @@ import { Icon } from 'react-native-elements';
 
 import Login from '../views/login';
 
-const LoginDrawerItem = createStackNavigator(
-  {
-    Playground: {
-      screen: Login,
+const LoginDrawerItem = createStackNavigator({
+  Playground: {
+    screen: Login,
 
-      navigationOptions: ({ navigation }) => ({
-        title: 'Login',
-        headerLeft: (
-          <Icon
-            name="menu"
-            size={30}
-            type="entypo"
-            iconStyle={{ paddingLeft: 10 }}
-            onPress={navigation.toggleDrawer}
-          />
-        ),
-      }),
-    },
-  }
-);
+    navigationOptions: ({ navigation }) => ({
+      title: 'Login',
+      headerLeft: (
+        <Icon
+          name="menu"
+          size={30}
+          type="entypo"
+          iconStyle={{ paddingLeft: 10 }}
+          onPress={navigation.toggleDrawer}
+        />
+      ),
+    }),
+  },
+});
 
 LoginDrawerItem.navigationOptions = {
   drawerLabel: 'Login',

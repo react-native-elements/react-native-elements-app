@@ -1,1 +1,1 @@
-export {AppLoading as default} from "expo";
+export { AppLoading as default } from 'expo';

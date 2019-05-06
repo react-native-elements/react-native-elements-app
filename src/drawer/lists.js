@@ -4,26 +4,24 @@ import { Icon } from 'react-native-elements';
 
 import Lists from '../views/lists';
 
-const ListsDrawerItem = createStackNavigator(
-  {
-    Playground: {
-      screen: Lists,
+const ListsDrawerItem = createStackNavigator({
+  Playground: {
+    screen: Lists,
 
-      navigationOptions: ({ navigation }) => ({
-        title: 'Lists',
-        headerLeft: (
-          <Icon
-            name="menu"
-            size={30}
-            type="entypo"
-            iconStyle={{ paddingLeft: 10 }}
-            onPress={navigation.toggleDrawer}
-          />
-        ),
-      }),
-    },
-  }
-);
+    navigationOptions: ({ navigation }) => ({
+      title: 'Lists',
+      headerLeft: (
+        <Icon
+          name="menu"
+          size={30}
+          type="entypo"
+          iconStyle={{ paddingLeft: 10 }}
+          onPress={navigation.toggleDrawer}
+        />
+      ),
+    }),
+  },
+});
 
 ListsDrawerItem.navigationOptions = {
   drawerLabel: 'Lists',

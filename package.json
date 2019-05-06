@@ -37,7 +37,7 @@
     "build:ios": "expo bi",
     "eject:web": "react-scripts eject",
     "eject:native": "expo eject",
-    "prettify": "prettier --write 'src/**/*.js'",
+    "prettify": "prettier --write src/**/*.js",
     "clean-install": "rm -rf node_modules && npm cache clean --force && watchman watch-del-all && yarn"
   },
   "devDependencies": {

@@ -4,26 +4,24 @@ import { Icon } from 'react-native-elements';
 
 import Profile from '../views/profile';
 
-const ProfileDrawerItem = createStackNavigator(
-  {
-    Playground: {
-      screen: Profile,
+const ProfileDrawerItem = createStackNavigator({
+  Playground: {
+    screen: Profile,
 
-      navigationOptions: ({ navigation }) => ({
-        title: 'Profile',
-        headerLeft: (
-          <Icon
-            name="menu"
-            size={30}
-            type="entypo"
-            iconStyle={{ paddingLeft: 10 }}
-            onPress={navigation.toggleDrawer}
-          />
-        ),
-      }),
-    },
-  }
-);
+    navigationOptions: ({ navigation }) => ({
+      title: 'Profile',
+      headerLeft: (
+        <Icon
+          name="menu"
+          size={30}
+          type="entypo"
+          iconStyle={{ paddingLeft: 10 }}
+          onPress={navigation.toggleDrawer}
+        />
+      ),
+    }),
+  },
+});
 
 ProfileDrawerItem.navigationOptions = {
   drawerLabel: 'Profile',

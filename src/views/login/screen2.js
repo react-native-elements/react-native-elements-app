@@ -12,10 +12,10 @@ import {
   Text,
   View,
 } from 'react-native';
-import { cacheFonts } from "../../helpers/AssetsCaching";
+import { cacheFonts } from '../../helpers/AssetsCaching';
 import { Input, Button, Icon } from 'react-native-elements';
 
-import {LinearGradient} from "../../components/LinearGradient";
+import { LinearGradient } from '../../components/LinearGradient';
 
 // Enable LayoutAnimation on Android
 UIManager.setLayoutAnimationEnabledExperimental &&
@@ -313,7 +313,9 @@ export const FormInput = props => {
       {...otherProps}
       ref={refInput}
       inputContainerStyle={styles.inputContainer}
-      leftIcon={<Icon name={icon} type={"simple-line-icon"} color="#7384B4" size={18} />}
+      leftIcon={
+        <Icon name={icon} type={'simple-line-icon'} color="#7384B4" size={18} />
+      }
       inputStyle={styles.inputStyle}
       autoFocus={false}
       autoCapitalize="none"

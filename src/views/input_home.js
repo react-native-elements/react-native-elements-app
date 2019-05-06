@@ -132,7 +132,12 @@ class InputHome extends Component {
                   backgroundColor: 'white',
                 }}
                 leftIcon={
-                  <Icon name="email-outline" type="material-community" color="black" size={25} />
+                  <Icon
+                    name="email-outline"
+                    type="material-community"
+                    color="black"
+                    size={25}
+                  />
                 }
                 leftIconContainerStyle={{
                   marginRight: 10,
@@ -168,7 +173,14 @@ class InputHome extends Component {
                   marginRight: 10,
                 }}
                 containerStyle={{ paddingHorizontal: 0 }}
-                leftIcon={<Icon name="lock" type="simple-line-icon" color="black" size={25} />}
+                leftIcon={
+                  <Icon
+                    name="lock"
+                    type="simple-line-icon"
+                    color="black"
+                    size={25}
+                  />
+                }
                 placeholder="Password"
                 placeholderTextColor="black"
                 autoCapitalize="none"

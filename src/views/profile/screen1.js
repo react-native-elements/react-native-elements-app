@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 import { Button } from 'react-native-elements';
 import { cacheFonts } from '../../helpers/AssetsCaching';
-import { LinearGradient } from "../../components/LinearGradient";
+import { LinearGradient } from '../../components/LinearGradient';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
 
@@ -45,17 +45,17 @@ class CustomButton extends Component {
         buttonStyle={
           selected
             ? {
-              backgroundColor: 'rgba(213, 100, 140, 1)',
-              borderRadius: 100,
-              width: 127,
-            }
+                backgroundColor: 'rgba(213, 100, 140, 1)',
+                borderRadius: 100,
+                width: 127,
+              }
             : {
-              borderWidth: 1,
-              borderColor: 'white',
-              borderRadius: 30,
-              width: 127,
-              backgroundColor: 'transparent',
-            }
+                borderWidth: 1,
+                borderColor: 'white',
+                borderRadius: 30,
+                width: 127,
+                backgroundColor: 'transparent',
+              }
         }
         containerStyle={{ marginRight: 10 }}
         onPress={() => this.setState({ selected: !selected })}

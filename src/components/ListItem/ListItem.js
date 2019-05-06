@@ -9,7 +9,11 @@ import {
 } from 'react-native';
 
 import { renderNode, nodeType } from 'react-native-elements/src/helpers';
-import { ViewPropTypes, TextPropTypes, withTheme } from 'react-native-elements/src/config';
+import {
+  ViewPropTypes,
+  TextPropTypes,
+  withTheme,
+} from 'react-native-elements/src/config';
 
 /*
 import Avatar from '../avatar/Avatar';
@@ -20,7 +24,15 @@ import Text from '../text/Text';
 import ButtonGroup from '../buttons/ButtonGroup';
 import Input from '../input/Input';
 */
-import {Avatar,Badge,CheckBox,Icon,Text,ButtonGroup,Input} from "react-native-elements";
+import {
+  Avatar,
+  Badge,
+  CheckBox,
+  Icon,
+  Text,
+  ButtonGroup,
+  Input,
+} from 'react-native-elements';
 
 const ANDROID_SECONDARY = 'rgba(0, 0, 0, 0.54)';
 
@@ -351,20 +363,22 @@ ListItem.defaultProps = {
   title: '',
 };
 
-const PadView = React.forwardRef(({ children, pad, Component, ...props }, ref) => {
-  const childrens = React.Children.toArray(children);
-  const { length } = childrens;
-  const Container = Component || View;
-  return (
-    <Container ref={ref} {...props}>
-      {React.Children.map(
-        childrens,
-        (child, index) =>
-          child && [child, index !== length - 1 && <View width={pad} />]
-      )}
-    </Container>
-  );
-});
+const PadView = React.forwardRef(
+  ({ children, pad, Component, ...props }, ref) => {
+    const childrens = React.Children.toArray(children);
+    const { length } = childrens;
+    const Container = Component || View;
+    return (
+      <Container ref={ref} {...props}>
+        {React.Children.map(
+          childrens,
+          (child, index) =>
+            child && [child, index !== length - 1 && <View width={pad} />]
+        )}
+      </Container>
+    );
+  }
+);
 
 PadView.propTypes = {
   children: PropTypes.node,

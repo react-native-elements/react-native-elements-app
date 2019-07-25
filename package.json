@@ -1,8 +1,8 @@
 {
-  "name": "react-native-elements-app",
+  "name": "react-native-elements",
   "version": "1.0.0",
   "description": "Demo app for React Native Elements UI Library",
-  "author": "Monte Thakkar",
+  "author": "Brian Dombrowski",
   "private": true,
   "homepage": "https://react-native-elements.github.io/react-native-elements-app",
   "main": "src/index.native.js",

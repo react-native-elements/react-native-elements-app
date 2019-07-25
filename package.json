@@ -7,7 +7,6 @@
   "homepage": "https://react-native-elements.github.io/react-native-elements-app",
   "main": "src/index.native.js",
   "dependencies": {
-    "@babel/polyfill": "^7.2.5",
     "@expo/vector-icons": "^9.0.0",
     "expo": "^32.0.0",
     "expo-linear-gradient": "^3.0.0",
@@ -26,7 +25,7 @@
     "react-native-vector-icons": "^6.3.0",
     "react-native-web": "^0.10.0",
     "react-navigation": "^3.5.1",
-    "react-scripts": "^2.1.5"
+    "react-scripts": "^3.0.1"
   },
   "scripts": {
     "web": "react-app-rewired start",
@@ -42,6 +41,8 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.3.4",
+    "@babel/polyfill": "^7.4.4",
+    "@babel/preset-env": "^7.5.5",
     "babel-preset-expo": "^5.0.0",
     "customize-cra": "^0.2.12",
     "prettier": "^1.15.3",

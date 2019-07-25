@@ -1,8 +1,8 @@
 import React from 'react';
-import AppLoading from "./components/AppLoading";
+import {AppLoading} from "./components/AppLoading";
 import { View, Text } from 'react-native';
 import {cacheAssets,cacheFonts} from "./helpers/AssetsCaching";
-
+import {Button} from 'react-native-elements';
 
 
 export default class AppContainer extends React.Component {
@@ -38,6 +38,11 @@ export default class AppContainer extends React.Component {
       );
     }
 
-    return <View><Text>Hello</Text></View>;
+    return (
+      <View>
+        <Text>Hello</Text>
+        <Button title="This is button"/>
+      </View>
+    );
   }
 }

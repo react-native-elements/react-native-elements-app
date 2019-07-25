@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 import App from "./App";
 import {KeepAwake,registerRootComponent} from "expo";
 

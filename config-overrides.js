@@ -36,9 +36,7 @@ module.exports = override(
     path.resolve(modulesPath, "@react-navigation", "native"),
     path.resolve(modulesPath, "react-native-gesture-handler-web"),
   ]),
-  addBabelPlugins(
-    "@babel/plugin-proposal-class-properties",
-  ),
+  // addBabelPlugins("@babel/plugin-proposal-class-properties",),
   addWebpackAlias({
     "react-native-gesture-handler": "react-native-gesture-handler-web",
   })

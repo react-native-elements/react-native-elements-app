@@ -2,11 +2,10 @@
 
 # React Native Elements App
 
-This is the Demo app for [React Native Elements](https://github.com/react-native-training/react-native-elements) built with [Expo](https://expo.io/). In this app you will find examples on on how to use various RNE components as well as production-ready screens.
+This boilerplate based on the demo app for [React Native Elements](https://github.com/react-native-training/react-native-elements) built with [Expo](https://expo.io/). In this app you will find examples on on how to use various RNE components as well as production-ready screens.
 
 This app also work on the `web` platform using [React Native Web](https://github.com/necolas/react-native-web). You can checkout the [live website here](https://react-native-elements.github.io/react-native-elements-app). If you are looking to build a React Native mobile app & also reuse the code to deploy on web, this repo can be used as a great starting point.
 
-Also the RNE team runs and maintains this project, so if you need any help developing your app with React Native Elements, someone on our team can help you out as well. Feel free to reach out to [@monte9]().
 
 ## Demo
 

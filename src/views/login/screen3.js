@@ -10,7 +10,6 @@ import {
   UIManager,
   KeyboardAvoidingView,
 } from 'react-native';
-import { cacheFonts } from '../../helpers/AssetsCaching';
 import { Input, Button, Icon } from 'react-native-elements';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
@@ -41,7 +40,6 @@ export default class LoginScreen2 extends Component {
     this.state = {
       email: '',
       password: '',
-      fontLoaded: false,
       selectedCategory: 0,
       isLoading: false,
       isEmailValid: true,
@@ -52,16 +50,6 @@ export default class LoginScreen2 extends Component {
     this.selectCategory = this.selectCategory.bind(this);
     this.login = this.login.bind(this);
     this.signUp = this.signUp.bind(this);
-  }
-
-  async componentDidMount() {
-    await cacheFonts({
-      georgia: require('../../../assets/fonts/Georgia.ttf'),
-      regular: require('../../../assets/fonts/Montserrat-Regular.ttf'),
-      light: require('../../../assets/fonts/Montserrat-Light.ttf'),
-    });
-
-    this.setState({ fontLoaded: true });
   }
 
   selectCategory(selectedCategory) {
@@ -121,85 +109,120 @@ export default class LoginScreen2 extends Component {
     } = this.state;
     const isLoginPage = selectedCategory === 0;
     const isSignUpPage = selectedCategory === 1;
+
     return (
       <View style={styles.container}>
         <ImageBackground source={BG_IMAGE} style={styles.bgImage}>
-          {this.state.fontLoaded ? (
-            <View>
-              <KeyboardAvoidingView
-                contentContainerStyle={styles.loginContainer}
-                behavior="position"
-              >
-                <View style={styles.titleContainer}>
-                  <View style={{ flexDirection: 'row' }}>
-                    <Text style={styles.titleText}>BEAUX</Text>
-                  </View>
-                  <View style={{ marginTop: -10, marginLeft: 10 }}>
-                    <Text style={styles.titleText}>VOYAGES</Text>
-                  </View>
-                </View>
+          <View>
+            <KeyboardAvoidingView
+              contentContainerStyle={styles.loginContainer}
+              behavior="position"
+            >
+              <View style={styles.titleContainer}>
                 <View style={{ flexDirection: 'row' }}>
-                  <Button
-                    disabled={isLoading}
-                    type="clear"
-                    activeOpacity={0.7}
-                    onPress={() => this.selectCategory(0)}
-                    containerStyle={{ flex: 1 }}
-                    titleStyle={[
-                      styles.categoryText,
-                      isLoginPage && styles.selectedCategoryText,
-                    ]}
-                    title={'Login'}
-                  />
-                  <Button
-                    disabled={isLoading}
-                    type="clear"
-                    activeOpacity={0.7}
-                    onPress={() => this.selectCategory(1)}
-                    containerStyle={{ flex: 1 }}
-                    titleStyle={[
-                      styles.categoryText,
-                      isSignUpPage && styles.selectedCategoryText,
-                    ]}
-                    title={'Sign up'}
-                  />
+                  <Text style={styles.titleText}>BEAUX</Text>
                 </View>
-                <View style={styles.rowSelector}>
-                  <TabSelector selected={isLoginPage} />
-                  <TabSelector selected={isSignUpPage} />
+                <View style={{ marginTop: -10, marginLeft: 10 }}>
+                  <Text style={styles.titleText}>VOYAGES</Text>
                 </View>
-                <View style={styles.formContainer}>
+              </View>
+              <View style={{ flexDirection: 'row' }}>
+                <Button
+                  disabled={isLoading}
+                  type="clear"
+                  activeOpacity={0.7}
+                  onPress={() => this.selectCategory(0)}
+                  containerStyle={{ flex: 1 }}
+                  titleStyle={[
+                    styles.categoryText,
+                    isLoginPage && styles.selectedCategoryText,
+                  ]}
+                  title={'Login'}
+                />
+                <Button
+                  disabled={isLoading}
+                  type="clear"
+                  activeOpacity={0.7}
+                  onPress={() => this.selectCategory(1)}
+                  containerStyle={{ flex: 1 }}
+                  titleStyle={[
+                    styles.categoryText,
+                    isSignUpPage && styles.selectedCategoryText,
+                  ]}
+                  title={'Sign up'}
+                />
+              </View>
+              <View style={styles.rowSelector}>
+                <TabSelector selected={isLoginPage} />
+                <TabSelector selected={isSignUpPage} />
+              </View>
+              <View style={styles.formContainer}>
+                <Input
+                  leftIcon={
+                    <Icon
+                      name="envelope-o"
+                      type="font-awesome"
+                      color="rgba(0, 0, 0, 0.38)"
+                      size={25}
+                      style={{ backgroundColor: 'transparent' }}
+                    />
+                  }
+                  value={email}
+                  keyboardAppearance="light"
+                  autoFocus={false}
+                  autoCapitalize="none"
+                  autoCorrect={false}
+                  keyboardType="email-address"
+                  returnKeyType="next"
+                  inputStyle={{ marginLeft: 10 }}
+                  placeholder={'Email'}
+                  containerStyle={{
+                    borderBottomColor: 'rgba(0, 0, 0, 0.38)',
+                  }}
+                  ref={input => (this.emailInput = input)}
+                  onSubmitEditing={() => this.passwordInput.focus()}
+                  onChangeText={email => this.setState({ email })}
+                  errorMessage={
+                    isEmailValid ? null : 'Please enter a valid email address'
+                  }
+                />
+                <Input
+                  leftIcon={
+                    <Icon
+                      name="lock"
+                      type="simple-line-icon"
+                      color="rgba(0, 0, 0, 0.38)"
+                      size={25}
+                      style={{ backgroundColor: 'transparent' }}
+                    />
+                  }
+                  value={password}
+                  keyboardAppearance="light"
+                  autoCapitalize="none"
+                  autoCorrect={false}
+                  secureTextEntry={true}
+                  returnKeyType={isSignUpPage ? 'next' : 'done'}
+                  blurOnSubmit={true}
+                  containerStyle={{
+                    marginTop: 16,
+                    borderBottomColor: 'rgba(0, 0, 0, 0.38)',
+                  }}
+                  inputStyle={{ marginLeft: 10 }}
+                  placeholder={'Password'}
+                  ref={input => (this.passwordInput = input)}
+                  onSubmitEditing={() =>
+                    isSignUpPage ? this.confirmationInput.focus() : this.login()
+                  }
+                  onChangeText={password => this.setState({ password })}
+                  errorMessage={
+                    isPasswordValid
+                      ? null
+                      : 'Please enter at least 8 characters'
+                  }
+                />
+                {isSignUpPage && (
                   <Input
-                    leftIcon={
-                      <Icon
-                        name="envelope-o"
-                        type="font-awesome"
-                        color="rgba(0, 0, 0, 0.38)"
-                        size={25}
-                        style={{ backgroundColor: 'transparent' }}
-                      />
-                    }
-                    value={email}
-                    keyboardAppearance="light"
-                    autoFocus={false}
-                    autoCapitalize="none"
-                    autoCorrect={false}
-                    keyboardType="email-address"
-                    returnKeyType="next"
-                    inputStyle={{ marginLeft: 10 }}
-                    placeholder={'Email'}
-                    containerStyle={{
-                      borderBottomColor: 'rgba(0, 0, 0, 0.38)',
-                    }}
-                    ref={input => (this.emailInput = input)}
-                    onSubmitEditing={() => this.passwordInput.focus()}
-                    onChangeText={email => this.setState({ email })}
-                    errorMessage={
-                      isEmailValid ? null : 'Please enter a valid email address'
-                    }
-                  />
-                  <Input
-                    leftIcon={
+                    icon={
                       <Icon
                         name="lock"
                         type="simple-line-icon"
@@ -208,94 +231,54 @@ export default class LoginScreen2 extends Component {
                         style={{ backgroundColor: 'transparent' }}
                       />
                     }
-                    value={password}
+                    value={passwordConfirmation}
+                    secureTextEntry={true}
                     keyboardAppearance="light"
                     autoCapitalize="none"
                     autoCorrect={false}
-                    secureTextEntry={true}
-                    returnKeyType={isSignUpPage ? 'next' : 'done'}
+                    keyboardType="default"
+                    returnKeyType={'done'}
                     blurOnSubmit={true}
                     containerStyle={{
                       marginTop: 16,
                       borderBottomColor: 'rgba(0, 0, 0, 0.38)',
                     }}
                     inputStyle={{ marginLeft: 10 }}
-                    placeholder={'Password'}
-                    ref={input => (this.passwordInput = input)}
-                    onSubmitEditing={() =>
-                      isSignUpPage
-                        ? this.confirmationInput.focus()
-                        : this.login()
+                    placeholder={'Confirm password'}
+                    ref={input => (this.confirmationInput = input)}
+                    onSubmitEditing={this.signUp}
+                    onChangeText={passwordConfirmation =>
+                      this.setState({ passwordConfirmation })
                     }
-                    onChangeText={password => this.setState({ password })}
                     errorMessage={
-                      isPasswordValid
+                      isConfirmationValid
                         ? null
-                        : 'Please enter at least 8 characters'
+                        : 'Please enter the same password'
                     }
                   />
-                  {isSignUpPage && (
-                    <Input
-                      icon={
-                        <Icon
-                          name="lock"
-                          type="simple-line-icon"
-                          color="rgba(0, 0, 0, 0.38)"
-                          size={25}
-                          style={{ backgroundColor: 'transparent' }}
-                        />
-                      }
-                      value={passwordConfirmation}
-                      secureTextEntry={true}
-                      keyboardAppearance="light"
-                      autoCapitalize="none"
-                      autoCorrect={false}
-                      keyboardType="default"
-                      returnKeyType={'done'}
-                      blurOnSubmit={true}
-                      containerStyle={{
-                        marginTop: 16,
-                        borderBottomColor: 'rgba(0, 0, 0, 0.38)',
-                      }}
-                      inputStyle={{ marginLeft: 10 }}
-                      placeholder={'Confirm password'}
-                      ref={input => (this.confirmationInput = input)}
-                      onSubmitEditing={this.signUp}
-                      onChangeText={passwordConfirmation =>
-                        this.setState({ passwordConfirmation })
-                      }
-                      errorMessage={
-                        isConfirmationValid
-                          ? null
-                          : 'Please enter the same password'
-                      }
-                    />
-                  )}
-                  <Button
-                    buttonStyle={styles.loginButton}
-                    containerStyle={{ marginTop: 32, flex: 0 }}
-                    activeOpacity={0.8}
-                    title={isLoginPage ? 'LOGIN' : 'SIGN UP'}
-                    onPress={isLoginPage ? this.login : this.signUp}
-                    titleStyle={styles.loginTextButton}
-                    loading={isLoading}
-                    disabled={isLoading}
-                  />
-                </View>
-              </KeyboardAvoidingView>
-              <View style={styles.helpContainer}>
+                )}
                 <Button
-                  title={'Need help ?'}
-                  titleStyle={{ color: 'white' }}
-                  buttonStyle={{ backgroundColor: 'transparent' }}
-                  underlayColor="transparent"
-                  onPress={() => console.log('Account created')}
+                  buttonStyle={styles.loginButton}
+                  containerStyle={{ marginTop: 32, flex: 0 }}
+                  activeOpacity={0.8}
+                  title={isLoginPage ? 'LOGIN' : 'SIGN UP'}
+                  onPress={isLoginPage ? this.login : this.signUp}
+                  titleStyle={styles.loginTextButton}
+                  loading={isLoading}
+                  disabled={isLoading}
                 />
               </View>
+            </KeyboardAvoidingView>
+            <View style={styles.helpContainer}>
+              <Button
+                title={'Need help ?'}
+                titleStyle={{ color: 'white' }}
+                buttonStyle={{ backgroundColor: 'transparent' }}
+                underlayColor="transparent"
+                onPress={() => console.log('Account created')}
+              />
             </View>
-          ) : (
-            <Text>Loading...</Text>
-          )}
+          </View>
         </ImageBackground>
       </View>
     );

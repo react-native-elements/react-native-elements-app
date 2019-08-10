@@ -4,6 +4,8 @@ import { Icon } from 'react-native-elements';
 
 import Settings from '../views/settings';
 
+import config from '../config/stack';
+
 const SettingsDrawerItem = createStackNavigator({
   Settings: {
     screen: Settings,
@@ -24,7 +26,7 @@ const SettingsDrawerItem = createStackNavigator({
       ),
     }),
   },
-});
+}, config);
 
 SettingsDrawerItem.navigationOptions = {
   drawerLabel: 'Settings',

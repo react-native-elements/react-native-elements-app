@@ -1,58 +1,46 @@
 {
   "name": "react-native-elements-app",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Demo app for React Native Elements UI Library",
   "author": "Monte Thakkar",
   "private": true,
-  "homepage": "https://react-native-elements.github.io/react-native-elements-app",
-  "main": "src/index.native.js",
+  "homepage": "https://react-native-elements.github.io/react-native-elements-app/",
+  "main": "node_modules/expo/AppEntry.js",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web",
+    "eject": "expo eject",
+    "test": "jest --watchAll",
+    "deploy": "gh-pages -d web-build",
+    "prettify": "prettier --write 'src/**/*.js'",
+    "clean-install": "rm -rf node_modules && npm cache clean --force && watchman watch-del-all && yarn"
+  },
   "dependencies": {
-    "@babel/polyfill": "^7.2.5",
+    "@expo/vector-icons": "^10.0.3",
     "expo": "^34.0.1",
-    "expo-asset": "~6.0.0",
-    "expo-font": "~6.0.1",
-    "expo-keep-awake": "~6.0.0",
-    "gh-pages": "^2.0.1",
-    "lodash": "^4.17.4",
+    "expo-asset": "^6.0.0",
+    "expo-font": "~6.0.0",
+    "lodash": "^4.17.15",
     "prop-types": "^15.7.2",
     "react": "16.8.3",
-    "react-art": "^16.8.3",
     "react-dom": "^16.8.6",
     "react-native": "https://github.com/expo/react-native/archive/sdk-34.0.0.tar.gz",
     "react-native-elements": "^1.1.0",
     "react-native-gesture-handler": "~1.3.0",
-    "react-native-gesture-handler-web": "npm:react-native-gesture-handler@1.1.0",
-    "react-native-ratings": "^6.3.0",
-    "react-native-reanimated": "~1.1.0",
-    "react-native-touchable-scale": "2.0.0",
-    "react-native-vector-icons": "^6.3.0",
+    "react-native-touchable-scale": "^2.0.0",
     "react-native-web": "^0.11.4",
     "react-navigation": "^3.11.1",
-    "react-scripts": "^2.1.5"
-  },
-  "scripts": {
-    "web": "react-app-rewired start",
-    "native": "expo start",
-    "build:web": "react-app-rewired build",
-    "deploy": "gh-pages -d build",
-    "build:android": "expo ba",
-    "build:ios": "expo bi",
-    "eject:web": "react-scripts eject",
-    "eject:native": "expo eject",
-    "prettify": "prettier --write 'src/**/*.js'",
-    "clean-install": "rm -rf node_modules && npm cache clean --force && watchman watch-del-all && yarn"
+    "rne-listitem-web": "gist:4a1da48acb977660e8665bae5262600b"
   },
   "devDependencies": {
-    "@babel/plugin-proposal-class-properties": "^7.3.4",
-    "babel-preset-expo": "^5.0.0",
-    "customize-cra": "^0.2.12",
-    "prettier": "^1.15.3",
-    "react-app-rewired": "^2.1.0"
+    "@expo/webpack-config": "^0.7.3",
+    "babel-preset-expo": "^6.0.0",
+    "gh-pages": "^2.1.1",
+    "jest-expo": "^34.0.0"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+  "jest": {
+    "preset": "jest-expo"
+  }
 }

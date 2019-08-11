@@ -45,10 +45,10 @@ yarn web || npm run web
 
 ### Deploy Web app
 
-First you must build the web app using:
+First you must set correct `publicPath` in `app.web-build.json`. Next you must build the web app using:
 
 ```
-expo build:web
+yarn build:web
 ```
 
 Once you have built it, you can see generated `web-build` folder.

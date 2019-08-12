@@ -40,7 +40,7 @@ yarn || npm install
 4. Run the cross-platform app (uses [Expo](https://expo.io/learn))
 
 ```
-yarn web || npm run web
+yarn start || npm start
 ```
 
 ### Deploy Web app

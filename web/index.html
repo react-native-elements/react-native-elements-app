@@ -1,18 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="%LANG_ISO_CODE%">
 <head>
     <meta charset="utf-8">
     <meta name="google" content="notranslate">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <meta name="theme-color" content="#2089dc">
-    <meta name="msapplication-TileColor" content="#cccccc">
-
-    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.png"/>
+    <link rel="shortcut icon" href="%PUBLIC_URL%favicon.png"/>
 
     <title>A demo app for React Native Elements UI Library</title>
-    <meta name="description" content="">
 
     <style>
         html, body {
@@ -21,7 +16,7 @@
         body {
             overflow: hidden;
         }
-        #root {
+        #%ROOT_ID% {
             display: flex;
             height: 100%;
         }
@@ -53,11 +48,16 @@
 </head>
 <body>
 
-<noscript>
-    You need to enable JavaScript to run this app.
-</noscript>
+<noscript>%NO_SCRIPT%</noscript>
+<div id="%ROOT_ID%"></div>
 
-<div id="root"></div>
+<script>
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+            navigator.serviceWorker.register('%PUBLIC_URL%service-worker.js');
+        });
+    }
+</script>
 
 </body>
 </html>

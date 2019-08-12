@@ -6,6 +6,8 @@ import { Icon } from 'react-native-elements';
 import FontsHome from '../views/fonts_home';
 import FontsDetails from '../views/fonts_detail';
 
+import config from '../config/stack';
+
 const FontsTabView = ({ navigation }) => (
   <FontsHome banner="Fonts" navigation={navigation} />
 );
@@ -38,6 +40,6 @@ const FontsTab = createStackNavigator({
       title: 'Fonts Detail',
     },
   },
-});
+}, config);
 
 export default FontsTab;

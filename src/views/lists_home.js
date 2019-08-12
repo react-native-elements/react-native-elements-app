@@ -7,8 +7,9 @@ import {
   Tile,
   Icon,
   Avatar,
-  ListItem,
+  // ListItem, TODO: Add React.forwardRef into PadView. @see https://github.com/facebook/react-native/issues/1040
 } from 'react-native-elements';
+import ListItem from 'rne-listitem-web';
 import TouchableScale from 'react-native-touchable-scale';
 
 import { LinearGradient } from '../components/LinearGradient';

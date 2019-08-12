@@ -5,6 +5,8 @@ import { Icon } from 'react-native-elements';
 import ButtonsHome from '../views/buttons_home';
 import ButtonsDetails from '../views/buttons_detail';
 
+import config from '../config/stack';
+
 const ButtonsTabView = ({ navigation }) => (
   <ButtonsHome navigation={navigation} />
 );
@@ -40,6 +42,6 @@ const ButtonsTab = createStackNavigator({
       title: 'Buttons Detail',
     },
   },
-});
+}, config);
 
 export default ButtonsTab;

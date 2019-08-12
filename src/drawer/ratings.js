@@ -4,6 +4,8 @@ import { Icon } from 'react-native-elements';
 
 import Ratings from '../views/ratings';
 
+import config from '../config/stack';
+
 const RatingsDrawerItem = createStackNavigator({
   Ratings: {
     screen: Ratings,
@@ -21,7 +23,7 @@ const RatingsDrawerItem = createStackNavigator({
       ),
     }),
   },
-});
+}, config);
 
 RatingsDrawerItem.navigationOptions = {
   drawerLabel: 'Ratings',

@@ -4,6 +4,8 @@ import { Icon } from 'react-native-elements';
 
 import Login from '../views/login';
 
+import config from '../config/stack';
+
 const LoginDrawerItem = createStackNavigator({
   Playground: {
     screen: Login,
@@ -20,7 +22,7 @@ const LoginDrawerItem = createStackNavigator({
       ),
     }),
   },
-});
+}, config);
 
 LoginDrawerItem.navigationOptions = {
   drawerLabel: 'Login',

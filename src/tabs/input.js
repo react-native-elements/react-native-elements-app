@@ -6,6 +6,8 @@ import { Icon } from 'react-native-elements';
 import InputHome from '../views/input_home';
 import InputDetails from '../views/input_details';
 
+import config from '../config/stack';
+
 const InputTabView = ({ navigation }) => <InputHome navigation={navigation} />;
 
 const InputDetailTabView = ({ navigation }) => (
@@ -39,6 +41,6 @@ const InputTab = createStackNavigator({
       title: 'Input Detail',
     },
   },
-});
+}, config);
 
 export default InputTab;

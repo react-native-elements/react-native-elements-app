@@ -4,6 +4,8 @@ import { Icon } from 'react-native-elements';
 
 import Lists from '../views/lists';
 
+import config from '../config/stack';
+
 const ListsDrawerItem = createStackNavigator(
   {
     Playground: {
@@ -22,7 +24,8 @@ const ListsDrawerItem = createStackNavigator(
         ),
       }),
     },
-  }
+  },
+  config,
 );
 
 ListsDrawerItem.navigationOptions = {

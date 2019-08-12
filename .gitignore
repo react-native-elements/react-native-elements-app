@@ -1,8 +1,12 @@
 .idea
-build
+.vscode
+.DS_Store
+web-build/
+web-report/
 
 node_modules/*
 .expo/*
 npm-debug.*
+*.log
 
 /beta

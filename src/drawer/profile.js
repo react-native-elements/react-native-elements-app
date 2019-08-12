@@ -4,6 +4,8 @@ import { Icon } from 'react-native-elements';
 
 import Profile from '../views/profile';
 
+import config from '../config/stack';
+
 const ProfileDrawerItem = createStackNavigator(
   {
     Playground: {
@@ -22,7 +24,8 @@ const ProfileDrawerItem = createStackNavigator(
         ),
       }),
     },
-  }
+  },
+  config,
 );
 
 ProfileDrawerItem.navigationOptions = {

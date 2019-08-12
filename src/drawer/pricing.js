@@ -4,6 +4,8 @@ import { Icon } from 'react-native-elements';
 
 import Pricing from '../views/pricing';
 
+import config from '../config/stack';
+
 const PricingDrawerItem = createStackNavigator({
   Pricing: {
     screen: Pricing,
@@ -20,7 +22,7 @@ const PricingDrawerItem = createStackNavigator({
       ),
     }),
   },
-});
+}, config);
 
 PricingDrawerItem.navigationOptions = {
   drawerLabel: 'Pricing',

@@ -14,13 +14,21 @@ Also the RNE team runs and maintains this project, so if you need any help devel
 
 ### Run it locally
 
-1. Clone the project
+1. Install [Expo CLI](https://docs.expo.io/versions/latest/workflow/expo-cli/)
+
+```
+[sudo] npm install -g expo-cli
+```
+
+*If permissions errors then please use `--unsafe-perm=true` flag too [npm/npm#16766](https://github.com/npm/npm/issues/16766)*
+
+2. Clone the project
 
 ```
 git clone https://github.com/react-native-training/react-native-elements-app.git
 ```
 
-2. Install dependencies
+3. Install dependencies
 
 ```
 cd react-native-elements-app
@@ -29,30 +37,21 @@ cd react-native-elements-app
 yarn || npm install
 ```
 
-3. Run the mobile app (uses [Expo](https://expo.io/learn))
+4. Run the cross-platform app (uses [Expo](https://expo.io/learn))
 
 ```
-# Install the expo-cli
-npm install -g expo-cli
-
-yarn native || npm run native
-```
-
-4. Run the web app (uses [CRA](https://facebook.github.io/create-react-app/docs/getting-started))
-
-```
-yarn web || npm run web
+yarn start || npm start
 ```
 
 ### Deploy Web app
 
-First you must build the web app using:
+First you must set correct `publicPath` in `app.web-build.json`. Next you must build the web app using:
 
 ```
 yarn build:web
 ```
 
-Once you have built it, you can see generated `build` folder.
+Once you have built it, you can see generated `web-build` folder.
 
 This folder can be hosted as static website. For example you can publish on [Github Pages](https://pages.github.com/) via [gh-pages](https://github.com/tschaub/gh-pages) cli.
 
@@ -64,21 +63,13 @@ yarn deploy
 
 ### Ejecting
 
-1. The mobile app is built using Expo. If you would like to eject, you can run the following command:
+The mobile app is built using Expo. If you would like to eject, you can run the following command:
 
 ```
-yarn eject:native || npm run eject:native
+yarn eject || npm run eject
 ```
 
 We highly recommend you read the [official Expo ejection docs](https://docs.expo.io/versions/latest/expokit/eject/) before proceeding.
-
-2. The web app is built using Creact React App. If you would like to eject, you can run the following command:
-
-```
-yarn eject:web || npm run eject:web
-```
-
-We highly recommend you read the [official CRA ejection docs](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#npm-run-eject) before proceeding.
 
 ## Major contributors:
 

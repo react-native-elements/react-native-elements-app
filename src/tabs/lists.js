@@ -6,6 +6,8 @@ import { Icon } from 'react-native-elements';
 import ListsHome from '../views/lists_home';
 import ListsDetails from '../views/lists_detail';
 
+import config from '../config/stack';
+
 const ListsTabView = ({ navigation }) => (
   <ListsHome banner="Lists" navigation={navigation} />
 );
@@ -38,6 +40,6 @@ const ListsTab = createStackNavigator({
       title: 'Lists Detail',
     },
   },
-});
+}, config);
 
 export default ListsTab;

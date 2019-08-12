@@ -12,10 +12,9 @@ import {
   Text,
   View,
 } from 'react-native';
-import { cacheFonts } from "../../helpers/AssetsCaching";
 import { Input, Button, Icon } from 'react-native-elements';
 
-import {LinearGradient} from "../../components/LinearGradient";
+import { LinearGradient } from '../../components/LinearGradient';
 
 // Enable LayoutAnimation on Android
 UIManager.setLayoutAnimationEnabledExperimental &&
@@ -35,7 +34,6 @@ export default class LoginScreen3 extends Component {
     this.state = {
       isLoading: false,
       selectedType: null,
-      fontLoaded: false,
       username: '',
       email: '',
       password: '',
@@ -53,16 +51,6 @@ export default class LoginScreen3 extends Component {
       this
     );
     this.signup = this.signup.bind(this);
-  }
-
-  async componentDidMount() {
-    await cacheFonts({
-      light: require('../../../assets/fonts/Ubuntu-Light.ttf'),
-      bold: require('../../../assets/fonts/Ubuntu-Bold.ttf'),
-      lightitalic: require('../../../assets/fonts/Ubuntu-Light-Italic.ttf'),
-    });
-
-    this.setState({ fontLoaded: true });
   }
 
   signup() {
@@ -130,7 +118,6 @@ export default class LoginScreen3 extends Component {
     const {
       isLoading,
       selectedType,
-      fontLoaded,
       confirmationPassword,
       email,
       emailValid,
@@ -141,11 +128,8 @@ export default class LoginScreen3 extends Component {
       usernameValid,
     } = this.state;
 
-    return !fontLoaded ? (
-      <Text> Loading... </Text>
-    ) : (
+    return (
       <ScrollView
-        scrollEnabled={false}
         keyboardShouldPersistTaps="handled"
         contentContainerStyle={styles.container}
       >
@@ -313,7 +297,9 @@ export const FormInput = props => {
       {...otherProps}
       ref={refInput}
       inputContainerStyle={styles.inputContainer}
-      leftIcon={<Icon name={icon} type={"simple-line-icon"} color="#7384B4" size={18} />}
+      leftIcon={
+        <Icon name={icon} type={'simple-line-icon'} color="#7384B4" size={18} />
+      }
       inputStyle={styles.inputStyle}
       autoFocus={false}
       autoCapitalize="none"
@@ -328,7 +314,7 @@ export const FormInput = props => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flexGrow: 1,
     paddingBottom: 20,
     paddingTop: 20,
     backgroundColor: '#293046',
@@ -345,11 +331,11 @@ const styles = StyleSheet.create({
   signUpText: {
     color: 'white',
     fontSize: 28,
-    fontFamily: 'light',
+    fontFamily: 'UbuntuLight',
   },
   whoAreYouText: {
     color: '#7384B4',
-    fontFamily: 'bold',
+    fontFamily: 'UbuntuBold',
     fontSize: 14,
   },
   userTypesContainer: {
@@ -377,7 +363,7 @@ const styles = StyleSheet.create({
   },
   userTypeLabel: {
     color: 'yellow',
-    fontFamily: 'bold',
+    fontFamily: 'UbuntuBold',
     fontSize: 11,
   },
   inputContainer: {
@@ -392,7 +378,7 @@ const styles = StyleSheet.create({
     flex: 1,
     marginLeft: 10,
     color: 'white',
-    fontFamily: 'light',
+    fontFamily: 'UbuntuLight',
     fontSize: 16,
   },
   errorInputStyle: {
@@ -401,12 +387,12 @@ const styles = StyleSheet.create({
     color: '#F44336',
   },
   signUpButtonText: {
-    fontFamily: 'bold',
+    fontFamily: 'UbuntuBold',
     fontSize: 13,
   },
   signUpButton: {
     width: 250,
-    borderRadius: 50,
+    borderRadius: Math.round(45 / 2),
     height: 45,
   },
   loginHereContainer: {
@@ -414,13 +400,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   alreadyAccountText: {
-    fontFamily: 'lightitalic',
+    fontFamily: 'UbuntuLightItalic',
     fontSize: 12,
     color: 'white',
   },
   loginHereText: {
     color: '#FF9800',
-    fontFamily: 'lightitalic',
+    fontFamily: 'UbuntuLightItalic',
     fontSize: 12,
   },
 });

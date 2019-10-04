@@ -15,7 +15,7 @@ const dummySearchBarProps = {
   onFocus: () => console.log('focus'),
   onBlur: () => console.log('blur'),
   onCancel: () => console.log('cancel'),
-  onClearText: () => console.log('cleared'),
+  onClear: () => console.log('cleared'),
   onChangeText: text => console.log('text:', text),
 };
 

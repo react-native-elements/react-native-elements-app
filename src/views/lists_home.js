@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, ScrollView, StyleSheet, Image, FlatList } from 'react-native';
 import _ from 'lodash';
 import {
@@ -153,6 +153,10 @@ const Icons = () => {
     );
   };
 
+  const [switch1, setSwitch1] = useState(true);
+  const [checkbox1, setCheckbox1] = useState(true);
+  const [selectedButtonIndex, setSelectedButtonIndex] = useState(0);
+
   return (
     <ScrollView>
       <View style={styles.headerContainer}>
@@ -198,17 +202,19 @@ const Icons = () => {
           chevron
           bottomDivider
         />
-        <ListItem title="Switch that please 😲" switch={{}} bottomDivider />
+        <ListItem title="Switch that please 😲" switch={{value: switch1, onValueChange: (value) => setSwitch1(value)}} bottomDivider />
         <ListItem
           title="Choose 🤯"
           buttonGroup={{
             buttons: ['Flower', 'Coco'],
+            selectedIndex: selectedButtonIndex,
+            onPress: (index) => setSelectedButtonIndex(index)
           }}
           bottomDivider
         />
         <ListItem
           title="Check that please 😢"
-          checkBox={{ checked: true }}
+          checkBox={{ checked: checkbox1, onPress: () => setCheckbox1(!checkbox1) }}
           bottomDivider
         />
         <ListItem

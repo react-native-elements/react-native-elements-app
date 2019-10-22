@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, ScrollView, StyleSheet, Text, Dimensions } from 'react-native';
+import { View, ScrollView, StyleSheet, Text, Dimensions, KeyboardAvoidingView, Platform } from 'react-native';
 import {
   Input,
   SearchBar,
@@ -22,6 +22,7 @@ const dummySearchBarProps = {
 class InputHome extends Component {
   render() {
     return (
+      <KeyboardAvoidingView style={styles.keyboardAvoidingView} behavior={"padding"} enabled keyboardVerticalOffset={Platform.OS === "ios" ? 64 : 84}>
       <ScrollView style={styles.container} keyboardShouldPersistTaps="handled">
         <View style={styles.headerContainer}>
           <Icon color="white" name="search" size={62} />
@@ -306,6 +307,7 @@ class InputHome extends Component {
           </ThemeProvider>
         </View>
       </ScrollView>
+      </KeyboardAvoidingView>
     );
   }
 }
@@ -360,6 +362,11 @@ const styles = StyleSheet.create({
   inputContainerStyle: {
     marginTop: 16,
     width: '90%',
+  },
+  keyboardAvoidingView: {
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'center',
   },
 });
 

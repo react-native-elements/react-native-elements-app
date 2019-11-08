@@ -1,5 +1,6 @@
 import React from 'react';
-import { createBottomTabNavigator, createStackNavigator } from 'react-navigation';
+import { createBottomTabNavigator } from 'react-navigation-tabs';
+import { createStackNavigator } from 'react-navigation-stack';
 import { Icon } from 'react-native-elements';
 
 import ButtonsTab from '../tabs/buttons';
@@ -17,7 +18,7 @@ const Components = createBottomTabNavigator(
         tabBarIcon: ({ tintColor, focused }) => (
           <Icon
             name={focused ? 'emoticon-cool' : 'emoticon-neutral'}
-            size={30}
+            size={24}
             type="material-community"
             color={tintColor}
           />
@@ -30,7 +31,7 @@ const Components = createBottomTabNavigator(
       navigationOptions: {
         tabBarLabel: 'Lists',
         tabBarIcon: ({ tintColor, focused }) => (
-          <Icon name="list" size={30} type="entypo" color={tintColor} />
+          <Icon name="list" size={24} type="entypo" color={tintColor} />
         ),
       },
     },
@@ -42,7 +43,7 @@ const Components = createBottomTabNavigator(
         tabBarIcon: ({ tintColor, focused }) => (
           <Icon
             name="wpforms"
-            size={30}
+            size={24}
             type="font-awesome"
             color={tintColor}
           />
@@ -57,7 +58,7 @@ const Components = createBottomTabNavigator(
         tabBarIcon: ({ tintColor, focused }) => (
           <Icon
             name={focused ? 'font' : 'font'}
-            size={30}
+            size={24}
             type="font-awesome"
             color={tintColor}
           />

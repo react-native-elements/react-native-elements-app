@@ -163,6 +163,36 @@ const Icons = () => {
         <Icon color="white" name="invert-colors" size={62} />
         <Text style={styles.heading}>Lists</Text>
       </View>
+      <View style={{ backgroundColor: '#ECEFF1', paddingVertical: 8 }}>
+        {list2.map((l, i) => (
+          <ListItem
+            component={TouchableScale}
+            friction={90}
+            tension={100}
+            activeScale={0.95}
+            leftAvatar={{ rounded: true, source: { uri: l.avatar_url } }}
+            key={i}
+            linearGradientProps={{
+              colors: l.linearGradientColors,
+              start: [1, 0],
+              end: [0.2, 0],
+            }}
+            ViewComponent={LinearGradient}
+            title={l.name}
+            titleStyle={{ color: 'white', fontWeight: 'bold' }}
+            subtitleStyle={{ color: 'white' }}
+            subtitle={l.subtitle}
+            chevronColor="white"
+            chevron
+            containerStyle={{
+              marginHorizontal: 16,
+              marginVertical: 8,
+              borderRadius: 8,
+            }}
+          />
+        ))}
+      </View>
+
       <View style={styles.list}>
         {list2.map((l, i) => (
           <ListItem
@@ -202,7 +232,7 @@ const Icons = () => {
           chevron
           bottomDivider
         />
-        <ListItem title="Switch that please 😲" switch={{value: switch1, onValueChange: (value) => setSwitch1(value)}} bottomDivider />
+        <ListItem title="Switch that please 😲" switch={{ value: switch1, onValueChange: (value) => setSwitch1(value) }} bottomDivider />
         <ListItem
           title="Choose 🤯"
           buttonGroup={{
@@ -248,44 +278,6 @@ const Icons = () => {
         />
       </View>
 
-      <View
-        style={[
-          styles.headerContainer,
-          { backgroundColor: '#FF9800', marginTop: 20 },
-        ]}
-      >
-        <Icon color="white" name="magic" size={62} type="font-awesome" />
-        <Text style={styles.heading}>Magic</Text>
-      </View>
-      <View style={{ backgroundColor: '#ECEFF1', paddingVertical: 8 }}>
-        {list2.map((l, i) => (
-          <ListItem
-            component={TouchableScale}
-            friction={90}
-            tension={100}
-            activeScale={0.95}
-            leftAvatar={{ rounded: true, source: { uri: l.avatar_url } }}
-            key={i}
-            linearGradientProps={{
-              colors: l.linearGradientColors,
-              start: [1, 0],
-              end: [0.2, 0],
-            }}
-            ViewComponent={LinearGradient}
-            title={l.name}
-            titleStyle={{ color: 'white', fontWeight: 'bold' }}
-            subtitleStyle={{ color: 'white' }}
-            subtitle={l.subtitle}
-            chevronColor="white"
-            chevron
-            containerStyle={{
-              marginHorizontal: 16,
-              marginVertical: 8,
-              borderRadius: 8,
-            }}
-          />
-        ))}
-      </View>
       <View style={[styles.headerContainer, { backgroundColor: '#18CDCA' }]}>
         <Icon color="white" name="hdd-o" size={62} type="font-awesome" />
         <Text style={styles.heading}>Cards</Text>

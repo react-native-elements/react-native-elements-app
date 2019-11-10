@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { createStackNavigator } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
 import { Icon } from 'react-native-elements';
 
 import InputHome from '../views/input_home';

@@ -8,7 +8,7 @@ import ListsTab from '../tabs/lists';
 import InputTab from '../tabs/input';
 import FontsTab from '../tabs/fonts';
 
-const Components = createBottomTabNavigator(
+const HomeTabs = createBottomTabNavigator(
   {
     ButtonsTab: {
       screen: ButtonsTab,
@@ -80,28 +80,30 @@ const Components = createBottomTabNavigator(
   }
 );
 
-// Workaround to avoid crashing when you come back on Components screen
-// and you were not on the Buttons tab
-export default createStackNavigator(
-  {
-    ComponentsTabs: { screen: Components },
-  },
-  {
-    headerMode: 'none',
-    navigationOptions: {
-      drawerLabel: 'Components',
-      drawerIcon: ({ tintColor }) => (
-        <Icon
-          name="settings"
-          size={30}
-          iconStyle={{
-            width: 30,
-            height: 30,
-          }}
-          type="material"
-          color={tintColor}
-        />
-      ),
-    }
-  }
-);
+export default HomeTabs;
+
+// // Workaround to avoid crashing when you come back on Components screen
+// // and you were not on the Buttons tab
+// export default createStackNavigator(
+//   {
+//     ComponentsTabs: { screen: Components },
+//   },
+//   {
+//     headerMode: 'none',
+//     navigationOptions: {
+//       drawerLabel: 'Components',
+//       drawerIcon: ({ tintColor }) => (
+//         <Icon
+//           name="settings"
+//           size={30}
+//           iconStyle={{
+//             width: 30,
+//             height: 30,
+//           }}
+//           type="material"
+//           color={tintColor}
+//         />
+//       ),
+//     },
+//   }
+// );

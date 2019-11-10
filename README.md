@@ -2,15 +2,13 @@
 
 # React Native Elements App
 
-This is the Demo app for [React Native Elements](https://github.com/react-native-training/react-native-elements) built with [Expo](https://expo.io/). In this app you will find examples on on how to use various RNE components as well as production-ready screens.
+**[Mobile App](https://expo.io/@monte9/react-native-elements-app)** | **[Web App](https://react-native-elements.github.io/react-native-elements-app)**
+
+This is the Demo app for [React Native Elements](https://github.com/react-native-elements/react-native-elements) built with [Expo](https://expo.io/). In this app you will find examples on on how to use various RNE components as well as production-ready screens.
 
 This app also work on the `web` platform using [React Native Web](https://github.com/necolas/react-native-web). You can checkout the [live website here](https://react-native-elements.github.io/react-native-elements-app). If you are looking to build a React Native mobile app & also reuse the code to deploy on web, this repo can be used as a great starting point.
 
-Also the RNE team runs and maintains this project, so if you need any help developing your app with React Native Elements, someone on our team can help you out as well. Feel free to reach out to [@monte9]().
-
-## Demo
-
-**[Mobile App](https://expo.io/@monte9/react-native-elements-app)** | **[Web App](https://react-native-elements.github.io/react-native-elements-app)**
+## Getting Started
 
 ### Run it locally
 
@@ -20,12 +18,12 @@ Also the RNE team runs and maintains this project, so if you need any help devel
 [sudo] npm install -g expo-cli
 ```
 
-*If permissions errors then please use `--unsafe-perm=true` flag too [npm/npm#16766](https://github.com/npm/npm/issues/16766)*
+_If permissions errors then please use `--unsafe-perm=true` flag too [npm/npm#16766](https://github.com/npm/npm/issues/16766)_
 
 2. Clone the project
 
 ```
-git clone https://github.com/react-native-training/react-native-elements-app.git
+git clone https://github.com/react-native-elements/react-native-elements-app.git
 ```
 
 3. Install dependencies
@@ -81,7 +79,7 @@ We highly recommend you read the [official Expo ejection docs](https://docs.expo
 
 ## React Native Elements
 
-This app is built using [React Native Elements](https://github.com/react-native-training/react-native-elements). RNE is a UI toolkit for React Native that provides you with production ready UI components so that you can focus on building the part that makes your app unique as opposed to reinvent the UI wheel.
+This app is built using [React Native Elements](https://github.com/react-native-elements/react-native-elements). RNE is a UI toolkit for React Native that provides you with production ready UI components so that you can focus on building the part that makes your app unique as opposed to reinvent the UI wheel.
 
 You can install `react-native-elements` in your app using:
 

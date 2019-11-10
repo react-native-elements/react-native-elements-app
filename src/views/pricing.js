@@ -9,10 +9,6 @@ class Pricing extends Component {
   render() {
     return (
       <ScrollView style={{ backgroundColor: 'white' }}>
-        <View style={styles.hero}>
-          <Icon color="white" name="games" size={62} />
-          <Text style={styles.heading}>Pricing</Text>
-        </View>
         <PricingCard
           color={colors.primary}
           title="Free"

@@ -10,7 +10,7 @@ import {
   StatusBar,
 } from 'react-native';
 import { Button } from 'react-native-elements';
-import { LinearGradient } from '../../components/LinearGradient';
+import { LinearGradient } from '../components/LinearGradient';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
 
@@ -70,9 +70,6 @@ export default class LoginScreen1 extends Component {
         <StatusBar barStyle="light-content" />
         <View style={{ flex: 1, backgroundColor: 'rgba(47,44,60,1)' }}>
           <View style={styles.statusBar} />
-          <View style={styles.navBar}>
-            <Text style={styles.nameHeader}>Theresa, 26</Text>
-          </View>
           <ScrollView style={{ flex: 1 }}>
             <View style={{ justifyContent: 'center', alignItems: 'center' }}>
               <Image

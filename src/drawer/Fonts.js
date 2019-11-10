@@ -2,17 +2,20 @@ import React from 'react';
 import { createStackNavigator } from 'react-navigation-stack';
 import { Icon } from 'react-native-elements';
 
-import Profile from '../views/profile';
+import FontsScreen from '../screens/FontsScreen';
 
 import config from '../config/stack';
 
-const ProfileDrawerItem = createStackNavigator(
+const FontsDrawerItem = createStackNavigator(
   {
-    Playground: {
-      screen: Profile,
-
+    Fonts: {
+      screen: FontsScreen,
       navigationOptions: ({ navigation }) => ({
-        title: 'Profile',
+        title: 'Fonts',
+        headerStyle: {
+          borderBottomWidth: 0,
+          backgroundColor: '#f5f5f5',
+        },
         headerLeft: (
           <Icon
             name="menu"
@@ -25,23 +28,23 @@ const ProfileDrawerItem = createStackNavigator(
       }),
     },
   },
-  config,
+  config
 );
 
-ProfileDrawerItem.navigationOptions = {
-  drawerLabel: 'Profile',
+FontsDrawerItem.navigationOptions = {
+  drawerLabel: 'Fonts',
   drawerIcon: ({ tintColor }) => (
     <Icon
-      name="person"
+      name="font"
       size={30}
       iconStyle={{
         width: 30,
         height: 30,
       }}
-      type="material"
+      type="font-awesome"
       color={tintColor}
     />
   ),
 };
 
-export default ProfileDrawerItem;
+export default FontsDrawerItem;

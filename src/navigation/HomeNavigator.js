@@ -44,10 +44,10 @@ const HomeNavigator = createStackNavigator(
 );
 
 HomeNavigator.navigationOptions = {
-  drawerLabel: 'Components',
+  drawerLabel: 'Home',
   drawerIcon: ({ tintColor }) => (
     <Icon
-      name="settings"
+      name="home"
       size={30}
       iconStyle={{
         width: 30,

@@ -1,12 +1,14 @@
 import React from 'react';
-import { createBottomTabNavigator } from 'react-navigation-tabs';
-import { createStackNavigator } from 'react-navigation-stack';
+import { createBottomTabNavigator, BottomTabBar } from 'react-navigation-tabs';
 import { Icon } from 'react-native-elements';
 
 import ButtonsTab from '../tabs/buttons';
 import ListsTab from '../tabs/lists';
 import InputTab from '../tabs/input';
-import FontsTab from '../tabs/fonts';
+import Profile from '../tabs/Profile';
+import Settings from '../tabs/Settings';
+
+const TabBarComponent = props => <BottomTabBar {...props} />;
 
 const HomeTabs = createBottomTabNavigator(
   {
@@ -50,18 +52,23 @@ const HomeTabs = createBottomTabNavigator(
         ),
       },
     },
-    FontsTab: {
-      screen: FontsTab,
-      path: '/fonts',
+    ProfileTab: {
+      screen: Profile,
+      path: '/profile',
       navigationOptions: {
-        tabBarLabel: 'Fonts',
+        tabBarLabel: 'Profile',
         tabBarIcon: ({ tintColor, focused }) => (
-          <Icon
-            name={focused ? 'font' : 'font'}
-            size={24}
-            type="font-awesome"
-            color={tintColor}
-          />
+          <Icon name="person" size={24} type="material" color={tintColor} />
+        ),
+      },
+    },
+    SettingsTab: {
+      screen: Settings,
+      path: '/settings',
+      navigationOptions: {
+        tabBarLabel: 'Settings',
+        tabBarIcon: ({ tintColor, focused }) => (
+          <Icon name="cog" size={24} type="font-awesome" color={tintColor} />
         ),
       },
     },
@@ -76,6 +83,28 @@ const HomeTabs = createBottomTabNavigator(
       activeTintColor: '#e91e63',
       // Android's default showing of icons is false whereas iOS is true
       showIcon: true,
+    },
+    tabBarComponent: props => {
+      const currentIndex = props.navigation.state.index;
+
+      return (
+        <TabBarComponent
+          {...props}
+          style={
+            currentIndex === 3 && {
+              backgroundColor: 'rgba(47,44,60,1)',
+              borderTopWidth: 0,
+            }
+          }
+          navigation={{
+            ...props.navigation,
+            state: {
+              ...props.navigation.state,
+              routes: props.navigation.state.routes,
+            },
+          }}
+        />
+      );
     },
   }
 );

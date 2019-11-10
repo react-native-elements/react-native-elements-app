@@ -1,28 +1,31 @@
 import React from 'react';
-
 import { createStackNavigator } from 'react-navigation-stack';
 import { Icon } from 'react-native-elements';
 
-import ListsHome from '../views/lists_home';
+import ProfileScreen from '../screens/ProfileScreen';
 
 import config from '../config/stack';
 
-const ListsTabView = ({ navigation }) => (
-  <ListsHome banner="Lists" navigation={navigation} />
-);
-
-const ListsTab = createStackNavigator(
+const ProfileTab = createStackNavigator(
   {
     Home: {
-      screen: ListsTabView,
+      screen: ProfileScreen,
       path: '/',
       navigationOptions: ({ navigation }) => ({
-        title: 'Lists',
+        title: 'Theresa, 26',
+        headerTitleStyle: {
+          color: 'white',
+        },
+        headerStyle: {
+          backgroundColor: 'rgba(47,44,60,1)',
+          borderBottomWidth: 0,
+        },
         headerLeft: (
           <Icon
             name="menu"
             size={30}
             type="entypo"
+            color="white"
             containerStyle={{ marginLeft: 10 }}
             onPress={navigation.toggleDrawer}
           />
@@ -33,4 +36,4 @@ const ListsTab = createStackNavigator(
   config
 );
 
-export default ListsTab;
+export default ProfileTab;

@@ -5,13 +5,12 @@ import {
   DrawerNavigatorItems,
 } from 'react-navigation-drawer';
 
+import HomeNavigator from './HomeNavigator';
 import Ratings from '../drawer/ratings';
 import Pricing from '../drawer/pricing';
 import Login from '../drawer/login';
-import Profile from '../drawer/profile';
 import Lists from '../drawer/lists';
-import Settings from '../drawer/settings';
-import HomeNavigator from './HomeNavigator';
+import FontsDrawerItem from '../drawer/Fonts';
 
 const WINDOW_WIDTH = Dimensions.get('window').width;
 
@@ -41,37 +40,33 @@ const customContentComponent = props => (
 
 const DrawerNavigator = createDrawerNavigator(
   {
+    Home: {
+      path: '/home',
+      screen: HomeNavigator,
+    },
     Login: {
       path: '/login',
       screen: Login,
-    },
-    Profile: {
-      path: '/profile',
-      screen: Profile,
     },
     Lists: {
       path: '/lists',
       screen: Lists,
     },
-    Components: {
-      path: '/components',
-      screen: HomeNavigator,
-    },
     Ratings: {
       path: '/ratings',
       screen: Ratings,
+    },
+    Fonts: {
+      path: '/fonts',
+      screen: FontsDrawerItem,
     },
     Pricing: {
       path: '/pricing',
       screen: Pricing,
     },
-    Settings: {
-      path: '/settings',
-      screen: Settings,
-    },
   },
   {
-    initialRouteName: 'Components',
+    initialRouteName: 'Home',
     contentOptions: {
       activeTintColor: '#548ff7',
       activeBackgroundColor: 'transparent',

@@ -1,1 +1,1 @@
-export {LinearGradient} from "./LinearGradient"
+export { LinearGradient } from './LinearGradient';

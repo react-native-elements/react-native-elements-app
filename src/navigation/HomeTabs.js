@@ -6,7 +6,7 @@ import ButtonsTab from '../tabs/buttons';
 import ListsTab from '../tabs/lists';
 import InputTab from '../tabs/input';
 import Profile from '../tabs/Profile';
-import Settings from '../tabs/Settings';
+import Settings from '../tabs/settings';
 
 const TabBarComponent = props => <BottomTabBar {...props} />;
 

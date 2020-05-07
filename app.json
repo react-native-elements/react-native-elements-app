@@ -4,8 +4,11 @@
     "slug": "react-native-elements-app",
     "description": "A demo app for React Native Elements UI Library",
     "privacy": "public",
-    "sdkVersion": "34.0.0",
-    "platforms": ["ios", "android", "web"],
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
     "version": "1.1.0",
     "orientation": "portrait",
     "primaryColor": "#cccccc",
@@ -16,7 +19,9 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true
     }

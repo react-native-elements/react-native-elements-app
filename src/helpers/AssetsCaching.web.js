@@ -15,10 +15,10 @@ const cacheFont = (name, link) => {
   cachedFonts[name] = link;
 };
 
-export const cacheFonts = fonts => {
+export const cacheFonts = (fonts) => {
   let jobs = [];
 
-  fonts.forEach(a => {
+  fonts.forEach((a) => {
     const fontName = Object.keys(a);
 
     if (!cachedFonts[fontName]) {

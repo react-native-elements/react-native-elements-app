@@ -179,9 +179,9 @@ export default class LoginScreen2 extends Component {
                   containerStyle={{
                     borderBottomColor: 'rgba(0, 0, 0, 0.38)',
                   }}
-                  ref={input => (this.emailInput = input)}
+                  ref={(input) => (this.emailInput = input)}
                   onSubmitEditing={() => this.passwordInput.focus()}
-                  onChangeText={email => this.setState({ email })}
+                  onChangeText={(email) => this.setState({ email })}
                   errorMessage={
                     isEmailValid ? null : 'Please enter a valid email address'
                   }
@@ -209,11 +209,11 @@ export default class LoginScreen2 extends Component {
                   }}
                   inputStyle={{ marginLeft: 10 }}
                   placeholder={'Password'}
-                  ref={input => (this.passwordInput = input)}
+                  ref={(input) => (this.passwordInput = input)}
                   onSubmitEditing={() =>
                     isSignUpPage ? this.confirmationInput.focus() : this.login()
                   }
-                  onChangeText={password => this.setState({ password })}
+                  onChangeText={(password) => this.setState({ password })}
                   errorMessage={
                     isPasswordValid
                       ? null
@@ -245,9 +245,9 @@ export default class LoginScreen2 extends Component {
                     }}
                     inputStyle={{ marginLeft: 10 }}
                     placeholder={'Confirm password'}
-                    ref={input => (this.confirmationInput = input)}
+                    ref={(input) => (this.confirmationInput = input)}
                     onSubmitEditing={this.signUp}
-                    onChangeText={passwordConfirmation =>
+                    onChangeText={(passwordConfirmation) =>
                       this.setState({ passwordConfirmation })
                     }
                     errorMessage={

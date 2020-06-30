@@ -3,6 +3,8 @@ import { ScrollView, StyleSheet, Platform } from 'react-native';
 
 import { Text } from 'react-native-elements';
 
+import { Header } from './header';
+
 const iOS_fonts = [
   'Academy Engraved LET',
   'AcademyEngravedLetPlain',
@@ -298,16 +300,19 @@ class Fonts extends Component {
     const fonts = Platform.OS === 'ios' ? iOS_fonts : android_fonts;
 
     return (
-      <ScrollView style={styles.container}>
-        {fonts.map((font, index) => (
-          <Text
-            key={index}
-            style={[styles.textStyle, { fontFamily: `${font}` }]}
-          >
-            {font}
-          </Text>
-        ))}
-      </ScrollView>
+      <>
+        <Header title="Fonts Examples" />
+        <ScrollView style={styles.container}>
+          {fonts.map((font, index) => (
+            <Text
+              key={index}
+              style={[styles.textStyle, { fontFamily: `${font}` }]}
+            >
+              {font}
+            </Text>
+          ))}
+        </ScrollView>
+      </>
     );
   }
 }

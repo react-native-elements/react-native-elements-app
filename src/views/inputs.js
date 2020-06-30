@@ -16,8 +16,11 @@ import {
   ThemeProvider,
 } from 'react-native-elements';
 
+<<<<<<< HEAD
 import { Header } from './header';
 
+=======
+>>>>>>> master
 const SCREEN_WIDTH = Dimensions.get('window').width;
 
 const dummySearchBarProps = {
@@ -29,7 +32,11 @@ const dummySearchBarProps = {
   onChangeText: (text) => console.log('text:', text),
 };
 
+<<<<<<< HEAD
 class Inputs extends Component {
+=======
+class InputHome extends Component {
+>>>>>>> master
   render() {
     return (
       <KeyboardAvoidingView
@@ -38,7 +45,10 @@ class Inputs extends Component {
         enabled
         keyboardVerticalOffset={Platform.OS === 'ios' ? 64 : 84}
       >
+<<<<<<< HEAD
         <Header title="Inputs" />
+=======
+>>>>>>> master
         <ScrollView
           style={styles.container}
           keyboardShouldPersistTaps="handled"
@@ -403,4 +413,8 @@ const styles = StyleSheet.create({
   },
 });
 
+<<<<<<< HEAD
 export default Inputs;
+=======
+export default InputHome;
+>>>>>>> master

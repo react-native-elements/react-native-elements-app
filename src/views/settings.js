@@ -3,6 +3,8 @@ import { View, StyleSheet, SectionList } from 'react-native';
 
 import { ListItem, Divider, SearchBar } from 'react-native-elements';
 
+import { Header } from './header';
+
 const ORANGE = '#FF9500';
 const BLUE = '#007AFF';
 const GREEN = '#4CD964';
@@ -159,17 +161,20 @@ export default class Settings extends React.PureComponent {
 
   render() {
     return (
-      <SectionList
-        keyExtractor={this.keyExtractor}
-        ListHeaderComponent={this.ListHeaderComponent}
-        contentContainerStyle={styles.containerStyle}
-        sections={sections}
-        renderItem={this.renderItem}
-        renderSectionHeader={this.renderSectionHeader}
-        ItemSeparatorComponent={this.ItemSeparatorComponent}
-        SectionSeparatorComponent={Divider}
-        stickySectionHeadersEnabled={false}
-      />
+      <>
+        <Header title="Settings Example" />
+        <SectionList
+          keyExtractor={this.keyExtractor}
+          ListHeaderComponent={this.ListHeaderComponent}
+          contentContainerStyle={styles.containerStyle}
+          sections={sections}
+          renderItem={this.renderItem}
+          renderSectionHeader={this.renderSectionHeader}
+          ItemSeparatorComponent={this.ItemSeparatorComponent}
+          SectionSeparatorComponent={Divider}
+          stickySectionHeadersEnabled={false}
+        />
+      </>
     );
   }
 }

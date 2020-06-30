@@ -17,20 +17,12 @@ const SCREEN_WIDTH = Dimensions.get('window').width;
 const IMAGE_SIZE = SCREEN_WIDTH - 80;
 
 class CustomButton extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
-      selected: false,
+      selected: props.selected || false,
     };
-  }
-
-  componentDidMount() {
-    const { selected } = this.props;
-
-    this.setState({
-      selected,
-    });
   }
 
   render() {

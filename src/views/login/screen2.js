@@ -111,7 +111,7 @@ export default class LoginScreen3 extends Component {
     return confirmationPasswordValid;
   }
 
-  setSelectedType = selectedType =>
+  setSelectedType = (selectedType) =>
     LayoutAnimation.easeInEaseOut() || this.setState({ selectedType });
 
   render() {
@@ -164,10 +164,10 @@ export default class LoginScreen3 extends Component {
           </View>
           <View style={{ width: '80%', alignItems: 'center' }}>
             <FormInput
-              refInput={input => (this.usernameInput = input)}
+              refInput={(input) => (this.usernameInput = input)}
               icon="user"
               value={username}
-              onChangeText={username => this.setState({ username })}
+              onChangeText={(username) => this.setState({ username })}
               placeholder="Username"
               returnKeyType="next"
               errorMessage={
@@ -179,10 +179,10 @@ export default class LoginScreen3 extends Component {
               }}
             />
             <FormInput
-              refInput={input => (this.emailInput = input)}
+              refInput={(input) => (this.emailInput = input)}
               icon="envelope"
               value={email}
-              onChangeText={email => this.setState({ email })}
+              onChangeText={(email) => this.setState({ email })}
               placeholder="Email"
               keyboardType="email-address"
               returnKeyType="next"
@@ -195,10 +195,10 @@ export default class LoginScreen3 extends Component {
               }}
             />
             <FormInput
-              refInput={input => (this.passwordInput = input)}
+              refInput={(input) => (this.passwordInput = input)}
               icon="lock"
               value={password}
-              onChangeText={password => this.setState({ password })}
+              onChangeText={(password) => this.setState({ password })}
               placeholder="Password"
               secureTextEntry
               returnKeyType="next"
@@ -211,10 +211,10 @@ export default class LoginScreen3 extends Component {
               }}
             />
             <FormInput
-              refInput={input => (this.confirmationPasswordInput = input)}
+              refInput={(input) => (this.confirmationPasswordInput = input)}
               icon="lock"
               value={confirmationPassword}
-              onChangeText={confirmationPassword =>
+              onChangeText={(confirmationPassword) =>
                 this.setState({ confirmationPassword })
               }
               placeholder="Confirm Password"
@@ -265,7 +265,7 @@ export default class LoginScreen3 extends Component {
   }
 }
 
-export const UserTypeItem = props => {
+export const UserTypeItem = (props) => {
   const { image, label, labelColor, selected, ...attributes } = props;
   return (
     <TouchableOpacity {...attributes}>
@@ -290,7 +290,7 @@ export const UserTypeItem = props => {
   );
 };
 
-export const FormInput = props => {
+export const FormInput = (props) => {
   const { icon, refInput, ...otherProps } = props;
   return (
     <Input

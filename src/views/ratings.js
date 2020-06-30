@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View, Platform, ScrollView } from 'react-native';
 
 import { Rating, AirbnbRating } from 'react-native-ratings';
+import { Header } from './header';
 
 const WATER_IMAGE = require('../images/water.png');
 
@@ -13,10 +14,7 @@ class Ratings extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <View style={styles.headingContainer}>
-          <Text style={styles.titleText}>React Native Ratings</Text>
-          <Text style={styles.subtitleText}>gestures for the win!</Text>
-        </View>
+        <Header title="Ratings" />
         <ScrollView style={styles.viewContainer}>
           <Text
             style={[

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { GridList } from 'react-native-element';
+import { GridList } from 'react-native-elements';
 const data = [
   { id: 1, img: require('../../assets/images/bg_screen1.jpg'), featured: true, content: '1' },
   { id: 2, img: require('../../assets/images/bg_screen2.jpg'), featured: false, content: '2' },
@@ -13,10 +13,15 @@ const data = [
   { id: 10, img: require('../../assets/images/wallpaper_2.jpg'), featured: false, content: '10' },
 ];
 
-export default class ImageGridList extends Component {
+class ImageGridList extends Component {
   render() {
     return (
-      <GridList data={data} column={3} itemHeight={80} featureHeight={180} />
+      <>
+        <Header title="Grid List" />
+        <GridList data={data} column={3} itemHeight={80} featureHeight={180} />
+      </>
     );
   }
 }
+
+export default ImageGridList;

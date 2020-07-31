@@ -16,6 +16,7 @@ import Pricing from '../views/pricing';
 import Ratings from '../views/ratings';
 import Settings from '../views/settings';
 import Fonts from '../views/fonts';
+import BottomSheet from '../views/bottomsheet';
 
 const Drawer = createDrawerNavigator();
 
@@ -48,6 +49,7 @@ function RootNavigator() {
         <Drawer.Screen name="Login" component={Login} />
         <Drawer.Screen name="Settings" component={Settings} />
         <Drawer.Screen name="Fonts" component={Fonts} />
+        <Drawer.Screen name="BottomSheet" component={BottomSheet} />
       </Drawer.Navigator>
     </NavigationContainer>
   );

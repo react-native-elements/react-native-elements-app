@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, ScrollView } from 'react-native';
 import _ from 'lodash';
-import { Avatar } from 'react-native-elements';
+import { Avatar, Accessory } from 'react-native-elements';
 
 import { Header } from './header';
 
@@ -67,6 +67,28 @@ const Avatars = () => {
             ))}
           </View>
         ))}
+        <View
+            style={{
+              flexDirection: 'row',
+              justifyContent: 'space-around',
+              marginTop: 10,
+              backgroundColor: 'grey',
+            }}
+          >
+        <Avatar 
+          size={64}
+          rounded
+          showAccessory 
+          source={{ uri: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg'}}
+        />
+        <Avatar 
+          size={64}
+          rounded
+          icon={{ name: 'user', type: 'font-awesome' }}
+        >
+          <Accessory size={23}/>
+        </Avatar>
+        </View>
       </ScrollView>
     </>
   );

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import {
   View,
   ScrollView,
@@ -26,7 +26,17 @@ const dummySearchBarProps = {
   onBlur: () => console.log('blur'),
   onCancel: () => console.log('cancel'),
   onClear: () => console.log('cleared'),
-  onChangeText: (text) => console.log('text:', text),
+};
+
+const SearchBarCustom = (props) => {
+  const [value, setValue] = useState("");
+  return (
+    <SearchBar
+      value={value}
+      onChangeText={setValue}
+      {...props}
+    />
+  );
 };
 
 class Inputs extends Component {
@@ -47,17 +57,17 @@ class Inputs extends Component {
             <Icon color="white" name="search" size={62} />
             <Text style={styles.heading}>Search Bars</Text>
           </View>
-          <SearchBar
+          <SearchBarCustom
             placeholder="iOS searchbar"
             platform="ios"
             {...dummySearchBarProps}
           />
-          <SearchBar
+          <SearchBarCustom
             placeholder="Android searchbar"
             platform="android"
             {...dummySearchBarProps}
           />
-          <SearchBar placeholder="Default searchbar" {...dummySearchBarProps} />
+          <SearchBarCustom placeholder="Default searchbar" {...dummySearchBarProps} />
           <View
             style={[
               styles.headerContainer,

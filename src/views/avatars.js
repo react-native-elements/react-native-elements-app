@@ -78,9 +78,10 @@ const Avatars = () => {
         <Avatar 
           size={64}
           rounded
-          showAccessory 
           source={{ uri: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg'}}
-        />
+        >
+          <Accessory size={23} />
+        </Avatar>
         <Avatar 
           size={64}
           rounded

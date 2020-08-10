@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { View, StyleSheet, Image, FlatList } from 'react-native';
-import { Text, ListItem } from 'react-native-elements';
+import { View, StyleSheet, Image, FlatList, Switch } from 'react-native';
+import { Avatar, Text, ListItem, Icon, Badge } from 'react-native-elements';
 import TouchableScale from 'react-native-touchable-scale';
 
 import { LinearGradient } from '../components/LinearGradient';
@@ -76,11 +76,14 @@ const Lists2 = () => {
     return (
       <ListItem
         onPress={log}
-        title={item.title}
-        leftIcon={{ name: item.icon }}
-        chevron
         bottomDivider
-      />
+      >
+        <Icon name={item.icon} />
+        <ListItem.Content>
+          <ListItem.Title>{item.title}</ListItem.Title>
+        </ListItem.Content>
+        <ListItem.Chevron />
+      </ListItem>
     );
   };
 
@@ -101,7 +104,6 @@ const Lists2 = () => {
                   friction={90}
                   tension={100}
                   activeScale={0.95}
-                  leftAvatar={{ rounded: true, source: { uri: l.avatar_url } }}
                   key={i}
                   linearGradientProps={{
                     colors: l.linearGradientColors,
@@ -109,103 +111,104 @@ const Lists2 = () => {
                     end: [0.2, 0],
                   }}
                   ViewComponent={LinearGradient}
-                  title={l.name}
-                  titleStyle={{ color: 'white', fontWeight: 'bold' }}
-                  subtitleStyle={{ color: 'white' }}
-                  subtitle={l.subtitle}
-                  chevronColor="white"
-                  chevron
                   containerStyle={{
                     marginHorizontal: 16,
                     marginVertical: 8,
                     borderRadius: 8,
                   }}
-                />
+                >
+                  <Avatar rounded source={{ uri: l.avatar_url }} />
+                  <ListItem.Content>
+                    <ListItem.Title style={{ color: 'white', fontWeight: 'bold' }}>{l.name}</ListItem.Title>
+                    <ListItem.Subtitle style={{ color: 'white' }}>{l.subtitle}</ListItem.Subtitle>
+                  </ListItem.Content>
+                  <ListItem.Chevron color="white" />
+                </ListItem>
               ))}
             </View>
 
             <View style={styles.list}>
               {list2.map((l, i) => (
                 <ListItem
-                  leftAvatar={{
-                    title: l.name[0],
-                    source: { uri: l.avatar_url },
-                  }}
                   key={i}
                   onPress={log}
-                  title={l.name}
-                  subtitle={l.subtitle}
-                  chevron
                   bottomDivider
-                />
+                >
+                  <Avatar title={l.name} source={{ uri: l.avatar_url }} />
+                  <ListItem.Content>
+                    <ListItem.Title>{l.name}</ListItem.Title>
+                    <ListItem.Subtitle>{l.subtitle}</ListItem.Subtitle>
+                  </ListItem.Content>
+                  <ListItem.Chevron />
+                </ListItem>
               ))}
             </View>
             <View style={styles.list}>
               {list2.map((l, i) => (
                 <ListItem
                   key={i}
-                  leftIcon={{
-                    name: 'user-circle-o',
-                    type: 'font-awesome',
-                    color: 'blue',
-                  }}
-                  title={l.name}
-                  titleStyle={{ color: 'red' }}
-                  subtitle={l.subtitle}
-                  rightTitle="11:00am"
-                  rightTitleStyle={{ color: 'green' }}
-                  rightSubtitle="12:00am"
                   bottomDivider
-                />
+                >
+                  <Icon name='user-circle-o' type='font-awesome' color='blue' />
+                  <ListItem.Content>
+                    <ListItem.Title style={{ color: 'red' }}>{l.name}</ListItem.Title>
+                    <ListItem.Subtitle>{l.subtitle}</ListItem.Subtitle>
+                  </ListItem.Content>
+                  <ListItem.Content right>
+                    <ListItem.Title right style={{ color: 'green' }}>11:00am</ListItem.Title>
+                    <ListItem.Subtitle right>12:00am</ListItem.Subtitle>
+                  </ListItem.Content>
+                </ListItem>
               ))}
             </View>
             <View style={styles.list}>
-              <ListItem
-                title="Name"
-                input={{ placeholder: 'Type your name' }}
-                chevron
-                bottomDivider
-              />
-              <ListItem
-                title="Switch that please 😲"
-                switch={{
-                  value: switch1,
-                  onValueChange: (value) => setSwitch1(value),
-                }}
-                bottomDivider
-              />
-              <ListItem
-                title="Choose 🤯"
-                buttonGroup={{
-                  buttons: ['Flower', 'Coco'],
-                  selectedIndex: selectedButtonIndex,
-                  onPress: (index) => setSelectedButtonIndex(index),
-                }}
-                bottomDivider
-              />
-              <ListItem
-                title="Check that please 😢"
-                checkBox={{
-                  checked: checkbox1,
-                  onPress: () => setCheckbox1(!checkbox1),
-                }}
-                bottomDivider
-              />
-              <ListItem
-                title="With a Badge ! 😻"
-                badge={{ value: '12' }}
-                bottomDivider
-              />
-              <ListItem
-                title="This thing is checked 😎"
-                checkmark
-                bottomDivider
-              />
+              <ListItem bottomDivider >
+                <ListItem.Content>
+                  <ListItem.Title>Name</ListItem.Title>
+                </ListItem.Content>
+                <ListItem.Input placeholder='Type your name' />
+                <ListItem.Chevron />
+              </ListItem>
+              <ListItem bottomDivider >
+                <ListItem.Content>
+                  <ListItem.Title>Switch that please 😲</ListItem.Title>
+                </ListItem.Content>
+                <Switch value={switch1} onValueChange={(value) => setSwitch1(value)} />
+              </ListItem>
+              <ListItem bottomDivider >
+                <ListItem.Content>
+                  <ListItem.Title>Choose 🤯</ListItem.Title>
+                </ListItem.Content>
+                <ListItem.ButtonGroup
+                  buttons={['Flower', 'Coco']}
+                  selectedIndex={selectedButtonIndex}
+                  onPress={(index) => setSelectedButtonIndex(index)}
+                />
+              </ListItem>
+              <ListItem bottomDivider >
+                <ListItem.Content>
+                  <ListItem.Title>Check that please 😢</ListItem.Title>
+                </ListItem.Content>
+                <ListItem.CheckBox checked={checkbox1} onPress={() => setCheckbox1(!checkbox1)} />
+              </ListItem>
+              <ListItem bottomDivider >
+                <ListItem.Content>
+                  <ListItem.Title>With a Badge ! 😻</ListItem.Title>
+                </ListItem.Content>
+                <Badge value={12} />
+              </ListItem>
+              <ListItem bottomDivider >
+                <ListItem.Content>
+                  <ListItem.Title>This thing is checked 😎</ListItem.Title>
+                </ListItem.Content>
+                <Icon name='check' size={20} />
+              </ListItem>
             </View>
             <View style={styles.list}>
-              <ListItem
-                title="Limited supply! Its like digital gold!"
-                subtitle={
+              <ListItem >
+                <Avatar source={require('../../assets/images/avatar1.jpg')} />
+                <ListItem.Content>
+                  <ListItem.Title>Limited supply! Its like digital gold!</ListItem.Title>
                   <View style={styles.subtitleView}>
                     <Image
                       source={require('../images/rating.png')}
@@ -213,11 +216,8 @@ const Lists2 = () => {
                     />
                     <Text style={styles.ratingText}>5 months ago</Text>
                   </View>
-                }
-                leftAvatar={{
-                  source: require('../../assets/images/avatar1.jpg'),
-                }}
-              />
+                </ListItem.Content>
+              </ListItem>
             </View>
           </>
         }

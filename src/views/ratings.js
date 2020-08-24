@@ -78,7 +78,6 @@ class Ratings extends React.Component {
               type="custom"
               ratingImage={WATER_IMAGE}
               ratingColor="#3498db"
-              ratingBackgroundColor="#ceee"
               ratingCount={10}
               imageSize={30}
               onFinishRating={this.ratingCompleted}
@@ -112,7 +111,6 @@ Ratings.navigationOptions = {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'white',
   },
   headingContainer: {
     paddingTop: 50,

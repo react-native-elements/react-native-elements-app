@@ -68,26 +68,29 @@ const Avatars = () => {
           </View>
         ))}
         <View
-            style={{
-              flexDirection: 'row',
-              justifyContent: 'space-around',
-              marginTop: 10,
-              backgroundColor: 'grey',
-            }}
-          >
-        <Avatar 
-          size={64}
-          rounded
-          showAccessory 
-          source={{ uri: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg'}}
-        />
-        <Avatar 
-          size={64}
-          rounded
-          icon={{ name: 'user', type: 'font-awesome' }}
+          style={{
+            flexDirection: 'row',
+            justifyContent: 'space-around',
+            marginTop: 10,
+            backgroundColor: 'grey',
+          }}
         >
-          <Accessory size={23}/>
-        </Avatar>
+          <Avatar
+            size={64}
+            rounded
+            showAccessory
+            source={{
+              uri:
+                'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
+            }}
+          />
+          <Avatar
+            size={64}
+            rounded
+            icon={{ name: 'user', type: 'font-awesome' }}
+          >
+            <Accessory size={23} />
+          </Avatar>
         </View>
       </ScrollView>
     </>

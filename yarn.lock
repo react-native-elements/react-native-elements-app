@@ -10228,8 +10228,8 @@ react-native-appearance@~0.3.3:
     use-subscription "^1.0.0"
 
 "react-native-elements@https://github.com/react-native-elements/react-native-elements#next":
-  version "2.1.0"
-  resolved "https://github.com/react-native-elements/react-native-elements#3b475527889c26805812dc460603075494a194c6"
+  version "2.2.1"
+  resolved "https://github.com/react-native-elements/react-native-elements#62066e442e49630bb8490f5eb9f24412024945a1"
   dependencies:
     "@types/react-native-vector-icons" "^6.4.5"
     color "^3.1.0"
@@ -11938,6 +11938,11 @@ typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.npmjs.org/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
+
+typescript@^4.0.2:
+  version "4.0.2"
+  resolved "https://registry.npmjs.org/typescript/-/typescript-4.0.2.tgz#7ea7c88777c723c681e33bf7988be5d008d05ac2"
+  integrity sha512-e4ERvRV2wb+rRZ/IQeb3jm2VxBsirQLpQhdxplZ2MEzGvDkkMmPglecnNDfSUBivMjP93vRbngYYDQqQ/78bcQ==
 
 ua-parser-js@^0.7.18:
   version "0.7.21"

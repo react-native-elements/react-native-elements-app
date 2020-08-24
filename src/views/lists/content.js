@@ -2,7 +2,7 @@ import _ from 'lodash';
 
 import React, { Component } from 'react';
 import { Text, View, ScrollView } from 'react-native';
-import { Avatar, Button, Icon } from 'react-native-elements';
+import { Avatar, Button, Icon, withTheme } from 'react-native-elements';
 
 const USERS = [
   {
@@ -43,7 +43,7 @@ const USERS = [
   },
 ];
 
-export default class ListContent extends Component {
+class ListContent extends Component {
   renderValue(user) {
     const { value, positive } = user;
 
@@ -114,7 +114,7 @@ export default class ListContent extends Component {
           height: 60,
           marginHorizontal: 10,
           marginTop: 10,
-          backgroundColor: 'white',
+          backgroundColor: this.props.theme.colors.grey4,
           borderRadius: 5,
           alignItems: 'center',
           flexDirection: 'row',
@@ -136,7 +136,7 @@ export default class ListContent extends Component {
               fontFamily: 'regular',
               fontSize: 15,
               marginLeft: 10,
-              color: 'gray',
+              color: this.props.theme.colors.grey0,
             }}
           >
             {name}
@@ -177,14 +177,11 @@ export default class ListContent extends Component {
   render() {
     return (
       <>
-        <ScrollView
-          style={{ marginTop: 15, backgroundColor: 'rgba(241,240,241,1)' }}
-        >
+        <ScrollView style={{ marginTop: 15 }}>
           <View
             style={{
               flex: 1,
               flexDirection: 'column',
-              backgroundColor: 'white',
               borderRadius: 5,
               alignItems: 'center',
               marginHorizontal: 10,
@@ -230,7 +227,7 @@ export default class ListContent extends Component {
                     style={{
                       fontFamily: 'bold',
                       fontSize: 25,
-                      color: 'rgba(98,93,144,1)',
+                      color: this.props.theme.colors.secondary,
                       marginLeft: -15,
                     }}
                   >
@@ -300,3 +297,5 @@ export default class ListContent extends Component {
     );
   }
 }
+
+export default withTheme(ListContent);

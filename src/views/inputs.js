@@ -29,14 +29,8 @@ const dummySearchBarProps = {
 };
 
 const SearchBarCustom = (props) => {
-  const [value, setValue] = useState("");
-  return (
-    <SearchBar
-      value={value}
-      onChangeText={setValue}
-      {...props}
-    />
-  );
+  const [value, setValue] = useState('');
+  return <SearchBar value={value} onChangeText={setValue} {...props} />;
 };
 
 class Inputs extends Component {
@@ -49,10 +43,7 @@ class Inputs extends Component {
         keyboardVerticalOffset={Platform.OS === 'ios' ? 64 : 84}
       >
         <Header title="Inputs" />
-        <ScrollView
-          style={styles.container}
-          keyboardShouldPersistTaps="handled"
-        >
+        <ScrollView keyboardShouldPersistTaps="handled">
           <View style={styles.headerContainer}>
             <Icon color="white" name="search" size={62} />
             <Text style={styles.heading}>Search Bars</Text>
@@ -67,7 +58,10 @@ class Inputs extends Component {
             platform="android"
             {...dummySearchBarProps}
           />
-          <SearchBarCustom placeholder="Default searchbar" {...dummySearchBarProps} />
+          <SearchBarCustom
+            placeholder="Default searchbar"
+            {...dummySearchBarProps}
+          />
           <View
             style={[
               styles.headerContainer,
@@ -356,9 +350,6 @@ class Inputs extends Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    backgroundColor: 'white',
-  },
   headerContainer: {
     justifyContent: 'center',
     alignItems: 'center',

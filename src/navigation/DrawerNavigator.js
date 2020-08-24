@@ -1,33 +1,37 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { View, Image, SafeAreaView } from 'react-native';
 import {
   DrawerContentScrollView,
   DrawerItemList,
 } from '@react-navigation/drawer';
+import { ThemeContext } from 'react-native-elements';
 
-const CustomContentComponent = (props) => (
-  <SafeAreaView
-    style={{ flex: 1, height: '100%', backgroundColor: '#43484d' }}
-    forceInset={{ top: 'always', horizontal: 'never' }}
-  >
-    <View
-      style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-      }}
+function CustomContentComponent(props) {
+  const { theme } = useContext(ThemeContext);
+  return (
+    <SafeAreaView
+      style={{ flex: 1, height: '100%', backgroundColor: theme.colors.grey5 }}
+      forceInset={{ top: 'always', horizontal: 'never' }}
     >
-      <Image
-        source={require('../images/logo.png')}
-        style={{ width: '70%' }}
-        resizeMode="contain"
-      />
-    </View>
-    <View style={{ marginLeft: 10 }}>
-      <DrawerItemList {...props} />
-    </View>
-  </SafeAreaView>
-);
+      <View
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
+        <Image
+          source={require('../images/logo.png')}
+          style={{ width: '70%' }}
+          resizeMode="contain"
+        />
+      </View>
+      <View style={{ marginLeft: 10 }}>
+        <DrawerItemList {...props} />
+      </View>
+    </SafeAreaView>
+  );
+}
 
 function CustomDrawerContent(props) {
   return (

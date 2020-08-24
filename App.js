@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { ThemeProvider } from 'react-native-elements';
+import { useColorScheme } from 'react-native-appearance';
 
 import RootNavigator from './src/navigation/RootNavigator';
 import AppLoading from './src/components/AppLoading';
@@ -7,6 +9,8 @@ import { cacheImages, cacheFonts } from './src/helpers/AssetsCaching';
 import vectorFonts from './src/helpers/vector-fonts';
 
 export default () => {
+  let colorScheme = useColorScheme();
+  console.log('color scheme is: ' + colorScheme);
   const [isReady, setIsReady] = useState(false);
 
   const loadAssetsAsync = async () => {
@@ -45,5 +49,9 @@ export default () => {
     );
   }
 
-  return <RootNavigator />;
+  return (
+    <ThemeProvider useDark={colorScheme === 'dark'}>
+      <RootNavigator />
+    </ThemeProvider>
+  );
 };

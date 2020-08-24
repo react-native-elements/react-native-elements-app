@@ -10,7 +10,7 @@ class Pricing extends Component {
     return (
       <>
         <Header title="Pricing" />
-        <ScrollView style={{ backgroundColor: 'white' }}>
+        <ScrollView>
           <PricingCard
             color={colors.primary}
             title="Free"

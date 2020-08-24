@@ -1,6 +1,7 @@
-import * as React from 'react';
+import React, { useContext } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
+import { ThemeContext } from 'react-native-elements';
 import DrawerNavigator from './DrawerNavigator';
 
 import Avatars from '../views/avatars';
@@ -22,16 +23,17 @@ import BottomSheet from '../views/bottomsheet';
 const Drawer = createDrawerNavigator();
 
 function RootNavigator() {
+  const { theme } = useContext(ThemeContext);
   return (
-    <NavigationContainer>
+    <NavigationContainer theme={{ colors: { background: theme.colors.white } }}>
       <Drawer.Navigator
         drawerContent={DrawerNavigator}
         drawerContentOptions={{
-          activeTintColor: '#548ff7',
+          activeTintColor: theme.colors.secondary,
           activeBackgroundColor: 'transparent',
-          inactiveTintColor: '#ffffff',
+          inactiveTintColor: theme.colors.grey0,
           inactiveBackgroundColor: 'transparent',
-          backgroundColor: '#43484d',
+          backgroundColor: theme.colors.grey4,
           labelStyle: {
             fontSize: 15,
             marginLeft: 0,

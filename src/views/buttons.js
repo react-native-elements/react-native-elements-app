@@ -1,10 +1,18 @@
 import React, { Component } from 'react';
 import { View, ScrollView, StyleSheet } from 'react-native';
-import { Button, ButtonGroup } from 'react-native-elements';
+import { Button, ButtonGroup, withTheme } from 'react-native-elements';
 
 import { Header, SubHeader } from './header';
 
 import { LinearGradient } from '../components/LinearGradient';
+
+const redButton = {
+  Button: {
+    buttonStyle: {
+      backgroundColor: 'red',
+    },
+  },
+};
 
 class Buttons extends Component {
   constructor(props) {
@@ -13,13 +21,14 @@ class Buttons extends Component {
       selectedIndex: 0,
       selectedIndexes: [0, 2, 3],
     };
+    this.props.updateTheme(redButton);
   }
 
   render() {
     return (
       <>
         <Header title="Buttons" />
-        <ScrollView style={styles.container}>
+        <ScrollView>
           <View style={styles.contentView}>
             <SubHeader title="Buttons" />
             <View style={{ alignItems: 'center' }}>
@@ -254,9 +263,6 @@ class Buttons extends Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    backgroundColor: 'white',
-  },
   contentView: {
     flex: 1,
   },
@@ -266,19 +272,6 @@ const styles = StyleSheet.create({
     width: '100%',
     marginTop: 20,
   },
-  headerContainer: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: 40,
-    backgroundColor: '#4F80E1',
-    marginBottom: 20,
-  },
-  heading: {
-    color: 'white',
-    marginTop: 10,
-    fontSize: 22,
-    fontWeight: 'bold',
-  },
 });
 
-export default Buttons;
+export default withTheme(Buttons);

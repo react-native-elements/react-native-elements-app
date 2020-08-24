@@ -94,7 +94,7 @@ const Lists2 = () => {
       <FlatList
         ListHeaderComponent={
           <>
-            <View style={{ backgroundColor: '#ECEFF1', paddingVertical: 8 }}>
+            <View style={{ paddingVertical: 8 }}>
               {list2.map((l, i) => (
                 <ListItem
                   component={TouchableScale}
@@ -237,7 +237,6 @@ const styles = StyleSheet.create({
     marginTop: 20,
     borderTopWidth: 1,
     borderColor: colors.greyOutline,
-    backgroundColor: '#fff',
   },
   subtitleView: {
     flexDirection: 'row',

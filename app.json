@@ -24,6 +24,7 @@
     ],
     "ios": {
       "supportsTablet": true
-    }
+    },
+    "userInterfaceStyle": "automatic"
   }
 }

@@ -1,7 +1,7 @@
 import React from 'react';
-import { View, StyleSheet, SectionList } from 'react-native';
+import { View, StyleSheet, SectionList, Switch } from 'react-native';
 
-import { ListItem, Divider, SearchBar } from 'react-native-elements';
+import { ListItem, Divider, SearchBar, Icon } from 'react-native-elements';
 
 import { Header } from './header';
 
@@ -120,26 +120,35 @@ export default class Settings extends React.PureComponent {
   }) => (
     <ListItem
       containerStyle={{ paddingVertical: 8 }}
-      switch={checkbox && { value: true }}
-      key={title}
-      chevron={!hideChevron}
-      rightTitle={rightTitle}
-      leftIcon={{
-        type: 'ionicon',
-        name: icon,
-        size: 20,
-        color: 'white',
-        containerStyle: {
+      key={title}ð
+    >
+      <Icon
+        type='ionicon'
+        name={icon}
+        size={20}
+        color='white'
+        containerStyle={{
           backgroundColor,
           width: 28,
           height: 28,
           borderRadius: 6,
           alignItems: 'center',
           justifyContent: 'center',
-        },
-      }}
-      title={title}
-    />
+        }}
+      />
+      <ListItem.Content>
+        <ListItem.Title>{title}</ListItem.Title>
+      </ListItem.Content>
+      <ListItem.Content right>
+        <ListItem.Title right>{rightTitle}</ListItem.Title>
+      </ListItem.Content>
+      {!hideChevron &&
+        <ListItem.Chevron />
+      }
+      {checkbox &&
+        <Switch value={true} />
+      }
+    </ListItem>
   );
 
   renderSectionHeader = () => <View style={styles.headerSection} />;

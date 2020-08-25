@@ -38,7 +38,9 @@ const Cards = () => {
       <Header title="Cards" />
       <ScrollView>
         <View style={styles.container}>
-          <Card title="CARD WITH DIVIDER">
+          <Card>
+            <Card.Title>CARD WITH DIVIDER</Card.Title>
+            <Card.Divider />
             {users.map((u, i) => {
               return (
                 <View key={i} style={styles.user}>
@@ -52,7 +54,9 @@ const Cards = () => {
               );
             })}
           </Card>
-          <Card containerStyle={{ marginTop: 15 }} title="FONTS">
+          <Card containerStyle={{ marginTop: 15 }}>
+            <Card.Title>FONTS</Card.Title>
+            <Card.Divider />
             <Text style={styles.fonts} h1>
               h1 Heading
             </Text>

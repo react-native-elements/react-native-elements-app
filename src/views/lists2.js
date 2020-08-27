@@ -122,7 +122,7 @@ const Lists2 = () => {
                     <ListItem.Title style={{color: 'white', fontWeight: 'bold'}}>
                       {l.name}
                     </ListItem.Title>
-                    <ListItem.Subtitle style={{color: 'white'}}>
+                    <ListItem.Subtitle style={[{color: 'white'}]}>
                       {l.subtitle}
                     </ListItem.Subtitle>
                   </ListItem.Content>

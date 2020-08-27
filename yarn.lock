@@ -10229,7 +10229,7 @@ react-native-appearance@~0.3.3:
 
 "react-native-elements@https://github.com/react-native-elements/react-native-elements#next":
   version "2.2.1"
-  resolved "https://github.com/react-native-elements/react-native-elements#02ac54653ad0da267a5dad017b53e1ddd8df3a90"
+  resolved "https://github.com/react-native-elements/react-native-elements#a3bf8ca8b4c11b32d2f165f8b292db619f1c6a08"
   dependencies:
     "@types/react-native-vector-icons" "^6.4.5"
     color "^3.1.0"

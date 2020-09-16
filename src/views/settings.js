@@ -118,15 +118,12 @@ export default class Settings extends React.PureComponent {
   renderItem = ({
     item: { title, backgroundColor, icon, rightTitle, hideChevron, checkbox },
   }) => (
-    <ListItem
-      containerStyle={{ paddingVertical: 8 }}
-      key={title}ð
-    >
+    <ListItem containerStyle={{ paddingVertical: 8 }} key={title} ð>
       <Icon
-        type='ionicon'
+        type="ionicon"
         name={icon}
         size={20}
-        color='white'
+        color="white"
         containerStyle={{
           backgroundColor,
           width: 28,
@@ -142,12 +139,8 @@ export default class Settings extends React.PureComponent {
       <ListItem.Content right>
         <ListItem.Title right>{rightTitle}</ListItem.Title>
       </ListItem.Content>
-      {!hideChevron &&
-        <ListItem.Chevron />
-      }
-      {checkbox &&
-        <Switch value={true} />
-      }
+      {!hideChevron && <ListItem.Chevron />}
+      {checkbox && <Switch value={true} />}
     </ListItem>
   );
 

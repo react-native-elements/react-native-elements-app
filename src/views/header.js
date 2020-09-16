@@ -1,12 +1,11 @@
-import React, { useReducer } from 'react';
-import { StyleSheet, View, Text, Switch } from 'react-native';
+import React from 'react';
+import { StyleSheet, View, Text } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { Header as HeaderRNE } from 'react-native-elements';
-import { ThemeReducerContext } from '../helpers/ThemeReducer';
 
 function Header(props) {
   const navigation = useNavigation();
-  const { ThemeState, dispatch } = React.useContext(ThemeReducerContext);
+
   return (
     <HeaderRNE
       leftComponent={{
@@ -15,18 +14,6 @@ function Header(props) {
         onPress: navigation.openDrawer,
       }}
       centerComponent={{ text: props.title, style: styles.heading }}
-      rightComponent={
-        <Switch
-          value={ThemeState.themeMode === 'dark'}
-          onValueChange={(val) => {
-            if (val === true) {
-              dispatch({ type: 'set-theme', payload: 'dark' });
-            } else {
-              dispatch({ type: 'set-theme', payload: 'light' });
-            }
-          }}
-        />
-      }
     />
   );
 }

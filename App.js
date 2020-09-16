@@ -21,7 +21,7 @@ export default () => {
     if (colorScheme === 'dark') {
       dispatch({ type: 'set-theme', payload: 'dark' });
     }
-  }, []);
+  }, [colorScheme]);
 
   const [isReady, setIsReady] = useState(false);
 

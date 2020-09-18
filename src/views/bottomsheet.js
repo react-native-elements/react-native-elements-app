@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { Header } from './header';
 import { BottomSheet, Button, ListItem } from 'react-native-elements';
 
@@ -11,14 +11,14 @@ export default () => {
       title: 'Cancel',
       containerStyle: { backgroundColor: 'red' },
       titleStyle: { color: 'white' },
-      onPress: () => setIsVisible(false)
+      onPress: () => setIsVisible(false),
     },
   ];
   return (
     <>
       <Header title="BottomSheet" />
-      <Button title='Open Buttom Sheet' onPress={() => setIsVisible(true)} />
-      <BottomSheet isVisible={isVisible} >
+      <Button title="Open Buttom Sheet" onPress={() => setIsVisible(true)} />
+      <BottomSheet isVisible={isVisible}>
         {list.map((l, i) => (
           <ListItem
             key={i}

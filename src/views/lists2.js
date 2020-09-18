@@ -74,15 +74,12 @@ const list2 = [
 const Lists2 = () => {
   const renderRow = ({ item }) => {
     return (
-      <ListItem
-        onPress={log}
-        bottomDivider
-      >
+      <ListItem onPress={log} bottomDivider>
         <Icon name={item.icon} />
         <ListItem.Content>
           <ListItem.Title>{item.title}</ListItem.Title>
         </ListItem.Content>
-        <ListItem.Chevron/>
+        <ListItem.Chevron />
       </ListItem>
     );
   };
@@ -117,12 +114,14 @@ const Lists2 = () => {
                     borderRadius: 8,
                   }}
                 >
-                  <Avatar rounded source={{uri: l.avatar_url}} />
+                  <Avatar rounded source={{ uri: l.avatar_url }} />
                   <ListItem.Content>
-                    <ListItem.Title style={{color: 'white', fontWeight: 'bold'}}>
+                    <ListItem.Title
+                      style={{ color: 'white', fontWeight: 'bold' }}
+                    >
                       {l.name}
                     </ListItem.Title>
-                    <ListItem.Subtitle style={[{color: 'white'}]}>
+                    <ListItem.Subtitle style={[{ color: 'white' }]}>
                       {l.subtitle}
                     </ListItem.Subtitle>
                   </ListItem.Content>
@@ -133,19 +132,11 @@ const Lists2 = () => {
 
             <View style={styles.list}>
               {list2.map((l, i) => (
-                <ListItem
-                  key={i}
-                  onPress={log}
-                  bottomDivider
-                >
-                  <Avatar title={l.name[0]} source={{uri: l.avatar_url}} />
+                <ListItem key={i} onPress={log} bottomDivider>
+                  <Avatar title={l.name[0]} source={{ uri: l.avatar_url }} />
                   <ListItem.Content>
-                    <ListItem.Title>
-                      {l.name}
-                    </ListItem.Title>
-                    <ListItem.Subtitle>
-                      {l.subtitle}
-                    </ListItem.Subtitle>
+                    <ListItem.Title>{l.name}</ListItem.Title>
+                    <ListItem.Subtitle>{l.subtitle}</ListItem.Subtitle>
                   </ListItem.Content>
                   <ListItem.Chevron />
                 </ListItem>
@@ -153,17 +144,18 @@ const Lists2 = () => {
             </View>
             <View style={styles.list}>
               {list2.map((l, i) => (
-                <ListItem
-                  key={i}
-                  bottomDivider
-                >
-                  <Icon name='user-circle-o' type='font-awesome' color='blue' />
+                <ListItem key={i} bottomDivider>
+                  <Icon name="user-circle-o" type="font-awesome" color="blue" />
                   <ListItem.Content>
-                    <ListItem.Title style={{ color: 'red'}}>{l.name}</ListItem.Title>
+                    <ListItem.Title style={{ color: 'red' }}>
+                      {l.name}
+                    </ListItem.Title>
                     <ListItem.Subtitle>{l.subtitle}</ListItem.Subtitle>
                   </ListItem.Content>
                   <ListItem.Content right>
-                    <ListItem.Title right style={{ color:'green'}}>11:00 am</ListItem.Title>
+                    <ListItem.Title right style={{ color: 'green' }}>
+                      11:00 am
+                    </ListItem.Title>
                     <ListItem.Subtitle right>12:00 am</ListItem.Subtitle>
                   </ListItem.Content>
                 </ListItem>
@@ -174,36 +166,44 @@ const Lists2 = () => {
                 <ListItem.Content>
                   <ListItem.Title>Name</ListItem.Title>
                 </ListItem.Content>
-                <ListItem.Input placeholder='Type your name' />
+                <ListItem.Input placeholder="Type your name" />
                 <ListItem.Chevron />
               </ListItem>
-              <ListItem bottomDivider >
+              <ListItem bottomDivider>
                 <ListItem.Content>
                   <ListItem.Title>Switch that please 😲</ListItem.Title>
                 </ListItem.Content>
-                <Switch value={switch1} onValueChange={(value) => setSwitch1(value)} />
+                <Switch
+                  value={switch1}
+                  onValueChange={(value) => setSwitch1(value)}
+                />
               </ListItem>
-              <ListItem
-                bottomDivider
-              >
+              <ListItem bottomDivider>
                 <ListItem.Content>
                   <ListItem.Title>Choose 🤯</ListItem.Title>
                 </ListItem.Content>
-                <ListItem.ButtonGroup buttons={['Flower', 'Coco']} selectedIndex={selectedButtonIndex} onPress={(index) => setSelectedButtonIndex(index)} />
+                <ListItem.ButtonGroup
+                  buttons={['Flower', 'Coco']}
+                  selectedIndex={selectedButtonIndex}
+                  onPress={(index) => setSelectedButtonIndex(index)}
+                />
               </ListItem>
-              <ListItem bottomDivider >
-                <ListItem.CheckBox checked={checkbox1} onPress={() => setCheckbox1(!checkbox1)} />
+              <ListItem bottomDivider>
+                <ListItem.CheckBox
+                  checked={checkbox1}
+                  onPress={() => setCheckbox1(!checkbox1)}
+                />
                 <ListItem.Content>
                   <ListItem.Title>Check that please 😢</ListItem.Title>
                 </ListItem.Content>
               </ListItem>
-              <ListItem bottomDivider >
-                <Badge value='12' />
+              <ListItem bottomDivider>
+                <Badge value="12" />
                 <ListItem.Content>
                   <ListItem.Title>With a Badge ! 😻</ListItem.Title>
                 </ListItem.Content>
               </ListItem>
-              <ListItem bottomDivider >
+              <ListItem bottomDivider>
                 <Icon name="check" size={20} />
                 <ListItem.Content>
                   <ListItem.Title>This thing is checked 😎</ListItem.Title>
@@ -211,10 +211,12 @@ const Lists2 = () => {
               </ListItem>
             </View>
             <View style={styles.list}>
-              <ListItem >
+              <ListItem>
                 <Avatar source={require('../../assets/images/avatar1.jpg')} />
                 <ListItem.Content>
-                  <ListItem.Title>Limited supply! Its like digital gold!</ListItem.Title>
+                  <ListItem.Title>
+                    Limited supply! Its like digital gold!
+                  </ListItem.Title>
                   <View style={styles.subtitleView}>
                     <Image
                       source={require('../images/rating.png')}

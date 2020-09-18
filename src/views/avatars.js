@@ -83,7 +83,7 @@ const Avatars = () => {
                 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
             }}
           >
-            <Avatar.Accessory size={24}/>
+            <Avatar.Accessory size={24} />
           </Avatar>
           <Avatar
             size={64}

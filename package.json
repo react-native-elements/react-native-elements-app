@@ -20,36 +20,36 @@
     "clean-install": "rm -rf node_modules && npm cache clean --force && watchman watch-del-all && yarn"
   },
   "dependencies": {
-    "@expo/vector-icons": "^10.2.0",
+    "@expo/vector-icons": "^10.0.0",
     "@react-native-community/masked-view": "0.1.10",
     "@react-navigation/drawer": "^5.8.4",
     "@react-navigation/native": "^5.6.1",
     "@react-navigation/stack": "^5.6.2",
-    "expo": "^38.0.0",
-    "expo-asset": "~8.1.7",
-    "expo-font": "~8.2.1",
+    "expo": "^39.0.0",
+    "expo-asset": "~8.2.0",
+    "expo-font": "~8.3.0",
     "lodash": "^4.17.15",
     "prop-types": "^15.7.2",
-    "react": "16.11.0",
-    "react-dom": "16.11.0",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-38.0.2.tar.gz",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-39.0.0.tar.gz",
     "react-native-appearance": "~0.3.3",
     "react-native-elements": "https://github.com/react-native-elements/react-native-elements#next",
-    "react-native-gesture-handler": "~1.6.0",
-    "react-native-reanimated": "~1.9.0",
-    "react-native-safe-area-context": "~3.0.7",
-    "react-native-screens": "~2.9.0",
+    "react-native-gesture-handler": "~1.7.0",
+    "react-native-reanimated": "~1.13.0",
+    "react-native-safe-area-context": "3.1.4",
+    "react-native-screens": "~2.10.1",
     "react-native-touchable-scale": "^2.1.1",
-    "react-native-web": "~0.11.7"
+    "react-native-web": "~0.13.7"
   },
   "devDependencies": {
     "@expo/webpack-config": "^0.12.16",
     "@react-native-community/eslint-config": "^2.0.0",
-    "babel-preset-expo": "^8.2.3",
+    "babel-preset-expo": "^8.3.0",
     "eslint": "^7.3.1",
     "gh-pages": "^2.1.1",
-    "jest-expo": "^38.0.0",
-    "typescript": "^4.0.2"
+    "jest-expo": "^39.0.0",
+    "typescript": "~3.9.2"
   },
   "jest": {
     "preset": "jest-expo"

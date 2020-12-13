@@ -1,1 +1,2 @@
-export { AppLoading as default } from 'expo';
+import AppLoading from 'expo-app-loading';
+export default AppLoading;

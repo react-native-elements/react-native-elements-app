@@ -38,34 +38,34 @@ const list2 = [
   {
     name: 'Amy Farha',
     avatar_url:
-      'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
+      'https://uifaces.co/our-content/donated/XdLjsJX_.jpg',
     subtitle: 'Vice President',
     linearGradientColors: ['#FF9800', '#F44336'],
   },
   {
     name: 'Chris Jackson',
     avatar_url:
-      'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
+      'https://uifaces.co/our-content/donated/KtCFjlD4.jpg',
     subtitle: 'Vice Chairman',
     linearGradientColors: ['#3F51B5', '#2196F3'],
   },
   {
     name: 'Amanda Martin',
-    avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg',
+    avatar_url: 'https://images.unsplash.com/photo-1498529605908-f357a9af7bf5?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=047fade70e80ebb22ac8f09c04872c40',
     subtitle: 'CEO',
     linearGradientColors: ['#FFD600', '#FF9800'],
   },
   {
     name: 'Christy Thomas',
     avatar_url:
-      'https://s3.amazonaws.com/uifaces/faces/twitter/kfriedson/128.jpg',
+      'https://randomuser.me/api/portraits/women/48.jpg',
     subtitle: 'Lead Developer',
     linearGradientColors: ['#4CAF50', '#8BC34A'],
   },
   {
     name: 'Melissa Jones',
     avatar_url:
-      'https://s3.amazonaws.com/uifaces/faces/twitter/nuraika/128.jpg',
+      'https://images-na.ssl-images-amazon.com/images/M/MV5BMTQwMDQ0NDk1OV5BMl5BanBnXkFtZTcwNDcxOTExNg@@._V1_UY256_CR2,0,172,256_AL_.jpg',
     subtitle: 'CTO',
     linearGradientColors: ['#F44336', '#E91E63'],
   },

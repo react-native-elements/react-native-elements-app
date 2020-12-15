@@ -7,37 +7,37 @@ import { Avatar, Button, Icon, withTheme } from 'react-native-elements';
 const USERS = [
   {
     name: 'Johh Smith',
-    avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg',
+    avatar: 'https://uifaces.co/our-content/donated/1H_7AxP0.jpg',
     value: '- 164',
   },
   {
     name: 'Sarah Parker',
-    avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/evagiselle/128.jpg',
+    avatar: 'https://images.pexels.com/photos/598745/pexels-photo-598745.jpeg?crop=faces&fit=crop&h=200&w=200&auto=compress&cs=tinysrgb',
     value: '+ 203',
     positive: true,
   },
   {
     name: 'Paul Allen',
-    avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/jsa/128.jpg',
+    avatar: 'https://uifaces.co/our-content/donated/bUkmHPKs.jpg',
     value: '+ 464',
     positive: true,
   },
   {
     name: 'Terry Andrews',
     avatar:
-      'https://s3.amazonaws.com/uifaces/faces/twitter/talhaconcepts/128.jpg',
+      'https://randomuser.me/api/portraits/men/4.jpg',
     value: '- 80',
     positive: false,
   },
   {
     name: 'Andy Vitale',
-    avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/andyvitale/128.jpg',
+    avatar: 'https://uifaces.co/our-content/donated/NY9hnAbp.jpg',
     value: '- 230',
     positive: false,
   },
   {
     name: 'Katy Friedson',
-    avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/kfriedson/128.jpg',
+    avatar: 'https://images-na.ssl-images-amazon.com/images/M/MV5BMTgxMTc1MTYzM15BMl5BanBnXkFtZTgwNzI5NjMwOTE@._V1_UY256_CR16,0,172,256_AL_.jpg',
     value: '+ 160',
     positive: true,
   },
@@ -202,7 +202,7 @@ class ListContent extends Component {
                   height={145}
                   source={{
                     uri:
-                      'https://s3.amazonaws.com/uifaces/faces/twitter/jsa/128.jpg',
+                      'https://randomuser.me/api/portraits/men/1.jpg',
                   }}
                   activeOpacity={0.7}
                   avatarStyle={{ borderRadius: 145 / 2 }}

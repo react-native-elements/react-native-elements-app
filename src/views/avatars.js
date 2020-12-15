@@ -8,13 +8,13 @@ import { Header } from './header';
 const dataList = [
   {
     image_url:
-      'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
+      'https://uifaces.co/our-content/donated/6MWH9Xi_.jpg',
     icon: null,
     title: null,
   },
   {
     image_url:
-      'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
+      'https://randomuser.me/api/portraits/men/36.jpg',
     icon: null,
     title: null,
   },
@@ -80,7 +80,7 @@ const Avatars = () => {
             rounded
             source={{
               uri:
-                'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
+                'https://randomuser.me/api/portraits/women/63.jpg',
             }}
           >
             <Avatar.Accessory size={24} />

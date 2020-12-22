@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, ScrollView, StyleSheet } from 'react-native';
-import { Button, ButtonGroup, withTheme } from 'react-native-elements';
+import { Button, ButtonGroup, withTheme, Text } from 'react-native-elements';
 
 import { Header, SubHeader } from './header';
 
@@ -61,7 +61,7 @@ class Buttons extends Component {
                 underlayColor="transparent"
               />
               <Button
-                title="Add to Cart"
+                title={<CustomTitle/>}
                 titleStyle={{ fontWeight: 'bold', fontSize: 18 }}
                 linearGradientProps={{
                   colors: ['#FF9800', '#F44336'],
@@ -74,7 +74,7 @@ class Buttons extends Component {
                   borderColor: 'transparent',
                   borderRadius: 20,
                 }}
-                containerStyle={{ marginVertical: 10, height: 40, width: 200 }}
+                containerStyle={{ marginVertical: 10, height: 80, width: 200 }}
                 icon={{
                   name: 'arrow-right',
                   type: 'font-awesome',
@@ -260,6 +260,15 @@ class Buttons extends Component {
       </>
     );
   }
+}
+
+function CustomTitle() {
+  return (
+    <View style={{flexDirection: 'column',}}>
+    <Text style={{ fontWeight: 'bold', fontSize: 18 }}>John Doe</Text>
+    <Text style={{ fontWeight: 'italics', fontSize: 12 }}>Minister of Magic</Text>
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({

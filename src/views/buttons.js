@@ -266,7 +266,7 @@ function CustomTitle() {
   return (
     <View style={{flexDirection: 'column',}}>
     <Text style={{ fontWeight: 'bold', fontSize: 18 }}>John Doe</Text>
-    <Text style={{ fontWeight: 'italics', fontSize: 12 }}>Minister of Magic</Text>
+    <Text style={{ fontStyle: 'italic', fontSize: 12 }}>Minister of Magic</Text>
     </View>
   );
 }

@@ -370,7 +370,7 @@ const styles = StyleSheet.create({
   triangleLeft: {
     position: 'absolute',
     left: -20,
-    bottom: 0,
+    bottom: 24,
     width: 0,
     height: 0,
     borderRightWidth: 20,

@@ -1,5 +1,7 @@
 import React, { useContext } from 'react';
 import { View, Image, SafeAreaView, Switch } from 'react-native';
+import { StyleSheet } from 'react-native';
+
 import {
   DrawerContentScrollView,
   DrawerItemList,
@@ -10,6 +12,7 @@ import { ThemeReducerContext } from '../helpers/ThemeReducer';
 function CustomContentComponent(props) {
   const { ThemeState, dispatch } = useContext(ThemeReducerContext);
   const { theme } = useContext(ThemeContext);
+  let value = true;
   return (
     <SafeAreaView
       style={{ flex: 1, height: '100%', backgroundColor: theme.colors.grey5 }}
@@ -23,8 +26,8 @@ function CustomContentComponent(props) {
         }}
       >
         <Image
-          source={require('../images/logo.png')}
-          style={{ width: '70%' }}
+          source={require('../images/logo.png')}  
+          style={{ width: '70%' , tintColor: '#397af8'}}
           resizeMode="contain"
         />
       </View>

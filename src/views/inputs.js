@@ -268,6 +268,7 @@ class Inputs extends Component {
                     <Icon
                       name="user"
                       type="simple-line-icon"
+                      style={{marginLeft: 10}}
                       color="rgba(110, 120, 170, 1)"
                       size={25}
                     />
@@ -287,6 +288,7 @@ class Inputs extends Component {
                     <Icon
                       name="email-outline"
                       type="material-community"
+                      style={{marginLeft: 10}}
                       color="rgba(110, 120, 170, 1)"
                       size={25}
                     />
@@ -306,6 +308,7 @@ class Inputs extends Component {
                     <Icon
                       name="lock"
                       type="simple-line-icon"
+                      style={{marginLeft: 10}}
                       color="rgba(110, 120, 170, 1)"
                       size={25}
                     />
@@ -326,6 +329,7 @@ class Inputs extends Component {
                     <Icon
                       name="lock"
                       type="simple-line-icon"
+                      style={{marginLeft: 10}}
                       color="rgba(110, 120, 170, 1)"
                       size={25}
                     />

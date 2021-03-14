@@ -17,6 +17,7 @@ import Pricing from '../views/pricing';
 import Ratings from '../views/ratings';
 import Settings from '../views/settings';
 import Sliders from '../views/sliders.js';
+import SocialIcons from '../views/social_icons';
 import Fonts from '../views/fonts';
 import BottomSheet from '../views/bottomsheet';
 
@@ -52,6 +53,7 @@ function RootNavigator() {
         <Drawer.Screen name="Login" component={Login} />
         <Drawer.Screen name="Settings" component={Settings} />
         <Drawer.Screen name="Slider" component={Sliders} />
+        <Drawer.Screen name="Social Icons" component={SocialIcons} />
         <Drawer.Screen name="Fonts" component={Fonts} />
         <Drawer.Screen name="BottomSheet" component={BottomSheet} />
       </Drawer.Navigator>

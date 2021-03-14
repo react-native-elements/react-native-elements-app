@@ -119,7 +119,7 @@ class Buttons extends Component {
                   borderColor: 'transparent',
                   borderWidth: 0,
                   borderRadius: 5,
-                  paddingVertical: 4,
+                  paddingVertical: 5,
                 }}
                 containerStyle={{ marginTop: 20, width: 300, height: 45 }}
               />

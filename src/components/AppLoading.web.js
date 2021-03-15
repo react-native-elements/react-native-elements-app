@@ -22,7 +22,7 @@ const AppLoading = (props) => {
 
     const successCb = onFinish || emptyFunc;
     const errorCb = onError || emptyFunc;
-    console.log(props);
+    
     return !startAsync
       ? successCb()
       : callbackHandler(startAsync, successCb, errorCb);

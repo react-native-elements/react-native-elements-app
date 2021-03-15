@@ -23,8 +23,8 @@ function CustomContentComponent(props) {
         }}
       >
         <Image
-          source={require('../images/logo.png')}  
-          style={{ width: '70%' , tintColor: '#397af8'}}
+          source={require('../images/logo.png')}
+          style={{ width: '70%', tintColor: '#397af8' }}
           resizeMode="contain"
         />
       </View>

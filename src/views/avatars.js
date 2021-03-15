@@ -1,20 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, ScrollView } from 'react-native';
 import _ from 'lodash';
-import { Avatar, Accessory } from 'react-native-elements';
+import {
+  Avatar,
+  Accessory,
+  Button,
+  ThemeProvider,
+} from 'react-native-elements';
 
 import { Header } from './header';
 
 const dataList = [
   {
-    image_url:
-      'https://uifaces.co/our-content/donated/6MWH9Xi_.jpg',
+    image_url: 'https://uifaces.co/our-content/donated/6MWH9Xi_.jpg',
     icon: null,
     title: null,
   },
   {
-    image_url:
-      'https://randomuser.me/api/portraits/men/36.jpg',
+    image_url: 'https://randomuser.me/api/portraits/men/36.jpg',
     icon: null,
     title: null,
   },
@@ -40,7 +43,23 @@ const dataList = [
   },
 ];
 
+const theme1 = {
+  Button: {
+    titleStyle: {
+      color: 'white',
+    },
+  },
+};
+const theme2 = {
+  Button: {
+    titleStyle: {
+      color: 'red',
+    },
+  },
+};
+
 const Avatars = () => {
+  const [theme, setTheme] = useState(theme1);
   return (
     <>
       <Header title="Avatars" />
@@ -79,8 +98,7 @@ const Avatars = () => {
             size={64}
             rounded
             source={{
-              uri:
-                'https://randomuser.me/api/portraits/women/63.jpg',
+              uri: 'https://randomuser.me/api/portraits/women/63.jpg',
             }}
           >
             <Avatar.Accessory size={24} />
@@ -92,6 +110,36 @@ const Avatars = () => {
           >
             <Accessory size={23} />
           </Avatar>
+        </View>
+        <View
+          style={{
+            flexDirection: 'row',
+            marginTop: 10,
+            backgroundColor: 'grey',
+          }}
+        >
+          <ThemeProvider theme={theme}>
+            <Button
+              title="My Button"
+              onPress={() => {
+                if (theme == theme1) {
+                  setTheme(theme2);
+                } else {
+                  setTheme(theme1);
+                }
+              }}
+            />
+            <Button
+              title="My 2nd Button"
+              onPress={() => {
+                if (theme == theme1) {
+                  setTheme(theme2);
+                } else {
+                  setTheme(theme1);
+                }
+              }}
+            />
+          </ThemeProvider>
         </View>
       </ScrollView>
     </>

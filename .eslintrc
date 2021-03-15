@@ -1,7 +1,6 @@
 {
   "extends": "@react-native-community",
   "rules": {
-    "react-native/no-inline-styles": 0,
-    "endOfLine": "auto"
+    "react-native/no-inline-styles": 0
   }
 }

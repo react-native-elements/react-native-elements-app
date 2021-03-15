@@ -11,7 +11,8 @@ const users = [
   },
   {
     name: 'thot leader',
-    avatar: 'https://images.pexels.com/photos/598745/pexels-photo-598745.jpeg?crop=faces&fit=crop&h=200&w=200&auto=compress&cs=tinysrgb',
+    avatar:
+      'https://images.pexels.com/photos/598745/pexels-photo-598745.jpeg?crop=faces&fit=crop&h=200&w=200&auto=compress&cs=tinysrgb',
   },
   {
     name: 'jsa',
@@ -19,8 +20,7 @@ const users = [
   },
   {
     name: 'talhaconcepts',
-    avatar:
-      'https://randomuser.me/api/portraits/men/4.jpg',
+    avatar: 'https://randomuser.me/api/portraits/men/4.jpg',
   },
   {
     name: 'andy vitale',
@@ -28,7 +28,8 @@ const users = [
   },
   {
     name: 'katy friedson',
-    avatar: 'https://images-na.ssl-images-amazon.com/images/M/MV5BMTgxMTc1MTYzM15BMl5BanBnXkFtZTgwNzI5NjMwOTE@._V1_UY256_CR16,0,172,256_AL_.jpg',
+    avatar:
+      'https://images-na.ssl-images-amazon.com/images/M/MV5BMTgxMTc1MTYzM15BMl5BanBnXkFtZTgwNzI5NjMwOTE@._V1_UY256_CR16,0,172,256_AL_.jpg',
   },
 ];
 
@@ -73,16 +74,28 @@ const Cards = () => {
           </Card>
           <Card>
             <Card.Title>HELLO WORLD</Card.Title>
-            <Card.Divider/>
-            <Card.Image style={{padding: 0}} 
-              source={{uri: 'https://awildgeographer.files.wordpress.com/2015/02/john_muir_glacier.jpg'}} />
-            <Text style={{marginBottom: 10}}>
-                The idea with React Native Elements is more about component structure than actual design.
+            <Card.Divider />
+            <Card.Image
+              style={{ padding: 0 }}
+              source={{
+                uri:
+                  'https://awildgeographer.files.wordpress.com/2015/02/john_muir_glacier.jpg',
+              }}
+            />
+            <Text style={{ marginBottom: 10 }}>
+              The idea with React Native Elements is more about component
+              structure than actual design.
             </Text>
             <Button
-              icon={<Icon name='code' color='#ffffff' />}
-              buttonStyle={{borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0}}
-              title='VIEW NOW' />
+              icon={<Icon name="code" color="#ffffff" />}
+              buttonStyle={{
+                borderRadius: 0,
+                marginLeft: 0,
+                marginRight: 0,
+                marginBottom: 0,
+              }}
+              title="VIEW NOW"
+            />
           </Card>
         </View>
       </ScrollView>

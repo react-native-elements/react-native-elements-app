@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { View, StyleSheet, Image, FlatList, Switch } from 'react-native';
 import { Text, ListItem, Avatar, Icon, Badge } from 'react-native-elements';
-import TouchableScale from 'react-native-touchable-scale';
 
 import { LinearGradient } from '../components/LinearGradient';
 
@@ -95,7 +94,6 @@ const Lists2 = () => {
             <View style={{ paddingVertical: 8 }}>
               {list2.map((l, i) => (
                 <ListItem
-                  component={TouchableScale}
                   friction={90}
                   tension={100}
                   activeScale={0.95}

@@ -181,8 +181,8 @@ const Buttons = (props) => {
                   backgroundColor: 'rgba(111, 202, 186, 1)',
                   borderColor: 'transparent',
                   borderWidth: 0,
-                  borderRadius: 30,
-                  paddingVertical: 10,
+                  borderRadius: 5,
+                  paddingVertical: 5,
                 }}
                 containerStyle={{ width: 100, height: 40 }}
               />

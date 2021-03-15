@@ -84,6 +84,13 @@ const dataList = [
   {
     type: 'vk',
   },
+  {
+    type: 'facebook-messenger',
+    iconType: 'material-community',
+  },
+  {
+    type: 'whatsapp',
+  },
 ];
 
 const SocialIcons = () => {
@@ -104,6 +111,8 @@ const SocialIcons = () => {
             {chunk.map((l, i) => (
               <SocialIcon
                 type={l.type}
+                iconType={l.iconType}
+                key={`${chunkIndex}-${i}`}
               />
             ))}
           </View>

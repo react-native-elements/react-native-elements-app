@@ -37,28 +37,26 @@ const list1 = [
 const list2 = [
   {
     name: 'Amy Farha',
-    avatar_url:
-      'https://uifaces.co/our-content/donated/XdLjsJX_.jpg',
+    avatar_url: 'https://uifaces.co/our-content/donated/XdLjsJX_.jpg',
     subtitle: 'Vice President',
     linearGradientColors: ['#FF9800', '#F44336'],
   },
   {
     name: 'Chris Jackson',
-    avatar_url:
-      'https://uifaces.co/our-content/donated/KtCFjlD4.jpg',
+    avatar_url: 'https://uifaces.co/our-content/donated/KtCFjlD4.jpg',
     subtitle: 'Vice Chairman',
     linearGradientColors: ['#3F51B5', '#2196F3'],
   },
   {
     name: 'Amanda Martin',
-    avatar_url: 'https://images.unsplash.com/photo-1498529605908-f357a9af7bf5?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=047fade70e80ebb22ac8f09c04872c40',
+    avatar_url:
+      'https://images.unsplash.com/photo-1498529605908-f357a9af7bf5?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=047fade70e80ebb22ac8f09c04872c40',
     subtitle: 'CEO',
     linearGradientColors: ['#FFD600', '#FF9800'],
   },
   {
     name: 'Christy Thomas',
-    avatar_url:
-      'https://randomuser.me/api/portraits/women/48.jpg',
+    avatar_url: 'https://randomuser.me/api/portraits/women/48.jpg',
     subtitle: 'Lead Developer',
     linearGradientColors: ['#4CAF50', '#8BC34A'],
   },

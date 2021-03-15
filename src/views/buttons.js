@@ -1,18 +1,10 @@
-import React, { Component, useState } from 'react';
+import React, { useState } from 'react';
 import { View, ScrollView, StyleSheet } from 'react-native';
 import { Button, ButtonGroup, withTheme, Text } from 'react-native-elements';
 
 import { Header, SubHeader } from './header';
 
 import { LinearGradient } from '../components/LinearGradient';
-
-const redButton = {
-  Button: {
-    buttonStyle: {
-      backgroundColor: 'red',
-    },
-  },
-};
 
 const Buttons = (props) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -234,8 +226,8 @@ const Buttons = (props) => {
           <ButtonGroup
             buttons={['SIMPLE', 'BUTTON', 'GROUP']}
             selectedIndex={selectedIndex}
-            onPress={(selectedIndex) => {
-              setSelectedIndex(selectedIndex);
+            onPress={(value) => {
+              setSelectedIndex(value);
             }}
             containerStyle={{ marginBottom: 20 }}
           />
@@ -243,8 +235,8 @@ const Buttons = (props) => {
             buttons={['Multiple', 'Select', 'Button', 'Group']}
             selectMultiple
             selectedIndexes={selectedIndexes}
-            onPress={(selectedIndexes) => {
-              setSelectedIndexes(selectedIndexes);
+            onPress={(value) => {
+              setSelectedIndexes(value);
             }}
             containerStyle={{ marginBottom: 20 }}
           />

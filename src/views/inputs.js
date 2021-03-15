@@ -1,4 +1,4 @@
-import React, { Component, useState, useRef, useReducer } from 'react';
+import React, { useState, useRef } from 'react';
 import {
   View,
   ScrollView,

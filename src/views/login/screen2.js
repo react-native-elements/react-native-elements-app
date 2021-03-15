@@ -1,4 +1,4 @@
-import React, { Component, useReducer, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import {
   Alert,
   LayoutAnimation,
@@ -34,10 +34,10 @@ const LoginScreen3 = (props) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmationPassword, setConfirmationPassword] = useState('');
-  const [emailValid, setEmailValid] = useState(true);
-  const [passwordValid, setPasswordValid] = useState(true);
-  const [usernameValid, setUsernameValid] = useState(true);
-  const [confirmationPasswordValid, setConfirmationPasswordValid] = useState(
+  const [validEmail, setEmailValid] = useState(true);
+  const [validPassword, setPasswordValid] = useState(true);
+  const [validUsername, setUsernameValid] = useState(true);
+  const [validConfirmationPassword, setConfirmationPasswordValid] = useState(
     true
   );
   let emailInput = useRef(null);
@@ -68,40 +68,40 @@ const LoginScreen3 = (props) => {
   };
 
   const validateUsername = () => {
-    const usernameValid = username.length > 0;
+    const usernameCheck = username.length > 0;
     LayoutAnimation.easeInEaseOut();
-    setUsernameValid(usernameValid);
-    usernameValid || usernameInput.shake();
-    return usernameValid;
+    setUsernameValid(usernameCheck);
+    usernameCheck || usernameInput.shake();
+    return usernameCheck;
   };
 
   const validateEmail = () => {
     const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    const emailValid = re.test(email);
+    const emailCheck = re.test(email);
     LayoutAnimation.easeInEaseOut();
-    setEmailValid(emailValid);
-    emailValid || emailInput.shake();
-    return emailValid;
+    setEmailValid(emailCheck);
+    emailCheck || emailInput.shake();
+    return emailCheck;
   };
 
   const validatePassword = () => {
-    const passwordValid = password.length >= 8;
+    const passwordCheck = password.length >= 8;
     LayoutAnimation.easeInEaseOut();
-    setPasswordValid(passwordValid);
-    passwordValid || passwordInput.shake();
-    return passwordValid;
+    setPasswordValid(passwordCheck);
+    passwordCheck || passwordInput.shake();
+    return passwordCheck;
   };
 
   const validateConfirmationPassword = () => {
-    const confirmationPasswordValid = password === confirmationPassword;
+    const confirmationPasswordCheck = password === confirmationPassword;
     LayoutAnimation.easeInEaseOut();
-    setConfirmationPasswordValid(confirmationPasswordValid);
-    confirmationPasswordValid || confirmationPasswordInput.shake();
-    return confirmationPasswordValid;
+    setConfirmationPasswordValid(confirmationPasswordCheck);
+    confirmationPasswordCheck || confirmationPasswordInput.shake();
+    return confirmationPasswordCheck;
   };
 
-  const selectedTypeHandler = (selectedType) =>
-    LayoutAnimation.easeInEaseOut() || setSelectedType(selectedType);
+  const selectedTypeHandler = (value) =>
+    LayoutAnimation.easeInEaseOut() || setSelectedType(value);
 
   return (
     <ScrollView
@@ -142,10 +142,10 @@ const LoginScreen3 = (props) => {
             refInput={(input) => (usernameInput = input)}
             icon="user"
             value={username}
-            onChangeText={(username) => setUsername(username)}
+            onChangeText={(text) => setUsername(text)}
             placeholder="Username"
             returnKeyType="next"
-            errorMessage={usernameValid ? null : "Your username can't be blank"}
+            errorMessage={validUsername ? null : "Your username can't be blank"}
             onSubmitEditing={() => {
               validateUsername();
               emailInput.focus();
@@ -155,12 +155,12 @@ const LoginScreen3 = (props) => {
             refInput={(input) => (emailInput = input)}
             icon="envelope"
             value={email}
-            onChangeText={(email) => setEmail(email)}
+            onChangeText={(text) => setEmail(text)}
             placeholder="Email"
             keyboardType="email-address"
             returnKeyType="next"
             errorMessage={
-              emailValid ? null : 'Please enter a valid email address'
+              validEmail ? null : 'Please enter a valid email address'
             }
             onSubmitEditing={() => {
               validateEmail();
@@ -171,12 +171,12 @@ const LoginScreen3 = (props) => {
             refInput={(input) => (passwordInput = input)}
             icon="lock"
             value={password}
-            onChangeText={(password) => setPassword(password)}
+            onChangeText={(text) => setPassword(text)}
             placeholder="Password"
             secureTextEntry
             returnKeyType="next"
             errorMessage={
-              passwordValid ? null : 'Please enter at least 8 characters'
+              validPassword ? null : 'Please enter at least 8 characters'
             }
             onSubmitEditing={() => {
               validatePassword();
@@ -187,13 +187,11 @@ const LoginScreen3 = (props) => {
             refInput={(input) => (confirmationPasswordInput = input)}
             icon="lock"
             value={confirmationPassword}
-            onChangeText={(confirmationPassword) =>
-              setConfirmationPassword(confirmationPassword)
-            }
+            onChangeText={(text) => setConfirmationPassword(text)}
             placeholder="Confirm Password"
             secureTextEntry
             errorMessage={
-              confirmationPasswordValid
+              validConfirmationPassword
                 ? null
                 : 'The password fields are not identics'
             }

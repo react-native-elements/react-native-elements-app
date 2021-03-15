@@ -122,7 +122,7 @@ const Avatars = () => {
             <Button
               title="My Button"
               onPress={() => {
-                if (theme == theme1) {
+                if (theme === theme1) {
                   setTheme(theme2);
                 } else {
                   setTheme(theme1);
@@ -132,7 +132,7 @@ const Avatars = () => {
             <Button
               title="My 2nd Button"
               onPress={() => {
-                if (theme == theme1) {
+                if (theme === theme1) {
                   setTheme(theme2);
                 } else {
                   setTheme(theme1);

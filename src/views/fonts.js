@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { ScrollView, StyleSheet, Platform } from 'react-native';
 
 import { Text } from 'react-native-elements';

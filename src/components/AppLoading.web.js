@@ -22,7 +22,7 @@ const AppLoading = (props) => {
     return !startAsync
       ? successCb()
       : Promise.resolve(startAsync()).then(successCb).catch(errorCb);
-  }, []);
+  }, [props]);
 
   const { startAsync, onError, onFinish, autoHideSplash, ...others } = props;
 

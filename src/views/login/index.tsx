@@ -1,11 +1,10 @@
-import React from 'react';
-import { StyleSheet, View, ScrollView } from 'react-native';
+import React from "react";
+import { StyleSheet, View, ScrollView } from "react-native";
+import { Header } from "../header";
+import LoginScreen2 from "./screen2";
+import LoginScreen3 from "./screen3";
 
-import { Header } from '../header';
-import LoginScreen2 from './screen2';
-import LoginScreen3 from './screen3';
-
-const Login = (props) => {
+const Login = props => {
   return (
     <>
       <Header title="Login Example" />
@@ -22,8 +21,8 @@ const Login = (props) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'black',
-  },
+    backgroundColor: "black"
+  }
 });
 
 export default Login;

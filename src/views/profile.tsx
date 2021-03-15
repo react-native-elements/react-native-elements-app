@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 import {
   StyleSheet,
   Text,
@@ -7,43 +7,45 @@ import {
   Image,
   ScrollView,
   Dimensions,
-  StatusBar,
-} from 'react-native';
-import { Button } from 'react-native-elements';
-import { LinearGradient } from '../components/LinearGradient';
+  StatusBar
+} from "react-native";
+import { Button } from "react-native-elements";
+import { LinearGradient } from "../components/LinearGradient";
 
-const SCREEN_WIDTH = Dimensions.get('window').width;
-
+const SCREEN_WIDTH = Dimensions.get("window").width;
 const IMAGE_SIZE = SCREEN_WIDTH - 80;
 
-const CustomButton = (props) => {
+const CustomButton = props => {
   const [selected, setSelected] = useState(false);
-
-  useEffect(() => {
-    if (props) {
-      setSelected(props.selected);
-    }
-  }, [props]);
+  
+  useEffect(
+    () => {
+      if (props) {
+        setSelected(props.selected);
+      }
+    },
+    [props]
+  );
 
   const { title } = props;
 
   return (
     <Button
       title={title}
-      titleStyle={{ fontSize: 15, color: 'white', fontFamily: 'regular' }}
+      titleStyle={{ fontSize: 15, color: "white", fontFamily: "regular" }}
       buttonStyle={
         selected
           ? {
-              backgroundColor: 'rgba(213, 100, 140, 1)',
+              backgroundColor: "rgba(213, 100, 140, 1)",
               borderRadius: 100,
-              width: 127,
+              width: 127
             }
           : {
               borderWidth: 1,
-              borderColor: 'white',
+              borderColor: "white",
               borderRadius: 30,
               width: 127,
-              backgroundColor: 'transparent',
+              backgroundColor: "transparent"
             }
       }
       containerStyle={{ marginRight: 10 }}
@@ -52,42 +54,42 @@ const CustomButton = (props) => {
   );
 };
 
-const LoginScreen1 = (props) => {
+const LoginScreen1 = props => {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <StatusBar barStyle="light-content" />
-      <View style={{ flex: 1, backgroundColor: 'rgba(47,44,60,1)' }}>
+      <View style={{ flex: 1, backgroundColor: "rgba(47,44,60,1)" }}>
         <View style={styles.statusBar} />
         <ScrollView style={{ flex: 1 }}>
-          <View style={{ justifyContent: 'center', alignItems: 'center' }}>
+          <View style={{ justifyContent: "center", alignItems: "center" }}>
             <Image
               source={{
                 uri:
-                  'https://static.pexels.com/photos/428336/pexels-photo-428336.jpeg',
+                  "https://static.pexels.com/photos/428336/pexels-photo-428336.jpeg"
               }}
               style={{
                 width: IMAGE_SIZE,
                 height: IMAGE_SIZE,
-                borderRadius: 10,
+                borderRadius: 10
               }}
             />
           </View>
           <View
             style={{
               flex: 1,
-              flexDirection: 'row',
+              flexDirection: "row",
               marginTop: 20,
               marginHorizontal: 40,
-              justifyContent: 'center',
-              alignItems: 'center',
+              justifyContent: "center",
+              alignItems: "center"
             }}
           >
             <Text
               style={{
                 flex: 1,
                 fontSize: 26,
-                color: 'white',
-                fontFamily: 'bold',
+                color: "white",
+                fontFamily: "bold"
               }}
             >
               Theresa
@@ -96,9 +98,9 @@ const LoginScreen1 = (props) => {
               style={{
                 flex: 0.5,
                 fontSize: 15,
-                color: 'gray',
-                textAlign: 'left',
-                marginTop: 5,
+                color: "gray",
+                textAlign: "left",
+                marginTop: 5
               }}
             >
               0.8 mi
@@ -107,9 +109,9 @@ const LoginScreen1 = (props) => {
               style={{
                 flex: 1,
                 fontSize: 26,
-                color: 'green',
-                fontFamily: 'bold',
-                textAlign: 'right',
+                color: "green",
+                fontFamily: "bold",
+                textAlign: "right"
               }}
             >
               84%
@@ -120,15 +122,15 @@ const LoginScreen1 = (props) => {
               flex: 1,
               marginTop: 20,
               width: SCREEN_WIDTH - 80,
-              marginLeft: 40,
+              marginLeft: 40
             }}
           >
             <Text
               style={{
                 flex: 1,
                 fontSize: 15,
-                color: 'white',
-                fontFamily: 'regular',
+                color: "white",
+                fontFamily: "regular"
               }}
             >
               100% Italian, fun loving, affectionate, young lady who knows what
@@ -140,9 +142,9 @@ const LoginScreen1 = (props) => {
               style={{
                 flex: 1,
                 fontSize: 15,
-                color: 'rgba(216, 121, 112, 1)',
-                fontFamily: 'regular',
-                marginLeft: 40,
+                color: "rgba(216, 121, 112, 1)",
+                fontFamily: "regular",
+                marginLeft: 40
               }}
             >
               INTERESTS
@@ -156,25 +158,25 @@ const LoginScreen1 = (props) => {
                 <View
                   style={{
                     flex: 1,
-                    flexDirection: 'column',
+                    flexDirection: "column",
                     height: 170,
                     marginLeft: 40,
-                    marginRight: 10,
+                    marginRight: 10
                   }}
                 >
-                  <View style={{ flex: 1, flexDirection: 'row' }}>
+                  <View style={{ flex: 1, flexDirection: "row" }}>
                     <CustomButton title="Philosophy" selected={true} />
                     <CustomButton title="Sport" />
                     <CustomButton title="Swimming" selected={true} />
                     <CustomButton title="Religion" />
                   </View>
-                  <View style={{ flex: 1, flexDirection: 'row' }}>
+                  <View style={{ flex: 1, flexDirection: "row" }}>
                     <CustomButton title="Music" />
                     <CustomButton title="Soccer" selected={true} />
                     <CustomButton title="Radiohead" selected={true} />
                     <CustomButton title="Micheal Jackson" />
                   </View>
-                  <View style={{ flex: 1, flexDirection: 'row' }}>
+                  <View style={{ flex: 1, flexDirection: "row" }}>
                     <CustomButton title="Travelling" selected={true} />
                     <CustomButton title="Rock'n'Roll" />
                     <CustomButton title="Dogs" selected={true} />
@@ -189,9 +191,9 @@ const LoginScreen1 = (props) => {
               style={{
                 flex: 1,
                 fontSize: 15,
-                color: 'rgba(216, 121, 112, 1)',
-                fontFamily: 'regular',
-                marginLeft: 40,
+                color: "rgba(216, 121, 112, 1)",
+                fontFamily: "regular",
+                marginLeft: 40
               }}
             >
               INFO
@@ -199,12 +201,12 @@ const LoginScreen1 = (props) => {
             <View
               style={{
                 flex: 1,
-                flexDirection: 'row',
+                flexDirection: "row",
                 marginTop: 20,
-                marginHorizontal: 30,
+                marginHorizontal: 30
               }}
             >
-              <View style={{ flex: 1, flexDirection: 'row' }}>
+              <View style={{ flex: 1, flexDirection: "row" }}>
                 <View style={{ flex: 1 }}>
                   <Text style={styles.infoTypeLabel}>Age</Text>
                   <Text style={styles.infoTypeLabel}>Height</Text>
@@ -220,7 +222,7 @@ const LoginScreen1 = (props) => {
                   <Text style={styles.infoAnswerLabel}>Catholic</Text>
                 </View>
               </View>
-              <View style={{ flex: 1, flexDirection: 'row' }}>
+              <View style={{ flex: 1, flexDirection: "row" }}>
                 <View style={{ flex: 1 }}>
                   <Text style={styles.infoTypeLabel}>Body Type</Text>
                   <Text style={styles.infoTypeLabel}>Diet</Text>
@@ -242,30 +244,30 @@ const LoginScreen1 = (props) => {
             containerStyle={{ marginVertical: 20 }}
             style={{
               flex: 1,
-              justifyContent: 'center',
-              alignItems: 'center',
+              justifyContent: "center",
+              alignItems: "center"
             }}
             buttonStyle={{
               height: 55,
               width: SCREEN_WIDTH - 40,
               borderRadius: 30,
-              justifyContent: 'center',
-              alignItems: 'center',
+              justifyContent: "center",
+              alignItems: "center"
             }}
             linearGradientProps={{
-              colors: ['rgba(214,116,112,1)', 'rgba(233,174,87,1)'],
+              colors: ["rgba(214,116,112,1)", "rgba(233,174,87,1)"],
               start: [1, 0],
-              end: [0.2, 0],
+              end: [0.2, 0]
             }}
             ViewComponent={LinearGradient}
             title="Message Theresa"
             titleStyle={{
-              fontFamily: 'regular',
+              fontFamily: "regular",
               fontSize: 20,
-              color: 'white',
-              textAlign: 'center',
+              color: "white",
+              textAlign: "center"
             }}
-            onPress={() => console.log('Message Theresa')}
+            onPress={() => console.log("Message Theresa")}
             activeOpacity={0.5}
           />
         </ScrollView>
@@ -276,32 +278,32 @@ const LoginScreen1 = (props) => {
 
 const styles = StyleSheet.create({
   statusBar: {
-    height: 10,
+    height: 10
   },
   navBar: {
     height: 60,
     width: SCREEN_WIDTH,
-    justifyContent: 'center',
-    alignContent: 'center',
+    justifyContent: "center",
+    alignContent: "center"
   },
   nameHeader: {
-    color: 'white',
+    color: "white",
     fontSize: 22,
-    textAlign: 'center',
+    textAlign: "center"
   },
   infoTypeLabel: {
     fontSize: 15,
-    textAlign: 'right',
-    color: 'rgba(126,123,138,1)',
-    fontFamily: 'regular',
-    paddingBottom: 10,
+    textAlign: "right",
+    color: "rgba(126,123,138,1)",
+    fontFamily: "regular",
+    paddingBottom: 10
   },
   infoAnswerLabel: {
     fontSize: 15,
-    color: 'white',
-    fontFamily: 'regular',
-    paddingBottom: 10,
-  },
+    color: "white",
+    fontFamily: "regular",
+    paddingBottom: 10
+  }
 });
 
 export default LoginScreen1;

@@ -1,19 +1,20 @@
-import React, { useState } from 'react';
-import { Header } from './header';
-import { BottomSheet, Button, ListItem } from 'react-native-elements';
+import React, { useState } from "react";
+import { Header } from "./header";
+import { BottomSheet, Button, ListItem } from "react-native-elements";
 
 export default () => {
   const [isVisible, setIsVisible] = useState(false);
   const list = [
-    { title: 'List Item 1' },
-    { title: 'List Item 2' },
+    { title: "List Item 1" },
+    { title: "List Item 2" },
     {
-      title: 'Cancel',
-      containerStyle: { backgroundColor: 'red' },
-      titleStyle: { color: 'white' },
-      onPress: () => setIsVisible(false),
-    },
+      title: "Cancel",
+      containerStyle: { backgroundColor: "red" },
+      titleStyle: { color: "white" },
+      onPress: () => setIsVisible(false)
+    }
   ];
+  
   return (
     <>
       <Header title="BottomSheet" />

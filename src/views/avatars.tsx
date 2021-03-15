@@ -1,65 +1,66 @@
-import React, { useState } from 'react';
-import { View, ScrollView } from 'react-native';
-import _ from 'lodash';
+import React, { useState } from "react";
+import { View, ScrollView } from "react-native";
+import _ from "lodash";
 import {
   Avatar,
   Accessory,
   Button,
-  ThemeProvider,
-} from 'react-native-elements';
-
-import { Header } from './header';
+  ThemeProvider
+} from "react-native-elements";
+import { Header } from "./header";
 
 const dataList = [
   {
-    image_url: 'https://uifaces.co/our-content/donated/6MWH9Xi_.jpg',
+    image_url: "https://uifaces.co/our-content/donated/6MWH9Xi_.jpg",
     icon: null,
-    title: null,
+    title: null
   },
   {
-    image_url: 'https://randomuser.me/api/portraits/men/36.jpg',
+    image_url: "https://randomuser.me/api/portraits/men/36.jpg",
     icon: null,
-    title: null,
+    title: null
   },
   {
     image_url: null,
     icon: null,
-    title: 'LR',
+    title: "LR"
   },
   {
     image_url: null,
-    icon: { name: 'user', type: 'font-awesome' },
-    title: null,
+    icon: { name: "user", type: "font-awesome" },
+    title: null
   },
   {
     image_url: null,
-    icon: { name: 'user-female', type: 'simple-line-icon' },
-    title: null,
+    icon: { name: "user-female", type: "simple-line-icon" },
+    title: null
   },
   {
     image_url: null,
-    icon: { name: 'baidu', type: 'entypo' },
-    title: null,
-  },
+    icon: { name: "baidu", type: "entypo" },
+    title: null
+  }
 ];
 
 const theme1 = {
   Button: {
     titleStyle: {
-      color: 'white',
-    },
-  },
+      color: "white"
+    }
+  }
 };
+
 const theme2 = {
   Button: {
     titleStyle: {
-      color: 'red',
-    },
-  },
+      color: "red"
+    }
+  }
 };
 
 const Avatars = () => {
   const [theme, setTheme] = useState(theme1);
+
   return (
     <>
       <Header title="Avatars" />
@@ -67,10 +68,10 @@ const Avatars = () => {
         {_.chunk(dataList, 3).map((chunk, chunkIndex) => (
           <View
             style={{
-              flexDirection: 'row',
-              justifyContent: 'space-around',
+              flexDirection: "row",
+              justifyContent: "space-around",
               marginTop: 10,
-              backgroundColor: 'grey',
+              backgroundColor: "grey"
             }}
             key={chunkIndex}
           >
@@ -88,17 +89,17 @@ const Avatars = () => {
         ))}
         <View
           style={{
-            flexDirection: 'row',
-            justifyContent: 'space-around',
+            flexDirection: "row",
+            justifyContent: "space-around",
             marginTop: 10,
-            backgroundColor: 'grey',
+            backgroundColor: "grey"
           }}
         >
           <Avatar
             size={64}
             rounded
             source={{
-              uri: 'https://randomuser.me/api/portraits/women/63.jpg',
+              uri: "https://randomuser.me/api/portraits/women/63.jpg"
             }}
           >
             <Avatar.Accessory size={24} />
@@ -106,16 +107,16 @@ const Avatars = () => {
           <Avatar
             size={64}
             rounded
-            icon={{ name: 'user', type: 'font-awesome' }}
+            icon={{ name: "user", type: "font-awesome" }}
           >
             <Accessory size={23} />
           </Avatar>
         </View>
         <View
           style={{
-            flexDirection: 'row',
+            flexDirection: "row",
             marginTop: 10,
-            backgroundColor: 'grey',
+            backgroundColor: "grey"
           }}
         >
           <ThemeProvider theme={theme}>

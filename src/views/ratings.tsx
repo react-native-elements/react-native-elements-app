@@ -1,14 +1,13 @@
-import React from 'react';
-import { StyleSheet, Text, View, Platform, ScrollView } from 'react-native';
+import React from "react";
+import { StyleSheet, Text, View, Platform, ScrollView } from "react-native";
+import { Rating, AirbnbRating } from "react-native-ratings";
+import { Header } from "./header";
 
-import { Rating, AirbnbRating } from 'react-native-ratings';
-import { Header } from './header';
-
-const WATER_IMAGE = require('../images/water.png');
+const WATER_IMAGE = require("../images/water.png");
 
 function Ratings(props) {
-  const ratingCompleted = (rating) => {
-    console.log('Rating is: ' + rating);
+  const ratingCompleted = rating => {
+    console.log("Rating is: " + rating);
   };
 
   return (
@@ -18,7 +17,7 @@ function Ratings(props) {
         <Text
           style={[
             styles.titleText,
-            { marginTop: 30, color: '#e74c3c', fontSize: 22 },
+            { marginTop: 30, color: "#e74c3c", fontSize: 22 }
           ]}
         >
           Airbnb-style Tap Ratings
@@ -27,17 +26,17 @@ function Ratings(props) {
         <AirbnbRating
           count={11}
           reviews={[
-            'Terrible',
-            'Bad',
-            'Meh',
-            'OK',
-            'Good',
-            'Hmm...',
-            'Very Good',
-            'Wow',
-            'Amazing',
-            'Unbelievable',
-            'Jesus',
+            "Terrible",
+            "Bad",
+            "Meh",
+            "OK",
+            "Good",
+            "Hmm...",
+            "Very Good",
+            "Wow",
+            "Amazing",
+            "Unbelievable",
+            "Jesus"
           ]}
           defaultRating={11}
           size={20}
@@ -45,16 +44,16 @@ function Ratings(props) {
         <Text
           style={[
             styles.titleText,
-            { marginTop: 30, color: '#9b59b6', fontSize: 22 },
+            { marginTop: 30, color: "#9b59b6", fontSize: 22 }
           ]}
         >
           Whatsapp-style Swipe Ratings
         </Text>
         <View
           style={{
-            justifyContent: 'center',
-            alignItems: 'center',
-            marginBottom: 30,
+            justifyContent: "center",
+            alignItems: "center",
+            marginBottom: 30
           }}
         >
           <Rating
@@ -98,39 +97,37 @@ function Ratings(props) {
     </View>
   );
 }
-
 /*
 Ratings.navigationOptions = {
   title: 'Ratings Component',
   header: null,
 };
 */
-
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 1
   },
   headingContainer: {
-    paddingTop: 50,
+    paddingTop: 50
   },
   titleText: {
     fontSize: 25,
-    fontWeight: 'bold',
-    textAlign: 'center',
+    fontWeight: "bold",
+    textAlign: "center",
     paddingVertical: 5,
-    fontFamily: Platform.OS === 'ios' ? 'Menlo-Bold' : null,
-    color: '#27ae60',
+    fontFamily: Platform.OS === "ios" ? "Menlo-Bold" : null,
+    color: "#27ae60"
   },
   subtitleText: {
     fontSize: 18,
-    fontWeight: '400',
-    textAlign: 'center',
-    fontFamily: Platform.OS === 'ios' ? 'Trebuchet MS' : null,
-    color: '#34495e',
+    fontWeight: "400",
+    textAlign: "center",
+    fontFamily: Platform.OS === "ios" ? "Trebuchet MS" : null,
+    color: "#34495e"
   },
   viewContainer: {
-    flex: 1,
-  },
+    flex: 1
+  }
 });
 
 export default Ratings;

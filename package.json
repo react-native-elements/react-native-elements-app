@@ -16,7 +16,7 @@
     "build:web": "expo build:web --config ./app.web-build.json --polyfill",
     "deploy": "gh-pages -d web-build",
     "prettify": "prettier --write 'src/**/*.js'",
-    "lint": "eslint --ext js,ts .",
+    "lint": "eslint --ext js,ts,tsx .",
     "clean-install": "rm -rf node_modules && npm cache clean --force && watchman watch-del-all && yarn",
     "postinstall": "./fix.sh && tsc --p ./node_modules/react-native-elements"
   },

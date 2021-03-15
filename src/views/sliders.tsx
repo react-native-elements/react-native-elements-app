@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
-import { View, Animated, StyleSheet } from 'react-native';
-import { Slider, Text, Icon } from 'react-native-elements';
-
-import { Header, SubHeader } from './header';
+import React, { useState } from "react";
+import { View, Animated, StyleSheet } from "react-native";
+import { Slider, Text, Icon } from "react-native-elements";
+import { Header, SubHeader } from "./header";
 
 const Sliders = () => {
   const [value, setValue] = useState(0);
@@ -20,8 +19,8 @@ const Sliders = () => {
           minimumValue={20}
           step={1}
           allowTouchTrack
-          trackStyle={{ height: 10, backgroundColor: 'transparent' }}
-          thumbStyle={{ height: 20, width: 20, backgroundColor: 'transparent' }}
+          trackStyle={{ height: 10, backgroundColor: "transparent" }}
+          thumbStyle={{ height: 20, width: 20, backgroundColor: "transparent" }}
           thumbProps={{
             children: (
               <Icon
@@ -32,7 +31,7 @@ const Sliders = () => {
                 containerStyle={{ bottom: 20, right: 20 }}
                 color="#f50"
               />
-            ),
+            )
           }}
         />
         <Text>Value: {value}</Text>
@@ -46,13 +45,13 @@ const Sliders = () => {
           minimumValue={20}
           step={1}
           orientation="vertical"
-          thumbStyle={{ height: 40, width: 40, backgroundColor: 'transparent' }}
+          thumbStyle={{ height: 40, width: 40, backgroundColor: "transparent" }}
           thumbProps={{
             Component: Animated.Image,
             source: {
               uri:
-                'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
-            },
+                "https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg"
+            }
           }}
         />
       </View>
@@ -64,18 +63,18 @@ const Sliders = () => {
 const styles = StyleSheet.create({
   contentView: {
     padding: 20,
-    width: '100%',
-    justifyContent: 'center',
-    alignItems: 'stretch',
+    width: "100%",
+    justifyContent: "center",
+    alignItems: "stretch"
   },
   verticalContent: {
     padding: 20,
     flex: 1,
-    flexDirection: 'row',
+    flexDirection: "row",
     height: 500,
-    justifyContent: 'center',
-    alignItems: 'stretch',
-  },
+    justifyContent: "center",
+    alignItems: "stretch"
+  }
 });
 
 export default Sliders;

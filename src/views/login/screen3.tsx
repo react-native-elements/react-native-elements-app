@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React, { Component } from "react";
 import {
   StyleSheet,
   View,
@@ -8,20 +7,23 @@ import {
   Dimensions,
   LayoutAnimation,
   UIManager,
-  KeyboardAvoidingView,
-} from 'react-native';
-import { Input, Button, Icon } from 'react-native-elements';
+  KeyboardAvoidingView
+} from "react-native";
+import { Input, Button, Icon } from "react-native-elements";
 
-const SCREEN_WIDTH = Dimensions.get('window').width;
-const SCREEN_HEIGHT = Dimensions.get('window').height;
-
-const BG_IMAGE = require('../../../assets/images/bg_screen4.jpg');
+const SCREEN_WIDTH = Dimensions.get("window").width;
+const SCREEN_HEIGHT = Dimensions.get("window").height;
+const BG_IMAGE = require("../../../assets/images/bg_screen4.jpg");
 
 // Enable LayoutAnimation on Android
 UIManager.setLayoutAnimationEnabledExperimental &&
   UIManager.setLayoutAnimationEnabledExperimental(true);
 
-const TabSelector = ({ selected }) => {
+type TabSelectorProps = {
+  selected: boolean
+};
+
+const TabSelector: React.SFC<TabSelectorProps> = ({ selected }) => {
   return (
     <View style={styles.selectorContainer}>
       <View style={selected && styles.selected} />
@@ -29,43 +31,58 @@ const TabSelector = ({ selected }) => {
   );
 };
 
-TabSelector.propTypes = {
-  selected: PropTypes.bool.isRequired,
+type LoginScreen2State = {
+  selectedCategory: any,
+  isLoading: boolean,
+  isLoading: boolean,
+  isLoading: boolean,
+  isEmailValid: any,
+  isPasswordValid: any,
+  isLoading: boolean,
+  isLoading: boolean,
+  isEmailValid: any,
+  isPasswordValid: any,
+  isConfirmationValid: any,
+  email: string,
+  password: string,
+  selectedCategory: number,
+  isLoading: boolean,
+  isEmailValid: boolean,
+  isPasswordValid: boolean,
+  isConfirmationValid: boolean
 };
 
-export default class LoginScreen2 extends Component {
+export default class LoginScreen2 extends Component<{}, LoginScreen2State> {
+  
   constructor(props) {
     super(props);
-
     this.state = {
-      email: '',
-      password: '',
+      email: "",
+      password: "",
       selectedCategory: 0,
       isLoading: false,
       isEmailValid: true,
       isPasswordValid: true,
-      isConfirmationValid: true,
+      isConfirmationValid: true
     };
-
     this.selectCategory = this.selectCategory.bind(this);
     this.login = this.login.bind(this);
     this.signUp = this.signUp.bind(this);
   }
-
+  
   selectCategory(selectedCategory) {
     LayoutAnimation.easeInEaseOut();
     this.setState({
       selectedCategory,
-      isLoading: false,
+      isLoading: false
     });
   }
-
+  
   validateEmail(email) {
     var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
     return re.test(email);
   }
-
+  
   login() {
     const { email, password } = this.state;
     this.setState({ isLoading: true });
@@ -75,11 +92,11 @@ export default class LoginScreen2 extends Component {
       this.setState({
         isLoading: false,
         isEmailValid: this.validateEmail(email) || this.emailInput.shake(),
-        isPasswordValid: password.length >= 8 || this.passwordInput.shake(),
+        isPasswordValid: password.length >= 8 || this.passwordInput.shake()
       });
     }, 1500);
   }
-
+  
   signUp() {
     const { email, password, passwordConfirmation } = this.state;
     this.setState({ isLoading: true });
@@ -91,11 +108,11 @@ export default class LoginScreen2 extends Component {
         isEmailValid: this.validateEmail(email) || this.emailInput.shake(),
         isPasswordValid: password.length >= 8 || this.passwordInput.shake(),
         isConfirmationValid:
-          password === passwordConfirmation || this.confirmationInput.shake(),
+          password === passwordConfirmation || this.confirmationInput.shake()
       });
     }, 1500);
   }
-
+  
   render() {
     const {
       selectedCategory,
@@ -105,11 +122,11 @@ export default class LoginScreen2 extends Component {
       isConfirmationValid,
       email,
       password,
-      passwordConfirmation,
+      passwordConfirmation
     } = this.state;
     const isLoginPage = selectedCategory === 0;
     const isSignUpPage = selectedCategory === 1;
-
+    
     return (
       <View style={styles.container}>
         <ImageBackground source={BG_IMAGE} style={styles.bgImage}>
@@ -119,14 +136,14 @@ export default class LoginScreen2 extends Component {
               behavior="position"
             >
               <View style={styles.titleContainer}>
-                <View style={{ flexDirection: 'row' }}>
+                <View style={{ flexDirection: "row" }}>
                   <Text style={styles.titleText}>BEAUX</Text>
                 </View>
                 <View style={{ marginTop: -10, marginLeft: 10 }}>
                   <Text style={styles.titleText}>VOYAGES</Text>
                 </View>
               </View>
-              <View style={{ flexDirection: 'row' }}>
+              <View style={{ flexDirection: "row" }}>
                 <Button
                   disabled={isLoading}
                   type="clear"
@@ -135,9 +152,9 @@ export default class LoginScreen2 extends Component {
                   containerStyle={{ flex: 1 }}
                   titleStyle={[
                     styles.categoryText,
-                    isLoginPage && styles.selectedCategoryText,
+                    isLoginPage && styles.selectedCategoryText
                   ]}
-                  title={'Login'}
+                  title={"Login"}
                 />
                 <Button
                   disabled={isLoading}
@@ -147,9 +164,9 @@ export default class LoginScreen2 extends Component {
                   containerStyle={{ flex: 1 }}
                   titleStyle={[
                     styles.categoryText,
-                    isSignUpPage && styles.selectedCategoryText,
+                    isSignUpPage && styles.selectedCategoryText
                   ]}
-                  title={'Sign up'}
+                  title={"Sign up"}
                 />
               </View>
               <View style={styles.rowSelector}>
@@ -164,7 +181,7 @@ export default class LoginScreen2 extends Component {
                       type="font-awesome"
                       color="rgba(0, 0, 0, 0.38)"
                       size={25}
-                      style={{ backgroundColor: 'transparent' }}
+                      style={{ backgroundColor: "transparent" }}
                     />
                   }
                   value={email}
@@ -175,15 +192,15 @@ export default class LoginScreen2 extends Component {
                   keyboardType="email-address"
                   returnKeyType="next"
                   inputStyle={{ marginLeft: 10 }}
-                  placeholder={'Email'}
+                  placeholder={"Email"}
                   containerStyle={{
-                    borderBottomColor: 'rgba(0, 0, 0, 0.38)',
+                    borderBottomColor: "rgba(0, 0, 0, 0.38)"
                   }}
-                  ref={(input) => (this.emailInput = input)}
+                  ref={input => (this.emailInput = input)}
                   onSubmitEditing={() => this.passwordInput.focus()}
-                  onChangeText={(text) => this.setState({ email: text })}
+                  onChangeText={text => this.setState({ email: text })}
                   errorMessage={
-                    isEmailValid ? null : 'Please enter a valid email address'
+                    isEmailValid ? null : "Please enter a valid email address"
                   }
                 />
                 <Input
@@ -193,7 +210,7 @@ export default class LoginScreen2 extends Component {
                       type="simple-line-icon"
                       color="rgba(0, 0, 0, 0.38)"
                       size={25}
-                      style={{ backgroundColor: 'transparent' }}
+                      style={{ backgroundColor: "transparent" }}
                     />
                   }
                   value={password}
@@ -201,23 +218,23 @@ export default class LoginScreen2 extends Component {
                   autoCapitalize="none"
                   autoCorrect={false}
                   secureTextEntry={true}
-                  returnKeyType={isSignUpPage ? 'next' : 'done'}
+                  returnKeyType={isSignUpPage ? "next" : "done"}
                   blurOnSubmit={true}
                   containerStyle={{
                     marginTop: 16,
-                    borderBottomColor: 'rgba(0, 0, 0, 0.38)',
+                    borderBottomColor: "rgba(0, 0, 0, 0.38)"
                   }}
                   inputStyle={{ marginLeft: 10 }}
-                  placeholder={'Password'}
-                  ref={(input) => (this.passwordInput = input)}
+                  placeholder={"Password"}
+                  ref={input => (this.passwordInput = input)}
                   onSubmitEditing={() =>
                     isSignUpPage ? this.confirmationInput.focus() : this.login()
                   }
-                  onChangeText={(text) => this.setState({ password: text })}
+                  onChangeText={text => this.setState({ password: text })}
                   errorMessage={
                     isPasswordValid
                       ? null
-                      : 'Please enter at least 8 characters'
+                      : "Please enter at least 8 characters"
                   }
                 />
                 {isSignUpPage && (
@@ -228,7 +245,7 @@ export default class LoginScreen2 extends Component {
                         type="simple-line-icon"
                         color="rgba(0, 0, 0, 0.38)"
                         size={25}
-                        style={{ backgroundColor: 'transparent' }}
+                        style={{ backgroundColor: "transparent" }}
                       />
                     }
                     value={passwordConfirmation}
@@ -237,23 +254,23 @@ export default class LoginScreen2 extends Component {
                     autoCapitalize="none"
                     autoCorrect={false}
                     keyboardType="default"
-                    returnKeyType={'done'}
+                    returnKeyType={"done"}
                     blurOnSubmit={true}
                     containerStyle={{
                       marginTop: 16,
-                      borderBottomColor: 'rgba(0, 0, 0, 0.38)',
+                      borderBottomColor: "rgba(0, 0, 0, 0.38)"
                     }}
                     inputStyle={{ marginLeft: 10 }}
-                    placeholder={'Confirm password'}
-                    ref={(input) => (this.confirmationInput = input)}
+                    placeholder={"Confirm password"}
+                    ref={input => (this.confirmationInput = input)}
                     onSubmitEditing={this.signUp}
-                    onChangeText={(text) =>
+                    onChangeText={text =>
                       this.setState({ passwordConfirmation: text })
                     }
                     errorMessage={
                       isConfirmationValid
                         ? null
-                        : 'Please enter the same password'
+                        : "Please enter the same password"
                     }
                   />
                 )}
@@ -261,7 +278,7 @@ export default class LoginScreen2 extends Component {
                   buttonStyle={styles.loginButton}
                   containerStyle={{ marginTop: 32, flex: 0 }}
                   activeOpacity={0.8}
-                  title={isLoginPage ? 'LOGIN' : 'SIGN UP'}
+                  title={isLoginPage ? "LOGIN" : "SIGN UP"}
                   onPress={isLoginPage ? this.login : this.signUp}
                   titleStyle={styles.loginTextButton}
                   loading={isLoading}
@@ -271,11 +288,11 @@ export default class LoginScreen2 extends Component {
             </KeyboardAvoidingView>
             <View style={styles.helpContainer}>
               <Button
-                title={'Need help ?'}
-                titleStyle={{ color: 'white' }}
-                buttonStyle={{ backgroundColor: 'transparent' }}
+                title={"Need help ?"}
+                titleStyle={{ color: "white" }}
+                buttonStyle={{ backgroundColor: "transparent" }}
                 underlayColor="transparent"
-                onPress={() => console.log('Account created')}
+                onPress={() => console.log("Account created")}
               />
             </View>
           </View>
@@ -287,60 +304,60 @@ export default class LoginScreen2 extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 1
   },
   rowSelector: {
     height: 20,
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center"
   },
   selectorContainer: {
     flex: 1,
-    alignItems: 'center',
+    alignItems: "center"
   },
   selected: {
-    position: 'absolute',
+    position: "absolute",
     borderRadius: 50,
     height: 0,
     width: 0,
     top: -5,
     borderRightWidth: 70,
     borderBottomWidth: 70,
-    borderColor: 'white',
-    backgroundColor: 'white',
+    borderColor: "white",
+    backgroundColor: "white"
   },
   loginContainer: {
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center"
   },
   loginTextButton: {
     fontSize: 16,
-    color: 'white',
-    fontWeight: 'bold',
+    color: "white",
+    fontWeight: "bold"
   },
   loginButton: {
-    backgroundColor: 'rgba(232, 147, 142, 1)',
+    backgroundColor: "rgba(232, 147, 142, 1)",
     borderRadius: 10,
     height: 50,
-    width: 200,
+    width: 200
   },
   titleContainer: {
     height: 150,
-    backgroundColor: 'transparent',
-    justifyContent: 'center',
+    backgroundColor: "transparent",
+    justifyContent: "center"
   },
   formContainer: {
-    backgroundColor: 'white',
+    backgroundColor: "white",
     width: SCREEN_WIDTH - 30,
     borderRadius: 10,
     paddingTop: 32,
     paddingBottom: 32,
-    alignItems: 'center',
+    alignItems: "center"
   },
   loginText: {
     fontSize: 16,
-    fontWeight: 'bold',
-    color: 'white',
+    fontWeight: "bold",
+    color: "white"
   },
   bgImage: {
     flex: 1,
@@ -348,28 +365,28 @@ const styles = StyleSheet.create({
     left: 0,
     width: SCREEN_WIDTH,
     height: SCREEN_HEIGHT,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center"
   },
   categoryText: {
-    textAlign: 'center',
-    color: 'white',
+    textAlign: "center",
+    color: "white",
     fontSize: 24,
-    fontFamily: 'light',
-    backgroundColor: 'transparent',
-    opacity: 0.54,
+    fontFamily: "light",
+    backgroundColor: "transparent",
+    opacity: 0.54
   },
   selectedCategoryText: {
-    opacity: 1,
+    opacity: 1
   },
   titleText: {
-    color: 'white',
+    color: "white",
     fontSize: 30,
-    fontFamily: 'regular',
+    fontFamily: "regular"
   },
   helpContainer: {
     height: 64,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+    alignItems: "center",
+    justifyContent: "center"
+  }
 });

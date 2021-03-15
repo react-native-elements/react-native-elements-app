@@ -1,4 +1,4 @@
-import React, { Component, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   StyleSheet,
   Text,
@@ -23,7 +23,7 @@ const CustomButton = (props) => {
     if (props) {
       setSelected(props.selected);
     }
-  }, []);
+  }, [props]);
 
   const { title } = props;
 

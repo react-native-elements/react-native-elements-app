@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-import React, { Component } from 'react';
+import React from 'react';
 import { Text, View, ScrollView } from 'react-native';
 import { Avatar, Button, Icon, withTheme } from 'react-native-elements';
 

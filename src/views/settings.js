@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, StyleSheet, SectionList, Switch } from 'react-native';
 
 import { ListItem, Divider, SearchBar, Icon } from 'react-native-elements';
@@ -114,8 +114,14 @@ const sections = [
   { data: [] },
 ];
 
-export default class Settings extends React.PureComponent {
-  renderItem = ({
+const Settings = (props) => {
+  const [switched, setSwitched] = useState(false);
+
+  const onSwitchEventHandler = (value) => {
+    setSwitched(value);
+  };
+
+  const renderItem = ({
     item: { title, backgroundColor, icon, rightTitle, hideChevron, checkbox },
   }) => (
     <ListItem containerStyle={{ paddingVertical: 8 }} key={title} ð>
@@ -140,46 +146,46 @@ export default class Settings extends React.PureComponent {
         <ListItem.Title right>{rightTitle}</ListItem.Title>
       </ListItem.Content>
       {!hideChevron && <ListItem.Chevron />}
-      {checkbox && <Switch value={true} />}
+      {checkbox && (
+        <Switch value={switched} onValueChange={onSwitchEventHandler} />
+      )}
     </ListItem>
   );
 
-  renderSectionHeader = () => <View style={styles.headerSection} />;
+  const renderSectionHeader = () => <View style={styles.headerSection} />;
 
-  ItemSeparatorComponent = () => (
+  const ItemSeparatorComponent = () => (
     <View style={styles.separatorComponent}>
       <Divider style={styles.separator} />
     </View>
   );
 
-  ListHeaderComponent = () => (
+  const ListHeaderComponent = () => (
     <View>
       <SearchBar platform="ios" placeholder="Search" />
       <Divider />
     </View>
   );
 
-  keyExtractor = (item, index) => index;
+  const keyExtractor = (item, index) => index;
 
-  render() {
-    return (
-      <>
-        <Header title="Settings Example" />
-        <SectionList
-          keyExtractor={this.keyExtractor}
-          ListHeaderComponent={this.ListHeaderComponent}
-          contentContainerStyle={styles.containerStyle}
-          sections={sections}
-          renderItem={this.renderItem}
-          renderSectionHeader={this.renderSectionHeader}
-          ItemSeparatorComponent={this.ItemSeparatorComponent}
-          SectionSeparatorComponent={Divider}
-          stickySectionHeadersEnabled={false}
-        />
-      </>
-    );
-  }
-}
+  return (
+    <>
+      <Header title="Settings Example" />
+      <SectionList
+        keyExtractor={keyExtractor}
+        ListHeaderComponent={ListHeaderComponent}
+        contentContainerStyle={styles.containerStyle}
+        sections={sections}
+        renderItem={renderItem}
+        renderSectionHeader={renderSectionHeader}
+        ItemSeparatorComponent={ItemSeparatorComponent}
+        SectionSeparatorComponent={Divider}
+        stickySectionHeadersEnabled={false}
+      />
+    </>
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -195,3 +201,5 @@ const styles = StyleSheet.create({
     height: 30,
   },
 });
+
+export default Settings;

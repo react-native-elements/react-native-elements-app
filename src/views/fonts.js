@@ -295,27 +295,24 @@ const android_fonts = [
   'monospace',
 ];
 
-class Fonts extends Component {
-  render() {
-    const fonts = Platform.OS === 'ios' ? iOS_fonts : android_fonts;
-
-    return (
-      <>
-        <Header title="Fonts Examples" />
-        <ScrollView style={styles.container}>
-          {fonts.map((font, index) => (
-            <Text
-              key={index}
-              style={[styles.textStyle, { fontFamily: `${font}` }]}
-            >
-              {font}
-            </Text>
-          ))}
-        </ScrollView>
-      </>
-    );
-  }
-}
+const Fonts = (props) => {
+  const fonts = Platform.OS === 'ios' ? iOS_fonts : android_fonts;
+  return (
+    <>
+      <Header title="Fonts Examples" />
+      <ScrollView style={styles.container}>
+        {fonts.map((font, index) => (
+          <Text
+            key={index}
+            style={[styles.textStyle, { fontFamily: `${font}` }]}
+          >
+            {font}
+          </Text>
+        ))}
+      </ScrollView>
+    </>
+  );
+};
 
 const styles = StyleSheet.create({
   container: {

@@ -3,7 +3,7 @@ import { StyleSheet, View, Text } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { Header as HeaderRNE } from 'react-native-elements';
 
-function Header(props) {
+const Header = (props) => {
   const navigation = useNavigation();
 
   return (
@@ -16,15 +16,15 @@ function Header(props) {
       centerComponent={{ text: props.title, style: styles.heading }}
     />
   );
-}
+};
 
-function SubHeader({ icon, iconType, title }) {
+const SubHeader = ({ icon, iconType, title }) => {
   return (
     <View style={styles.headerContainer}>
       <Text style={styles.heading}>{title}</Text>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   headerContainer: {

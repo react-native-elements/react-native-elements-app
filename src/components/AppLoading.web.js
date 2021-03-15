@@ -12,16 +12,20 @@ const styles = StyleSheet.create({
 
 const emptyFunc = () => null;
 
+const callbackHandler = (startAsync, successCb, errorCb) => {
+  Promise.resolve(startAsync()).then(successCb).catch(errorCb);
+};
+
 const AppLoading = (props) => {
   useEffect(() => {
     const { startAsync, onError, onFinish } = props;
 
     const successCb = onFinish || emptyFunc;
     const errorCb = onError || emptyFunc;
-
+    console.log(props);
     return !startAsync
       ? successCb()
-      : Promise.resolve(startAsync()).then(successCb).catch(errorCb);
+      : callbackHandler(startAsync, successCb, errorCb);
   }, [props]);
 
   const { startAsync, onError, onFinish, autoHideSplash, ...others } = props;

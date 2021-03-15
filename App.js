@@ -55,7 +55,9 @@ export default () => {
     return (
       <AppLoading
         startAsync={loadAssetsAsync}
-        onFinish={() => setIsReady(true)}
+        onFinish={() => {
+          setIsReady(true);
+        }}
         onError={console.warn}
       />
     );

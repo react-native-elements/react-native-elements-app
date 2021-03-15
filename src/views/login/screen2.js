@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useReducer, useRef, useState } from 'react';
 import {
   Alert,
   LayoutAnimation,
@@ -27,243 +27,217 @@ const USER_HP = require('../../../assets/images/user-hp.png');
 const SCREEN_WIDTH = Dimensions.get('window').width;
 const SCREEN_HEIGHT = Dimensions.get('window').height;
 
-export default class LoginScreen3 extends Component {
-  constructor(props) {
-    super(props);
+const LoginScreen3 = (props) => {
+  const [isLoading, setLoading] = useState(false);
+  const [selectedType, setSelectedType] = useState(null);
+  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmationPassword, setConfirmationPassword] = useState('');
+  const [emailValid, setEmailValid] = useState(true);
+  const [passwordValid, setPasswordValid] = useState(true);
+  const [usernameValid, setUsernameValid] = useState(true);
+  const [confirmationPasswordValid, setConfirmationPasswordValid] = useState(
+    true
+  );
+  let emailInput = useRef(null);
+  let passwordInput = useRef(null);
+  let confirmationPasswordInput = useRef(null);
+  let usernameInput = useRef(null);
 
-    this.state = {
-      isLoading: false,
-      selectedType: null,
-      username: '',
-      email: '',
-      password: '',
-      confirmationPassword: '',
-      emailValid: true,
-      passwordValid: true,
-      usernameValid: true,
-      confirmationPasswordValid: true,
-    };
-
-    this.setSelectedType = this.setSelectedType.bind(this);
-    this.validateEmail = this.validateEmail.bind(this);
-    this.validatePassword = this.validatePassword.bind(this);
-    this.validateConfirmationPassword = this.validateConfirmationPassword.bind(
-      this
-    );
-    this.signup = this.signup.bind(this);
-  }
-
-  signup() {
+  const signup = () => {
     LayoutAnimation.easeInEaseOut();
-    const usernameValid = this.validateUsername();
-    const emailValid = this.validateEmail();
-    const passwordValid = this.validatePassword();
-    const confirmationPasswordValid = this.validateConfirmationPassword();
+    const usernameValid = validateUsername();
+    const emailValid = validateEmail();
+    const passwordValid = validatePassword();
+    const confirmationPasswordValid = validateConfirmationPassword();
+
     if (
       emailValid &&
       passwordValid &&
       confirmationPasswordValid &&
       usernameValid
     ) {
-      this.setState({ isLoading: true });
+      setLoading(true);
       setTimeout(() => {
         LayoutAnimation.easeInEaseOut();
-        this.setState({ isLoading: false });
+        setLoading(false);
         Alert.alert('🎸', 'You rock');
       }, 1500);
     }
-  }
+  };
 
-  validateUsername() {
-    const { username } = this.state;
+  const validateUsername = () => {
     const usernameValid = username.length > 0;
     LayoutAnimation.easeInEaseOut();
-    this.setState({ usernameValid });
-    usernameValid || this.usernameInput.shake();
+    setUsernameValid(usernameValid);
+    usernameValid || usernameInput.shake();
     return usernameValid;
-  }
+  };
 
-  validateEmail() {
-    const { email } = this.state;
+  const validateEmail = () => {
     const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     const emailValid = re.test(email);
     LayoutAnimation.easeInEaseOut();
-    this.setState({ emailValid });
-    emailValid || this.emailInput.shake();
+    setEmailValid(emailValid);
+    emailValid || emailInput.shake();
     return emailValid;
-  }
+  };
 
-  validatePassword() {
-    const { password } = this.state;
+  const validatePassword = () => {
     const passwordValid = password.length >= 8;
     LayoutAnimation.easeInEaseOut();
-    this.setState({ passwordValid });
-    passwordValid || this.passwordInput.shake();
+    setPasswordValid(passwordValid);
+    passwordValid || passwordInput.shake();
     return passwordValid;
-  }
+  };
 
-  validateConfirmationPassword() {
-    const { password, confirmationPassword } = this.state;
+  const validateConfirmationPassword = () => {
     const confirmationPasswordValid = password === confirmationPassword;
     LayoutAnimation.easeInEaseOut();
-    this.setState({ confirmationPasswordValid });
-    confirmationPasswordValid || this.confirmationPasswordInput.shake();
+    setConfirmationPasswordValid(confirmationPasswordValid);
+    confirmationPasswordValid || confirmationPasswordInput.shake();
     return confirmationPasswordValid;
-  }
+  };
 
-  setSelectedType = (selectedType) =>
-    LayoutAnimation.easeInEaseOut() || this.setState({ selectedType });
+  const selectedTypeHandler = (selectedType) =>
+    LayoutAnimation.easeInEaseOut() || setSelectedType(selectedType);
 
-  render() {
-    const {
-      isLoading,
-      selectedType,
-      confirmationPassword,
-      email,
-      emailValid,
-      password,
-      passwordValid,
-      confirmationPasswordValid,
-      username,
-      usernameValid,
-    } = this.state;
-
-    return (
-      <ScrollView
-        keyboardShouldPersistTaps="handled"
-        contentContainerStyle={styles.container}
+  return (
+    <ScrollView
+      keyboardShouldPersistTaps="handled"
+      contentContainerStyle={styles.container}
+    >
+      <KeyboardAvoidingView
+        behavior="position"
+        contentContainerStyle={styles.formContainer}
       >
-        <KeyboardAvoidingView
-          behavior="position"
-          contentContainerStyle={styles.formContainer}
-        >
-          <Text style={styles.signUpText}>Sign up</Text>
-          <Text style={styles.whoAreYouText}>WHO YOU ARE ?</Text>
-          <View style={styles.userTypesContainer}>
-            <UserTypeItem
-              label="COOL"
-              labelColor="#ECC841"
-              image={USER_COOL}
-              onPress={() => this.setSelectedType('parent')}
-              selected={selectedType === 'parent'}
-            />
-            <UserTypeItem
-              label="STUDENT"
-              labelColor="#2CA75E"
-              image={USER_STUDENT}
-              onPress={() => this.setSelectedType('child')}
-              selected={selectedType === 'child'}
-            />
-            <UserTypeItem
-              label="HARRY POTTER"
-              labelColor="#36717F"
-              image={USER_HP}
-              onPress={() => this.setSelectedType('teacher')}
-              selected={selectedType === 'teacher'}
-            />
-          </View>
-          <View style={{ width: '80%', alignItems: 'center' }}>
-            <FormInput
-              refInput={(input) => (this.usernameInput = input)}
-              icon="user"
-              value={username}
-              onChangeText={(username) => this.setState({ username })}
-              placeholder="Username"
-              returnKeyType="next"
-              errorMessage={
-                usernameValid ? null : "Your username can't be blank"
-              }
-              onSubmitEditing={() => {
-                this.validateUsername();
-                this.emailInput.focus();
-              }}
-            />
-            <FormInput
-              refInput={(input) => (this.emailInput = input)}
-              icon="envelope"
-              value={email}
-              onChangeText={(email) => this.setState({ email })}
-              placeholder="Email"
-              keyboardType="email-address"
-              returnKeyType="next"
-              errorMessage={
-                emailValid ? null : 'Please enter a valid email address'
-              }
-              onSubmitEditing={() => {
-                this.validateEmail();
-                this.passwordInput.focus();
-              }}
-            />
-            <FormInput
-              refInput={(input) => (this.passwordInput = input)}
-              icon="lock"
-              value={password}
-              onChangeText={(password) => this.setState({ password })}
-              placeholder="Password"
-              secureTextEntry
-              returnKeyType="next"
-              errorMessage={
-                passwordValid ? null : 'Please enter at least 8 characters'
-              }
-              onSubmitEditing={() => {
-                this.validatePassword();
-                this.confirmationPasswordInput.focus();
-              }}
-            />
-            <FormInput
-              refInput={(input) => (this.confirmationPasswordInput = input)}
-              icon="lock"
-              value={confirmationPassword}
-              onChangeText={(confirmationPassword) =>
-                this.setState({ confirmationPassword })
-              }
-              placeholder="Confirm Password"
-              secureTextEntry
-              errorMessage={
-                confirmationPasswordValid
-                  ? null
-                  : 'The password fields are not identics'
-              }
-              returnKeyType="go"
-              onSubmitEditing={() => {
-                this.validateConfirmationPassword();
-                this.signup();
-              }}
-            />
-          </View>
-          <Button
-            loading={isLoading}
-            title="SIGNUP"
-            containerStyle={{ flex: -1 }}
-            buttonStyle={styles.signUpButton}
-            linearGradientProps={{
-              colors: ['#FF9800', '#F44336'],
-              start: [1, 0],
-              end: [0.2, 0],
-            }}
-            ViewComponent={LinearGradient}
-            titleStyle={styles.signUpButtonText}
-            onPress={this.signup}
-            disabled={isLoading}
+        <Text style={styles.signUpText}>Sign up</Text>
+        <Text style={styles.whoAreYouText}>WHO YOU ARE ?</Text>
+        <View style={styles.userTypesContainer}>
+          <UserTypeItem
+            label="COOL"
+            labelColor="#ECC841"
+            image={USER_COOL}
+            onPress={() => selectedTypeHandler('parent')}
+            selected={selectedType === 'parent'}
           />
-        </KeyboardAvoidingView>
-        <View style={styles.loginHereContainer}>
-          <Text style={styles.alreadyAccountText}>
-            Already have an account.
-          </Text>
-          <Button
-            title="Login here"
-            titleStyle={styles.loginHereText}
-            containerStyle={{ flex: -1 }}
-            buttonStyle={{ backgroundColor: 'transparent' }}
-            underlayColor="transparent"
-            onPress={() => Alert.alert('🔥', 'You can login here')}
+          <UserTypeItem
+            label="STUDENT"
+            labelColor="#2CA75E"
+            image={USER_STUDENT}
+            onPress={() => selectedTypeHandler('child')}
+            selected={selectedType === 'child'}
+          />
+          <UserTypeItem
+            label="HARRY POTTER"
+            labelColor="#36717F"
+            image={USER_HP}
+            onPress={() => selectedTypeHandler('teacher')}
+            selected={selectedType === 'teacher'}
           />
         </View>
-      </ScrollView>
-    );
-  }
-}
+        <View style={{ width: '80%', alignItems: 'center' }}>
+          <FormInput
+            refInput={(input) => (usernameInput = input)}
+            icon="user"
+            value={username}
+            onChangeText={(username) => setUsername(username)}
+            placeholder="Username"
+            returnKeyType="next"
+            errorMessage={usernameValid ? null : "Your username can't be blank"}
+            onSubmitEditing={() => {
+              validateUsername();
+              emailInput.focus();
+            }}
+          />
+          <FormInput
+            refInput={(input) => (emailInput = input)}
+            icon="envelope"
+            value={email}
+            onChangeText={(email) => setEmail(email)}
+            placeholder="Email"
+            keyboardType="email-address"
+            returnKeyType="next"
+            errorMessage={
+              emailValid ? null : 'Please enter a valid email address'
+            }
+            onSubmitEditing={() => {
+              validateEmail();
+              passwordInput.focus();
+            }}
+          />
+          <FormInput
+            refInput={(input) => (passwordInput = input)}
+            icon="lock"
+            value={password}
+            onChangeText={(password) => setPassword(password)}
+            placeholder="Password"
+            secureTextEntry
+            returnKeyType="next"
+            errorMessage={
+              passwordValid ? null : 'Please enter at least 8 characters'
+            }
+            onSubmitEditing={() => {
+              validatePassword();
+              confirmationPasswordInput.focus();
+            }}
+          />
+          <FormInput
+            refInput={(input) => (confirmationPasswordInput = input)}
+            icon="lock"
+            value={confirmationPassword}
+            onChangeText={(confirmationPassword) =>
+              setConfirmationPassword(confirmationPassword)
+            }
+            placeholder="Confirm Password"
+            secureTextEntry
+            errorMessage={
+              confirmationPasswordValid
+                ? null
+                : 'The password fields are not identics'
+            }
+            returnKeyType="go"
+            onSubmitEditing={() => {
+              validateConfirmationPassword();
+              signup();
+            }}
+          />
+        </View>
+        <Button
+          loading={isLoading}
+          title="SIGNUP"
+          containerStyle={{ flex: -1 }}
+          buttonStyle={styles.signUpButton}
+          linearGradientProps={{
+            colors: ['#FF9800', '#F44336'],
+            start: [1, 0],
+            end: [0.2, 0],
+          }}
+          ViewComponent={LinearGradient}
+          titleStyle={styles.signUpButtonText}
+          onPress={() => {
+            signup();
+          }}
+          disabled={isLoading}
+        />
+      </KeyboardAvoidingView>
+      <View style={styles.loginHereContainer}>
+        <Text style={styles.alreadyAccountText}>Already have an account.</Text>
+        <Button
+          title="Login here"
+          titleStyle={styles.loginHereText}
+          containerStyle={{ flex: -1 }}
+          buttonStyle={{ backgroundColor: 'transparent' }}
+          underlayColor="transparent"
+          onPress={() => Alert.alert('🔥', 'You can login here')}
+        />
+      </View>
+    </ScrollView>
+  );
+};
+
+export default LoginScreen3;
 
 export const UserTypeItem = (props) => {
   const { image, label, labelColor, selected, ...attributes } = props;

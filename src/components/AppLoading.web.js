@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { View, StyleSheet, ActivityIndicator } from 'react-native';
 
 const styles = StyleSheet.create({
@@ -12,9 +12,9 @@ const styles = StyleSheet.create({
 
 const emptyFunc = () => null;
 
-export default class AppLoading extends React.Component {
-  componentDidMount() {
-    const { startAsync, onError, onFinish } = this.props;
+const AppLoading = (props) => {
+  useEffect(() => {
+    const { startAsync, onError, onFinish } = props;
 
     const successCb = onFinish || emptyFunc;
     const errorCb = onError || emptyFunc;
@@ -22,20 +22,15 @@ export default class AppLoading extends React.Component {
     return !startAsync
       ? successCb()
       : Promise.resolve(startAsync()).then(successCb).catch(errorCb);
-  }
+  }, []);
 
-  render() {
-    const {
-      startAsync,
-      onError,
-      onFinish,
-      autoHideSplash,
-      ...others
-    } = this.props;
-    return (
-      <View style={styles.container}>
-        <ActivityIndicator size={'large'} {...others} />
-      </View>
-    );
-  }
-}
+  const { startAsync, onError, onFinish, autoHideSplash, ...others } = props;
+
+  return (
+    <View style={styles.container}>
+      <ActivityIndicator size={'large'} {...others} />
+    </View>
+  );
+};
+
+export default AppLoading;

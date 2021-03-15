@@ -12,7 +12,8 @@ const USERS = [
   },
   {
     name: 'Sarah Parker',
-    avatar: 'https://images.pexels.com/photos/598745/pexels-photo-598745.jpeg?crop=faces&fit=crop&h=200&w=200&auto=compress&cs=tinysrgb',
+    avatar:
+      'https://images.pexels.com/photos/598745/pexels-photo-598745.jpeg?crop=faces&fit=crop&h=200&w=200&auto=compress&cs=tinysrgb',
     value: '+ 203',
     positive: true,
   },
@@ -24,8 +25,7 @@ const USERS = [
   },
   {
     name: 'Terry Andrews',
-    avatar:
-      'https://randomuser.me/api/portraits/men/4.jpg',
+    avatar: 'https://randomuser.me/api/portraits/men/4.jpg',
     value: '- 80',
     positive: false,
   },
@@ -37,14 +37,15 @@ const USERS = [
   },
   {
     name: 'Katy Friedson',
-    avatar: 'https://images-na.ssl-images-amazon.com/images/M/MV5BMTgxMTc1MTYzM15BMl5BanBnXkFtZTgwNzI5NjMwOTE@._V1_UY256_CR16,0,172,256_AL_.jpg',
+    avatar:
+      'https://images-na.ssl-images-amazon.com/images/M/MV5BMTgxMTc1MTYzM15BMl5BanBnXkFtZTgwNzI5NjMwOTE@._V1_UY256_CR16,0,172,256_AL_.jpg',
     value: '+ 160',
     positive: true,
   },
 ];
 
-class ListContent extends Component {
-  renderValue(user) {
+const ListContent = (props) => {
+  const renderValue = (user) => {
     const { value, positive } = user;
 
     if (positive) {
@@ -102,9 +103,9 @@ class ListContent extends Component {
         </View>
       );
     }
-  }
+  };
 
-  renderCard(user, index) {
+  const renderCard = (user, index) => {
     const { name, avatar } = user;
 
     return (
@@ -114,7 +115,7 @@ class ListContent extends Component {
           height: 60,
           marginHorizontal: 10,
           marginTop: 10,
-          backgroundColor: this.props.theme.colors.grey4,
+          backgroundColor: props.theme.colors.grey4,
           borderRadius: 5,
           alignItems: 'center',
           flexDirection: 'row',
@@ -136,7 +137,7 @@ class ListContent extends Component {
               fontFamily: 'regular',
               fontSize: 15,
               marginLeft: 10,
-              color: this.props.theme.colors.grey0,
+              color: props.theme.colors.grey0,
             }}
           >
             {name}
@@ -149,7 +150,7 @@ class ListContent extends Component {
             marginRight: 10,
           }}
         >
-          {this.renderValue(user)}
+          {renderValue(user)}
           <View
             style={{
               backgroundColor: 'rgba(222,222,222,1)',
@@ -166,136 +167,133 @@ class ListContent extends Component {
         </View>
       </View>
     );
-  }
+  };
 
-  renderListCards() {
+  const renderListCards = () => {
     return _.map(USERS, (user, index) => {
-      return this.renderCard(user, index);
+      return renderCard(user, index);
     });
-  }
+  };
 
-  render() {
-    return (
-      <>
-        <ScrollView style={{ marginTop: 15 }}>
-          <View
-            style={{
-              flex: 1,
-              flexDirection: 'column',
-              borderRadius: 5,
-              alignItems: 'center',
-              marginHorizontal: 10,
-              height: 250,
-              marginBottom: 10,
-            }}
-          >
-            <View style={{ flex: 3, flexDirection: 'row' }}>
-              <View
-                style={{
-                  flex: 1,
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                }}
-              >
-                <Avatar
-                  width={145}
-                  height={145}
-                  source={{
-                    uri:
-                      'https://randomuser.me/api/portraits/men/1.jpg',
-                  }}
-                  activeOpacity={0.7}
-                  avatarStyle={{ borderRadius: 145 / 2 }}
-                  overlayContainerStyle={{ backgroundColor: 'transparent' }}
-                />
-              </View>
-              <View
-                style={{
-                  flex: 1,
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                }}
-              >
-                <View
-                  style={{
-                    flex: 1,
-                    marginTop: 10,
-                    justifyContent: 'center',
-                  }}
-                >
-                  <Text
-                    style={{
-                      fontFamily: 'bold',
-                      fontSize: 25,
-                      color: this.props.theme.colors.secondary,
-                      marginLeft: -15,
-                    }}
-                  >
-                    Paul Allen
-                  </Text>
-                </View>
-              </View>
-            </View>
-            <View
-              style={{
-                width: 300,
-                borderWidth: 0.5,
-                borderColor: 'rgba(222, 223, 226, 1)',
-                marginHorizontal: 20,
-                height: 1,
-                marginVertical: 10,
-              }}
-            />
+  return (
+    <>
+      <ScrollView style={{ marginTop: 15 }}>
+        <View
+          style={{
+            flex: 1,
+            flexDirection: 'column',
+            borderRadius: 5,
+            alignItems: 'center',
+            marginHorizontal: 10,
+            height: 250,
+            marginBottom: 10,
+          }}
+        >
+          <View style={{ flex: 3, flexDirection: 'row' }}>
             <View
               style={{
                 flex: 1,
-                flexDirection: 'row',
+                justifyContent: 'center',
                 alignItems: 'center',
               }}
             >
-              <View style={{ flex: 1, alignItems: 'center' }}>
-                <Button
-                  title="View Profile"
-                  buttonStyle={{
-                    height: 33,
-                    width: 120,
-                    backgroundColor: 'rgba(222, 223, 226, 1)',
-                    borderRadius: 5,
+              <Avatar
+                width={145}
+                height={145}
+                source={{
+                  uri: 'https://randomuser.me/api/portraits/men/1.jpg',
+                }}
+                activeOpacity={0.7}
+                avatarStyle={{ borderRadius: 145 / 2 }}
+                overlayContainerStyle={{ backgroundColor: 'transparent' }}
+              />
+            </View>
+            <View
+              style={{
+                flex: 1,
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}
+            >
+              <View
+                style={{
+                  flex: 1,
+                  marginTop: 10,
+                  justifyContent: 'center',
+                }}
+              >
+                <Text
+                  style={{
+                    fontFamily: 'bold',
+                    fontSize: 25,
+                    color: props.theme.colors.secondary,
+                    marginLeft: -15,
                   }}
-                  titleStyle={{
-                    fontFamily: 'regular',
-                    fontSize: 13,
-                    color: 'gray',
-                  }}
-                  onPress={() => console.log('aye')}
-                  underlayColor="transparent"
-                />
-              </View>
-              <View style={{ flex: 1, alignItems: 'center' }}>
-                <Button
-                  title="Add User"
-                  buttonStyle={{
-                    height: 33,
-                    width: 120,
-                    backgroundColor: 'rgba(113, 154, 112, 1)',
-                    borderRadius: 5,
-                  }}
-                  titleStyle={{
-                    fontFamily: 'regular',
-                    fontSize: 13,
-                    color: 'white',
-                  }}
-                  onPress={() => console.log('aye')}
-                  underlayColor="transparent"
-                />
+                >
+                  Paul Allen
+                </Text>
               </View>
             </View>
           </View>
-          {this.renderListCards()}
-        </ScrollView>
-      </>
-    );
-  }
-}
+          <View
+            style={{
+              width: 300,
+              borderWidth: 0.5,
+              borderColor: 'rgba(222, 223, 226, 1)',
+              marginHorizontal: 20,
+              height: 1,
+              marginVertical: 10,
+            }}
+          />
+          <View
+            style={{
+              flex: 1,
+              flexDirection: 'row',
+              alignItems: 'center',
+            }}
+          >
+            <View style={{ flex: 1, alignItems: 'center' }}>
+              <Button
+                title="View Profile"
+                buttonStyle={{
+                  height: 33,
+                  width: 120,
+                  backgroundColor: 'rgba(222, 223, 226, 1)',
+                  borderRadius: 5,
+                }}
+                titleStyle={{
+                  fontFamily: 'regular',
+                  fontSize: 13,
+                  color: 'gray',
+                }}
+                onPress={() => console.log('aye')}
+                underlayColor="transparent"
+              />
+            </View>
+            <View style={{ flex: 1, alignItems: 'center' }}>
+              <Button
+                title="Add User"
+                buttonStyle={{
+                  height: 33,
+                  width: 120,
+                  backgroundColor: 'rgba(113, 154, 112, 1)',
+                  borderRadius: 5,
+                }}
+                titleStyle={{
+                  fontFamily: 'regular',
+                  fontSize: 13,
+                  color: 'white',
+                }}
+                onPress={() => console.log('aye')}
+                underlayColor="transparent"
+              />
+            </View>
+          </View>
+        </View>
+        {renderListCards()}
+      </ScrollView>
+    </>
+  );
+};
 
 export default withTheme(ListContent);

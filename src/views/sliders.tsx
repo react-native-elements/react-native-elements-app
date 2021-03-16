@@ -45,13 +45,18 @@ const Sliders = () => {
           minimumValue={20}
           step={1}
           orientation="vertical"
-          thumbStyle={{ height: 40, width: 40, backgroundColor: "transparent" }}
+          thumbStyle={{ height: 20, width: 16, backgroundColor: "transparent" }}
           thumbProps={{
-            Component: Animated.Image,
-            source: {
-              uri:
-                "https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg"
-            }
+            children: (
+              <Icon
+                name="heartbeat"
+                type="font-awesome"
+                size={20}
+                reverse
+                containerStyle={{ bottom: 20, right: 20 }}
+                color="#f50"
+              />
+            )
           }}
         />
       </View>

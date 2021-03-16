@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, ScrollView } from 'react-native';
 import _ from 'lodash';
-import { Avatar, Button, ThemeProvider } from 'react-native-elements';
+import { Avatar, } from 'react-native-elements';
 import { Header } from './header';
 
 const dataList = [
@@ -116,28 +116,6 @@ const Avatars: React.FC<Props> = () => {
             backgroundColor: 'grey',
           }}
         >
-          <ThemeProvider theme={theme}>
-            <Button
-              title="My Button"
-              onPress={() => {
-                if (theme === theme1) {
-                  setTheme(theme2);
-                } else {
-                  setTheme(theme1);
-                }
-              }}
-            />
-            <Button
-              title="My 2nd Button"
-              onPress={() => {
-                if (theme === theme1) {
-                  setTheme(theme2);
-                } else {
-                  setTheme(theme1);
-                }
-              }}
-            />
-          </ThemeProvider>
         </View>
       </ScrollView>
     </>

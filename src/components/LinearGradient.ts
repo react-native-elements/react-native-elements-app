@@ -1,1 +1,1 @@
-export { LinearGradient } from "expo-linear-gradient";
+export { LinearGradient } from 'expo-linear-gradient';

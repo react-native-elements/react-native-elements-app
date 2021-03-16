@@ -51,7 +51,7 @@
     "eslint": "^7.3.1",
     "gh-pages": "^2.1.1",
     "jest-expo": "^40.0.0",
-    "typescript": "~4.0.0"
+    "typescript": "~4.1.0"
   },
   "jest": {
     "preset": "jest-expo"

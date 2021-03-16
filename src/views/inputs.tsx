@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef } from 'react';
 import {
   View,
   ScrollView,
@@ -6,48 +6,46 @@ import {
   Text,
   Dimensions,
   KeyboardAvoidingView,
-  Platform
-} from "react-native";
+  Platform,
+} from 'react-native';
 import {
   Input,
   SearchBar,
   Icon,
   Button,
-  ThemeProvider
-} from "react-native-elements";
-import { Header } from "./header";
+  ThemeProvider,
+} from 'react-native-elements';
+import { Header } from './header';
 
-const SCREEN_WIDTH = Dimensions.get("window").width;
+const SCREEN_WIDTH = Dimensions.get('window').width;
 const dummySearchBarProps = {
   showLoading: true,
-  onFocus: () => console.log("focus"),
-  onBlur: () => console.log("blur"),
-  onCancel: () => console.log("cancel"),
-  onClear: () => console.log("cleared")
+  onFocus: () => console.log('focus'),
+  onBlur: () => console.log('blur'),
+  onCancel: () => console.log('cancel'),
+  onClear: () => console.log('cleared'),
 };
 
-const SearchBarCustom = props => {
-  const [value, setValue] = useState("");
+const SearchBarCustom = (props) => {
+  const [value, setValue] = useState('');
   return <SearchBar value={value} onChangeText={setValue} {...props} />;
 };
 
-const Inputs = props => {
-  let emailInput = useRef(null);
+const Inputs = () => {
   let email2Input = useRef(null);
   let passwordInput = useRef(null);
   let password2Input = useRef(null);
-  let usernameInput = useRef(null);
   let shakeInput = useRef(null);
   let confirmPassword2Input = useRef(null);
   const InputFieldsStyle = {
-    outline:'none'
-  }
+    borderWidth: 0,
+  };
   return (
     <KeyboardAvoidingView
       style={styles.keyboardAvoidingView}
-      behavior={"padding"}
+      behavior={'padding'}
       enabled
-      keyboardVerticalOffset={Platform.OS === "ios" ? 64 : 84}
+      keyboardVerticalOffset={Platform.OS === 'ios' ? 64 : 84}
     >
       <Header title="Inputs" />
       <ScrollView keyboardShouldPersistTaps="handled">
@@ -69,24 +67,24 @@ const Inputs = props => {
         />
         <SearchBarCustom
           placeholder="Default searchbar"
-           style={InputFieldsStyle}
+          style={InputFieldsStyle}
           {...dummySearchBarProps}
         />
         <View
           style={[
             styles.headerContainer,
-            { backgroundColor: "#616389", marginTop: 20 }
+            { backgroundColor: '#616389', marginTop: 20 },
           ]}
         >
           <Icon color="white" name="input" size={62} />
           <Text style={styles.heading}>Inputs</Text>
         </View>
-        <View style={{ alignItems: "center", marginBottom: 16 }}>
+        <View style={{ alignItems: 'center', marginBottom: 16 }}>
           <Input
-            containerStyle={{ width: "90%" }}
+            containerStyle={{ width: '90%' }}
             placeholder="Input with label"
             label="LABEL"
-            labelStyle={{ marginTop: 16}}
+            labelStyle={{ marginTop: 16 }}
             style={InputFieldsStyle}
           />
           <Input
@@ -131,7 +129,7 @@ const Inputs = props => {
             containerStyle={[styles.inputContainerStyle]}
             placeholder="Shake input"
             style={InputFieldsStyle}
-            ref={ref => (shakeInput = ref)}
+            ref={(ref) => (shakeInput = ref)}
             rightIcon={
               <Button
                 title="Shake"
@@ -144,18 +142,18 @@ const Inputs = props => {
         <View style={styles.contentView}>
           <View
             style={{
-              backgroundColor: "#2F343B",
+              backgroundColor: '#2F343B',
               width: SCREEN_WIDTH,
-              alignItems: "center"
+              alignItems: 'center',
             }}
           >
             <Text
               style={{
                 fontSize: 30,
                 marginVertical: 10,
-                fontWeight: "300",
+                fontWeight: '300',
                 marginTop: 10,
-                color: "white"
+                color: 'white',
               }}
             >
               Login
@@ -165,11 +163,11 @@ const Inputs = props => {
               <Input
                 inputContainerStyle={{
                   borderWidth: 1,
-                  borderColor: "white",
+                  borderColor: 'white',
                   borderLeftWidth: 0,
                   height: 50,
                   width: SCREEN_WIDTH - 80,
-                  backgroundColor: "white"
+                  backgroundColor: 'white',
                 }}
                 leftIcon={
                   <Icon
@@ -180,7 +178,7 @@ const Inputs = props => {
                   />
                 }
                 leftIconContainerStyle={{
-                  marginRight: 10
+                  marginRight: 10,
                 }}
                 containerStyle={{ paddingHorizontal: 0 }}
                 placeholder="Email"
@@ -191,7 +189,6 @@ const Inputs = props => {
                 style={InputFieldsStyle}
                 keyboardType="email-address"
                 returnKeyType="next"
-                ref={input => (emailInput = input)}
                 onSubmitEditing={() => {
                   passwordInput.focus();
                 }}
@@ -204,14 +201,14 @@ const Inputs = props => {
               <Input
                 inputContainerStyle={{
                   borderWidth: 1,
-                  borderColor: "white",
+                  borderColor: 'white',
                   borderLeftWidth: 0,
                   height: 50,
                   width: SCREEN_WIDTH - 80,
-                  backgroundColor: "white"
+                  backgroundColor: 'white',
                 }}
                 leftIconContainerStyle={{
-                  marginRight: 10
+                  marginRight: 10,
                 }}
                 containerStyle={{ paddingHorizontal: 0 }}
                 leftIcon={
@@ -231,7 +228,7 @@ const Inputs = props => {
                 style={InputFieldsStyle}
                 keyboardType="default"
                 returnKeyType="done"
-                ref={input => (passwordInput = input)}
+                ref={(input) => (passwordInput = input)}
                 blurOnSubmit={true}
               />
               <View style={styles.triangleRight} />
@@ -242,39 +239,39 @@ const Inputs = props => {
             theme={{
               Input: {
                 containerStyle: {
-                  width: SCREEN_WIDTH - 50
+                  width: SCREEN_WIDTH - 50,
                 },
                 inputContainerStyle: {
                   borderRadius: 40,
                   borderWidth: 1,
-                  borderColor: "rgba(110, 120, 170, 1)",
+                  borderColor: 'rgba(110, 120, 170, 1)',
                   height: 50,
-                  marginVertical: 10
+                  marginVertical: 10,
                 },
-                placeholderTextColor: "rgba(110, 120, 177, 1)",
+                placeholderTextColor: 'rgba(110, 120, 177, 1)',
                 inputStyle: {
                   marginLeft: 10,
-                  color: "white"
+                  color: 'white',
                 },
-                keyboardAppearance: "light",
-                blurOnSubmit: false
-              }
+                keyboardAppearance: 'light',
+                blurOnSubmit: false,
+              },
             }}
           >
             <View
               style={{
-                backgroundColor: "rgba(46, 50, 72, 1)",
+                backgroundColor: 'rgba(46, 50, 72, 1)',
                 width: SCREEN_WIDTH,
-                alignItems: "center",
-                paddingBottom: 30
+                alignItems: 'center',
+                paddingBottom: 30,
               }}
             >
               <Text
                 style={{
-                  color: "white",
+                  color: 'white',
                   fontSize: 30,
                   marginVertical: 10,
-                  fontWeight: "300"
+                  fontWeight: '300',
                 }}
               >
                 Sign up
@@ -295,7 +292,6 @@ const Inputs = props => {
                 keyboardType="email-address"
                 style={InputFieldsStyle}
                 returnKeyType="next"
-                ref={input => (usernameInput = input)}
                 onSubmitEditing={() => {
                   email2Input.focus();
                 }}
@@ -316,7 +312,7 @@ const Inputs = props => {
                 keyboardType="email-address"
                 style={InputFieldsStyle}
                 returnKeyType="next"
-                ref={input => (email2Input = input)}
+                ref={(input) => (email2Input = input)}
                 onSubmitEditing={() => {
                   password2Input.focus();
                 }}
@@ -338,7 +334,7 @@ const Inputs = props => {
                 keyboardType="default"
                 style={InputFieldsStyle}
                 returnKeyType="next"
-                ref={input => (password2Input = input)}
+                ref={(input) => (password2Input = input)}
                 onSubmitEditing={() => {
                   confirmPassword2Input.focus();
                 }}
@@ -361,7 +357,7 @@ const Inputs = props => {
                 keyboardType="default"
                 returnKeyType="done"
                 style={InputFieldsStyle}
-                ref={input => (confirmPassword2Input = input)}
+                ref={(input) => (confirmPassword2Input = input)}
                 blurOnSubmit
               />
             </View>
@@ -376,55 +372,55 @@ export default Inputs;
 
 const styles = StyleSheet.create({
   headerContainer: {
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
     padding: 40,
-    backgroundColor: "#B46486"
+    backgroundColor: '#B46486',
   },
   heading: {
-    color: "white",
+    color: 'white',
     marginTop: 10,
     fontSize: 22,
-    fontWeight: "bold"
+    fontWeight: 'bold',
   },
   contentView: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center"
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   triangleLeft: {
-    position: "absolute",
+    position: 'absolute',
     left: -20,
     bottom: 24,
     width: 0,
     height: 0,
     borderRightWidth: 20,
-    borderRightColor: "white",
+    borderRightColor: 'white',
     borderBottomWidth: 25,
-    borderBottomColor: "transparent",
+    borderBottomColor: 'transparent',
     borderTopWidth: 25,
-    borderTopColor: "transparent"
+    borderTopColor: 'transparent',
   },
   triangleRight: {
-    position: "absolute",
+    position: 'absolute',
     right: -20,
     top: 0,
     width: 0,
     height: 0,
     borderLeftWidth: 20,
-    borderLeftColor: "white",
+    borderLeftColor: 'white',
     borderBottomWidth: 25,
-    borderBottomColor: "transparent",
+    borderBottomColor: 'transparent',
     borderTopWidth: 25,
-    borderTopColor: "transparent"
+    borderTopColor: 'transparent',
   },
   inputContainerStyle: {
     marginTop: 16,
-    width: "90%"
+    width: '90%',
   },
   keyboardAvoidingView: {
     flex: 1,
-    flexDirection: "column",
-    justifyContent: "center"
-  }
+    flexDirection: 'column',
+    justifyContent: 'center',
+  },
 });

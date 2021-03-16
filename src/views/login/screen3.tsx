@@ -1,4 +1,4 @@
-import React, { Component, useRef } from 'react';
+import React, { Component } from 'react';
 import {
   StyleSheet,
   View,
@@ -23,7 +23,9 @@ type TabSelectorProps = {
   selected: boolean;
 };
 
-const TabSelector: React.SFC<TabSelectorProps> = ({ selected }) => {
+const TabSelector: React.FunctionComponent<TabSelectorProps> = ({
+  selected,
+}) => {
   return (
     <View style={styles.selectorContainer}>
       <View style={selected && styles.selected} />

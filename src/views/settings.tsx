@@ -1,125 +1,125 @@
-import React, { useState } from "react";
-import { View, StyleSheet, SectionList, Switch } from "react-native";
-import { ListItem, Divider, SearchBar, Icon } from "react-native-elements";
-import { Header } from "./header";
+import React, { useState } from 'react';
+import { View, StyleSheet, SectionList, Switch } from 'react-native';
+import { ListItem, Divider, SearchBar, Icon } from 'react-native-elements';
+import { Header } from './header';
 
-const ORANGE = "#FF9500";
-const BLUE = "#007AFF";
-const GREEN = "#4CD964";
-const RED = "#FF3B30";
-const GREY = "#8E8E93";
-const PURPLE = "#5856D6";
-const TEAL_BLUE = "#5AC8FA";
+const ORANGE = '#FF9500';
+const BLUE = '#007AFF';
+const GREEN = '#4CD964';
+const RED = '#FF3B30';
+const GREY = '#8E8E93';
+const PURPLE = '#5856D6';
+const TEAL_BLUE = '#5AC8FA';
 const sections = [
   {
     data: [
       {
-        title: "Airplane Mode",
-        icon: "ios-airplane",
+        title: 'Airplane Mode',
+        icon: 'ios-airplane',
         backgroundColor: ORANGE,
         hideChevron: true,
-        checkbox: true
+        checkbox: true,
       },
       {
-        title: "Wi-Fi",
+        title: 'Wi-Fi',
         backgroundColor: BLUE,
-        icon: "ios-wifi"
+        icon: 'ios-wifi',
       },
       {
-        title: "Bluetooth",
+        title: 'Bluetooth',
         backgroundColor: BLUE,
-        icon: "ios-bluetooth",
-        rightTitle: "Off"
+        icon: 'ios-bluetooth',
+        rightTitle: 'Off',
       },
       {
-        title: "Cellular",
+        title: 'Cellular',
         backgroundColor: GREEN,
-        icon: "ios-phone-portrait"
+        icon: 'ios-phone-portrait',
       },
       {
-        title: "Personal Hotspot",
+        title: 'Personal Hotspot',
         backgroundColor: GREEN,
-        icon: "ios-radio",
-        rightTitle: "Off"
-      }
-    ]
+        icon: 'ios-radio',
+        rightTitle: 'Off',
+      },
+    ],
   },
   {
     data: [
       {
-        title: "Notifications",
-        icon: "ios-notifications",
-        backgroundColor: RED
+        title: 'Notifications',
+        icon: 'ios-notifications',
+        backgroundColor: RED,
       },
       {
-        title: "Control Center",
+        title: 'Control Center',
         backgroundColor: GREY,
-        icon: "ios-switch"
+        icon: 'ios-switch',
       },
       {
-        title: "Do Not Disturb",
+        title: 'Do Not Disturb',
         backgroundColor: PURPLE,
-        icon: "ios-moon"
-      }
-    ]
+        icon: 'ios-moon',
+      },
+    ],
   },
   {
     data: [
       {
-        title: "General",
-        icon: "ios-settings",
-        backgroundColor: GREY
-      },
-      {
-        title: "Display & Brightness",
-        backgroundColor: BLUE,
-        icon: "ios-bulb"
-      },
-      {
-        title: "Wallpaper",
-        backgroundColor: TEAL_BLUE,
-        icon: "ios-color-wand"
-      },
-      {
-        title: "Sounds",
-        backgroundColor: RED,
-        icon: "ios-volume-high"
-      },
-      {
-        title: "Touch ID & Code",
-        backgroundColor: RED,
-        icon: "ios-finger-print"
-      },
-      {
-        title: "Emergency Call",
-        backgroundColor: ORANGE,
-        icon: "ios-medical"
-      },
-      {
-        title: "Battery",
-        backgroundColor: GREEN,
-        icon: "ios-battery-full"
-      },
-      {
-        title: "Confidentiality",
+        title: 'General',
+        icon: 'ios-settings',
         backgroundColor: GREY,
-        icon: "ios-hand"
-      }
-    ]
+      },
+      {
+        title: 'Display & Brightness',
+        backgroundColor: BLUE,
+        icon: 'ios-bulb',
+      },
+      {
+        title: 'Wallpaper',
+        backgroundColor: TEAL_BLUE,
+        icon: 'ios-color-wand',
+      },
+      {
+        title: 'Sounds',
+        backgroundColor: RED,
+        icon: 'ios-volume-high',
+      },
+      {
+        title: 'Touch ID & Code',
+        backgroundColor: RED,
+        icon: 'ios-finger-print',
+      },
+      {
+        title: 'Emergency Call',
+        backgroundColor: ORANGE,
+        icon: 'ios-medical',
+      },
+      {
+        title: 'Battery',
+        backgroundColor: GREEN,
+        icon: 'ios-battery-full',
+      },
+      {
+        title: 'Confidentiality',
+        backgroundColor: GREY,
+        icon: 'ios-hand',
+      },
+    ],
   },
   // Space at the bottom
-  { data: [] }
+  { data: [] },
 ];
 
-const Settings = props => {
+const Settings = () => {
   const [switched, setSwitched] = useState(false);
-  
-  const onSwitchEventHandler = value => {
+
+  const onSwitchEventHandler = (value) => {
     setSwitched(value);
   };
 
   const renderItem = ({
-    item: { title, backgroundColor, icon, rightTitle, hideChevron, checkbox }
+    item: { title, backgroundColor, icon, rightTitle, hideChevron, checkbox },
   }) => (
     <ListItem containerStyle={{ paddingVertical: 8 }} key={title}>
       <Icon
@@ -132,8 +132,8 @@ const Settings = props => {
           width: 28,
           height: 28,
           borderRadius: 6,
-          alignItems: "center",
-          justifyContent: "center"
+          alignItems: 'center',
+          justifyContent: 'center',
         }}
       />
       <ListItem.Content>
@@ -185,17 +185,17 @@ const Settings = props => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#EFEFF4"
+    backgroundColor: '#EFEFF4',
   },
   separatorComponent: {
-    backgroundColor: "white"
+    backgroundColor: 'white',
   },
   separator: {
-    marginLeft: 58
+    marginLeft: 58,
   },
   headerSection: {
-    height: 30
-  }
+    height: 30,
+  },
 });
 
 export default Settings;

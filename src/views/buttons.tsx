@@ -1,10 +1,10 @@
-import React, { SetStateAction, useState } from 'react';
+import React, { useState } from 'react';
 import { View, ScrollView, StyleSheet } from 'react-native';
 import { Button, ButtonGroup, withTheme, Text } from 'react-native-elements';
 import { Header, SubHeader } from './header';
 import { LinearGradient } from '../components/LinearGradient';
 
-const Buttons = (props) => {
+const Buttons = () => {
   const [selectedIndex, setSelectedIndex] = useState<number>(0);
   const [selectedIndexes, setSelectedIndexes] = useState<number[]>([0, 2, 3]);
 

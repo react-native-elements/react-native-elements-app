@@ -38,7 +38,7 @@ const Inputs = () => {
   let shakeInput = useRef(null);
   let confirmPassword2Input = useRef(null);
   const InputFieldsStyle = {
-    outline: 'none',
+    borderWidth: 0,
   };
   return (
     <KeyboardAvoidingView

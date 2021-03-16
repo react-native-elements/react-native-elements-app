@@ -1,26 +1,26 @@
-import React from "react";
-import { StyleSheet, View, Text } from "react-native";
-import { useNavigation } from "@react-navigation/native";
-import { Header as HeaderRNE } from "react-native-elements";
+import React from 'react';
+import { StyleSheet, View, Text } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import { Header as HeaderRNE } from 'react-native-elements';
 
-const Header = props => {
+const Header = (props) => {
   const navigation = useNavigation();
   return (
     <HeaderRNE
       leftComponent={{
-        icon: "menu",
-        color: "#fff",
-        onPress: navigation.openDrawer
+        icon: 'menu',
+        color: '#fff',
+        onPress: navigation.openDrawer,
       }}
       centerComponent={{ text: props.title, style: styles.heading }}
     />
   );
 };
- type SubHeaderProps  = {
-   title:string;
- }
+type SubHeaderProps = {
+  title: string;
+};
 
-const SubHeader = ({ icon, iconType, title }:SubHeaderProps) => {
+const SubHeader = ({ title }: SubHeaderProps) => {
   return (
     <View style={styles.headerContainer}>
       <Text style={styles.heading}>{title}</Text>
@@ -30,18 +30,16 @@ const SubHeader = ({ icon, iconType, title }:SubHeaderProps) => {
 
 const styles = StyleSheet.create({
   headerContainer: {
-    justifyContent: "center",
-    alignItems: "center",
-    padding: 40,
-    backgroundColor: "#ED553B",
-    marginBottom: 20
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#ED553B',
+    marginBottom: 20,
   },
   heading: {
-    color: "white",
-    marginTop: 10,
+    color: 'white',
     fontSize: 22,
-    fontWeight: "bold"
-  }
+    fontWeight: 'bold',
+  },
 });
 
 export { Header, SubHeader };

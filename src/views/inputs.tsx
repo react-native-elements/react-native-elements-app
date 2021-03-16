@@ -39,7 +39,9 @@ const Inputs = props => {
   let usernameInput = useRef(null);
   let shakeInput = useRef(null);
   let confirmPassword2Input = useRef(null);
-
+  const InputFieldsStyle = {
+    outline:'none'
+  }
   return (
     <KeyboardAvoidingView
       style={styles.keyboardAvoidingView}
@@ -56,15 +58,18 @@ const Inputs = props => {
         <SearchBarCustom
           placeholder="iOS searchbar"
           platform="ios"
+          style={InputFieldsStyle}
           {...dummySearchBarProps}
         />
         <SearchBarCustom
           placeholder="Android searchbar"
           platform="android"
+          style={InputFieldsStyle}
           {...dummySearchBarProps}
         />
         <SearchBarCustom
           placeholder="Default searchbar"
+           style={InputFieldsStyle}
           {...dummySearchBarProps}
         />
         <View
@@ -81,11 +86,13 @@ const Inputs = props => {
             containerStyle={{ width: "90%" }}
             placeholder="Input with label"
             label="LABEL"
-            labelStyle={{ marginTop: 16 }}
+            labelStyle={{ marginTop: 16}}
+            style={InputFieldsStyle}
           />
           <Input
             containerStyle={styles.inputContainerStyle}
             placeholder="Simple input"
+            style={InputFieldsStyle}
           />
           <Input
             leftIcon={
@@ -99,6 +106,7 @@ const Inputs = props => {
             leftIconContainerStyle={{ marginLeft: 0, marginRight: 10 }}
             containerStyle={styles.inputContainerStyle}
             placeholder="Input with left icon"
+            style={InputFieldsStyle}
           />
           <Input
             rightIcon={
@@ -111,15 +119,18 @@ const Inputs = props => {
             }
             containerStyle={styles.inputContainerStyle}
             placeholder="Input with right icon"
+            style={InputFieldsStyle}
           />
           <Input
             containerStyle={styles.inputContainerStyle}
             placeholder="Input with error message"
             errorMessage="Invalid input"
+            style={InputFieldsStyle}
           />
           <Input
             containerStyle={[styles.inputContainerStyle]}
             placeholder="Shake input"
+            style={InputFieldsStyle}
             ref={ref => (shakeInput = ref)}
             rightIcon={
               <Button
@@ -177,6 +188,7 @@ const Inputs = props => {
                 autoCapitalize="none"
                 autoCorrect={false}
                 keyboardAppearance="light"
+                style={InputFieldsStyle}
                 keyboardType="email-address"
                 returnKeyType="next"
                 ref={input => (emailInput = input)}
@@ -216,6 +228,7 @@ const Inputs = props => {
                 keyboardAppearance="light"
                 secureTextEntry={true}
                 autoCorrect={false}
+                style={InputFieldsStyle}
                 keyboardType="default"
                 returnKeyType="done"
                 ref={input => (passwordInput = input)}
@@ -238,7 +251,7 @@ const Inputs = props => {
                   height: 50,
                   marginVertical: 10
                 },
-                placeholderTextColor: "rgba(110, 120, 170, 1)",
+                placeholderTextColor: "rgba(110, 120, 177, 1)",
                 inputStyle: {
                   marginLeft: 10,
                   color: "white"
@@ -280,6 +293,7 @@ const Inputs = props => {
                 autoCapitalize="none"
                 autoCorrect={false}
                 keyboardType="email-address"
+                style={InputFieldsStyle}
                 returnKeyType="next"
                 ref={input => (usernameInput = input)}
                 onSubmitEditing={() => {
@@ -300,6 +314,7 @@ const Inputs = props => {
                 autoCapitalize="none"
                 autoCorrect={false}
                 keyboardType="email-address"
+                style={InputFieldsStyle}
                 returnKeyType="next"
                 ref={input => (email2Input = input)}
                 onSubmitEditing={() => {
@@ -321,6 +336,7 @@ const Inputs = props => {
                 secureTextEntry={true}
                 autoCorrect={false}
                 keyboardType="default"
+                style={InputFieldsStyle}
                 returnKeyType="next"
                 ref={input => (password2Input = input)}
                 onSubmitEditing={() => {
@@ -344,6 +360,7 @@ const Inputs = props => {
                 autoCorrect={false}
                 keyboardType="default"
                 returnKeyType="done"
+                style={InputFieldsStyle}
                 ref={input => (confirmPassword2Input = input)}
                 blurOnSubmit
               />

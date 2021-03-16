@@ -1,97 +1,97 @@
 /* eslint-disable */
 
-import React from "react";
-import { View, ScrollView } from "react-native";
-import _ from "lodash";
-import { SocialIcon } from "react-native-elements";
-import { Header } from "./header";
+import React from 'react';
+import { View, ScrollView } from 'react-native';
+import _ from 'lodash';
+import { SocialIcon } from 'react-native-elements';
+import { Header } from './header';
 
 const dataList = [
   {
-    type: "facebook"
+    type: 'facebook',
   },
   {
-    type: "twitter"
+    type: 'twitter',
   },
   {
-    type: "google-plus-official"
+    type: 'google-plus-official',
   },
   {
-    type: "google"
+    type: 'google',
   },
   {
-    type: "pinterest"
+    type: 'pinterest',
   },
   {
-    type: "linkedin"
+    type: 'linkedin',
   },
   {
-    type: "youtube"
+    type: 'youtube',
   },
   {
-    type: "vimeo"
+    type: 'vimeo',
   },
   {
-    type: "tumblr"
+    type: 'tumblr',
   },
   {
-    type: "instagram"
+    type: 'instagram',
   },
   {
-    type: "quora"
+    type: 'quora',
   },
   {
-    type: "flickr"
+    type: 'flickr',
   },
   {
-    type: "foursquare"
+    type: 'foursquare',
   },
   {
-    type: "wordpress"
+    type: 'wordpress',
   },
   {
-    type: "stumbleupon"
+    type: 'stumbleupon',
   },
   {
-    type: "github"
+    type: 'github',
   },
   {
-    type: "github-alt"
+    type: 'github-alt',
   },
   {
-    type: "twitch"
+    type: 'twitch',
   },
   {
-    type: "medium"
+    type: 'medium',
   },
   {
-    type: "soundcloud"
+    type: 'soundcloud',
   },
   {
-    type: "stack-overflow"
+    type: 'stack-overflow',
   },
   {
-    type: "gitlab"
+    type: 'gitlab',
   },
   {
-    type: "angellist"
+    type: 'angellist',
   },
   {
-    type: "codepen"
+    type: 'codepen',
   },
   {
-    type: "weibo"
+    type: 'weibo',
   },
   {
-    type: "vk"
+    type: 'vk',
   },
   {
-    type: "facebook-messenger",
-    iconType: "material-community"
+    type: 'facebook-messenger',
+    iconType: 'material-community',
   },
   {
-    type: "whatsapp"
-  }
+    type: 'whatsapp',
+  },
 ];
 
 const SocialIcons = () => {
@@ -102,19 +102,15 @@ const SocialIcons = () => {
         {_.chunk(dataList, 3).map((chunk, chunkIndex) => (
           <View
             style={{
-              flexDirection: "row",
-              justifyContent: "space-around",
+              flexDirection: 'row',
+              justifyContent: 'space-around',
               marginTop: 10,
-              backgroundColor: "grey"
+              backgroundColor: 'grey',
             }}
             key={chunkIndex}
           >
             {chunk.map((l, i) => (
-              <SocialIcon
-                type={l.type}
-                iconType={l.iconType}
-                key={`${chunkIndex}-${i}`}
-              />
+              <SocialIcon type={l.type} key={`${chunkIndex}-${i}`} />
             ))}
           </View>
         ))}

@@ -18,8 +18,11 @@ const Header = props => {
     />
   );
 };
+ type SubHeaderProps  = {
+   title:string;
+ }
 
-const SubHeader = ({ icon, iconType, title }) => {
+const SubHeader = ({ icon, iconType, title }:SubHeaderProps) => {
   return (
     <View style={styles.headerContainer}>
       <Text style={styles.heading}>{title}</Text>

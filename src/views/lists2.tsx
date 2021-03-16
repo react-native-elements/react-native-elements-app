@@ -1,67 +1,67 @@
-import React, { useState } from "react";
-import { View, StyleSheet, Image, FlatList, Switch } from "react-native";
-import { Text, ListItem, Avatar, Icon, Badge } from "react-native-elements";
-import { LinearGradient } from "../components/LinearGradient";
-import { Header } from "./header";
-import colors from "../config/colors";
+import React, { useState } from 'react';
+import { View, StyleSheet, Image, FlatList, Switch } from 'react-native';
+import { Text, ListItem, Avatar, Icon, Badge } from 'react-native-elements';
+import { LinearGradient } from '../components/LinearGradient';
+import { Header } from './header';
+import colors from '../config/colors';
 
-const log = () => console.log("this is an example method");
+const log = () => console.log('this is an example method');
 const list1 = [
   {
-    title: "Appointments",
-    icon: "av-timer"
+    title: 'Appointments',
+    icon: 'av-timer',
   },
   {
-    title: "Trips",
-    icon: "flight-takeoff"
+    title: 'Trips',
+    icon: 'flight-takeoff',
   },
   {
-    title: "Passwords",
-    icon: "fingerprint"
+    title: 'Passwords',
+    icon: 'fingerprint',
   },
   {
-    title: "Pitches",
-    icon: "lightbulb-outline"
+    title: 'Pitches',
+    icon: 'lightbulb-outline',
   },
   {
-    title: "Updates",
-    icon: "track-changes"
-  }
+    title: 'Updates',
+    icon: 'track-changes',
+  },
 ];
 
 const list2 = [
   {
-    name: "Amy Farha",
-    avatar_url: "https://uifaces.co/our-content/donated/XdLjsJX_.jpg",
-    subtitle: "Vice President",
-    linearGradientColors: ["#FF9800", "#F44336"]
+    name: 'Amy Farha',
+    avatar_url: 'https://uifaces.co/our-content/donated/XdLjsJX_.jpg',
+    subtitle: 'Vice President',
+    linearGradientColors: ['#FF9800', '#F44336'],
   },
   {
-    name: "Chris Jackson",
-    avatar_url: "https://uifaces.co/our-content/donated/KtCFjlD4.jpg",
-    subtitle: "Vice Chairman",
-    linearGradientColors: ["#3F51B5", "#2196F3"]
+    name: 'Chris Jackson',
+    avatar_url: 'https://uifaces.co/our-content/donated/KtCFjlD4.jpg',
+    subtitle: 'Vice Chairman',
+    linearGradientColors: ['#3F51B5', '#2196F3'],
   },
   {
-    name: "Amanda Martin",
+    name: 'Amanda Martin',
     avatar_url:
-      "https://images.unsplash.com/photo-1498529605908-f357a9af7bf5?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=047fade70e80ebb22ac8f09c04872c40",
-    subtitle: "CEO",
-    linearGradientColors: ["#FFD600", "#FF9800"]
+      'https://images.unsplash.com/photo-1498529605908-f357a9af7bf5?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=047fade70e80ebb22ac8f09c04872c40',
+    subtitle: 'CEO',
+    linearGradientColors: ['#FFD600', '#FF9800'],
   },
   {
-    name: "Christy Thomas",
-    avatar_url: "https://randomuser.me/api/portraits/women/48.jpg",
-    subtitle: "Lead Developer",
-    linearGradientColors: ["#4CAF50", "#8BC34A"]
+    name: 'Christy Thomas',
+    avatar_url: 'https://randomuser.me/api/portraits/women/48.jpg',
+    subtitle: 'Lead Developer',
+    linearGradientColors: ['#4CAF50', '#8BC34A'],
   },
   {
-    name: "Melissa Jones",
+    name: 'Melissa Jones',
     avatar_url:
-      "https://images-na.ssl-images-amazon.com/images/M/MV5BMTQwMDQ0NDk1OV5BMl5BanBnXkFtZTcwNDcxOTExNg@@._V1_UY256_CR2,0,172,256_AL_.jpg",
-    subtitle: "CTO",
-    linearGradientColors: ["#F44336", "#E91E63"]
-  }
+      'https://images-na.ssl-images-amazon.com/images/M/MV5BMTQwMDQ0NDk1OV5BMl5BanBnXkFtZTcwNDcxOTExNg@@._V1_UY256_CR2,0,172,256_AL_.jpg',
+    subtitle: 'CTO',
+    linearGradientColors: ['#F44336', '#E91E63'],
+  },
 ];
 
 const Lists2 = () => {
@@ -96,23 +96,23 @@ const Lists2 = () => {
                   linearGradientProps={{
                     colors: l.linearGradientColors,
                     start: [1, 0],
-                    end: [0.2, 0]
+                    end: [0.2, 0],
                   }}
                   ViewComponent={LinearGradient}
                   containerStyle={{
                     marginHorizontal: 16,
                     marginVertical: 8,
-                    borderRadius: 8
+                    borderRadius: 8,
                   }}
                 >
                   <Avatar rounded source={{ uri: l.avatar_url }} />
                   <ListItem.Content>
                     <ListItem.Title
-                      style={{ color: "white", fontWeight: "bold" }}
+                      style={{ color: 'white', fontWeight: 'bold' }}
                     >
                       {l.name}
                     </ListItem.Title>
-                    <ListItem.Subtitle style={[{ color: "white" }]}>
+                    <ListItem.Subtitle style={[{ color: 'white' }]}>
                       {l.subtitle}
                     </ListItem.Subtitle>
                   </ListItem.Content>
@@ -138,13 +138,13 @@ const Lists2 = () => {
                 <ListItem key={i} bottomDivider>
                   <Icon name="user-circle-o" type="font-awesome" color="blue" />
                   <ListItem.Content>
-                    <ListItem.Title style={{ color: "red" }}>
+                    <ListItem.Title style={{ color: 'red' }}>
                       {l.name}
                     </ListItem.Title>
                     <ListItem.Subtitle>{l.subtitle}</ListItem.Subtitle>
                   </ListItem.Content>
                   <ListItem.Content right>
-                    <ListItem.Title right style={{ color: "green" }}>
+                    <ListItem.Title right style={{ color: 'green' }}>
                       11:00 am
                     </ListItem.Title>
                     <ListItem.Subtitle right>12:00 am</ListItem.Subtitle>
@@ -166,7 +166,7 @@ const Lists2 = () => {
                 </ListItem.Content>
                 <Switch
                   value={switch1}
-                  onValueChange={value => setSwitch1(value)}
+                  onValueChange={(value) => setSwitch1(value)}
                 />
               </ListItem>
               <ListItem bottomDivider>
@@ -174,9 +174,9 @@ const Lists2 = () => {
                   <ListItem.Title>Choose 🤯</ListItem.Title>
                 </ListItem.Content>
                 <ListItem.ButtonGroup
-                  buttons={["Flower", "Coco"]}
+                  buttons={['Flower', 'Coco']}
                   selectedIndex={selectedButtonIndex}
-                  onPress={index => setSelectedButtonIndex(index)}
+                  onPress={(index) => setSelectedButtonIndex(index)}
                 />
               </ListItem>
               <ListItem bottomDivider>
@@ -203,14 +203,14 @@ const Lists2 = () => {
             </View>
             <View style={styles.list}>
               <ListItem>
-                <Avatar source={require("../../assets/images/avatar1.jpg")} />
+                <Avatar source={require('../../assets/images/avatar1.jpg')} />
                 <ListItem.Content>
                   <ListItem.Title>
                     Limited supply! Its like digital gold!
                   </ListItem.Title>
                   <View style={styles.subtitleView}>
                     <Image
-                      source={require("../images/rating.png")}
+                      source={require('../images/rating.png')}
                       style={styles.ratingImage}
                     />
                     <Text style={styles.ratingText}>5 months ago</Text>
@@ -221,7 +221,7 @@ const Lists2 = () => {
           </>
         }
         data={list1}
-        keyExtractor={a => a.title}
+        keyExtractor={(a) => a.title}
         renderItem={renderRow}
       />
     </>
@@ -230,26 +230,26 @@ const Lists2 = () => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
   },
   list: {
     marginTop: 20,
     borderTopWidth: 1,
-    borderColor: colors.greyOutline
+    borderColor: colors.greyOutline,
   },
   subtitleView: {
-    flexDirection: "row",
+    flexDirection: 'row',
     paddingLeft: 10,
-    paddingTop: 5
+    paddingTop: 5,
   },
   ratingImage: {
     height: 19.21,
-    width: 100
+    width: 100,
   },
   ratingText: {
     paddingLeft: 10,
-    color: "grey"
-  }
+    color: 'grey',
+  },
 });
 
 export default Lists2;

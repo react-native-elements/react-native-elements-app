@@ -121,7 +121,7 @@ const Settings = props => {
   const renderItem = ({
     item: { title, backgroundColor, icon, rightTitle, hideChevron, checkbox }
   }) => (
-    <ListItem containerStyle={{ paddingVertical: 8 }} key={title} ð>
+    <ListItem containerStyle={{ paddingVertical: 8 }} key={title}>
       <Icon
         type="ionicon"
         name={icon}
@@ -172,7 +172,6 @@ const Settings = props => {
       <SectionList
         keyExtractor={keyExtractor}
         ListHeaderComponent={ListHeaderComponent}
-        contentContainerStyle={styles.containerStyle}
         sections={sections}
         renderItem={renderItem}
         renderSectionHeader={renderSectionHeader}

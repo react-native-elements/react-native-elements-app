@@ -192,7 +192,11 @@ const LoginScreen3 = (props) => {
             errorMessage={
               validConfirmationPassword
                 ? null
+<<<<<<< HEAD
                 : 'The password fields are not identics'
+=======
+                : "The password fields are not identical"
+>>>>>>> 1335d3a8e6ee87aa50b7340956cbeb593d005439
             }
             returnKeyType="go"
             onSubmitEditing={() => {

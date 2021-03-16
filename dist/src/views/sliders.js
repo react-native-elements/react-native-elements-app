@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Animated, StyleSheet } from "react-native";
+import { View, StyleSheet } from "react-native";
 import { Slider, Text, Icon } from "react-native-elements";
 import { Header, SubHeader } from "./header";
 const Sliders = () => {
@@ -16,11 +16,8 @@ const Sliders = () => {
       </View>
       <SubHeader title="Slider Vertical"/>
       <View style={styles.verticalContent}>
-        <Slider value={vertValue} onValueChange={setVertValue} maximumValue={50} minimumValue={20} step={1} orientation="vertical" thumbStyle={{ height: 40, width: 40, backgroundColor: "transparent" }} thumbProps={{
-            Component: Animated.Image,
-            source: {
-                uri: "https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg"
-            }
+        <Slider value={vertValue} onValueChange={setVertValue} maximumValue={50} minimumValue={20} step={1} orientation="vertical" thumbStyle={{ height: 20, width: 16, backgroundColor: "transparent" }} thumbProps={{
+            children: (<Icon name="heartbeat" type="font-awesome" size={20} reverse containerStyle={{ bottom: 20, right: 20 }} color="#f50"/>)
         }}/>
       </View>
       <Text>Value: {vertValue}</Text>

@@ -111,7 +111,7 @@ const LoginScreen3 = (props) => {
         }}/>
           <FormInput refInput={(input) => (confirmationPasswordInput = input)} icon="lock" value={confirmationPassword} onChangeText={(text) => setConfirmationPassword(text)} placeholder="Confirm Password" secureTextEntry errorMessage={validConfirmationPassword
             ? null
-            : 'The password fields are not identics'} returnKeyType="go" onSubmitEditing={() => {
+            : 'The password fields are not identical'} returnKeyType="go" onSubmitEditing={() => {
             validateConfirmationPassword();
             signup();
         }}/>

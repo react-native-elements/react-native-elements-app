@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import React, { useState } from "react";
 import { View, ScrollView, StyleSheet } from "react-native";
 import { Button, ButtonGroup, withTheme, Text } from "react-native-elements";

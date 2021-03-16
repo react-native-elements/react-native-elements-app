@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 export const cacheImages = () => [];
 
 let cachedFonts = {};

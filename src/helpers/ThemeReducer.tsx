@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import React from "react";
 
 export const initialState = { themeMode: "light" };

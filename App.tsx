@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import React, { useState, useReducer, useEffect } from "react";
 import { ThemeProvider } from "react-native-elements";
 import { useColorScheme } from "react-native-appearance";

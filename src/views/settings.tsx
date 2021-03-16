@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import React, { useState } from "react";
 import { View, StyleSheet, SectionList, Switch } from "react-native";
 import { ListItem, Divider, SearchBar, Icon } from "react-native-elements";

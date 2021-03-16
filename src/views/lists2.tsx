@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import React, { useState } from "react";
 import { View, StyleSheet, Image, FlatList, Switch } from "react-native";
 import { Text, ListItem, Avatar, Icon, Badge } from "react-native-elements";

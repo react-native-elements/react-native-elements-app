@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import React from "react";
 import { ScrollView, StyleSheet, Platform } from "react-native";
 import { Text } from "react-native-elements";

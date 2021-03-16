@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import React, { useContext } from "react";
 import { View, Image, SafeAreaView, Switch } from "react-native";
 import {

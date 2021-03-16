@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import React, { useState } from "react";
 import { Header } from "./header";
 import { BottomSheet, Button, ListItem } from "react-native-elements";

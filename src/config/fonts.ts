@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 export default {
   ios: {
     regular: "System",

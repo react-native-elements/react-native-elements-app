@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import { Image } from "react-native";
 import { loadAsync } from "expo-font";
 import { Asset } from "expo-asset";

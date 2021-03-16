@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import React, { useState } from "react";
 import { View, Animated, StyleSheet } from "react-native";
 import { Slider, Text, Icon } from "react-native-elements";

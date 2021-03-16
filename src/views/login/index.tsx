@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import React from "react";
 import { StyleSheet, View, ScrollView } from "react-native";
 import { Header } from "../header";

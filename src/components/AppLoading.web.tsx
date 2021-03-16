@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import React, { useEffect } from "react";
 import { View, StyleSheet, ActivityIndicator } from "react-native";
 

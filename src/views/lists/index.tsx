@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import React from "react";
 import { Header } from "../header";
 import ListContent from "./content";

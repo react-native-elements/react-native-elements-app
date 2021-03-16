@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 export default {
   primary: "#397af8",
   primary1: "#4d86f7",

@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import React from "react";
 import { StyleSheet, Text, View, Platform, ScrollView } from "react-native";
 import { Rating, AirbnbRating } from "react-native-ratings";

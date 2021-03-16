@@ -5,6 +5,7 @@ web-build/
 web-report/
 
 node_modules/*
+dist/*
 .expo/*
 npm-debug.*
 *.log

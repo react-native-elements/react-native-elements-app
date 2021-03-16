@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Header } from './header';
 import { BottomSheet, Button, ListItem } from 'react-native-elements';
+import { StyleSheet } from 'react-native';
 
 export interface Props {}
 
@@ -20,7 +21,11 @@ const BottomSheetComponent: React.FC<Props> = () => {
   return (
     <>
       <Header title="BottomSheet" />
-      <Button title="Open Buttom Sheet" onPress={() => setIsVisible(true)} />
+      <Button
+        title="Open Buttom Sheet"
+        onPress={() => setIsVisible(true)}
+        buttonStyle={styles.button}
+      />
       <BottomSheet modalProps={{}} isVisible={isVisible}>
         {list.map((l, i) => (
           <ListItem
@@ -37,5 +42,11 @@ const BottomSheetComponent: React.FC<Props> = () => {
     </>
   );
 };
+
+const styles = StyleSheet.create({
+  button: {
+    margin: 10,
+  },
+});
 
 export default BottomSheetComponent;

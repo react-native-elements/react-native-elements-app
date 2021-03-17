@@ -88,7 +88,13 @@ const Cards: React.FunctionComponent<CardsComponentsProps> = () => {
               structure than actual design.
             </Text>
             <Button
-              icon={<Icon name="code" color="#ffffff" />}
+              icon={
+                <Icon
+                  name="code"
+                  color="#ffffff"
+                  iconStyle={{ marginRight: 10 }}
+                />
+              }
               buttonStyle={{
                 borderRadius: 0,
                 marginLeft: 0,

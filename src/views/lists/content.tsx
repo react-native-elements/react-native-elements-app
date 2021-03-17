@@ -174,7 +174,7 @@ const ListContent = (props) => {
 
   return (
     <>
-      <ScrollView style={{ marginTop: 15 }}>
+      <ScrollView>
         <View
           style={{
             flex: 1,
@@ -284,7 +284,7 @@ const ListContent = (props) => {
             </View>
           </View>
         </View>
-        {renderListCards()}
+        <View style={{ marginBottom: 10 }}>{renderListCards()}</View>
       </ScrollView>
     </>
   );

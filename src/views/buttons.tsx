@@ -94,7 +94,7 @@ const Buttons: React.FunctionComponent<ButtonsComponentProps> = () => {
               title="SIGN UP"
               loading={true}
               loadingProps={{
-                size: 'large',
+                size: 'small',
                 color: 'rgba(111, 202, 186, 1)',
               }}
               titleStyle={{ fontWeight: '700' }}
@@ -105,7 +105,7 @@ const Buttons: React.FunctionComponent<ButtonsComponentProps> = () => {
                 borderRadius: 5,
                 paddingVertical: 10,
               }}
-              containerStyle={{ marginTop: 20, width: 300, height: 45 }}
+              containerStyle={{ width: 300 }}
             />
             <View style={styles.buttonsContainer}>
               <Button

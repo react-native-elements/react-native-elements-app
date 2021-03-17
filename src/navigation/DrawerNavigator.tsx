@@ -1,11 +1,12 @@
 import React, { useContext } from 'react';
-import { View, Image, SafeAreaView, Switch } from 'react-native';
+import { View, Image, Switch } from 'react-native';
 import {
   DrawerContentScrollView,
   DrawerItemList,
 } from '@react-navigation/drawer';
 import { ThemeContext, Text, Divider } from 'react-native-elements';
 import { ThemeReducerContext } from '../helpers/ThemeReducer';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 function CustomContentComponent(props) {
   const { ThemeState, dispatch } = useContext(ThemeReducerContext);
@@ -14,7 +15,7 @@ function CustomContentComponent(props) {
   return (
     <SafeAreaView
       style={{ flex: 1, height: '100%', backgroundColor: theme.colors.grey5 }}
-      forceInset={{ top: 'always', horizontal: 'never' }}
+      edges={['right', 'left', 'bottom']}
     >
       <View
         style={{

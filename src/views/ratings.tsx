@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, Platform, ScrollView } from 'react-native';
-import { Rating, AirbnbRating } from 'react-native-ratings';
+import { Rating, AirbnbRating, RatingProps } from 'react-native-ratings';
 import { Header } from './header';
 
 const WATER_IMAGE = require('../images/water.png');
@@ -12,6 +12,7 @@ const Ratings: React.FunctionComponent<RatingsComponentProps> = () => {
     console.log('Rating is: ' + rating);
   };
 
+  const ratingProps = {};
   return (
     <View style={styles.container}>
       <Header title="Ratings" />
@@ -62,6 +63,7 @@ const Ratings: React.FunctionComponent<RatingsComponentProps> = () => {
             showRating
             imageSize={40}
             onFinishRating={ratingCompleted}
+            {...(ratingProps as RatingProps)}
             style={{ paddingVertical: 10 }}
           />
           <Rating

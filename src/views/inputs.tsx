@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, createRef } from 'react';
 import {
   View,
   ScrollView,
@@ -14,6 +14,7 @@ import {
   Icon,
   Button,
   ThemeProvider,
+  InputProps,
 } from 'react-native-elements';
 import { Header } from './header';
 
@@ -34,14 +35,17 @@ const SearchBarCustom = (props) => {
 type InputsComponentProps = {};
 
 const Inputs: React.FunctionComponent<InputsComponentProps> = () => {
-  let email2Input = useRef(null);
-  let passwordInput = useRef(null);
-  let password2Input = useRef(null);
-  let shakeInput = useRef(null);
-  let confirmPassword2Input = useRef(null);
+  let email2Input = createRef();
+  let passwordInput = createRef();
+  let password2Input = createRef();
+  let shakeInput = createRef();
+  let confirmPassword2Input = createRef();
+
   const InputFieldsStyle = {
     borderWidth: 0,
   };
+
+  const inputProps = {};
   return (
     <KeyboardAvoidingView
       style={styles.keyboardAvoidingView}
@@ -83,6 +87,7 @@ const Inputs: React.FunctionComponent<InputsComponentProps> = () => {
         </View>
         <View style={{ alignItems: 'center', marginBottom: 16 }}>
           <Input
+            {...(inputProps as InputProps)}
             containerStyle={{ width: '90%' }}
             placeholder="Input with label"
             label="LABEL"
@@ -90,11 +95,13 @@ const Inputs: React.FunctionComponent<InputsComponentProps> = () => {
             style={InputFieldsStyle}
           />
           <Input
+            {...(inputProps as InputProps)}
             containerStyle={styles.inputContainerStyle}
             placeholder="Simple input"
             style={InputFieldsStyle}
           />
           <Input
+            {...(inputProps as InputProps)}
             leftIcon={
               <Icon
                 name="map-marker"
@@ -109,6 +116,7 @@ const Inputs: React.FunctionComponent<InputsComponentProps> = () => {
             style={InputFieldsStyle}
           />
           <Input
+            {...(inputProps as InputProps)}
             rightIcon={
               <Icon
                 name="chevron-right"
@@ -122,12 +130,14 @@ const Inputs: React.FunctionComponent<InputsComponentProps> = () => {
             style={InputFieldsStyle}
           />
           <Input
+            {...(inputProps as InputProps)}
             containerStyle={styles.inputContainerStyle}
             placeholder="Input with error message"
             errorMessage="Invalid input"
             style={InputFieldsStyle}
           />
           <Input
+            {...(inputProps as InputProps)}
             containerStyle={[styles.inputContainerStyle]}
             placeholder="Shake input"
             style={InputFieldsStyle}
@@ -135,7 +145,7 @@ const Inputs: React.FunctionComponent<InputsComponentProps> = () => {
             rightIcon={
               <Button
                 title="Shake"
-                onPress={() => shakeInput && shakeInput.shake()}
+                onPress={() => shakeInput && shakeInput.current.shake()}
               />
             }
             errorMessage="Shake me on error !"
@@ -163,6 +173,7 @@ const Inputs: React.FunctionComponent<InputsComponentProps> = () => {
             <View>
               <View style={styles.triangleLeft} />
               <Input
+                {...(inputProps as InputProps)}
                 inputContainerStyle={{
                   borderWidth: 1,
                   borderColor: 'white',
@@ -192,7 +203,7 @@ const Inputs: React.FunctionComponent<InputsComponentProps> = () => {
                 keyboardType="email-address"
                 returnKeyType="next"
                 onSubmitEditing={() => {
-                  passwordInput.focus();
+                  passwordInput.current.focus();
                 }}
                 blurOnSubmit={false}
               />
@@ -279,6 +290,7 @@ const Inputs: React.FunctionComponent<InputsComponentProps> = () => {
                 Sign up
               </Text>
               <Input
+                {...(inputProps as InputProps)}
                 leftIcon={
                   <Icon
                     name="user"
@@ -295,10 +307,11 @@ const Inputs: React.FunctionComponent<InputsComponentProps> = () => {
                 style={InputFieldsStyle}
                 returnKeyType="next"
                 onSubmitEditing={() => {
-                  email2Input.focus();
+                  email2Input.current.focus();
                 }}
               />
               <Input
+                {...(inputProps as InputProps)}
                 leftIcon={
                   <Icon
                     name="email-outline"
@@ -316,10 +329,11 @@ const Inputs: React.FunctionComponent<InputsComponentProps> = () => {
                 returnKeyType="next"
                 ref={(input) => (email2Input = input)}
                 onSubmitEditing={() => {
-                  password2Input.focus();
+                  password2Input.current.focus();
                 }}
               />
               <Input
+                {...(inputProps as InputProps)}
                 leftIcon={
                   <Icon
                     name="lock"
@@ -338,10 +352,11 @@ const Inputs: React.FunctionComponent<InputsComponentProps> = () => {
                 returnKeyType="next"
                 ref={(input) => (password2Input = input)}
                 onSubmitEditing={() => {
-                  confirmPassword2Input.focus();
+                  confirmPassword2Input.current.focus();
                 }}
               />
               <Input
+                {...(inputProps as InputProps)}
                 leftIcon={
                   <Icon
                     name="lock"

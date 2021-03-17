@@ -1,14 +1,22 @@
 import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { DrawerNavigationProp } from '@react-navigation/drawer';
 import { Header as HeaderRNE, HeaderProps } from 'react-native-elements';
 
 type HeaderComponentProps = {
   title: string;
 };
 
+type ParamList = {
+  Detail: {
+    openDrawer: void;
+  };
+};
+
 const Header: React.FunctionComponent<HeaderComponentProps> = (props) => {
-  const navigation = useNavigation();
+  const navigation = useNavigation<DrawerNavigationProp<ParamList, 'Detail'>>();
+
   return (
     <HeaderRNE
       leftComponent={{

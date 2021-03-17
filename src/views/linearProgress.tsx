@@ -1,9 +1,13 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import { Header } from './header';
-import { Button, LinearProgress } from 'react-native-elements';
+import {
+  Button,
+  LinearProgress,
+  LinearProgressProps,
+} from 'react-native-elements';
 
-export default () => {
+const LinearProgressAPI: React.FunctionComponent = () => {
   const [progress, setProgress] = React.useState<number>(0);
 
   React.useEffect(() => {
@@ -58,3 +62,5 @@ export default () => {
     </View>
   );
 };
+
+export default LinearProgressAPI;

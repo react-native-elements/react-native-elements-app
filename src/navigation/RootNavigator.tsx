@@ -10,6 +10,7 @@ import Buttons from '../views/buttons';
 import Lists from '../views/lists';
 import Lists2 from '../views/lists2';
 import Inputs from '../views/inputs';
+import LinearProgress from '../views/linearProgress';
 import Login from '../views/login';
 import Pricing from '../views/pricing';
 import Ratings from '../views/ratings';
@@ -48,6 +49,7 @@ function RootNavigator() {
         <Drawer.Screen name="Inputs" component={Inputs} />
         <Drawer.Screen name="Lists" component={Lists} />
         <Drawer.Screen name="Lists2" component={Lists2} />
+        <Drawer.Screen name="LinearProgress" component={LinearProgress} />
         <Drawer.Screen name="Cards" component={Cards} />
         <Drawer.Screen name="Tiles" component={Tiles} />
         <Drawer.Screen name="Pricing" component={Pricing} />

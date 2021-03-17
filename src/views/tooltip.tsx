@@ -17,6 +17,7 @@ const TooltipComponent = () => {
           </Tooltip>
           <Tooltip
             popover={<Text>Tooltip info goes here</Text>}
+            containerStyle={{ width: 150, height: 60 }}
             backgroundColor={colors.primary}
           >
             <Text>Press me</Text>
@@ -28,27 +29,28 @@ const TooltipComponent = () => {
             popover={
               <Text>Tooltip info goes here too. Find tooltip everywhere</Text>
             }
-            containerStyle={{ width: 170, height: 60 }}
+            containerStyle={{ width: 200, height: 60 }}
           >
             <Text>Press me</Text>
           </Tooltip>
           <Tooltip
             pointerColor={colors.primary}
             popover={<Text>Tooltip info goes here too.</Text>}
+            containerStyle={{ width: 150, height: 60 }}
           >
             <Text>Huge</Text>
           </Tooltip>
         </View>
         <View style={styles.view}>
-          <Tooltip width={150} popover={<Text>Tooltip info goes here</Text>}>
+          <Tooltip width={200} popover={<Text>Tooltip info goes here</Text>}>
             <Text>More attention</Text>
           </Tooltip>
         </View>
         <View style={styles.view}>
-          <Tooltip popover={<Text>Tooltip info goes here</Text>}>
+          <Tooltip width={200} popover={<Text>Tooltip info goes here</Text>}>
             <Text>I'm Different</Text>
           </Tooltip>
-          <Tooltip popover={<Text>Tooltip info goes here</Text>}>
+          <Tooltip width={200} popover={<Text>Tooltip info goes here</Text>}>
             <Text>Press me</Text>
           </Tooltip>
         </View>

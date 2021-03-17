@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
 import { View, StyleSheet, SectionList, Switch } from 'react-native';
-import { ListItem, Divider, SearchBar, Icon } from 'react-native-elements';
+import {
+  ListItem,
+  Divider,
+  SearchBar,
+  Icon,
+  SearchBarProps,
+} from 'react-native-elements';
 import { Header } from './header';
 
 const ORANGE = '#FF9500';
@@ -111,12 +117,16 @@ const sections = [
   { data: [] },
 ];
 
-const Settings = () => {
+type SetttingsComponentProps = {};
+
+const Settings: React.FunctionComponent<SetttingsComponentProps> = () => {
   const [switched, setSwitched] = useState(false);
 
   const onSwitchEventHandler = (value) => {
     setSwitched(value);
   };
+
+  const searchbarProps = {};
 
   const renderItem = ({
     item: { title, backgroundColor, icon, rightTitle, hideChevron, checkbox },
@@ -159,7 +169,11 @@ const Settings = () => {
 
   const ListHeaderComponent = () => (
     <View>
-      <SearchBar platform="ios" placeholder="Search" />
+      <SearchBar
+        {...(searchbarProps as SearchBarProps)}
+        platform="ios"
+        placeholder="Search"
+      />
       <Divider />
     </View>
   );

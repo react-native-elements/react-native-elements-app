@@ -4,7 +4,9 @@ import { Button, ButtonGroup, withTheme, Text } from 'react-native-elements';
 import { Header, SubHeader } from './header';
 import { LinearGradient } from '../components/LinearGradient';
 
-const Buttons = () => {
+type ButtonsComponentProps = {};
+
+const Buttons: React.FunctionComponent<ButtonsComponentProps> = () => {
   const [selectedIndex, setSelectedIndex] = useState<number>(0);
   const [selectedIndexes, setSelectedIndexes] = useState<number[]>([0, 2, 3]);
 
@@ -243,7 +245,7 @@ const Buttons = () => {
   );
 };
 
-function CustomTitle() {
+const CustomTitle = () => {
   return (
     <View style={{ flexDirection: 'column' }}>
       <Text style={{ fontWeight: 'bold', fontSize: 18 }}>John Doe</Text>
@@ -252,7 +254,7 @@ function CustomTitle() {
       </Text>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   contentView: {
@@ -266,4 +268,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default withTheme(Buttons);
+export default withTheme(Buttons, '');

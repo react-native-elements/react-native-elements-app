@@ -3,7 +3,9 @@ import { View, ScrollView } from 'react-native';
 import { Text, Tile } from 'react-native-elements';
 import { Header } from './header';
 
-const Tiles = () => {
+type TilesComponentProps = {};
+
+const Tiles: React.FunctionComponent<TilesComponentProps> = () => {
   return (
     <>
       <Header title="Tiles" />

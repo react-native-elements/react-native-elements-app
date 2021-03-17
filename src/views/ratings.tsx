@@ -5,7 +5,9 @@ import { Header } from './header';
 
 const WATER_IMAGE = require('../images/water.png');
 
-function Ratings() {
+type RatingsComponentProps = {};
+
+const Ratings: React.FunctionComponent<RatingsComponentProps> = () => {
   const ratingCompleted = (rating) => {
     console.log('Rating is: ' + rating);
   };
@@ -96,7 +98,7 @@ function Ratings() {
       </ScrollView>
     </View>
   );
-}
+};
 /*
 Ratings.navigationOptions = {
   title: 'Ratings Component',

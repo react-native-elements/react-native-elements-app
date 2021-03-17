@@ -1,21 +1,29 @@
 import React from 'react';
-import { Tooltip, Text } from 'react-native-elements';
+import { Tooltip, Text, TooltipProps } from 'react-native-elements';
 import { Header } from './header';
 import { View, StyleSheet, Dimensions } from 'react-native';
 import colors from '../config/colors';
 
 const { height } = Dimensions.get('window');
 
-const TooltipComponent = () => {
+type ToolTipComponentProps = {};
+
+const TooltipComponent: React.FunctionComponent<ToolTipComponentProps> = () => {
+  const toolProps = {};
   return (
     <>
       <Header title="Tooltip" />
       <View style={{ marginVertical: height / 8 }}>
         <View style={styles.view}>
-          <Tooltip popover={<Text>Hey there!</Text>} withPointer={false}>
+          <Tooltip
+            {...(toolProps as TooltipProps)}
+            popover={<Text>Hey there!</Text>}
+            withPointer={false}
+          >
             <Text>Without caret</Text>
           </Tooltip>
           <Tooltip
+            {...(toolProps as TooltipProps)}
             popover={<Text>Tooltip info goes here</Text>}
             backgroundColor={colors.primary}
           >
@@ -24,6 +32,7 @@ const TooltipComponent = () => {
         </View>
         <View style={styles.view}>
           <Tooltip
+            {...(toolProps as TooltipProps)}
             backgroundColor={colors.secondary}
             popover={
               <Text>Tooltip info goes here too. Find tooltip everywhere</Text>
@@ -33,6 +42,7 @@ const TooltipComponent = () => {
             <Text>Press me</Text>
           </Tooltip>
           <Tooltip
+            {...(toolProps as TooltipProps)}
             pointerColor={colors.primary}
             popover={<Text>Tooltip info goes here too.</Text>}
           >
@@ -40,15 +50,25 @@ const TooltipComponent = () => {
           </Tooltip>
         </View>
         <View style={styles.view}>
-          <Tooltip width={150} popover={<Text>Tooltip info goes here</Text>}>
+          <Tooltip
+            {...(toolProps as TooltipProps)}
+            width={150}
+            popover={<Text>Tooltip info goes here</Text>}
+          >
             <Text>More attention</Text>
           </Tooltip>
         </View>
         <View style={styles.view}>
-          <Tooltip popover={<Text>Tooltip info goes here</Text>}>
+          <Tooltip
+            {...(toolProps as TooltipProps)}
+            popover={<Text>Tooltip info goes here</Text>}
+          >
             <Text>I'm Different</Text>
           </Tooltip>
-          <Tooltip popover={<Text>Tooltip info goes here</Text>}>
+          <Tooltip
+            {...(toolProps as TooltipProps)}
+            popover={<Text>Tooltip info goes here</Text>}
+          >
             <Text>Press me</Text>
           </Tooltip>
         </View>

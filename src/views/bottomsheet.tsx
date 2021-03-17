@@ -3,9 +3,9 @@ import { Header } from './header';
 import { BottomSheet, Button, ListItem } from 'react-native-elements';
 import { StyleSheet } from 'react-native';
 
-export interface Props {}
+type BottomSheetComponentProps = {};
 
-const BottomSheetComponent: React.FC<Props> = () => {
+const BottomSheetComponent: React.FunctionComponent<BottomSheetComponentProps> = () => {
   const [isVisible, setIsVisible] = useState(false);
   const list = [
     { title: 'List Item 1' },
@@ -22,7 +22,7 @@ const BottomSheetComponent: React.FC<Props> = () => {
     <>
       <Header title="BottomSheet" />
       <Button
-        title="Open Buttom Sheet"
+        title="Open Bottom Sheet"
         onPress={() => setIsVisible(true)}
         buttonStyle={styles.button}
       />

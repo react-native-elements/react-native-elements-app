@@ -31,7 +31,9 @@ const SearchBarCustom = (props) => {
   return <SearchBar value={value} onChangeText={setValue} {...props} />;
 };
 
-const Inputs = () => {
+type InputsComponentProps = {};
+
+const Inputs: React.FunctionComponent<InputsComponentProps> = () => {
   let email2Input = useRef(null);
   let passwordInput = useRef(null);
   let password2Input = useRef(null);
@@ -158,7 +160,7 @@ const Inputs = () => {
             >
               Login
             </Text>
-            <View style={styles.overlay}>
+            <View>
               <View style={styles.triangleLeft} />
               <Input
                 inputContainerStyle={{
@@ -196,7 +198,7 @@ const Inputs = () => {
               />
               <View style={styles.triangleRight} />
             </View>
-            <View style={[styles.overlay, { marginBottom: 30, marginTop: 1 }]}>
+            <View style={[{ marginBottom: 30, marginTop: 1 }]}>
               <View style={styles.triangleLeft} />
               <Input
                 inputContainerStyle={{

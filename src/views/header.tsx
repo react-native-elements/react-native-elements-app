@@ -1,9 +1,13 @@
 import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { Header as HeaderRNE } from 'react-native-elements';
+import { Header as HeaderRNE, HeaderProps } from 'react-native-elements';
 
-const Header = (props) => {
+type HeaderComponentProps = {
+  title: string;
+};
+
+const Header: React.FunctionComponent<HeaderComponentProps> = (props) => {
   const navigation = useNavigation();
   return (
     <HeaderRNE
@@ -16,6 +20,7 @@ const Header = (props) => {
     />
   );
 };
+
 type SubHeaderProps = {
   title: string;
 };

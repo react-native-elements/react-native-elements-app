@@ -4,7 +4,9 @@ import { Header } from '../header';
 import LoginScreen2 from './screen2';
 import LoginScreen3 from './screen3';
 
-const Login = () => {
+type LoginComponentProps = {};
+
+const Login: React.FunctionComponent<LoginComponentProps> = () => {
   return (
     <>
       <Header title="Login Example" />

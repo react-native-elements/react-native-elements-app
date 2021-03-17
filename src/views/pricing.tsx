@@ -4,7 +4,9 @@ import colors from '../config/colors';
 import { Header } from './header';
 import { PricingCard } from 'react-native-elements';
 
-const Pricing = () => {
+type PricingCardComponentProps = {};
+
+const Pricing: React.FunctionComponent<PricingCardComponentProps> = () => {
   return (
     <>
       <Header title="Pricing" />

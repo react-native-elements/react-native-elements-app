@@ -32,7 +32,9 @@ const users = [
   },
 ];
 
-const Cards = () => {
+type CardsComponentsProps = {};
+
+const Cards: React.FunctionComponent<CardsComponentsProps> = () => {
   return (
     <>
       <Header title="Cards" />

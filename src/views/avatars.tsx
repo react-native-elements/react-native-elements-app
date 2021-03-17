@@ -53,9 +53,9 @@ const theme2 = {
   },
 };
 
-export interface Props {}
+type AvatarComponentProps = {};
 
-const Avatars: React.FC<Props> = () => {
+const Avatars: React.FunctionComponent<AvatarComponentProps> = () => {
   const [theme, setTheme] = useState(theme1);
 
   return (

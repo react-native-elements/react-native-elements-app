@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import { CheckBox, Icon } from 'react-native-elements';
 import { Header } from './header';
 
-const CheckboxComponent = () => {
+type CheckboxComponentProps = {};
+
+const CheckboxComponent: React.FunctionComponent<CheckboxComponentProps> = () => {
   const [checked, setChecked] = useState(false);
   const onCheckHandler = () => {
     setChecked(!checked);
@@ -30,7 +32,7 @@ const CheckboxComponent = () => {
 
       <CheckBox
         center
-        title="Click Here to Remove This Item"
+        title={`Click Here to ${checked ? 'Remove' : 'Add'} This Item`}
         iconRight
         iconType="material"
         checkedIcon="clear"

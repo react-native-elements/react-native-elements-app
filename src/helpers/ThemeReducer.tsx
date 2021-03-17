@@ -11,4 +11,5 @@ export function ThemeReducer(state, action) {
   }
 }
 
-export const ThemeReducerContext = React.createContext();
+// added null in the create context so that tsc issues are fixed. Refer https://stackoverflow.com/questions/54577865/react-createcontext-issue-in-typescript/54667477
+export const ThemeReducerContext = React.createContext(null);

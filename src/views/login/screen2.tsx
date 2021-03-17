@@ -25,7 +25,7 @@ const USER_HP = require('../../../assets/images/user-hp.png');
 const SCREEN_WIDTH = Dimensions.get('window').width;
 const SCREEN_HEIGHT = Dimensions.get('window').height;
 
-const LoginScreen3 = (props) => {
+const LoginScreen3 = () => {
   const [isLoading, setLoading] = useState<boolean>(false);
   const [selectedType, setSelectedType] = useState<string>(null);
   const [username, setUsername] = useState<string>('');

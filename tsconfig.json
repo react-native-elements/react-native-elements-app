@@ -46,6 +46,6 @@
   },
   "include": ["src/**/*.tsx", "src/**/*.ts", "App.tsx"],
   "exclude": [
-    ".ci", "website", "node_modules", "babel.config.js", "jest.config.js", "src/index.d.ts", "__tests__"
+    ".ci", "web-build", "node_modules", "babel.config.js", "jest.config.js", "src/index.d.ts", "__tests__"
   ]
 }

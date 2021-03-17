@@ -5,7 +5,7 @@ import { Header } from './header';
 
 const WATER_IMAGE = require('../images/water.png');
 
-function Ratings(props) {
+function Ratings() {
   const ratingCompleted = (rating) => {
     console.log('Rating is: ' + rating);
   };

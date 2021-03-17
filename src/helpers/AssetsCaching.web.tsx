@@ -4,8 +4,8 @@ let cachedFonts = {};
 
 const cacheFont = (name, link) => {
   const styleBody = `@font-face { src: url(${link}); font-family: ${name}; }`;
-  const style:HTMLStyleElement = document.createElement("style");
-  style.type = "text/css";
+  const style: HTMLStyleElement = document.createElement('style');
+  style.type = 'text/css';
   if (style.style) {
     style.style.cssText = styleBody;
   } else {
@@ -15,10 +15,10 @@ const cacheFont = (name, link) => {
   cachedFonts[name] = link;
 };
 
-export const cacheFonts = fonts => {
+export const cacheFonts = (fonts) => {
   let jobs = [];
-  fonts.forEach(a => {
-    const fontName:string[] = Object.keys(a);
+  fonts.forEach((a) => {
+    const fontName: string[] = Object.keys(a);
     if (!cachedFonts[fontName]) {
       jobs.push(cacheFont(fontName, a[fontName]));
     }

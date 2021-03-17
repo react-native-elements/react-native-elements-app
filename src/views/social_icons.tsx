@@ -108,7 +108,11 @@ const SocialIcons = () => {
             key={chunkIndex}
           >
             {chunk.map((l, i) => (
-              <SocialIcon type={l.type} key={`${chunkIndex}-${i}`} />
+              <SocialIcon
+                type={l.type}
+                iconType={l.iconType}
+                key={`${chunkIndex}-${i}`}
+              />
             ))}
           </View>
         ))}

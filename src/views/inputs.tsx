@@ -39,9 +39,7 @@ const Inputs = props => {
   let usernameInput = useRef(null);
   let shakeInput = useRef(null);
   let confirmPassword2Input = useRef(null);
-  const InputFieldsStyle = {
-    outline:'none'
-  }
+ 
   return (
     <KeyboardAvoidingView
       style={styles.keyboardAvoidingView}

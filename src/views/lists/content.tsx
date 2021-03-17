@@ -290,4 +290,4 @@ const ListContent = (props) => {
   );
 };
 
-export default withTheme(ListContent);
+export default withTheme(ListContent, '');

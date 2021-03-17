@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { ThemeContext } from 'react-native-elements';
+import { ThemeReducerContext } from '../helpers/ThemeReducer';
 import DrawerNavigator from './DrawerNavigator';
 import Avatars from '../views/avatars';
 import Cards from '../views/cards';
@@ -25,10 +26,23 @@ import CheckBox from '../views/checkbox';
 const Drawer = createDrawerNavigator();
 
 function RootNavigator() {
+  const { ThemeState, dispatch } = useContext(ThemeReducerContext);
   const { theme } = useContext(ThemeContext);
 
   return (
-    <NavigationContainer theme={{ colors: { background: theme.colors.white } }}>
+    <NavigationContainer
+      theme={{
+        colors: {
+          background: theme.colors.white,
+          primary: '',
+          card: '',
+          text: '',
+          border: '',
+          notification: '',
+        },
+        dark: ThemeState.themeMode === 'dark',
+      }}
+    >
       <Drawer.Navigator
         drawerContent={DrawerNavigator}
         drawerContentOptions={{
@@ -36,11 +50,13 @@ function RootNavigator() {
           activeBackgroundColor: 'transparent',
           inactiveTintColor: theme.colors.grey0,
           inactiveBackgroundColor: 'transparent',
-          backgroundColor: theme.colors.grey4,
           labelStyle: {
             fontSize: 15,
             marginLeft: 0,
           },
+        }}
+        drawerStyle={{
+          backgroundColor: theme.colors.grey4,
         }}
       >
         <Drawer.Screen name="Avatars" component={Avatars} />

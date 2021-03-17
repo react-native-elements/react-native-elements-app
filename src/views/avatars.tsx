@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, ScrollView } from 'react-native';
 import _ from 'lodash';
-import { Avatar, } from 'react-native-elements';
+import { Avatar } from 'react-native-elements';
 import { Header } from './header';
 
 const dataList = [
@@ -53,9 +53,9 @@ const theme2 = {
   },
 };
 
-export interface Props {}
+type AvatarComponentProps = {};
 
-const Avatars: React.FC<Props> = () => {
+const Avatars: React.FunctionComponent<AvatarComponentProps> = () => {
   const [theme, setTheme] = useState(theme1);
 
   return (
@@ -115,8 +115,7 @@ const Avatars: React.FC<Props> = () => {
             marginTop: 10,
             backgroundColor: 'grey',
           }}
-        >
-        </View>
+        />
       </ScrollView>
     </>
   );

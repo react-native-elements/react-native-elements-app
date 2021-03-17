@@ -19,8 +19,8 @@ export const cacheFonts = (fonts) => {
   let jobs = [];
   fonts.forEach((a) => {
     const fontName: string[] = Object.keys(a);
-    if (!cachedFonts[fontName]) {
-      jobs.push(cacheFont(fontName, a[fontName]));
+    if (!cachedFonts[fontName[0]]) {
+      jobs.push(cacheFont(fontName, a[fontName[0]]));
     }
   });
   return jobs;

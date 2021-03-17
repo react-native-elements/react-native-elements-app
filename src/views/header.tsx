@@ -1,10 +1,22 @@
 import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { Header as HeaderRNE } from 'react-native-elements';
+import { DrawerNavigationProp } from '@react-navigation/drawer';
+import { Header as HeaderRNE, HeaderProps } from 'react-native-elements';
 
-const Header = (props) => {
-  const navigation = useNavigation();
+type HeaderComponentProps = {
+  title: string;
+};
+
+type ParamList = {
+  Detail: {
+    openDrawer: void;
+  };
+};
+
+const Header: React.FunctionComponent<HeaderComponentProps> = (props) => {
+  const navigation = useNavigation<DrawerNavigationProp<ParamList, 'Detail'>>();
+
   return (
     <HeaderRNE
       leftComponent={{
@@ -16,6 +28,7 @@ const Header = (props) => {
     />
   );
 };
+
 type SubHeaderProps = {
   title: string;
 };

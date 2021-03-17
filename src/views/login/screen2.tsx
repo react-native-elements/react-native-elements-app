@@ -12,7 +12,7 @@ import {
   Text,
   View,
 } from 'react-native';
-import { Input, Button, Icon } from 'react-native-elements';
+import { Input, Button, Icon, InputProps } from 'react-native-elements';
 import { LinearGradient } from '../../components/LinearGradient';
 
 // Enable LayoutAnimation on Android
@@ -25,7 +25,9 @@ const USER_HP = require('../../../assets/images/user-hp.png');
 const SCREEN_WIDTH = Dimensions.get('window').width;
 const SCREEN_HEIGHT = Dimensions.get('window').height;
 
-const LoginScreen3 = () => {
+type LoginScreen3Props = {};
+
+const LoginScreen3: React.FunctionComponent<LoginScreen3Props> = () => {
   const [isLoading, setLoading] = useState<boolean>(false);
   const [selectedType, setSelectedType] = useState<string>(null);
   const [username, setUsername] = useState<string>('');
@@ -38,10 +40,10 @@ const LoginScreen3 = () => {
   const [validConfirmationPassword, setConfirmationPasswordValid] = useState<
     boolean
   >(true);
-  let emailInput = useRef(null);
-  let passwordInput = useRef(null);
-  let confirmationPasswordInput = useRef(null);
-  let usernameInput = useRef(null);
+  let emailInput = useRef<InputProps>(null);
+  let passwordInput = useRef<InputProps>(null);
+  let confirmationPasswordInput = useRef<InputProps>(null);
+  let usernameInput = useRef<InputProps>(null);
 
   const signup = () => {
     LayoutAnimation.easeInEaseOut();

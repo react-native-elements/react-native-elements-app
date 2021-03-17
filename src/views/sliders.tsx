@@ -3,7 +3,9 @@ import { View, StyleSheet } from 'react-native';
 import { Slider, Text, Icon } from 'react-native-elements';
 import { Header, SubHeader } from './header';
 
-const Sliders = () => {
+type SlidersComponentProps = {};
+
+const Sliders: React.FunctionComponent<SlidersComponentProps> = () => {
   const [value, setValue] = useState(0);
   const [vertValue, setVertValue] = useState(0);
 

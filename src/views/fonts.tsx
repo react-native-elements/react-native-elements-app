@@ -293,7 +293,9 @@ const android_fonts = [
   'monospace',
 ];
 
-const Fonts = () => {
+type FontsComponentProps = {};
+
+const Fonts: React.FunctionComponent<FontsComponentProps> = () => {
   const fonts = Platform.OS === 'ios' ? iOS_fonts : android_fonts;
   return (
     <>

@@ -15,7 +15,12 @@ import { LinearGradient } from '../components/LinearGradient';
 const SCREEN_WIDTH = Dimensions.get('window').width;
 const IMAGE_SIZE = SCREEN_WIDTH - 80;
 
-const CustomButton = (props) => {
+type CustomButtonProps = {
+  selected: boolean;
+  title: string;
+};
+
+const CustomButton: React.FunctionComponent<CustomButtonProps> = (props) => {
   const [selected, setSelected] = useState(false);
 
   useEffect(() => {
@@ -51,7 +56,9 @@ const CustomButton = (props) => {
   );
 };
 
-const LoginScreen1 = () => {
+type LoginComponentProps = {};
+
+const LoginScreen1: React.FunctionComponent<LoginComponentProps> = () => {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <StatusBar barStyle="light-content" />
@@ -163,19 +170,19 @@ const LoginScreen1 = () => {
                 >
                   <View style={{ flex: 1, flexDirection: 'row' }}>
                     <CustomButton title="Philosophy" selected={true} />
-                    <CustomButton title="Sport" />
+                    <CustomButton title="Sport" selected={false} />
                     <CustomButton title="Swimming" selected={true} />
-                    <CustomButton title="Religion" />
+                    <CustomButton title="Religion" selected={false} />
                   </View>
                   <View style={{ flex: 1, flexDirection: 'row' }}>
-                    <CustomButton title="Music" />
+                    <CustomButton title="Music" selected={false} />
                     <CustomButton title="Soccer" selected={true} />
                     <CustomButton title="Radiohead" selected={true} />
-                    <CustomButton title="Micheal Jackson" />
+                    <CustomButton title="Micheal Jackson" selected={false} />
                   </View>
                   <View style={{ flex: 1, flexDirection: 'row' }}>
                     <CustomButton title="Travelling" selected={true} />
-                    <CustomButton title="Rock'n'Roll" />
+                    <CustomButton title="Rock'n'Roll" selected={false} />
                     <CustomButton title="Dogs" selected={true} />
                     <CustomButton title="France" selected={true} />
                   </View>

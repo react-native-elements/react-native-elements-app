@@ -1,6 +1,13 @@
 import React, { useState } from 'react';
 import { View, StyleSheet, Image, FlatList, Switch } from 'react-native';
-import { Text, ListItem, Avatar, Icon, Badge } from 'react-native-elements';
+import {
+  Text,
+  ListItem,
+  Avatar,
+  Icon,
+  Badge,
+  ListItemProps,
+} from 'react-native-elements';
 import { LinearGradient } from '../components/LinearGradient';
 import { Header } from './header';
 import colors from '../config/colors';
@@ -64,7 +71,10 @@ const list2 = [
   },
 ];
 
-const Lists2 = () => {
+type ListComponentProps = ListItemProps;
+
+const Lists2: React.FunctionComponent<ListComponentProps> = () => {
+  const listItemProps = {};
   const renderRow = ({ item }) => {
     return (
       <ListItem onPress={log} bottomDivider>
@@ -89,9 +99,7 @@ const Lists2 = () => {
             <View style={{ paddingVertical: 8 }}>
               {list2.map((l, i) => (
                 <ListItem
-                  friction={90}
-                  tension={100}
-                  activeScale={0.95}
+                  {...(listItemProps as ListItemProps)}
                   key={i}
                   linearGradientProps={{
                     colors: l.linearGradientColors,

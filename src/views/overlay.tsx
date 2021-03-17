@@ -3,7 +3,9 @@ import { Button, Overlay, Icon } from 'react-native-elements';
 import { View, Text, StyleSheet } from 'react-native';
 import { Header } from './header';
 
-const OverlayComponent = () => {
+type OverlayComponentProps = {};
+
+const OverlayComponent: React.FunctionComponent<OverlayComponentProps> = () => {
   const [visible, setVisible] = useState(false);
 
   const toggleOverlay = () => {

@@ -17,14 +17,15 @@ const TooltipComponent: React.FunctionComponent<ToolTipComponentProps> = () => {
         <View style={styles.view}>
           <Tooltip
             {...(toolProps as TooltipProps)}
-            popover={<Text>Hey there!</Text>}
+            popover={<Text>no caret!</Text>}
             withPointer={false}
           >
-            <Text>Without caret</Text>
+            <Text>without caret</Text>
           </Tooltip>
           <Tooltip
             {...(toolProps as TooltipProps)}
             popover={<Text>Tooltip info goes here</Text>}
+            width={200}
             backgroundColor={colors.primary}
           >
             <Text>Press me</Text>
@@ -37,22 +38,23 @@ const TooltipComponent: React.FunctionComponent<ToolTipComponentProps> = () => {
             popover={
               <Text>Tooltip info goes here too. Find tooltip everywhere</Text>
             }
-            containerStyle={{ width: 170, height: 60 }}
+            containerStyle={{ width: 200, height: 60 }}
           >
             <Text>Press me</Text>
           </Tooltip>
           <Tooltip
             {...(toolProps as TooltipProps)}
-            pointerColor={colors.primary}
-            popover={<Text>Tooltip info goes here too.</Text>}
+            containerStyle={{ width: 145, height: 130 }}
+            popover={<Text>{`Some big text full of important stuff for the super duper user that our design has been created for`}</Text>}
           >
-            <Text>Huge</Text>
+            <Text>HUGE</Text>
           </Tooltip>
         </View>
         <View style={styles.view}>
           <Tooltip
             {...(toolProps as TooltipProps)}
-            width={150}
+            width={200}
+            backgroundColor={colors.primary1}
             popover={<Text>Tooltip info goes here</Text>}
           >
             <Text>More attention</Text>
@@ -61,12 +63,15 @@ const TooltipComponent: React.FunctionComponent<ToolTipComponentProps> = () => {
         <View style={styles.view}>
           <Tooltip
             {...(toolProps as TooltipProps)}
+            width={200}
+            backgroundColor={colors.primary2}
             popover={<Text>Tooltip info goes here</Text>}
           >
-            <Text>I'm Different</Text>
+            <Text>I'm different</Text>
           </Tooltip>
           <Tooltip
             {...(toolProps as TooltipProps)}
+            width={200}
             popover={<Text>Tooltip info goes here</Text>}
           >
             <Text>Press me</Text>

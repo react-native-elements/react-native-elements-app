@@ -114,6 +114,7 @@ const SocialIcons: React.FunctionComponent<SocialIconsComponentProps> = () => {
               <SocialIcon
                 {...(socialProps as SocialIconProps)}
                 type={l.type}
+                iconType={l.iconType}
                 key={`${chunkIndex}-${i}`}
               />
             ))}

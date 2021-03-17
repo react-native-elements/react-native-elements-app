@@ -115,7 +115,7 @@ const Avatars: React.FunctionComponent<AvatarComponentProps> = () => {
             marginTop: 10,
             backgroundColor: 'grey',
           }}
-        ></View>
+        />
       </ScrollView>
     </>
   );

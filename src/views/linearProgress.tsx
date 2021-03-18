@@ -13,7 +13,7 @@ const LinearProgressAPI: React.FunctionComponent = () => {
         if (subs) {
           setProgress(progress + 0.1);
         }
-      }, 300);
+      }, 100);
     }
     return () => {
       subs = false;

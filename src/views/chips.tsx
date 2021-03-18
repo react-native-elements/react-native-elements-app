@@ -13,8 +13,17 @@ const Buttons: React.FunctionComponent<ChipsComponentProps> = () => {
       <ScrollView>
         <View style={styles.contentView}>
           <View style={{ alignItems: 'center' }}>
-          <Chip
+            <Chip
               title={'Test Chip'}
+            />
+            <Chip
+              title={'Test Chip'}
+              icon={{
+                name: 'home',
+                type: 'font-awesome',
+                size: 15,
+                color: 'white',
+              }}
             />
             <Chip
               title={'Test Chip'}
@@ -30,12 +39,6 @@ const Buttons: React.FunctionComponent<ChipsComponentProps> = () => {
 const styles = StyleSheet.create({
   contentView: {
     flex: 1,
-    marginTop: 20,
-  },
-  buttonsContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    width: '100%',
     marginTop: 20,
   },
 });

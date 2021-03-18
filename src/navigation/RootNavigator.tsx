@@ -8,6 +8,7 @@ import Avatars from '../views/avatars';
 import Cards from '../views/cards';
 import Tiles from '../views/tiles';
 import Buttons from '../views/buttons';
+import Chips from '../views/chips';
 import Lists from '../views/lists';
 import Lists2 from '../views/lists2';
 import Inputs from '../views/inputs';
@@ -62,6 +63,7 @@ function RootNavigator() {
       >
         <Drawer.Screen name="Avatars" component={Avatars} />
         <Drawer.Screen name="Buttons" component={Buttons} />
+        <Drawer.Screen name="Chips" component={Chips} />
         <Drawer.Screen name="Inputs" component={Inputs} />
         <Drawer.Screen name="Lists" component={Lists} />
         <Drawer.Screen name="Lists2" component={Lists2} />

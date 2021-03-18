@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, ScrollView, StyleSheet } from 'react-native';
-import { Button, withTheme } from 'react-native-elements';
+import { Chip, withTheme } from 'react-native-elements';
 import { Header, SubHeader } from './header';
 
 type ChipsComponentProps = {};
@@ -13,8 +13,12 @@ const Buttons: React.FunctionComponent<ChipsComponentProps> = () => {
       <ScrollView>
         <View style={styles.contentView}>
           <View style={{ alignItems: 'center' }}>
-            <Button
+          <Chip
               title={'Test Chip'}
+            />
+            <Chip
+              title={'Test Chip'}
+              type="outline"
             />
           </View>
         </View>

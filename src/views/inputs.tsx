@@ -35,11 +35,11 @@ const SearchBarCustom = (props) => {
 type InputsComponentProps = {};
 
 const Inputs: React.FunctionComponent<InputsComponentProps> = () => {
-  let email2Input = createRef();
-  let passwordInput = createRef();
-  let password2Input = createRef();
-  let shakeInput = createRef();
-  let confirmPassword2Input = createRef();
+  let email2Input = useRef(null);
+  let passwordInput = useRef(null);
+  let password2Input = useRef(null);
+  let shakeInput = useRef(null);
+  let confirmPassword2Input = useRef(null);
 
   const InputFieldsStyle = {
     borderWidth: 0,
@@ -145,7 +145,7 @@ const Inputs: React.FunctionComponent<InputsComponentProps> = () => {
             rightIcon={
               <Button
                 title="Shake"
-                onPress={() => shakeInput && shakeInput.current.shake()}
+                onPress={() => shakeInput && shakeInput.shake()}
               />
             }
             errorMessage="Shake me on error !"
@@ -203,7 +203,7 @@ const Inputs: React.FunctionComponent<InputsComponentProps> = () => {
                 keyboardType="email-address"
                 returnKeyType="next"
                 onSubmitEditing={() => {
-                  passwordInput.current.focus();
+                  passwordInput.focus();
                 }}
                 blurOnSubmit={false}
               />
@@ -307,7 +307,7 @@ const Inputs: React.FunctionComponent<InputsComponentProps> = () => {
                 style={InputFieldsStyle}
                 returnKeyType="next"
                 onSubmitEditing={() => {
-                  email2Input.current.focus();
+                  email2Input.focus();
                 }}
               />
               <Input
@@ -329,7 +329,7 @@ const Inputs: React.FunctionComponent<InputsComponentProps> = () => {
                 returnKeyType="next"
                 ref={(input) => (email2Input = input)}
                 onSubmitEditing={() => {
-                  password2Input.current.focus();
+                  password2Input.focus();
                 }}
               />
               <Input
@@ -408,7 +408,7 @@ const styles = StyleSheet.create({
   triangleLeft: {
     position: 'absolute',
     left: -20,
-    bottom: 24,
+    top: 0,
     width: 0,
     height: 0,
     borderRightWidth: 20,

@@ -138,7 +138,7 @@ const LoginScreen3: React.FunctionComponent<LoginScreen3Props> = () => {
             selected={selectedType === 'teacher'}
           />
         </View>
-        <View style={{ width: '80%', alignItems: 'center' }}>
+        <View style={{ width: '80%', marginLeft: 'auto', marginRight: 'auto' }}>
           <FormInput
             refInput={(input) => (usernameInput = input)}
             icon="user"
@@ -206,7 +206,7 @@ const LoginScreen3: React.FunctionComponent<LoginScreen3Props> = () => {
         <Button
           loading={isLoading}
           title="SIGNUP"
-          containerStyle={{ flex: -1 }}
+          containerStyle={{ flex: -1, marginLeft: 'auto', marginRight: 'auto' }}
           buttonStyle={styles.signUpButton}
           linearGradientProps={{
             colors: ['#FF9800', '#F44336'],
@@ -305,11 +305,13 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 28,
     fontFamily: 'UbuntuLight',
+    textAlign: 'center',
   },
   whoAreYouText: {
     color: '#7384B4',
     fontFamily: 'UbuntuBold',
     fontSize: 14,
+    textAlign: 'center',
   },
   userTypesContainer: {
     flexDirection: 'row',

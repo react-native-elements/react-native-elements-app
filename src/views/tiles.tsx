@@ -10,7 +10,7 @@ const Tiles: React.FunctionComponent<TilesComponentProps> = () => {
     <>
       <Header title="Tiles" />
       <View style={{ alignItems: 'center' }}>
-        <ScrollView>
+        <ScrollView style={{ paddingVertical: 10 }}>
           <Tile
             imageSrc={{
               uri:
@@ -54,6 +54,7 @@ const Tiles: React.FunctionComponent<TilesComponentProps> = () => {
               activeOpacity={1}
               width={310}
               contentContainerStyle={{ height: 70 }}
+              style={{ paddingBottom: 20 }}
             >
               <View
                 style={{

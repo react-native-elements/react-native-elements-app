@@ -4,9 +4,11 @@
 
 **[Mobile App](https://expo.io/@monte9/react-native-elements-app)** | **[Web App](https://react-native-elements.github.io/react-native-elements-app)**
 
-This is the Demo app for [React Native Elements](https://github.com/react-native-elements/react-native-elements) built with [Expo](https://expo.io/). In this app you will find examples on on how to use various RNE components as well as production-ready screens.
+This is the Demo app for [React Native Elements](https://github.com/react-native-elements/react-native-elements) built with [Expo](https://expo.io/). The purpose of this app is to demonstrate the usage of the various UI components that React Native Elements provides out of the box, so that you can focus on what really matters.
 
-This app also work on the `web` platform using [React Native Web](https://github.com/necolas/react-native-web). You can checkout the [live website here](https://react-native-elements.github.io/react-native-elements-app). If you are looking to build a React Native mobile app & also reuse the code to deploy on web, this repo can be used as a great starting point.
+This app also works on the `web` platform using [React Native Web](https://github.com/necolas/react-native-web). You can checkout the [live website here](https://react-native-elements.github.io/react-native-elements-app). If you are looking to build a React Native mobile app and also reuse the code to deploy on web, this repo can be used as a great starting point.
+
+This is the purpose we decided to use [Expo](https://expo.io/), which reduces the effort required to build an app once and deploy it anywhere.
 
 ## Getting Started
 
@@ -48,7 +50,7 @@ yarn start
 npm start
 ```
 
-### Deploy Web app
+### Deploy Web App
 
 First you must set correct `publicPath` in `app.web-build.json`. Next you must build the web app using:
 
@@ -90,7 +92,7 @@ We highly recommend you read the [official Expo ejection docs](https://docs.expo
 
 ## React Native Elements
 
-This app is built using [React Native Elements](https://github.com/react-native-elements/react-native-elements). RNE is a UI toolkit for React Native that provides you with production ready UI components so that you can focus on building the part that makes your app unique as opposed to reinvent the UI wheel.
+This app is built using [React Native Elements](https://github.com/react-native-elements/react-native-elements). React Native Elements is a UI toolkit for React Native that provides you with production ready UI components so that you can focus on building the part that makes your app unique as opposed to reinvent the UI wheel. 
 
 You can install `react-native-elements` in your app using:
 

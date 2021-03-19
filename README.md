@@ -90,7 +90,7 @@ We highly recommend you read the [official Expo ejection docs](https://docs.expo
 
 ## React Native Elements
 
-This app is built using [React Native Elements](https://github.com/react-native-elements/react-native-elements). React Native Elements is a UI toolkit for React Native that provides you with production ready UI components so that you can focus on building the part that makes your app unique as opposed to reinvent the UI wheel. Aiding rapid development and pragmatic design, React Native Elements is the one-stop shop for all your requirements, making your web and mobile apps look more professionally designed.
+This app is built using [React Native Elements](https://github.com/react-native-elements/react-native-elements). React Native Elements is a UI toolkit for React Native that provides you with production ready UI components so that you can focus on building the part that makes your app unique as opposed to reinvent the UI wheel. Aiding rapid development and pragmatic design, React Native Elements is the one-stop shop for all your requirements, making your web and mobile apps look more dynamic and professional.
 
 You can install `react-native-elements` in your app using:
 

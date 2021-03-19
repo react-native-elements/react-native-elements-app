@@ -4,9 +4,9 @@
 
 **[Mobile App](https://expo.io/@monte9/react-native-elements-app)** | **[Web App](https://react-native-elements.github.io/react-native-elements-app)**
 
-This is the Demo app for [React Native Elements](https://github.com/react-native-elements/react-native-elements) built with [Expo](https://expo.io/). In this app you will find examples on on how to use various RNE components as well as production-ready screens.
+This is the Demo app for [React Native Elements](https://github.com/react-native-elements/react-native-elements) built with [Expo](https://expo.io/). The purpose of this app is to demonstrate the usage of the various UI components that React Native Elements provides out of the box.
 
-This app also work on the `web` platform using [React Native Web](https://github.com/necolas/react-native-web). You can checkout the [live website here](https://react-native-elements.github.io/react-native-elements-app). If you are looking to build a React Native mobile app & also reuse the code to deploy on web, this repo can be used as a great starting point.
+This app also works on the `web` platform using [React Native Web](https://github.com/necolas/react-native-web). You can checkout the [live website here](https://react-native-elements.github.io/react-native-elements-app). If you are looking to build a React Native mobile app which can reuse the code to deploy it on the web, this is the right place to begin. We decided to use [Expo](https://expo.io/), which reduces the effort required to build an app once and deploy it anywhere.
 
 ## Getting Started
 
@@ -31,17 +31,24 @@ git clone https://github.com/react-native-elements/react-native-elements-app.git
 ```
 cd react-native-elements-app
 
-# Using npm or yarn
-yarn || npm install
+# Using yarn
+yarn install
+
+# Using npm
+npm install
 ```
 
 4. Run the cross-platform app (uses [Expo](https://expo.io/learn))
 
 ```
-yarn start || npm start
+# Using yarn
+yarn start 
+
+# Using npm
+npm start
 ```
 
-### Deploy Web app
+### Deploy Web App
 
 First you must set correct `publicPath` in `app.web-build.json`. Next you must build the web app using:
 
@@ -57,17 +64,21 @@ This folder can be hosted as static website. For example you can publish on [Git
 yarn deploy
 ```
 
-**Note:** don't forget to add or change "homepage" key in your package.json
+**Note:** Don't forget to add or change "homepage" key in your package.json!
 
 ### Ejecting
 
 The mobile app is built using Expo. If you would like to eject, you can run the following command:
 
 ```
-yarn eject || npm run eject
+# Using Yarn
+yarn eject 
+
+# Using npm
+npm run eject
 ```
 
-We highly recommend you read the [official Expo ejection docs](https://docs.expo.io/versions/latest/expokit/eject/) before proceeding.
+We highly recommend you read the [official Expo ejection docs](https://docs.expo.io/versions/latest/expokit/eject/) before proceeding, as the action of ejecting is not reversible.
 
 ## Major contributors:
 
@@ -79,12 +90,16 @@ We highly recommend you read the [official Expo ejection docs](https://docs.expo
 
 ## React Native Elements
 
-This app is built using [React Native Elements](https://github.com/react-native-elements/react-native-elements). RNE is a UI toolkit for React Native that provides you with production ready UI components so that you can focus on building the part that makes your app unique as opposed to reinvent the UI wheel.
+This app is built using [React Native Elements](https://github.com/react-native-elements/react-native-elements). React Native Elements is a UI toolkit for React Native that provides you with production ready UI components so that you can focus on building the part that makes your app unique as opposed to reinvent the UI wheel. Aiding rapid development and pragmatic design, React Native Elements is the one-stop shop for all your requirements, making your web and mobile apps look more dynamic and professional.
 
 You can install `react-native-elements` in your app using:
 
 ```
-yarn add react-native-elements || npm install react-native-elements --save
+# Using yarn
+yarn add react-native-elements 
+
+# Using npm
+npm install react-native-elements --save
 ```
 
 ## Feedback

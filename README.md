@@ -31,7 +31,7 @@ git clone https://github.com/react-native-elements/react-native-elements-app.git
 ```
 cd react-native-elements-app
 
-# Using npm 
+# Using yarn
 yarn install
 
 #Using npm

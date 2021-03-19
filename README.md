@@ -31,14 +31,21 @@ git clone https://github.com/react-native-elements/react-native-elements-app.git
 ```
 cd react-native-elements-app
 
-# Using npm or yarn
-yarn || npm install
+# Using npm 
+yarn install
+
+#Using npm
+npm install
 ```
 
 4. Run the cross-platform app (uses [Expo](https://expo.io/learn))
 
 ```
-yarn start || npm start
+#Using yarn
+yarn start 
+
+#Using npm
+npm start
 ```
 
 ### Deploy Web app
@@ -64,7 +71,11 @@ yarn deploy
 The mobile app is built using Expo. If you would like to eject, you can run the following command:
 
 ```
-yarn eject || npm run eject
+#Using Yarn
+yarn eject 
+
+#Using npm
+npm run eject
 ```
 
 We highly recommend you read the [official Expo ejection docs](https://docs.expo.io/versions/latest/expokit/eject/) before proceeding.
@@ -84,7 +95,11 @@ This app is built using [React Native Elements](https://github.com/react-native-
 You can install `react-native-elements` in your app using:
 
 ```
-yarn add react-native-elements || npm install react-native-elements --save
+#Using yarn
+yarn add react-native-elements 
+
+#Using npm
+npm install react-native-elements --save
 ```
 
 ## Feedback

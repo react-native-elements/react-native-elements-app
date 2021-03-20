@@ -54,6 +54,12 @@ const Buttons: React.FunctionComponent<ChipsComponentProps> = () => {
               iconRight
               containerStyle={{ marginVertical: 15 }}
             />
+            <Chip
+              title={'Clickable Chip'}
+              type="outline"
+              onPress={() => console.log("A clickable chip was pressed!")}
+              containerStyle={{ marginVertical: 15 }}
+            />
           </View>
         </View>
       </ScrollView>

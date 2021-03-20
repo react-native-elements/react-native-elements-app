@@ -23,6 +23,7 @@ import BottomSheet from '../views/bottomsheet';
 import Tooltip from '../views/tooltip';
 import Overlay from '../views/overlay';
 import CheckBox from '../views/checkbox';
+import FAB from '../views/fab';
 
 const Drawer = createDrawerNavigator();
 
@@ -70,6 +71,7 @@ function RootNavigator() {
         <Drawer.Screen name="Tiles" component={Tiles} />
         <Drawer.Screen name="Pricing" component={Pricing} />
         <Drawer.Screen name="Ratings" component={Ratings} />
+        <Drawer.Screen name="FAB" component={FAB} />
         <Drawer.Screen name="Login" component={Login} />
         <Drawer.Screen name="Settings" component={Settings} />
         <Drawer.Screen name="Slider" component={Sliders} />

@@ -47,6 +47,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#ED553B',
     marginBottom: 20,
+    width:"100%",
+    paddingVertical:10
   },
   heading: {
     color: 'white',

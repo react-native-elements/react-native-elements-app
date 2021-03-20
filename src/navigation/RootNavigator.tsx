@@ -23,6 +23,7 @@ import BottomSheet from '../views/bottomsheet';
 import Tooltip from '../views/tooltip';
 import Overlay from '../views/overlay';
 import CheckBox from '../views/checkbox';
+import Text from '../views/text';
 
 const Drawer = createDrawerNavigator();
 
@@ -63,6 +64,7 @@ function RootNavigator() {
         <Drawer.Screen name="Avatars" component={Avatars} />
         <Drawer.Screen name="Buttons" component={Buttons} />
         <Drawer.Screen name="Inputs" component={Inputs} />
+        <Drawer.Screen name="Text" component={Text} />
         <Drawer.Screen name="Lists" component={Lists} />
         <Drawer.Screen name="Lists2" component={Lists2} />
         <Drawer.Screen name="LinearProgress" component={LinearProgress} />

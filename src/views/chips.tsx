@@ -14,20 +14,45 @@ const Buttons: React.FunctionComponent<ChipsComponentProps> = () => {
         <View style={styles.contentView}>
           <View style={{ alignItems: 'center' }}>
             <Chip
-              title={'Test Chip'}
+              title={'Solid Chip'}
+              containerStyle={{ marginVertical: 15 }}
             />
             <Chip
-              title={'Test Chip'}
+              title={'Disabled Chip'}
+              disabled
+              containerStyle={{ marginVertical: 15 }}
+            />
+            <Chip
+              title={'Outlined Chip'}
+              type="outline"
+              containerStyle={{ marginVertical: 15 }}
+            />
+            <Chip
+              title={'Outlined & Disabled'}
+              type="outline"
+              disabled
+              containerStyle={{ marginVertical: 15 }}
+            />
+            <Chip
+              title={'Left Icon Chip'}
               icon={{
-                name: 'home',
+                name: 'bluetooth',
                 type: 'font-awesome',
-                size: 15,
+                size: 20,
                 color: 'white',
               }}
+              containerStyle={{ marginVertical: 15 }}
             />
             <Chip
-              title={'Test Chip'}
-              type="outline"
+              title={'Right Icon Chip'}
+              icon={{
+                name: 'close',
+                type: 'font-awesome',
+                size: 20,
+                color: 'white',
+              }}
+              iconRight
+              containerStyle={{ marginVertical: 15 }}
             />
           </View>
         </View>

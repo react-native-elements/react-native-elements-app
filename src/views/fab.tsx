@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import { Icon, FAB } from 'react-native-elements';
+import { FAB } from 'react-native-elements';
 import { Header } from './header';
 
 export default () => {
@@ -17,60 +17,36 @@ export default () => {
         }}
       >
         <Text>Small Size</Text>
-        <FAB
-          visible={visible}
-          icon="add"
-          iconColor="#fff"
-          color="blue"
-          size="small"
-        />
+        <FAB loading visible={visible} iconName="add" size="small" />
         <Text>Large Size</Text>
-        <FAB visible={visible} icon="add" iconColor="#fff" color="blue" />
+        <FAB visible={visible} iconName="add" color="blue" />
         <Text>Primary Color</Text>
-        <FAB visible={visible} label="Extended" icon="place" iconColor="#fff" />
+        <FAB visible={visible} label="Navigate" upperCase iconName="place" />
         <Text>Disabled</Text>
         <FAB
           visible={visible}
           disabled
           label="Extended"
-          icon="place"
-          iconColor="#fff"
+          icon={{
+            name: 'place',
+            color: 'white',
+          }}
         />
-        <Text>Custom Icon component</Text>
-        <FAB
-          label="delete"
-          IconComponent={<Icon name="delete" color="#fff" />}
-          labelColor="white"
-          upperCase
-          visible={visible}
-          color="blue"
-        />
+
         <FAB
           visible={visible}
           onPress={() => setVisible(!visible)}
-          style={{
-            position: 'absolute',
-            margin: 16,
-            right: 0,
-            bottom: 0,
-          }}
+          placement="right"
           label="Invisible"
-          icon="edit"
-          iconColor="#fff"
+          iconName="edit"
           color="blue"
         />
         <FAB
           visible={!visible}
           onPress={() => setVisible(!visible)}
-          style={{
-            position: 'absolute',
-            margin: 16,
-            right: 0,
-            bottom: 0,
-          }}
+          placement="left"
           label="Visible"
-          icon="add"
-          iconColor="#fff"
+          iconName="add"
           color="green"
         />
       </View>

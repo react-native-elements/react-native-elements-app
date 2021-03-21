@@ -10218,8 +10218,8 @@ react-native-appearance@~0.3.4:
     use-subscription "^1.0.0"
 
 "react-native-elements@https://github.com/react-native-elements/react-native-elements":
-  version "3.3.1"
-  resolved "https://github.com/react-native-elements/react-native-elements#16fb8ac674283db9525634b4ad1e2019aa4e4ea7"
+  version "3.3.2"
+  resolved "https://github.com/react-native-elements/react-native-elements#19db829f81185049ae8df7e3376f520a74d9f3cf"
   dependencies:
     "@types/react-native-vector-icons" "^6.4.6"
     color "^3.1.2"

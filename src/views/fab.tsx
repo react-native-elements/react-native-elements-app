@@ -9,7 +9,6 @@ export default () => {
   return (
     <>
       <Header title="FAB" />
-
       <View
         style={{
           alignItems: 'center',
@@ -32,21 +31,20 @@ export default () => {
             color: 'white',
           }}
         />
-
         <FAB
           visible={visible}
           onPress={() => setVisible(!visible)}
           placement="right"
-          label="Invisible"
-          iconName="edit"
+          label="Hide"
+          iconName="delete"
           color="blue"
         />
         <FAB
           visible={!visible}
           onPress={() => setVisible(!visible)}
           placement="left"
-          label="Visible"
-          iconName="add"
+          label="Show"
+          iconName="edit"
           color="green"
         />
       </View>

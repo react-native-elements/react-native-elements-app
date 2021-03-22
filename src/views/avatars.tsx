@@ -66,7 +66,9 @@ const Avatars: React.FunctionComponent<AvatarComponentProps> = () => {
     <>
       <Header title="Avatars" />
       <ScrollView>
-        <SubHeader title={'Photo Avatars'} />
+        <SubHeader
+          title={'Photo Avatars'}
+        />
         {_.chunk(dataList, 3).map((chunk, chunkIndex) => (
           <View
             style={{

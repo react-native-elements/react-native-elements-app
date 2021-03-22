@@ -1,11 +1,12 @@
 import React from 'react';
 import { View, ScrollView, StyleSheet } from 'react-native';
 import { Chip, withTheme } from 'react-native-elements';
-import { Header, SubHeader } from './header';
+import colors from '../config/colors';
+import { Header } from './header';
 
 type ChipsComponentProps = {};
 
-const Buttons: React.FunctionComponent<ChipsComponentProps> = () => {
+const Chips: React.FunctionComponent<ChipsComponentProps> = () => {
 
   return (
     <>
@@ -14,27 +15,27 @@ const Buttons: React.FunctionComponent<ChipsComponentProps> = () => {
         <View style={styles.contentView}>
           <View style={{ alignItems: 'center' }}>
             <Chip
-              title={'Solid Chip'}
+              title="Solid Chip"
               containerStyle={{ marginVertical: 15 }}
             />
             <Chip
-              title={'Disabled Chip'}
+              title="Disabled Chip"
               disabled
               containerStyle={{ marginVertical: 15 }}
             />
             <Chip
-              title={'Outlined Chip'}
+              title="Outlined Chip"
               type="outline"
               containerStyle={{ marginVertical: 15 }}
             />
             <Chip
-              title={'Outlined & Disabled'}
+              title="Outlined & Disabled"
               type="outline"
               disabled
               containerStyle={{ marginVertical: 15 }}
             />
             <Chip
-              title={'Left Icon Chip'}
+              title="Left Icon Chip"
               icon={{
                 name: 'bluetooth',
                 type: 'font-awesome',
@@ -44,7 +45,7 @@ const Buttons: React.FunctionComponent<ChipsComponentProps> = () => {
               containerStyle={{ marginVertical: 15 }}
             />
             <Chip
-              title={'Right Icon Chip'}
+              title="Right Icon Chip"
               icon={{
                 name: 'close',
                 type: 'font-awesome',
@@ -55,9 +56,26 @@ const Buttons: React.FunctionComponent<ChipsComponentProps> = () => {
               containerStyle={{ marginVertical: 15 }}
             />
             <Chip
-              title={'Clickable Chip'}
+              title="Left Icon Chip"
+              icon={{
+                name: 'bluetooth',
+                type: 'font-awesome',
+                size: 20,
+                color: colors.primary2,
+              }}
               type="outline"
-              onPress={() => console.log("A clickable chip was pressed!")}
+              containerStyle={{ marginVertical: 15 }}
+            />
+            <Chip
+              title="Right Icon Chip"
+              icon={{
+                name: 'close',
+                type: 'font-awesome',
+                size: 20,
+                color: colors.primary2,
+              }}
+              iconRight
+              type="outline"
               containerStyle={{ marginVertical: 15 }}
             />
           </View>
@@ -74,4 +92,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default withTheme(Buttons, '');
+export default withTheme(Chips, '');

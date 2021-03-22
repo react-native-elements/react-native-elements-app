@@ -16,11 +16,25 @@ export default () => {
         }}
       >
         <Text>Small Size</Text>
-        <FAB loading visible={visible} iconName="add" size="small" />
+        <FAB
+          loading
+          visible={visible}
+          icon={{ name: 'add', color: 'white' }}
+          size="small"
+        />
         <Text>Large Size</Text>
-        <FAB visible={visible} iconName="add" color="blue" />
+        <FAB
+          visible={visible}
+          icon={{ name: 'add', color: 'white' }}
+          color="blue"
+        />
         <Text>Primary Color</Text>
-        <FAB visible={visible} label="Navigate" upperCase iconName="place" />
+        <FAB
+          visible={visible}
+          label="Navigate"
+          upperCase
+          icon={{ name: 'place', color: 'white' }}
+        />
         <Text>Disabled</Text>
         <FAB
           visible={visible}
@@ -36,7 +50,7 @@ export default () => {
           onPress={() => setVisible(!visible)}
           placement="right"
           label="Hide"
-          iconName="delete"
+          icon={{ name: 'delete', color: 'white' }}
           color="blue"
         />
         <FAB
@@ -44,7 +58,7 @@ export default () => {
           onPress={() => setVisible(!visible)}
           placement="left"
           label="Show"
-          iconName="edit"
+          icon={{ name: 'edit', color: 'white' }}
           color="green"
         />
       </View>

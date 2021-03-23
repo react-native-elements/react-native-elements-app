@@ -4761,9 +4761,9 @@ ee-first@1.1.1:
   integrity sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=
 
 electron-to-chromium@^1.3.564, electron-to-chromium@^1.3.649:
-  version "1.3.695"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.695.tgz#955f419cf99137226180cc4cca2e59015a4e248d"
-  integrity sha512-lz66RliUqLHU1Ojxx1A4QUxKydjiQ79Y4dZyPobs2Dmxj5aVL2TM3KoQ2Gs7HS703Bfny+ukI3KOxwAB0xceHQ==
+  version "1.3.696"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.696.tgz#f38485644ff23d55955d9d68901051c6e72d1c14"
+  integrity sha512-yuKKvBuXe+IWRp6DxqbGUxbPtamh5C+mEC38vZ0KLxQFpGG9TQn0DbPL9WhWhQnfNhLyzxmPYlCzShbs8QxGbA==
 
 elliptic@^6.5.3:
   version "6.5.4"
@@ -10093,7 +10093,7 @@ react-native-appearance@~0.3.4:
 
 "react-native-elements@github:Dhananjayan-PN/react-native-elements#dialog":
   version "3.3.2"
-  resolved "https://codeload.github.com/Dhananjayan-PN/react-native-elements/tar.gz/585c1ba7196787247b23366eb5e004ce53b40865"
+  resolved "https://codeload.github.com/Dhananjayan-PN/react-native-elements/tar.gz/56ae233f0c6b789fb5352eea9edfc964f102d281"
   dependencies:
     "@types/react-native-vector-icons" "^6.4.6"
     color "^3.1.2"

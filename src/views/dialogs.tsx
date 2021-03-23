@@ -21,7 +21,14 @@ const Dialogs: React.FunctionComponent<DialogComponentProps> = () => {
         onPress={toggleOverlay}
         buttonStyle={styles.button}
       />
-      <Dialog isVisible={visible} onBackdropPress={toggleOverlay}>
+      <Dialog
+        isVisible={visible}
+        secondary="delete"
+        secondaryOnPress={() => console.log("secondary!!")}
+        onBackdropPress={toggleOverlay}
+        title="Are you sure about this?"
+      >
+      <Text>All your progress will be lost. You will have to start again!</Text>
       </Dialog>
     </View>
   );

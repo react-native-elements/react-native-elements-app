@@ -21,7 +21,7 @@ import SocialIcons from '../views/social_icons';
 import Fonts from '../views/fonts';
 import BottomSheet from '../views/bottomsheet';
 import Tooltip from '../views/tooltip';
-import Dialogs from '../views/dialog'
+import Dialogs from '../views/dialogs'
 import Overlay from '../views/overlay';
 import CheckBox from '../views/checkbox';
 import FAB from '../views/fab';

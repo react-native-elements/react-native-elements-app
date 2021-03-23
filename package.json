@@ -1,0 +1,59 @@
+{
+  "name": "react-native-elements-app",
+  "version": "1.1.0",
+  "description": "Demo app for React Native Elements UI Library",
+  "author": "Monte Thakkar",
+  "private": true,
+  "homepage": "https://react-native-elements.github.io/react-native-elements-app/",
+  "main": "node_modules/expo/AppEntry.js",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web",
+    "eject": "expo eject",
+    "test": "jest --watchAll",
+    "build:web": "expo build:web --config ./app.web-build.json --polyfill",
+    "deploy": "gh-pages -d web-build",
+    "prettify": "prettier --write 'src/**/*.js'",
+    "lint": "eslint --ext js,ts,tsx .",
+    "clean-install": "rm -rf node_modules && npm cache clean --force && watchman watch-del-all && yarn",
+    "postinstall": "./fix.sh && tsc --p ./node_modules/react-native-elements"
+  },
+  "dependencies": {
+    "@expo/vector-icons": "^12.0.0",
+    "@react-native-community/masked-view": "0.1.10",
+    "@react-navigation/drawer": "^5.11.4",
+    "@react-navigation/native": "^5.8.10",
+    "@react-navigation/stack": "^5.12.8",
+    "expo": "^40.0.0",
+    "expo-app-loading": "^1.0.1",
+    "expo-asset": "~8.2.1",
+    "expo-font": "~8.4.0",
+    "expo-linear-gradient": "~8.4.0",
+    "lodash": "^4.17.20",
+    "prop-types": "^15.7.2",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-40.0.0.tar.gz",
+    "react-native-appearance": "~0.3.4",
+    "react-native-elements": "https://github.com/react-native-elements/react-native-elements",
+    "react-native-gesture-handler": "~1.9.0",
+    "react-native-reanimated": "~1.13.2",
+    "react-native-safe-area-context": "3.1.9",
+    "react-native-screens": "~2.16.1",
+    "react-native-web": "~0.15.0"
+  },
+  "devDependencies": {
+    "@expo/webpack-config": "~0.12.45",
+    "@react-native-community/eslint-config": "^2.0.0",
+    "babel-preset-expo": "8.3.0",
+    "eslint": "^7.3.1",
+    "gh-pages": "^2.1.1",
+    "jest-expo": "^40.0.0",
+    "typescript": "~4.1.0"
+  },
+  "jest": {
+    "preset": "jest-expo"
+  }
+}

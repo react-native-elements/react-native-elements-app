@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { Button, Overlay, Icon } from 'react-native-elements';
+import { Button, Dialog, Icon } from 'react-native-elements';
 import { View, Text, StyleSheet } from 'react-native';
 import { Header } from './header';
 
-type OverlayComponentProps = {};
+type DialogComponentProps = {};
 
-const OverlayComponent: React.FunctionComponent<OverlayComponentProps> = () => {
+const Dialogs: React.FunctionComponent<DialogComponentProps> = () => {
   const [visible, setVisible] = useState(false);
 
   const toggleOverlay = () => {
@@ -14,32 +14,15 @@ const OverlayComponent: React.FunctionComponent<OverlayComponentProps> = () => {
 
   return (
     <View>
-      <Header title="Overlay" />
+      <Header title="Dialogs" />
 
       <Button
-        title="Open Overlay"
+        title="Open Dialog"
         onPress={toggleOverlay}
         buttonStyle={styles.button}
       />
-      <Overlay isVisible={visible} onBackdropPress={toggleOverlay}>
-        <Text style={styles.textPrimary}>Hello!</Text>
-        <Text style={styles.textSecondary}>
-          Welcome to react native training
-        </Text>
-        <Button
-          icon={
-            <Icon
-              name="wrench"
-              type="font-awesome"
-              color="white"
-              size={25}
-              iconStyle={{ marginRight: 10 }}
-            />
-          }
-          title="Start Building"
-          onPress={toggleOverlay}
-        />
-      </Overlay>
+      <Dialog isVisible={visible} onBackdropPress={toggleOverlay}>
+      </Dialog>
     </View>
   );
 };
@@ -60,4 +43,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default OverlayComponent;
+export default Dialogs;

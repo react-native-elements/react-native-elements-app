@@ -10,7 +10,7 @@
       "web"
     ],
     "version": "1.1.0",
-    "orientation": "portrait",
+    "orientation": "any",
     "primaryColor": "#cccccc",
     "icon": "./assets/icons/icon.png",
     "splash": {

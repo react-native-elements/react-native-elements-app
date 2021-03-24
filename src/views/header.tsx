@@ -30,10 +30,10 @@ const Header: React.FunctionComponent<HeaderComponentProps> = (props) => {
 };
 
 type SubHeaderProps = {
-  title: string;
+  title: string,
 };
 
-const SubHeader = ({ title }: SubHeaderProps) => {
+const SubHeader = ({ title}: SubHeaderProps) => {
   return (
     <View style={styles.headerContainer}>
       <Text style={styles.heading}>{title}</Text>
@@ -47,6 +47,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#ED553B',
     marginBottom: 20,
+    width:"100%",
+    paddingVertical:10
   },
   heading: {
     color: 'white',

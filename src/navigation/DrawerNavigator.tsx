@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
-import { View, Image, Switch } from 'react-native';
+import { View, Image } from 'react-native';
 import {
   DrawerContentScrollView,
   DrawerItemList,
 } from '@react-navigation/drawer';
-import { ThemeContext, Text, Divider } from 'react-native-elements';
+import { ThemeContext, Text, Divider, Switch } from 'react-native-elements';
 import { ThemeReducerContext } from '../helpers/ThemeReducer';
 import { SafeAreaView } from 'react-native-safe-area-context';
 

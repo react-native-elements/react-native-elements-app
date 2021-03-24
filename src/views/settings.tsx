@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { View, StyleSheet, SectionList, Switch } from 'react-native';
+import { View, StyleSheet, SectionList } from 'react-native';
 import {
   ListItem,
   Divider,
   SearchBar,
   Icon,
   SearchBarProps,
+  Switch,
 } from 'react-native-elements';
 import { Header } from './header';
 

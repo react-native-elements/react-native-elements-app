@@ -14,7 +14,11 @@ function CustomContentComponent(props) {
 
   return (
     <SafeAreaView
-      style={{ flex: 1, height: '100%', backgroundColor: theme.colors.grey5 }}
+      style={{
+        flex: 1,
+        height: '100%',
+        backgroundColor: theme.colors.grey5,
+      }}
       edges={['right', 'left', 'bottom']}
     >
       <View
@@ -26,7 +30,7 @@ function CustomContentComponent(props) {
       >
         <Image
           source={require('../images/logo.png')}
-          style={{ width: '70%', tintColor: '#397af8' }}
+          style={{ width: '70%', height: 100, tintColor: '#397af8' }}
           resizeMode="contain"
         />
       </View>

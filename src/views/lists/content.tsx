@@ -1,9 +1,7 @@
 import _ from 'lodash';
 import React from 'react';
-import { Text, View, ScrollView, Dimensions } from 'react-native';
+import { Text, View, ScrollView } from 'react-native';
 import { Avatar, Button, Icon, withTheme } from 'react-native-elements';
-const SCREEN_WIDTH = Dimensions.get('window').width;
-
 
 const USERS = [
   {
@@ -225,7 +223,7 @@ const ListContent = (props) => {
                     fontFamily: 'bold',
                     fontSize: 25,
                     color: props.theme.colors.secondary,
-                    marginRight: "30%",
+                    marginLeft: -15,
                   }}
                 >
                   Paul Allen

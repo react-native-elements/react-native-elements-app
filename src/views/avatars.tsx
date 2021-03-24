@@ -118,7 +118,7 @@ const Avatars: React.FunctionComponent<AvatarComponentProps> = () => {
           style={{
             flexDirection: 'row',
             justifyContent: 'space-around',
-            marginBottom: 31,
+            marginBottom: 30,
           }}
         >
           <Avatar

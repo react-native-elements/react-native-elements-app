@@ -1,34 +1,173 @@
 import React, { useState } from 'react';
-import { Button, Dialog, Icon } from 'react-native-elements';
+import {
+  Button,
+  Dialog,
+  CheckBox,
+  ListItem,
+  Avatar,
+} from 'react-native-elements';
 import { View, Text, StyleSheet } from 'react-native';
 import { Header } from './header';
 
 type DialogComponentProps = {};
 
 const Dialogs: React.FunctionComponent<DialogComponentProps> = () => {
-  const [visible, setVisible] = useState(false);
+  const [visible1, setVisible1] = useState(false);
+  const [visible2, setVisible2] = useState(false);
+  const [visible3, setVisible3] = useState(false);
+  const [visible4, setVisible4] = useState(false);
+  const [visible5, setVisible5] = useState(false);
+  const [visible6, setVisible6] = useState(false);
+  const [checked, setChecked] = useState(1);
 
-  const toggleOverlay = () => {
-    setVisible(!visible);
+  const toggleDialog1 = () => {
+    setVisible1(!visible1);
   };
+  const toggleDialog2 = () => {
+    setVisible2(!visible2);
+  };
+  const toggleDialog3 = () => {
+    setVisible3(!visible3);
+  };
+  const toggleDialog4 = () => {
+    setVisible4(!visible4);
+  };
+  const toggleDialog5 = () => {
+    setVisible5(!visible5);
+  };
+  const toggleDialog6 = () => {
+    setVisible6(!visible6);
+  };
+
+  const userlist = [
+    {
+      name: 'Amy Farha',
+      avatar_url: 'https://uifaces.co/our-content/donated/XdLjsJX_.jpg',
+      subtitle: 'amy.farha@gmail.com',
+    },
+    {
+      name: 'Chris Jackson',
+      avatar_url: 'https://uifaces.co/our-content/donated/KtCFjlD4.jpg',
+      subtitle: 'cjackson@gmail.com',
+    },
+    {
+      name: 'Amanda Martin',
+      avatar_url:
+        'https://images.unsplash.com/photo-1498529605908-f357a9af7bf5?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=047fade70e80ebb22ac8f09c04872c40',
+      subtitle: 'amandam@gmail.com',
+    },
+  ];
 
   return (
     <View>
       <Header title="Dialogs" />
-
-      <Button
-        title="Open Dialog"
-        onPress={toggleOverlay}
-        buttonStyle={styles.button}
-      />
+      <View style={styles.buttonContainer}>
+        <Button
+          title="Open Simple Dialog"
+          onPress={toggleDialog1}
+          buttonStyle={styles.button}
+        />
+        <Button
+          title="Open Mutli Action Dialog"
+          onPress={toggleDialog2}
+          buttonStyle={styles.button}
+        />
+        <Button
+          title="Open Loading Dialog"
+          onPress={toggleDialog3}
+          buttonStyle={styles.button}
+        />
+        <Button
+          title="Open Buttonless Dialog"
+          onPress={toggleDialog4}
+          buttonStyle={styles.button}
+        />
+        <Button
+          title="Open Custom Dialog 1"
+          onPress={toggleDialog5}
+          buttonStyle={styles.button}
+        />
+        <Button
+          title="Open Custom Dialog 2"
+          onPress={toggleDialog6}
+          buttonStyle={styles.button}
+        />
+      </View>
       <Dialog
-        isVisible={visible}
-        secondary="delete"
-        secondaryOnPress={() => console.log("secondary!!")}
-        onBackdropPress={toggleOverlay}
-        title="Are you sure about this?"
+        isVisible={visible1}
+        onBackdropPress={toggleDialog1}
+        title="Dialog Title"
       >
-      <Text>All your progress will be lost. You will have to start again!</Text>
+        <Text>Dialog body text. Add relevant information here.</Text>
+      </Dialog>
+      <Dialog
+        isVisible={visible2}
+        onBackdropPress={toggleDialog2}
+        primary="Action 1"
+        primaryOnPress={() => console.log('Primary Action Clicked!')}
+        secondary="Action 2"
+        secondaryOnPress={() => console.log('Secondary Action Clicked!')}
+        title="Dialog Title"
+      >
+        <Text>Dialog body text. Add relevant information here.</Text>
+      </Dialog>
+      <Dialog isVisible={visible3} onBackdropPress={toggleDialog3} loading />
+      <Dialog
+        isVisible={visible4}
+        onBackdropPress={toggleDialog4}
+        title="Dialog Title"
+        noButtons
+      >
+        <Text>Dialog body text. Add relevant information here.</Text>
+      </Dialog>
+      <Dialog
+        isVisible={visible5}
+        onBackdropPress={toggleDialog5}
+        primary="Confirm"
+        primaryOnPress={() => {
+          console.log(`Option ${checked} was selected!`);
+          toggleDialog5();
+        }}
+        secondary="Cancel"
+        secondaryOnPress={toggleDialog5}
+        title="Select Preference"
+      >
+        {['Option 1', 'Option 2', 'Option 3'].map((l, i) => (
+          <CheckBox
+            key={i}
+            title={l}
+            containerStyle={{ backgroundColor: 'white', borderWidth: 0 }}
+            checkedIcon="dot-circle-o"
+            uncheckedIcon="circle-o"
+            checked={checked === i + 1}
+            onPress={() => setChecked(i + 1)}
+          />
+        ))}
+      </Dialog>
+      <Dialog
+        isVisible={visible6}
+        onBackdropPress={toggleDialog6}
+        title="Choose Account"
+        noButtons
+      >
+        {userlist.map((l, i) => (
+          <ListItem
+            key={i}
+            containerStyle={{
+              marginHorizontal: -10,
+              borderRadius: 8,
+            }}
+            onPress={toggleDialog6}
+          >
+            <Avatar rounded source={{ uri: l.avatar_url }} />
+            <ListItem.Content>
+              <ListItem.Title style={{ fontWeight: '700' }}>
+                {l.name}
+              </ListItem.Title>
+              <ListItem.Subtitle>{l.subtitle}</ListItem.Subtitle>
+            </ListItem.Content>
+          </ListItem>
+        ))}
       </Dialog>
     </View>
   );
@@ -36,17 +175,14 @@ const Dialogs: React.FunctionComponent<DialogComponentProps> = () => {
 
 const styles = StyleSheet.create({
   button: {
-    margin: 10,
+    borderRadius: 6,
+    width: 220,
+    margin: 20,
   },
-  textPrimary: {
-    marginVertical: 20,
-    textAlign: 'center',
-    fontSize: 20,
-  },
-  textSecondary: {
-    marginVertical: 20,
-    textAlign: 'center',
-    fontSize: 17,
+  buttonContainer: {
+    margin: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });
 

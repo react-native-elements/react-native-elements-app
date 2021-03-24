@@ -3,7 +3,7 @@ import { Header } from './header';
 import { SpeedDial } from 'react-native-elements';
 
 export default () => {
-  const [open, setOpen] = React.useState(!false);
+  const [open, setOpen] = React.useState(false);
 
   return (
     <>

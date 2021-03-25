@@ -37,7 +37,7 @@
     "react-dom": "16.13.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-40.0.0.tar.gz",
     "react-native-appearance": "~0.3.4",
-    "react-native-elements": "github:Dhananjayan-PN/react-native-elements#dialog",
+    "react-native-elements": "https://github.com/react-native-elements/react-native-elements",
     "react-native-gesture-handler": "~1.9.0",
     "react-native-reanimated": "~1.13.2",
     "react-native-safe-area-context": "3.1.9",

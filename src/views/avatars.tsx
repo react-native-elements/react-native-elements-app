@@ -64,11 +64,14 @@ const Avatars: React.FunctionComponent<AvatarComponentProps> = () => {
 
   return (
     <>
-      <Header title="Avatars" />
+      <Header
+        title="Avatars"
+        containerStyle={{
+          paddingVertical: 20,
+        }}
+      />
       <ScrollView>
-        <SubHeader
-          title={'Photo Avatars'}
-        />
+        <SubHeader title={'Photo Avatars'} />
         {_.chunk(dataList, 3).map((chunk, chunkIndex) => (
           <View
             style={{

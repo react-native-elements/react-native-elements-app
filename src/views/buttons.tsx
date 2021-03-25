@@ -364,4 +364,3 @@ const styles = StyleSheet.create({
 });
 
 export default withTheme(Buttons, '');
-

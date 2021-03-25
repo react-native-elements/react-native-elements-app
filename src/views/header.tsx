@@ -6,6 +6,7 @@ import { Header as HeaderRNE, HeaderProps } from 'react-native-elements';
 
 type HeaderComponentProps = {
   title: string;
+  containerStyle?: object;
 };
 
 type ParamList = {
@@ -19,12 +20,16 @@ const Header: React.FunctionComponent<HeaderComponentProps> = (props) => {
 
   return (
     <HeaderRNE
+      containerStyle={props.containerStyle}
       leftComponent={{
         icon: 'menu',
         color: '#fff',
         onPress: navigation.openDrawer,
       }}
-      centerComponent={{ text: props.title, style: styles.heading }}
+      centerComponent={{
+        text: props.title,
+        style: styles.heading,
+      }}
     />
   );
 };

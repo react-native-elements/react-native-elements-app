@@ -89,7 +89,9 @@ export default class LoginScreen2 extends Component<{}, LoginScreen2State> {
         isEmailValid: this.validateEmail(email) || this.emailInput.shake(),
         isPasswordValid: password.length >= 8 || this.passwordInput.shake(),
       });
-      Alert.alert('🔥', 'Successfully Logged In');
+      if(this.state.isEmailValid && 
+        this.state.isPasswordValid) 
+        Alert.alert('🔥', 'Successfully Logged In');
     }, 1500);
   }
 
@@ -106,7 +108,10 @@ export default class LoginScreen2 extends Component<{}, LoginScreen2State> {
         isConfirmationValid:
           password === passwordConfirmation || this.confirmationInput.shake(),
       });
-      Alert.alert('🙏', 'Welcome');
+      if(this.state.isEmailValid && 
+        this.state.isPasswordValid && 
+        this.state.isConfirmationValid) 
+        Alert.alert('🙏', 'Welcome');
     }, 1500);
   }
 

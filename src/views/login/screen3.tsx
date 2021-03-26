@@ -131,10 +131,10 @@ export default class LoginScreen2 extends Component<{}, LoginScreen2State> {
               behavior="position"
             >
               <View style={styles.titleContainer}>
-                <View style={{ flexDirection: 'row' }}>
+                <View>
                   <Text style={styles.titleText}>BEAUX</Text>
                 </View>
-                <View style={{ marginTop: -10, marginLeft: 10 }}>
+                <View style={{ marginLeft: 10 }}>
                   <Text style={styles.titleText}>VOYAGES</Text>
                 </View>
               </View>
@@ -377,6 +377,7 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 30,
     fontFamily: 'regular',
+    textAlign: 'center',
   },
   helpContainer: {
     height: 64,

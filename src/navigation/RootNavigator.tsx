@@ -26,6 +26,7 @@ import Overlay from '../views/overlay';
 import CheckBox from '../views/checkbox';
 import FAB from '../views/fab';
 import Text from '../views/text';
+import Badge from '../views/badge';
 
 const Drawer = createDrawerNavigator();
 
@@ -64,6 +65,7 @@ function RootNavigator() {
         }}
       >
         <Drawer.Screen name="Avatars" component={Avatars} />
+        <Drawer.Screen name="Badge" component={Badge} />
         <Drawer.Screen name="Buttons" component={Buttons} />
         <Drawer.Screen name="Inputs" component={Inputs} />
         <Drawer.Screen name="Text" component={Text} />

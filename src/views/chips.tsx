@@ -56,24 +56,26 @@ const Chips: React.FunctionComponent<ChipsComponentProps> = () => {
               containerStyle={{ marginVertical: 15 }}
             />
             <Chip
-              title="Left Icon Chip"
+              title="Pressable Icon Chip"
               icon={{
                 name: 'bluetooth',
                 type: 'font-awesome',
                 size: 20,
                 color: colors.primary2,
               }}
+              onPress={() => console.log("Icon chip was pressed!")}
               type="outline"
               containerStyle={{ marginVertical: 15 }}
             />
             <Chip
-              title="Right Icon Chip"
+              title="Pressable Icon Chip"
               icon={{
                 name: 'close',
                 type: 'font-awesome',
                 size: 20,
                 color: colors.primary2,
               }}
+              onPress={() => console.log("Icon chip was pressed!")}
               iconRight
               type="outline"
               containerStyle={{ marginVertical: 15 }}

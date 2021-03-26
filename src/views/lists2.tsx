@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, StyleSheet, Image, FlatList, Switch } from 'react-native';
+import { View, StyleSheet, Image, FlatList } from 'react-native';
 import {
   Text,
   ListItem,
@@ -7,6 +7,7 @@ import {
   Icon,
   Badge,
   ListItemProps,
+  Switch,
 } from 'react-native-elements';
 import { LinearGradient } from '../components/LinearGradient';
 import { Header } from './header';

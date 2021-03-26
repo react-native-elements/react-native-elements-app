@@ -40,6 +40,7 @@ type SubHeaderProps = {
 };
 
 const SubHeader = ({ title, containerStyle }: SubHeaderProps) => {
+
   return (
     <View style={[styles.headerContainer, containerStyle]}>
       <Text style={styles.heading}>{title}</Text>
@@ -55,6 +56,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     width: '100%',
     paddingVertical: 10,
+
   },
   heading: {
     color: 'white',

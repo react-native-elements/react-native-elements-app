@@ -78,6 +78,7 @@ const Avatars: React.FunctionComponent<AvatarComponentProps> = () => {
               flexDirection: 'row',
               justifyContent: 'space-around',
               marginBottom: 20,
+
             }}
             key={chunkIndex}
           >
@@ -97,7 +98,8 @@ const Avatars: React.FunctionComponent<AvatarComponentProps> = () => {
           style={{
             flexDirection: 'row',
             justifyContent: 'space-around',
-            marginBottom: 10,
+            marginBottom: 20,
+
           }}
         >
           <Avatar
@@ -123,7 +125,7 @@ const Avatars: React.FunctionComponent<AvatarComponentProps> = () => {
           style={{
             flexDirection: 'row',
             justifyContent: 'space-around',
-            marginBottom: 40,
+            marginBottom: 20,
           }}
         >
           <Avatar
@@ -167,7 +169,7 @@ const Avatars: React.FunctionComponent<AvatarComponentProps> = () => {
           style={{
             flexDirection: 'row',
             justifyContent: 'space-around',
-            marginBottom: 40,
+            marginBottom: 20,
           }}
         >
           <Avatar

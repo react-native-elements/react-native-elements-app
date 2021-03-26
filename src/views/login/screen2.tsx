@@ -291,7 +291,7 @@ const styles = StyleSheet.create({
     paddingBottom: 20,
     paddingTop: 20,
     backgroundColor: '#293046',
-    width: SCREEN_WIDTH,
+    width:"100%",
     height: SCREEN_HEIGHT,
     alignItems: 'center',
     justifyContent: 'space-around',

@@ -288,7 +288,7 @@ export default class LoginScreen2 extends Component<{}, LoginScreen2State> {
                 title={'Need help ?'}
                 titleStyle={{ color: 'white' }}
                 buttonStyle={{ backgroundColor: 'transparent' }}
-                onPress={() => console.log('Account created')}
+                onPress={() => Alert.alert('🤔', 'Forgot Password Route')}
               />
             </View>
           </View>

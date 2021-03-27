@@ -64,7 +64,7 @@ const Tiles: React.FunctionComponent<TilesComponentProps> = () => {
                 }}
               >
                 <Text style={{ color: 'green' }}>Visit</Text>
-                <Text style={{ color: 'blue' }}>Find out More</Text>
+                <Text style={{ color: '#397af8' }}>Find out More</Text>
               </View>
             </Tile>
           </View>

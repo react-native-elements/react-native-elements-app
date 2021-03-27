@@ -11,7 +11,7 @@ const Login: React.FunctionComponent<LoginComponentProps> = () => {
     <>
       <Header title="Login Example" />
       <View style={styles.container}>
-        <ScrollView horizontal pagingEnabled decelerationRate={0.993}>
+        <ScrollView>
           <LoginScreen2 />
           <LoginScreen3 />
         </ScrollView>

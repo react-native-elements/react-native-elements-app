@@ -12,16 +12,17 @@ export default () => {
       <View
         style={{
           alignItems: 'center',
+          paddingVertical: 5,
           flexGrow: 1,
         }}
       >
-        <Text>Small Size</Text>
+        <Text style={{color: '#397af8', paddingVertical: 10}}>Small Size</Text>
         <FAB loading visible={visible} iconName="add" size="small" />
-        <Text>Large Size</Text>
+        <Text style={{color: '#397af8', paddingVertical: 10}}>Large Size</Text>
         <FAB visible={visible} iconName="add" color="blue" />
-        <Text>Primary Color</Text>
+        <Text style={{color: '#397af8', paddingVertical: 10}}>Primary Color</Text>
         <FAB visible={visible} label="Navigate" upperCase iconName="place" />
-        <Text>Disabled</Text>
+        <Text style={{color: '#397af8', paddingVertical: 10}}>Disabled</Text>
         <FAB
           visible={visible}
           disabled

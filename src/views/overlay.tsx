@@ -15,7 +15,6 @@ const OverlayComponent: React.FunctionComponent<OverlayComponentProps> = () => {
   return (
     <View>
       <Header title="Overlay" />
-
       <Button
         title="Open Overlay"
         onPress={toggleOverlay}

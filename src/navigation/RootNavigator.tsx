@@ -25,7 +25,7 @@ import Overlay from '../views/overlay';
 import CheckBox from '../views/checkbox';
 import FAB from '../views/fab';
 import Text from '../views/text';
-
+import Counter from '../views/counter';
 const Drawer = createDrawerNavigator();
 
 function RootNavigator() {
@@ -83,6 +83,7 @@ function RootNavigator() {
         <Drawer.Screen name="Tooltip" component={Tooltip} />
         <Drawer.Screen name="BottomSheet" component={BottomSheet} />
         <Drawer.Screen name="Checkbox" component={CheckBox} />
+        <Drawer.Screen name="Counter" component={Counter} />
       </Drawer.Navigator>
     </NavigationContainer>
   );

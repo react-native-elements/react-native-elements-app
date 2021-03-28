@@ -6,7 +6,6 @@ import {
   Dimensions,
   Image,
   UIManager,
-  KeyboardAvoidingView,
   StyleSheet,
   ScrollView,
   Text,
@@ -109,118 +108,113 @@ const LoginScreen3: React.FunctionComponent<LoginScreen3Props> = () => {
       keyboardShouldPersistTaps="handled"
       contentContainerStyle={styles.container}
     >
-      <KeyboardAvoidingView
-        behavior="position"
-        contentContainerStyle={styles.formContainer}
-      >
-        <Text style={styles.signUpText}>Sign up</Text>
-        <Text style={styles.whoAreYouText}>WHO YOU ARE ?</Text>
-        <View style={styles.userTypesContainer}>
-          <UserTypeItem
-            label="COOL"
-            labelColor="#ECC841"
-            image={USER_COOL}
-            onPress={() => selectedTypeHandler('parent')}
-            selected={selectedType === 'parent'}
-          />
-          <UserTypeItem
-            label="STUDENT"
-            labelColor="#2CA75E"
-            image={USER_STUDENT}
-            onPress={() => selectedTypeHandler('child')}
-            selected={selectedType === 'child'}
-          />
-          <UserTypeItem
-            label="HARRY POTTER"
-            labelColor="#36717F"
-            image={USER_HP}
-            onPress={() => selectedTypeHandler('teacher')}
-            selected={selectedType === 'teacher'}
-          />
-        </View>
-        <View style={{ width: '80%', marginLeft: 'auto', marginRight: 'auto' }}>
-          <FormInput
-            refInput={(input) => (usernameInput = input)}
-            icon="user"
-            value={username}
-            onChangeText={(text) => setUsername(text)}
-            placeholder="Username"
-            returnKeyType="next"
-            errorMessage={validUsername ? null : "Your username can't be blank"}
-            onSubmitEditing={() => {
-              validateUsername();
-              emailInput.focus();
-            }}
-          />
-          <FormInput
-            refInput={(input) => (emailInput = input)}
-            icon="envelope"
-            value={email}
-            onChangeText={(text) => setEmail(text)}
-            placeholder="Email"
-            keyboardType="email-address"
-            returnKeyType="next"
-            errorMessage={
-              validEmail ? null : 'Please enter a valid email address'
-            }
-            onSubmitEditing={() => {
-              validateEmail();
-              passwordInput.focus();
-            }}
-          />
-          <FormInput
-            refInput={(input) => (passwordInput = input)}
-            icon="lock"
-            value={password}
-            onChangeText={(text) => setPassword(text)}
-            placeholder="Password"
-            secureTextEntry
-            returnKeyType="next"
-            errorMessage={
-              validPassword ? null : 'Please enter at least 8 characters'
-            }
-            onSubmitEditing={() => {
-              validatePassword();
-              confirmationPasswordInput.focus();
-            }}
-          />
-          <FormInput
-            refInput={(input) => (confirmationPasswordInput = input)}
-            icon="lock"
-            value={confirmationPassword}
-            onChangeText={(text) => setConfirmationPassword(text)}
-            placeholder="Confirm Password"
-            secureTextEntry
-            errorMessage={
-              validConfirmationPassword
-                ? null
-                : 'The password fields are not identical'
-            }
-            returnKeyType="go"
-            onSubmitEditing={() => {
-              validateConfirmationPassword();
-              signup();
-            }}
-          />
-        </View>
-        <Button
-          loading={isLoading}
-          title="SIGNUP"
-          containerStyle={{ flex: -1, marginLeft: 'auto', marginRight: 'auto' }}
-          buttonStyle={styles.signUpButton}
-          linearGradientProps={{
-            colors: ['#FF9800', '#F44336'],
-            start: [1, 0],
-            end: [0.2, 0],
+      <Text style={styles.signUpText}>Sign up</Text>
+      <Text style={styles.whoAreYouText}>WHO YOU ARE ?</Text>
+      <View style={styles.userTypesContainer}>
+        <UserTypeItem
+          label="COOL"
+          labelColor="#ECC841"
+          image={USER_COOL}
+          onPress={() => selectedTypeHandler('parent')}
+          selected={selectedType === 'parent'}
+        />
+        <UserTypeItem
+          label="STUDENT"
+          labelColor="#2CA75E"
+          image={USER_STUDENT}
+          onPress={() => selectedTypeHandler('child')}
+          selected={selectedType === 'child'}
+        />
+        <UserTypeItem
+          label="HARRY POTTER"
+          labelColor="#36717F"
+          image={USER_HP}
+          onPress={() => selectedTypeHandler('teacher')}
+          selected={selectedType === 'teacher'}
+        />
+      </View>
+      <View style={{ width: '80%', marginLeft: 'auto', marginRight: 'auto' }}>
+        <FormInput
+          refInput={(input) => (usernameInput = input)}
+          icon="user"
+          value={username}
+          onChangeText={(text) => setUsername(text)}
+          placeholder="Username"
+          returnKeyType="next"
+          errorMessage={validUsername ? null : "Your username can't be blank"}
+          onSubmitEditing={() => {
+            validateUsername();
+            emailInput.focus();
           }}
-          ViewComponent={LinearGradient}
-          titleStyle={styles.signUpButtonText}
-          onPress={() => {
+        />
+        <FormInput
+          refInput={(input) => (emailInput = input)}
+          icon="envelope"
+          value={email}
+          onChangeText={(text) => setEmail(text)}
+          placeholder="Email"
+          keyboardType="email-address"
+          returnKeyType="next"
+          errorMessage={
+            validEmail ? null : 'Please enter a valid email address'
+          }
+          onSubmitEditing={() => {
+            validateEmail();
+            passwordInput.focus();
+          }}
+        />
+        <FormInput
+          refInput={(input) => (passwordInput = input)}
+          icon="lock"
+          value={password}
+          onChangeText={(text) => setPassword(text)}
+          placeholder="Password"
+          secureTextEntry
+          returnKeyType="next"
+          errorMessage={
+            validPassword ? null : 'Please enter at least 8 characters'
+          }
+          onSubmitEditing={() => {
+            validatePassword();
+            confirmationPasswordInput.focus();
+          }}
+        />
+        <FormInput
+          refInput={(input) => (confirmationPasswordInput = input)}
+          icon="lock"
+          value={confirmationPassword}
+          onChangeText={(text) => setConfirmationPassword(text)}
+          placeholder="Confirm Password"
+          secureTextEntry
+          errorMessage={
+            validConfirmationPassword
+              ? null
+              : 'The password fields are not identical'
+          }
+          returnKeyType="go"
+          onSubmitEditing={() => {
+            validateConfirmationPassword();
             signup();
           }}
-          disabled={isLoading}
         />
-      </KeyboardAvoidingView>
+      </View>
+      <Button
+        loading={isLoading}
+        title="SIGNUP"
+        containerStyle={{ flex: -1, marginLeft: 'auto', marginRight: 'auto' }}
+        buttonStyle={styles.signUpButton}
+        linearGradientProps={{
+          colors: ['#FF9800', '#F44336'],
+          start: [1, 0],
+          end: [0.2, 0],
+        }}
+        ViewComponent={LinearGradient}
+        titleStyle={styles.signUpButtonText}
+        onPress={() => {
+          signup();
+        }}
+        disabled={isLoading}
+      />
       <View style={styles.loginHereContainer}>
         <Text style={styles.alreadyAccountText}>Already have an account.</Text>
         <Button
@@ -295,11 +289,6 @@ const styles = StyleSheet.create({
     height: SCREEN_HEIGHT,
     alignItems: 'center',
     justifyContent: 'space-around',
-  },
-  formContainer: {
-    flex: 1,
-    justifyContent: 'space-around',
-    alignItems: 'center',
   },
   signUpText: {
     color: 'white',

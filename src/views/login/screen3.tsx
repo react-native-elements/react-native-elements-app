@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {
+  Alert,
   StyleSheet,
   View,
   Text,
@@ -89,6 +90,7 @@ export default class LoginScreen2 extends Component<{}, LoginScreen2State> {
         isEmailValid: this.validateEmail(email) || this.emailInput.shake(),
         isPasswordValid: password.length >= 8 || this.passwordInput.shake(),
       });
+      Alert.alert('🔥', 'Successfully Logged In');
     }, 1500);
   }
 
@@ -105,6 +107,7 @@ export default class LoginScreen2 extends Component<{}, LoginScreen2State> {
         isConfirmationValid:
           password === passwordConfirmation || this.confirmationInput.shake(),
       });
+      Alert.alert('🙏', 'Welcome');
     }, 1500);
   }
 
@@ -131,10 +134,10 @@ export default class LoginScreen2 extends Component<{}, LoginScreen2State> {
               behavior="position"
             >
               <View style={styles.titleContainer}>
-                <View style={{ flexDirection: 'row' }}>
+                <View>
                   <Text style={styles.titleText}>BEAUX</Text>
                 </View>
-                <View style={{ marginTop: -10, marginLeft: 10 }}>
+                <View style={{ marginLeft: 10 }}>
                   <Text style={styles.titleText}>VOYAGES</Text>
                 </View>
               </View>
@@ -186,7 +189,7 @@ export default class LoginScreen2 extends Component<{}, LoginScreen2State> {
                   autoCorrect={false}
                   keyboardType="email-address"
                   returnKeyType="next"
-                  inputStyle={{ marginLeft: 10 }}
+                  inputStyle={{ marginLeft: 10, color: 'grey'}}
                   placeholder={'Email'}
                   containerStyle={{
                     borderBottomColor: 'rgba(0, 0, 0, 0.38)',
@@ -219,7 +222,7 @@ export default class LoginScreen2 extends Component<{}, LoginScreen2State> {
                     marginTop: 16,
                     borderBottomColor: 'rgba(0, 0, 0, 0.38)',
                   }}
-                  inputStyle={{ marginLeft: 10 }}
+                  inputStyle={{ marginLeft: 10, color: 'grey' }}
                   placeholder={'Password'}
                   ref={(input) => (this.passwordInput = input)}
                   onSubmitEditing={() =>
@@ -255,7 +258,7 @@ export default class LoginScreen2 extends Component<{}, LoginScreen2State> {
                       marginTop: 16,
                       borderBottomColor: 'rgba(0, 0, 0, 0.38)',
                     }}
-                    inputStyle={{ marginLeft: 10 }}
+                    inputStyle={{ marginLeft: 10, color: 'grey' }}
                     placeholder={'Confirm password'}
                     ref={(input) => (this.confirmationInput = input)}
                     onSubmitEditing={this.signUp}
@@ -298,7 +301,12 @@ export default class LoginScreen2 extends Component<{}, LoginScreen2State> {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flexGrow: 1,
+    paddingBottom: 20,
+    width:"100%",
+    height: SCREEN_HEIGHT,
+    alignItems: 'center',
+    justifyContent: 'space-around',
   },
   rowSelector: {
     height: 20,
@@ -357,7 +365,7 @@ const styles = StyleSheet.create({
     flex: 1,
     top: 0,
     left: 0,
-    width: SCREEN_WIDTH,
+    width:"100%",
     height: SCREEN_HEIGHT,
     justifyContent: 'center',
     alignItems: 'center',
@@ -377,6 +385,7 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 30,
     fontFamily: 'regular',
+    textAlign: 'center',
   },
   helpContainer: {
     height: 64,

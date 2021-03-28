@@ -43,7 +43,7 @@ const Tiles: React.FunctionComponent<TilesComponentProps> = () => {
               width={310}
             />
           </View>
-          <View style={{ paddingTop: 20 }}>
+          <View style={{ paddingTop: 20, paddingBottom: 100 }}>
             <Tile
               imageSrc={{
                 uri:

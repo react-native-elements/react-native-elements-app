@@ -155,7 +155,7 @@ const Inputs: React.FunctionComponent<InputsComponentProps> = () => {
           <View
             style={{
               backgroundColor: '#2F343B',
-              width: SCREEN_WIDTH,
+              width:"100%",
               alignItems: 'center',
             }}
           >
@@ -179,7 +179,7 @@ const Inputs: React.FunctionComponent<InputsComponentProps> = () => {
                   borderColor: 'white',
                   borderLeftWidth: 0,
                   height: 50,
-                  width: SCREEN_WIDTH - 80,
+                  width:"80%",
                   backgroundColor: 'white',
                 }}
                 leftIcon={
@@ -217,7 +217,7 @@ const Inputs: React.FunctionComponent<InputsComponentProps> = () => {
                   borderColor: 'white',
                   borderLeftWidth: 0,
                   height: 50,
-                  width: SCREEN_WIDTH - 80,
+                  width:"80%",
                   backgroundColor: 'white',
                 }}
                 leftIconContainerStyle={{
@@ -274,7 +274,7 @@ const Inputs: React.FunctionComponent<InputsComponentProps> = () => {
             <View
               style={{
                 backgroundColor: 'rgba(46, 50, 72, 1)',
-                width: SCREEN_WIDTH,
+                width:"100%",
                 alignItems: 'center',
                 paddingBottom: 30,
               }}
@@ -295,7 +295,7 @@ const Inputs: React.FunctionComponent<InputsComponentProps> = () => {
                   <Icon
                     name="user"
                     type="simple-line-icon"
-                    style={{ marginLeft: 10 }}
+                    style={{ marginLeft: 12 }}
                     color="rgba(110, 120, 170, 1)"
                     size={25}
                   />

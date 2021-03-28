@@ -30,7 +30,7 @@ const TextComponent: React.FunctionComponent<TextComponentProps> = () => {
           Heading 4
         </Text>
         <View style={styles.more}>
-          <Text style={[styles.text, { color: 'grey' }]}>
+          <Text style={[styles.text, { color: 'grey', padding: 20 }]}>
             Refer docs for more:
           </Text>
           <Button
@@ -50,6 +50,7 @@ const styles = StyleSheet.create({
   },
   text: {
     textAlign: 'center',
+    padding: 5,
   },
   more: {
     marginVertical: 20,

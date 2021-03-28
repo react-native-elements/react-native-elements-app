@@ -16,7 +16,7 @@ import {
   ThemeProvider,
   InputProps,
 } from 'react-native-elements';
-import { Header } from './header';
+import { Header, SubHeader } from './header';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
 const dummySearchBarProps = {
@@ -42,7 +42,7 @@ const Inputs: React.FunctionComponent<InputsComponentProps> = () => {
   let confirmPassword2Input = useRef(null);
 
   const InputFieldsStyle = {
-    borderWidth: 0,
+    borderWidth: 0   
   };
 
   const inputProps = {};
@@ -55,9 +55,8 @@ const Inputs: React.FunctionComponent<InputsComponentProps> = () => {
     >
       <Header title="Inputs" />
       <ScrollView keyboardShouldPersistTaps="handled">
-        <View style={styles.headerContainer}>
-          <Icon color="white" name="search" size={62} />
-          <Text style={styles.heading}>Search Bars</Text>
+        <View>
+          <SubHeader title={'Search Bars'} />
         </View>
         <SearchBarCustom
           placeholder="iOS searchbar"
@@ -76,14 +75,8 @@ const Inputs: React.FunctionComponent<InputsComponentProps> = () => {
           style={InputFieldsStyle}
           {...dummySearchBarProps}
         />
-        <View
-          style={[
-            styles.headerContainer,
-            { backgroundColor: '#616389', marginTop: 20 },
-          ]}
-        >
-          <Icon color="white" name="input" size={62} />
-          <Text style={styles.heading}>Inputs</Text>
+        <View style={{paddingTop: 30}}>
+          <SubHeader title={'Inputs'} />
         </View>
         <View style={{ alignItems: 'center', marginBottom: 16 }}>
           <Input
@@ -388,12 +381,6 @@ const Inputs: React.FunctionComponent<InputsComponentProps> = () => {
 export default Inputs;
 
 const styles = StyleSheet.create({
-  headerContainer: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: 40,
-    backgroundColor: '#B46486',
-  },
   heading: {
     color: 'white',
     marginTop: 10,

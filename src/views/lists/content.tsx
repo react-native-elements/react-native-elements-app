@@ -5,7 +5,7 @@ import { Avatar, Button, Icon, withTheme } from 'react-native-elements';
 
 const USERS = [
   {
-    name: 'Johh Smith',
+    name: 'John Smith',
     avatar: 'https://uifaces.co/our-content/donated/1H_7AxP0.jpg',
     value: '- 164',
   },
@@ -17,7 +17,7 @@ const USERS = [
     positive: true,
   },
   {
-    name: 'Paul Allen',
+    name: 'Barry Allen',
     avatar: 'https://uifaces.co/our-content/donated/bUkmHPKs.jpg',
     value: '+ 464',
     positive: true,

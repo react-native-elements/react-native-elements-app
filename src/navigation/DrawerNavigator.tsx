@@ -41,6 +41,7 @@ function CustomContentComponent(props) {
           flexDirection: 'row',
           width: '100%',
           paddingLeft: 25,
+          paddingBottom: 5,
         }}
       >
         <Text

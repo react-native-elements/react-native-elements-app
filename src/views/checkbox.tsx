@@ -57,7 +57,7 @@ const CheckboxComponent: React.FunctionComponent<CheckboxComponentProps> = () =>
           <Icon
             name="radio-button-unchecked"
             type="material"
-            color="black"
+            color="grey"
             size={25}
             iconStyle={{ marginRight: 10 }}
           />

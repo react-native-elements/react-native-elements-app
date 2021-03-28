@@ -206,7 +206,7 @@ const Avatars: React.FunctionComponent<AvatarComponentProps> = () => {
             rounded
             source={{
               uri:
-                'https://cdn.pixabay.com/photo/2020/06/03/14/53/girl-5255195__340.jpg',
+                'https://randomuser.me/api/portraits/women/57.jpg',
             }}
             title="Bj"
             containerStyle={{ backgroundColor: 'grey' }}

@@ -27,6 +27,7 @@ import FAB from '../views/fab';
 import Text from '../views/text';
 import Badge from '../views/badge';
 import WhatsappClone from '../views/whatsappClone';
+import animation from '../views/animation';
 
 const Drawer = createDrawerNavigator();
 
@@ -64,6 +65,7 @@ function RootNavigator() {
           backgroundColor: theme.colors.grey4,
         }}
       >
+
         <Drawer.Screen name="Avatars" component={Avatars} />
         <Drawer.Screen name="Badge" component={Badge} />
         <Drawer.Screen name="Buttons" component={Buttons} />
@@ -76,6 +78,7 @@ function RootNavigator() {
         <Drawer.Screen name="Tiles" component={Tiles} />
         <Drawer.Screen name="Pricing" component={Pricing} />
         <Drawer.Screen name="Ratings" component={Ratings} />
+        <Drawer.Screen name="Native Driver Animations" component={animation} />
         <Drawer.Screen name="FAB" component={FAB} />
         <Drawer.Screen name="Login" component={Login} />
         <Drawer.Screen name="Settings" component={Settings} />

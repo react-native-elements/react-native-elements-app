@@ -1,11 +1,10 @@
 import React from 'react';
-import { View } from 'react-native';
+import { Text } from 'react-native';
 import { Header } from './header';
 import { Tab } from 'react-native-elements';
 
 export default () => {
   const [index, setIndex] = React.useState(0);
-  const [index2, setIndex2] = React.useState(0);
 
   return (
     <>
@@ -32,14 +31,18 @@ export default () => {
           icon={{ name: 'cart', type: 'ionicon', color: 'white' }}
         />
       </Tab>
-
-      <View style={{ marginVertical: 20 }}>
-        <Tab value={index2} onChange={(e: number) => setIndex2(e)}>
-          <Tab.Item title="Tab 1" />
-          <Tab.Item title="Disabled" disabled />
-          <Tab.Item title="Tab 3" />
-        </Tab>
-      </View>
+      {(() => {
+        switch (index) {
+          case 0:
+            return <Text>Recent</Text>;
+          case 1:
+            return <Text>favourites</Text>;
+          case 2:
+            return <Text>Your Cart</Text>;
+          default:
+            return null;
+        }
+      })()}
     </>
   );
 };

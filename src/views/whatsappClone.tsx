@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import {
   View,
   ScrollView,
@@ -8,9 +8,12 @@ import {
   SafeAreaView,
 } from 'react-native';
 import { Avatar, FAB, Icon, ListItem } from 'react-native-elements';
+import { ThemeReducerContext } from '../helpers/ThemeReducer';
+
 
 const WhatsappClone: React.FunctionComponent = () => {
   const { current: offset } = React.useRef(new Animated.Value(0));
+  const { ThemeState } = useContext(ThemeReducerContext);
 
   return (
     <>
@@ -81,7 +84,7 @@ const WhatsappClone: React.FunctionComponent = () => {
                   <Text>John Doe</Text>
                 </ListItem.Title>
                 <View>
-                  <Text style={{ opacity: 0.6, fontSize: 12 }}>
+                  <Text style={[ThemeState.themeMode === 'dark'? styles.chatOverviewDark: styles.chatOverviewLight]}>
                     You: Oh I am using React Native Elements
                   </Text>
                 </View>
@@ -140,4 +143,14 @@ const styles = StyleSheet.create({
     borderBottomColor: '#fff',
     borderBottomWidth: 4,
   },
+  chatOverviewLight: {
+    opacity: 0.6,
+    fontSize: 12,
+    color: 'black'
+  },
+  chatOverviewDark: {
+    opacity: 0.6,
+    fontSize: 12,
+    color: 'white'
+  }
 });

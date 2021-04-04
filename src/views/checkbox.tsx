@@ -5,20 +5,20 @@ import { Header } from './header';
 type CheckboxComponentProps = {};
 
 const CheckboxComponent: React.FunctionComponent<CheckboxComponentProps> = () => {
-  const [checked, setChecked] = useState(false);
-  const onCheckHandler = () => {
-    setChecked(!checked);
-  };
+  const [check1, setCheck1] = useState(false);
+  const [check2, setCheck2] = useState(false);
+  const [check3, setCheck3] = useState(false);
+  const [check4, setCheck4] = useState(false);
+
   return (
     <>
       <Header title="Checkbox" />
-      <CheckBox title="Click Here" checked={checked} onPress={onCheckHandler} />
 
       <CheckBox
         center
         title="Click Here"
-        checked={checked}
-        onPress={onCheckHandler}
+        checked={check1}
+        onPress={() => setCheck1(!check1)}
       />
 
       <CheckBox
@@ -26,20 +26,20 @@ const CheckboxComponent: React.FunctionComponent<CheckboxComponentProps> = () =>
         title="Click Here"
         checkedIcon="dot-circle-o"
         uncheckedIcon="circle-o"
-        checked={checked}
-        onPress={onCheckHandler}
+        checked={check2}
+        onPress={() => setCheck2(!check2)}
       />
 
       <CheckBox
         center
-        title={`Click Here to ${checked ? 'Remove' : 'Add'} This Item`}
+        title={`Click Here to ${check3 ? 'Remove' : 'Add'} This Item`}
         iconRight
         iconType="material"
         checkedIcon="clear"
         uncheckedIcon="add"
         checkedColor="red"
-        checked={checked}
-        onPress={onCheckHandler}
+        checked={check3}
+        onPress={() => setCheck3(!check3)}
       />
 
       <CheckBox
@@ -62,8 +62,8 @@ const CheckboxComponent: React.FunctionComponent<CheckboxComponentProps> = () =>
             iconStyle={{ marginRight: 10 }}
           />
         }
-        checked={checked}
-        onPress={onCheckHandler}
+        checked={check4}
+        onPress={() => setCheck4(!check4)}
       />
     </>
   );

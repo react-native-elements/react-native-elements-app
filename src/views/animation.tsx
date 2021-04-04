@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { View, Animated, Text } from 'react-native'
-import { TouchableOpacity } from 'react-native-gesture-handler'
+import { TouchableHighlight, TouchableOpacity } from 'react-native-gesture-handler'
 import { SafeAreaView } from 'react-native-safe-area-context'
 
 
@@ -65,16 +65,16 @@ const animation = () => {
 
                 </View>
             </Animated.View>
-            <TouchableOpacity onPress={moveForward}>
+            <TouchableHighlight onPress={moveForward}>
                 <Text style={{color: 'white'}}>
                     Move Forward
                 </Text>
-            </TouchableOpacity>
-            <TouchableOpacity onPress={moveBackward}>
+            </TouchableHighlight>
+            <TouchableHighlight onPress={moveBackward}>
                 <Text style={{color: 'white'}}>
                     Move Backward
                 </Text>
-            </TouchableOpacity>
+            </TouchableHighlight>
 
 
             <Animated.View style ={{
@@ -85,16 +85,16 @@ const animation = () => {
                     backgroundColor: 'yellow',
                     marginTop: 30,
                 }}/>
-            <TouchableOpacity onPress={fadeIn}>
+            <TouchableHighlight onPress={fadeIn}>
                 <Text style={{color: 'white'}}>
                     Fade In
                 </Text>
-            </TouchableOpacity>
-            <TouchableOpacity onPress={fadeOut}>
+            </TouchableHighlight>
+            <TouchableHighlight onPress={fadeOut}>
                 <Text style={{color: 'white'}}>
                     Fade Out
                 </Text>
-            </TouchableOpacity>
+            </TouchableHighlight>
 
 
             <Animated.View style ={
@@ -107,11 +107,11 @@ const animation = () => {
                     marginTop: 30,
                 }
                     }/>
-            <TouchableOpacity onPress={translate}>
+            <TouchableHighlight onPress={translate}>
                 <Text style={{color: 'white'}}>
                     Translate
                 </Text>
-            </TouchableOpacity>
+            </TouchableHighlight>
         </SafeAreaView>
     )
 }

@@ -41,27 +41,9 @@ const dataList = [
   },
 ];
 
-const theme1 = {
-  Button: {
-    titleStyle: {
-      color: 'white',
-    },
-  },
-};
-
-const theme2 = {
-  Button: {
-    titleStyle: {
-      color: 'red',
-    },
-  },
-};
-
 type AvatarComponentProps = {};
 
 const Avatars: React.FunctionComponent<AvatarComponentProps> = () => {
-  const [theme, setTheme] = useState(theme1);
-
   return (
     <>
       <Header title="Avatars" />
@@ -205,8 +187,7 @@ const Avatars: React.FunctionComponent<AvatarComponentProps> = () => {
             size={64}
             rounded
             source={{
-              uri:
-                'https://randomuser.me/api/portraits/women/57.jpg',
+              uri: 'https://randomuser.me/api/portraits/women/57.jpg',
             }}
             title="Bj"
             containerStyle={{ backgroundColor: 'grey' }}

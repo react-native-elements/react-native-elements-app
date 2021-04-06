@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { View, ScrollView } from 'react-native';
 import _ from 'lodash';
 import { Avatar } from 'react-native-elements';
-import { Header, SubHeader } from './header';
+import { Header, SubHeader } from '../components/header';
 
 const dataList = [
   {
@@ -64,7 +64,7 @@ const Avatars: React.FunctionComponent<AvatarComponentProps> = () => {
 
   return (
     <>
-      <Header title="Avatars" />
+      <Header title="Avatars" view="avatar" />
       <ScrollView>
         <SubHeader title={'Photo Avatars'} />
         {_.chunk(dataList, 3).map((chunk, chunkIndex) => (
@@ -205,8 +205,7 @@ const Avatars: React.FunctionComponent<AvatarComponentProps> = () => {
             size={64}
             rounded
             source={{
-              uri:
-                'https://randomuser.me/api/portraits/women/57.jpg',
+              uri: 'https://randomuser.me/api/portraits/women/57.jpg',
             }}
             title="Bj"
             containerStyle={{ backgroundColor: 'grey' }}

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Overlay, Icon } from 'react-native-elements';
 import { View, Text, StyleSheet } from 'react-native';
-import { Header } from './header';
+import { Header } from '../components/header';
 
 type OverlayComponentProps = {};
 
@@ -14,7 +14,7 @@ const OverlayComponent: React.FunctionComponent<OverlayComponentProps> = () => {
 
   return (
     <View>
-      <Header title="Overlay" />
+      <Header title="Overlay" view="overlay" />
 
       <Button
         title="Open Overlay"

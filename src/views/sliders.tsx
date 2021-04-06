@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, StyleSheet } from 'react-native';
 import { Slider, Text, Icon } from 'react-native-elements';
-import { Header, SubHeader } from './header';
+import { Header, SubHeader } from '../components/header';
 
 type SlidersComponentProps = {};
 
@@ -11,7 +11,7 @@ const Sliders: React.FunctionComponent<SlidersComponentProps> = () => {
 
   return (
     <>
-      <Header title="Slider" />
+      <Header title="Slider" view="slider" />
       <SubHeader title="Slider Horizontal" />
       <View style={styles.contentView}>
         <Slider
@@ -36,7 +36,7 @@ const Sliders: React.FunctionComponent<SlidersComponentProps> = () => {
             ),
           }}
         />
-        <Text style={{paddingTop: 20}}>Value: {value}</Text>
+        <Text style={{ paddingTop: 20 }}>Value: {value}</Text>
       </View>
       <SubHeader title="Slider Vertical" />
       <View style={styles.verticalContent}>
@@ -62,7 +62,7 @@ const Sliders: React.FunctionComponent<SlidersComponentProps> = () => {
           }}
         />
       </View>
-      <Text style={{paddingLeft: 25}}>Value: {vertValue}</Text>
+      <Text style={{ paddingLeft: 25 }}>Value: {vertValue}</Text>
     </>
   );
 };

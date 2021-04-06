@@ -2,7 +2,7 @@ import React from 'react';
 import { View, ScrollView } from 'react-native';
 import _ from 'lodash';
 import { SocialIcon, SocialIconProps } from 'react-native-elements';
-import { Header } from './header';
+import { Header } from '../components/header';
 
 const dataList = [
   {
@@ -98,7 +98,7 @@ const SocialIcons: React.FunctionComponent<SocialIconsComponentProps> = () => {
   const socialProps = {};
   return (
     <>
-      <Header title="Social Icons" />
+      <Header title="Social Icons" view="social_icon" />
       <ScrollView>
         {_.chunk(dataList, 3).map((chunk, chunkIndex) => (
           <View

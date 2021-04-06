@@ -1,5 +1,5 @@
 import React from 'react';
-import { Header } from '../header';
+import { Header } from '../../components/header';
 import ListContent from './content';
 
 type ListComponentProps = {};
@@ -7,7 +7,7 @@ type ListComponentProps = {};
 const Lists: React.FunctionComponent<ListComponentProps> = () => {
   return (
     <>
-      <Header title="Lists" />
+      <Header title="Lists" view="listitem" />
       <ListContent />
     </>
   );

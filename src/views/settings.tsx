@@ -8,9 +8,8 @@ import {
   SearchBarProps,
   Switch,
 } from 'react-native-elements';
-import { Header } from './header';
+import { Header } from '../components/header';
 import { ThemeReducerContext } from '../helpers/ThemeReducer';
-
 
 const ORANGE = '#FF9500';
 const BLUE = '#007AFF';
@@ -166,7 +165,13 @@ const Settings: React.FunctionComponent<SetttingsComponentProps> = () => {
   const renderSectionHeader = () => <View style={styles.headerSection} />;
 
   const ItemSeparatorComponent = () => (
-    <View style={[ThemeState.themeMode === 'dark'? styles.separatorComponentDark: styles.separatorComponentLight]}>
+    <View
+      style={[
+        ThemeState.themeMode === 'dark'
+          ? styles.separatorComponentDark
+          : styles.separatorComponentLight,
+      ]}
+    >
       <Divider style={styles.separator} />
     </View>
   );

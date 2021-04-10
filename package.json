@@ -17,8 +17,7 @@
     "deploy": "gh-pages -d web-build",
     "prettify": "prettier --write 'src/**/*.js'",
     "lint": "eslint --ext js,ts,tsx .",
-    "clean-install": "rm -rf node_modules && npm cache clean --force && watchman watch-del-all && yarn",
-    "postinstall": "./fix.sh && tsc --p ./node_modules/react-native-elements"
+    "clean-install": "rm -rf node_modules && npm cache clean --force && watchman watch-del-all && yarn"
   },
   "dependencies": {
     "@expo/vector-icons": "^12.0.0",
@@ -37,7 +36,7 @@
     "react-dom": "16.13.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-40.0.0.tar.gz",
     "react-native-appearance": "~0.3.4",
-    "react-native-elements": "https://github.com/react-native-elements/react-native-elements",
+    "react-native-elements": "https://github.com/react-native-elements/react-native-elements#dist",
     "react-native-gesture-handler": "~1.9.0",
     "react-native-reanimated": "~1.13.2",
     "react-native-safe-area-context": "3.1.9",

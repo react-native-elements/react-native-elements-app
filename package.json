@@ -17,8 +17,7 @@
     "deploy": "gh-pages -d web-build",
     "prettify": "prettier --write 'src/**/*.js'",
     "lint": "eslint --ext js,ts,tsx .",
-    "clean-install": "rm -rf node_modules && npm cache clean --force && watchman watch-del-all && yarn",
-    "postinstall": "./fix.sh && tsc --p ./node_modules/react-native-elements"
+    "clean-install": "rm -rf node_modules && npm cache clean --force && watchman watch-del-all && yarn"
   },
   "dependencies": {
     "@expo/vector-icons": "^12.0.0",

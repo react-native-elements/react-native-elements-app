@@ -36,7 +36,7 @@ const Sliders: React.FunctionComponent<SlidersComponentProps> = () => {
             ),
           }}
         />
-        <Text style={{paddingTop: 20}}>Value: {value}</Text>
+        <Text style={{ paddingTop: 20 }}>Value: {value}</Text>
       </View>
       <SubHeader title="Slider Vertical" />
       <View style={styles.verticalContent}>
@@ -62,7 +62,7 @@ const Sliders: React.FunctionComponent<SlidersComponentProps> = () => {
           }}
         />
       </View>
-      <Text style={{paddingLeft: 25}}>Value: {vertValue}</Text>
+      <Text style={{ paddingLeft: 25 }}>Value: {vertValue}</Text>
     </>
   );
 };

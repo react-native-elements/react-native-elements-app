@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { DrawerNavigationProp } from '@react-navigation/drawer';
-import { Header as HeaderRNE, HeaderProps } from 'react-native-elements';
+import { Header as HeaderRNE } from 'react-native-elements';
 
 type HeaderComponentProps = {
   title: string;
@@ -30,10 +30,10 @@ const Header: React.FunctionComponent<HeaderComponentProps> = (props) => {
 };
 
 type SubHeaderProps = {
-  title: string,
+  title: string;
 };
 
-const SubHeader = ({ title}: SubHeaderProps) => {
+const SubHeader = ({ title }: SubHeaderProps) => {
   return (
     <View style={styles.headerContainer}>
       <Text style={styles.heading}>{title}</Text>
@@ -47,8 +47,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#397af8',
     marginBottom: 20,
-    width:"100%",
-    paddingVertical:15,
+    width: '100%',
+    paddingVertical: 15,
   },
   heading: {
     color: 'white',

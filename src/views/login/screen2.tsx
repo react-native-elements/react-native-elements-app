@@ -36,9 +36,10 @@ const LoginScreen3: React.FunctionComponent<LoginScreen3Props> = () => {
   const [validEmail, setEmailValid] = useState<boolean>(true);
   const [validPassword, setPasswordValid] = useState<boolean>(true);
   const [validUsername, setUsernameValid] = useState<boolean>(true);
-  const [validConfirmationPassword, setConfirmationPasswordValid] = useState<
-    boolean
-  >(true);
+  const [
+    validConfirmationPassword,
+    setConfirmationPasswordValid,
+  ] = useState<boolean>(true);
   let emailInput = useRef<InputProps>(null);
   let passwordInput = useRef<InputProps>(null);
   let confirmationPasswordInput = useRef<InputProps>(null);
@@ -285,7 +286,7 @@ const styles = StyleSheet.create({
     paddingBottom: 20,
     paddingTop: 20,
     backgroundColor: '#293046',
-    width:"100%",
+    width: '100%',
     height: SCREEN_HEIGHT,
     alignItems: 'center',
     justifyContent: 'space-around',

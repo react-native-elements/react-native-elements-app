@@ -24,9 +24,9 @@ const USER_HP = require('../../../assets/images/user-hp.png');
 const SCREEN_WIDTH = Dimensions.get('window').width;
 const SCREEN_HEIGHT = Dimensions.get('window').height;
 
-type LoginScreen3Props = {};
+type LoginScreen2Props = {};
 
-const LoginScreen3: React.FunctionComponent<LoginScreen3Props> = () => {
+const LoginScreen2: React.FunctionComponent<LoginScreen2Props> = () => {
   const [isLoading, setLoading] = useState<boolean>(false);
   const [selectedType, setSelectedType] = useState<string>(null);
   const [username, setUsername] = useState<string>('');
@@ -36,9 +36,10 @@ const LoginScreen3: React.FunctionComponent<LoginScreen3Props> = () => {
   const [validEmail, setEmailValid] = useState<boolean>(true);
   const [validPassword, setPasswordValid] = useState<boolean>(true);
   const [validUsername, setUsernameValid] = useState<boolean>(true);
-  const [validConfirmationPassword, setConfirmationPasswordValid] = useState<
-    boolean
-  >(true);
+  const [
+    validConfirmationPassword,
+    setConfirmationPasswordValid,
+  ] = useState<boolean>(true);
   let emailInput = useRef<InputProps>(null);
   let passwordInput = useRef<InputProps>(null);
   let confirmationPasswordInput = useRef<InputProps>(null);
@@ -229,7 +230,7 @@ const LoginScreen3: React.FunctionComponent<LoginScreen3Props> = () => {
   );
 };
 
-export default LoginScreen3;
+export default LoginScreen2;
 
 export const UserTypeItem = (props) => {
   const { image, label, labelColor, selected, ...attributes } = props;
@@ -285,7 +286,7 @@ const styles = StyleSheet.create({
     paddingBottom: 20,
     paddingTop: 20,
     backgroundColor: '#293046',
-    width:"100%",
+    width: '100%',
     height: SCREEN_HEIGHT,
     alignItems: 'center',
     justifyContent: 'space-around',

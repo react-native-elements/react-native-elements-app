@@ -33,7 +33,7 @@ import WhatsappClone from '../views/whatsappClone';
 const Drawer = createDrawerNavigator();
 
 function RootNavigator() {
-  const { ThemeState, dispatch } = useContext(ThemeReducerContext);
+  const { ThemeState } = useContext(ThemeReducerContext);
   const { theme } = useContext(ThemeContext);
 
   return (

@@ -33,14 +33,15 @@ import WhatsappClone from '../views/whatsappClone';
 const Drawer = createDrawerNavigator();
 
 function RootNavigator() {
-  const { ThemeState, dispatch } = useContext(ThemeReducerContext);
+  const { ThemeState } = useContext(ThemeReducerContext);
   const { theme } = useContext(ThemeContext);
 
   return (
     <NavigationContainer
       theme={{
         colors: {
-          background: theme.colors.white,
+          background:
+            theme?.colors?.white !== undefined ? theme.colors.white : '',
           primary: '',
           card: '',
           text: '',
@@ -53,9 +54,9 @@ function RootNavigator() {
       <Drawer.Navigator
         drawerContent={DrawerNavigator}
         drawerContentOptions={{
-          activeTintColor: theme.colors.secondary,
+          activeTintColor: theme?.colors?.secondary,
           activeBackgroundColor: 'transparent',
-          inactiveTintColor: theme.colors.grey0,
+          inactiveTintColor: theme?.colors?.grey0,
           inactiveBackgroundColor: 'transparent',
           labelStyle: {
             fontSize: 15,
@@ -63,7 +64,7 @@ function RootNavigator() {
           },
         }}
         drawerStyle={{
-          backgroundColor: theme.colors.grey4,
+          backgroundColor: theme?.colors?.grey4,
         }}
       >
         <Drawer.Screen name="Avatars" component={Avatars} />

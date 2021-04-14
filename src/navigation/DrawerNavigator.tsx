@@ -17,7 +17,7 @@ function CustomContentComponent(props) {
       style={{
         flex: 1,
         height: '100%',
-        backgroundColor: theme.colors.grey5,
+        backgroundColor: theme?.colors?.grey5,
       }}
       edges={['right', 'left', 'bottom']}
     >

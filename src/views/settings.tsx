@@ -11,7 +11,6 @@ import {
 import { Header } from './header';
 import { ThemeReducerContext } from '../helpers/ThemeReducer';
 
-
 const ORANGE = '#FF9500';
 const BLUE = '#007AFF';
 const GREEN = '#4CD964';
@@ -19,7 +18,21 @@ const RED = '#FF3B30';
 const GREY = '#8E8E93';
 const PURPLE = '#5856D6';
 const TEAL_BLUE = '#5AC8FA';
-const sections = [
+
+type SettingData = {
+  title?: string;
+  icon?: string;
+  backgroundColor?: string;
+  hideChevron?: boolean;
+  checkbox?: boolean;
+  rightTitle?: string;
+};
+
+type SettingsData = {
+  data: SettingData[];
+};
+
+const sections: SettingsData[] = [
   {
     data: [
       {
@@ -126,7 +139,7 @@ const Settings: React.FunctionComponent<SetttingsComponentProps> = () => {
   const [switched, setSwitched] = useState(false);
   const { ThemeState } = useContext(ThemeReducerContext);
 
-  const onSwitchEventHandler = (value) => {
+  const onSwitchEventHandler = (value: boolean) => {
     setSwitched(value);
   };
 
@@ -134,6 +147,8 @@ const Settings: React.FunctionComponent<SetttingsComponentProps> = () => {
 
   const renderItem = ({
     item: { title, backgroundColor, icon, rightTitle, hideChevron, checkbox },
+  }: {
+    item: SettingData;
   }) => (
     <ListItem containerStyle={{ paddingVertical: 8 }} key={title}>
       <Icon
@@ -166,7 +181,13 @@ const Settings: React.FunctionComponent<SetttingsComponentProps> = () => {
   const renderSectionHeader = () => <View style={styles.headerSection} />;
 
   const ItemSeparatorComponent = () => (
-    <View style={[ThemeState.themeMode === 'dark'? styles.separatorComponentDark: styles.separatorComponentLight]}>
+    <View
+      style={[
+        ThemeState.themeMode === 'dark'
+          ? styles.separatorComponentDark
+          : styles.separatorComponentLight,
+      ]}
+    >
       <Divider style={styles.separator} />
     </View>
   );
@@ -182,7 +203,12 @@ const Settings: React.FunctionComponent<SetttingsComponentProps> = () => {
     </View>
   );
 
-  const keyExtractor = (item, index) => index;
+  const keyExtractor: (item: SettingData, index: number) => string = (
+    item: SettingData,
+    index: React.Key
+  ) => {
+    return index.toString();
+  };
 
   return (
     <>

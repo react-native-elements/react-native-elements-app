@@ -21,7 +21,7 @@ const TEAL_BLUE = '#5AC8FA';
 
 type SettingData = {
   title?: string;
-  icon?: string;
+  icon: string;
   backgroundColor?: string;
   hideChevron?: boolean;
   checkbox?: boolean;
@@ -125,7 +125,7 @@ const sections: SettingsData[] = [
       {
         title: 'Confidentiality',
         backgroundColor: GREY,
-        icon: 'ios-hand',
+        icon: 'ios-hand-left',
       },
     ],
   },

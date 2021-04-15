@@ -1,7 +1,14 @@
 import _ from 'lodash';
 import React from 'react';
 import { Text, View, ScrollView } from 'react-native';
-import { Avatar, Button, Icon, withTheme } from 'react-native-elements';
+import { Avatar, Button, Icon, Theme, withTheme } from 'react-native-elements';
+
+type UserData = {
+  name?: string;
+  avatar?: string;
+  value?: string;
+  positive?: boolean;
+};
 
 const USERS = [
   {
@@ -43,8 +50,12 @@ const USERS = [
   },
 ];
 
-const ListContent = (props) => {
-  const renderValue = (user) => {
+type ListContentType = {
+  theme?: Theme;
+};
+
+const ListContent = (props: ListContentType) => {
+  const renderValue = (user: UserData) => {
     const { value, positive } = user;
 
     if (positive) {
@@ -104,7 +115,7 @@ const ListContent = (props) => {
     }
   };
 
-  const renderCard = (user, index) => {
+  const renderCard = (user: UserData, index: React.Key) => {
     const { name, avatar } = user;
     return (
       <View
@@ -113,7 +124,7 @@ const ListContent = (props) => {
           height: 60,
           marginHorizontal: 10,
           marginTop: 10,
-          backgroundColor: props.theme.colors.grey4,
+          backgroundColor: props?.theme?.colors?.grey4,
           borderRadius: 5,
           alignItems: 'center',
           flexDirection: 'row',
@@ -134,7 +145,7 @@ const ListContent = (props) => {
               fontFamily: 'regular',
               fontSize: 15,
               marginLeft: 10,
-              color: props.theme.colors.grey0,
+              color: props?.theme?.colors?.grey0,
             }}
           >
             {name}
@@ -222,7 +233,7 @@ const ListContent = (props) => {
                   style={{
                     fontFamily: 'bold',
                     fontSize: 25,
-                    color: props.theme.colors.secondary,
+                    color: props?.theme?.colors?.secondary,
                     marginLeft: -15,
                   }}
                 >

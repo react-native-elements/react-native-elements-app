@@ -16,7 +16,7 @@ import {
   ThemeProvider,
   InputProps,
 } from 'react-native-elements';
-import { Header } from './header';
+import { Header, SubHeader } from './header';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
 const dummySearchBarProps = {
@@ -42,7 +42,7 @@ const Inputs: React.FunctionComponent<InputsComponentProps> = () => {
   let confirmPassword2Input = useRef(null);
 
   const InputFieldsStyle = {
-    borderWidth: 0,
+    borderWidth: 0   
   };
 
   const inputProps = {};
@@ -55,9 +55,8 @@ const Inputs: React.FunctionComponent<InputsComponentProps> = () => {
     >
       <Header title="Inputs" />
       <ScrollView keyboardShouldPersistTaps="handled">
-        <View style={styles.headerContainer}>
-          <Icon color="white" name="search" size={62} />
-          <Text style={styles.heading}>Search Bars</Text>
+        <View>
+          <SubHeader title={'Search Bars'} />
         </View>
         <SearchBarCustom
           placeholder="iOS searchbar"
@@ -76,14 +75,8 @@ const Inputs: React.FunctionComponent<InputsComponentProps> = () => {
           style={InputFieldsStyle}
           {...dummySearchBarProps}
         />
-        <View
-          style={[
-            styles.headerContainer,
-            { backgroundColor: '#616389', marginTop: 20 },
-          ]}
-        >
-          <Icon color="white" name="input" size={62} />
-          <Text style={styles.heading}>Inputs</Text>
+        <View style={{paddingTop: 30}}>
+          <SubHeader title={'Inputs'} />
         </View>
         <View style={{ alignItems: 'center', marginBottom: 16 }}>
           <Input
@@ -155,7 +148,7 @@ const Inputs: React.FunctionComponent<InputsComponentProps> = () => {
           <View
             style={{
               backgroundColor: '#2F343B',
-              width: SCREEN_WIDTH,
+              width:"100%",
               alignItems: 'center',
             }}
           >
@@ -179,7 +172,7 @@ const Inputs: React.FunctionComponent<InputsComponentProps> = () => {
                   borderColor: 'white',
                   borderLeftWidth: 0,
                   height: 50,
-                  width: SCREEN_WIDTH - 80,
+                  width:"80%",
                   backgroundColor: 'white',
                 }}
                 leftIcon={
@@ -217,7 +210,7 @@ const Inputs: React.FunctionComponent<InputsComponentProps> = () => {
                   borderColor: 'white',
                   borderLeftWidth: 0,
                   height: 50,
-                  width: SCREEN_WIDTH - 80,
+                  width:"80%",
                   backgroundColor: 'white',
                 }}
                 leftIconContainerStyle={{
@@ -274,7 +267,7 @@ const Inputs: React.FunctionComponent<InputsComponentProps> = () => {
             <View
               style={{
                 backgroundColor: 'rgba(46, 50, 72, 1)',
-                width: SCREEN_WIDTH,
+                width:"100%",
                 alignItems: 'center',
                 paddingBottom: 30,
               }}
@@ -295,7 +288,7 @@ const Inputs: React.FunctionComponent<InputsComponentProps> = () => {
                   <Icon
                     name="user"
                     type="simple-line-icon"
-                    style={{ marginLeft: 10 }}
+                    style={{ marginLeft: 12 }}
                     color="rgba(110, 120, 170, 1)"
                     size={25}
                   />
@@ -388,12 +381,6 @@ const Inputs: React.FunctionComponent<InputsComponentProps> = () => {
 export default Inputs;
 
 const styles = StyleSheet.create({
-  headerContainer: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: 40,
-    backgroundColor: '#B46486',
-  },
   heading: {
     color: 'white',
     marginTop: 10,

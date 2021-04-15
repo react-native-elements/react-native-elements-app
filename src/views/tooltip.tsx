@@ -1,7 +1,7 @@
 import React from 'react';
 import { Tooltip, Text, TooltipProps } from 'react-native-elements';
 import { Header } from './header';
-import { View, StyleSheet, Dimensions } from 'react-native';
+import { View, StyleSheet, Dimensions, ScrollView } from 'react-native';
 import colors from '../config/colors';
 
 const { height } = Dimensions.get('window');
@@ -13,6 +13,7 @@ const TooltipComponent: React.FunctionComponent<ToolTipComponentProps> = () => {
   return (
     <>
       <Header title="Tooltip" />
+      <ScrollView>
       <View style={{ marginVertical: height / 8 }}>
         <View style={styles.view}>
           <Tooltip
@@ -78,6 +79,7 @@ const TooltipComponent: React.FunctionComponent<ToolTipComponentProps> = () => {
           </Tooltip>
         </View>
       </View>
+      </ScrollView>
     </>
   );
 };

@@ -45,10 +45,10 @@ const styles = StyleSheet.create({
   headerContainer: {
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#ED553B',
+    backgroundColor: '#397af8',
     marginBottom: 20,
     width:"100%",
-    paddingVertical:10
+    paddingVertical:15,
   },
   heading: {
     color: 'white',

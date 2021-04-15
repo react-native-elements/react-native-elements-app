@@ -24,7 +24,7 @@ const OverlayComponent: React.FunctionComponent<OverlayComponentProps> = () => {
       <Overlay isVisible={visible} onBackdropPress={toggleOverlay}>
         <Text style={styles.textPrimary}>Hello!</Text>
         <Text style={styles.textSecondary}>
-          Welcome to react native training
+          Welcome to React Native Elements
         </Text>
         <Button
           icon={
@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
   },
   textSecondary: {
-    marginVertical: 20,
+    marginBottom: 10,
     textAlign: 'center',
     fontSize: 17,
   },

@@ -75,6 +75,8 @@ const list2 = [
 type ListComponentProps = ListItemProps;
 
 const Lists2: React.FunctionComponent<ListComponentProps> = () => {
+  const [expanded, setExpanded] = React.useState(false);
+
   const listItemProps = {};
   const renderRow = ({ item }) => {
     return (
@@ -131,16 +133,31 @@ const Lists2: React.FunctionComponent<ListComponentProps> = () => {
             </View>
 
             <View style={styles.list}>
-              {list2.map((l, i) => (
-                <ListItem key={i} onPress={log} bottomDivider>
-                  <Avatar title={l.name[0]} source={{ uri: l.avatar_url }} />
-                  <ListItem.Content>
-                    <ListItem.Title>{l.name}</ListItem.Title>
-                    <ListItem.Subtitle>{l.subtitle}</ListItem.Subtitle>
-                  </ListItem.Content>
-                  <ListItem.Chevron />
-                </ListItem>
-              ))}
+              <ListItem.Accordion
+                content={
+                  <>
+                    <Icon name="place" size={30} />
+                    <ListItem.Content>
+                      <ListItem.Title>List Accordion</ListItem.Title>
+                    </ListItem.Content>
+                  </>
+                }
+                isExpanded={expanded}
+                onPress={() => {
+                  setExpanded(!expanded);
+                }}
+              >
+                {list2.map((l, i) => (
+                  <ListItem key={i} onPress={log} bottomDivider>
+                    <Avatar title={l.name[0]} source={{ uri: l.avatar_url }} />
+                    <ListItem.Content>
+                      <ListItem.Title>{l.name}</ListItem.Title>
+                      <ListItem.Subtitle>{l.subtitle}</ListItem.Subtitle>
+                    </ListItem.Content>
+                    <ListItem.Chevron />
+                  </ListItem>
+                ))}
+              </ListItem.Accordion>
             </View>
             <View style={styles.list}>
               {list2.map((l, i) => (

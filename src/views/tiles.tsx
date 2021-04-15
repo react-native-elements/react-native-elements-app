@@ -43,7 +43,7 @@ const Tiles: React.FunctionComponent<TilesComponentProps> = () => {
               width={310}
             />
           </View>
-          <View style={{ paddingTop: 20 }}>
+          <View style={{ paddingTop: 20, paddingBottom: 100 }}>
             <Tile
               imageSrc={{
                 uri:
@@ -64,7 +64,7 @@ const Tiles: React.FunctionComponent<TilesComponentProps> = () => {
                 }}
               >
                 <Text style={{ color: 'green' }}>Visit</Text>
-                <Text style={{ color: 'blue' }}>Find out More</Text>
+                <Text style={{ color: '#397af8' }}>Find out More</Text>
               </View>
             </Tile>
           </View>

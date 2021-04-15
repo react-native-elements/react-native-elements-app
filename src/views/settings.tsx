@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { View, StyleSheet, SectionList } from 'react-native';
 import {
   ListItem,
@@ -9,6 +9,8 @@ import {
   Switch,
 } from 'react-native-elements';
 import { Header } from './header';
+import { ThemeReducerContext } from '../helpers/ThemeReducer';
+
 
 const ORANGE = '#FF9500';
 const BLUE = '#007AFF';
@@ -122,6 +124,7 @@ type SetttingsComponentProps = {};
 
 const Settings: React.FunctionComponent<SetttingsComponentProps> = () => {
   const [switched, setSwitched] = useState(false);
+  const { ThemeState } = useContext(ThemeReducerContext);
 
   const onSwitchEventHandler = (value) => {
     setSwitched(value);
@@ -163,7 +166,7 @@ const Settings: React.FunctionComponent<SetttingsComponentProps> = () => {
   const renderSectionHeader = () => <View style={styles.headerSection} />;
 
   const ItemSeparatorComponent = () => (
-    <View style={styles.separatorComponent}>
+    <View style={[ThemeState.themeMode === 'dark'? styles.separatorComponentDark: styles.separatorComponentLight]}>
       <Divider style={styles.separator} />
     </View>
   );
@@ -202,8 +205,11 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: '#EFEFF4',
   },
-  separatorComponent: {
+  separatorComponentLight: {
     backgroundColor: 'white',
+  },
+  separatorComponentDark: {
+    backgroundColor: 'black',
   },
   separator: {
     marginLeft: 58,

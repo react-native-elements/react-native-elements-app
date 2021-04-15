@@ -67,20 +67,6 @@ const Buttons: React.FunctionComponent<ButtonsComponentProps> = () => {
                 onPress={() => console.log('aye')}
               />
               <Button
-                title="Default"
-                containerStyle={{
-                  height: 40,
-                  width: 200,
-                  marginHorizontal: 50,
-                  marginVertical: 10,
-                }}
-                buttonStyle={{ backgroundColor: 'rgba(78, 116, 289, 1)' }}
-                titleStyle={{
-                  color: 'white',
-                  marginHorizontal: 20,
-                }}
-              />
-              <Button
                 title="Secondary"
                 buttonStyle={{ backgroundColor: 'rgba(127, 220, 103, 1)' }}
                 containerStyle={{
@@ -89,6 +75,20 @@ const Buttons: React.FunctionComponent<ButtonsComponentProps> = () => {
                   marginHorizontal: 50,
                   marginVertical: 10,
                 }}
+                titleStyle={{
+                  color: 'white',
+                  marginHorizontal: 20,
+                }}
+              />
+              <Button
+                title="Warning"
+                containerStyle={{
+                  height: 40,
+                  width: 200,
+                  marginHorizontal: 50,
+                  marginVertical: 10,
+                }}
+                buttonStyle={{ backgroundColor: 'rgba(255, 193, 7, 1)' }}
                 titleStyle={{
                   color: 'white',
                   marginHorizontal: 20,
@@ -239,6 +239,20 @@ const Buttons: React.FunctionComponent<ButtonsComponentProps> = () => {
                   borderColor: 'rgba(78, 116, 289, 1)',
                 }}
                 type="outline"
+                titleStyle={{ color: 'rgba(78, 116, 289, 1)' }}
+                containerStyle={{
+                  width: 200,
+                  marginHorizontal: 50,
+                  marginVertical: 10,
+                }}
+              />
+              <Button
+                title="Raised Button"
+                buttonStyle={{
+                  borderColor: 'rgba(78, 116, 289, 1)',
+                }}
+                type="outline"
+                raised="true"
                 titleStyle={{ color: 'rgba(78, 116, 289, 1)' }}
                 containerStyle={{
                   width: 200,

@@ -5,7 +5,7 @@ import { Avatar } from 'react-native-elements';
 import { Header, SubHeader } from './header';
 
 type AvatarData = {
-  image_url?: string;
+  image_url: string;
 };
 
 const dataList: AvatarData[] = [

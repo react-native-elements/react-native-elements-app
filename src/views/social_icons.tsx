@@ -6,11 +6,11 @@ import { SocialMediaType } from 'react-native-elements/dist/social/SocialIcon';
 import _ from 'lodash';
 
 type IconData = {
-  type?: SocialMediaType;
-  iconType?: string;
+  type: SocialMediaType;
+  iconType: string;
 };
 
-const dataList: IconData[] = [
+const dataList: Partial<IconData>[] = [
   {
     type: 'facebook',
   },
@@ -107,7 +107,7 @@ const SocialIcons: React.FunctionComponent<SocialIconsComponentProps> = () => {
       <Header title="Social Icons" />
       <ScrollView>
         {_.chunk(dataList, 3).map(
-          (chunk: IconData[], chunkIndex: React.Key) => (
+          (chunk: Partial<IconData>[], chunkIndex: React.Key) => (
             <View
               style={{
                 flexDirection: 'row',
@@ -117,7 +117,7 @@ const SocialIcons: React.FunctionComponent<SocialIconsComponentProps> = () => {
               }}
               key={chunkIndex}
             >
-              {chunk.map((l: IconData, i: React.Key) => (
+              {chunk.map((l: Partial<IconData>, i: React.Key) => (
                 <SocialIcon
                   {...(socialProps as SocialIconProps)}
                   type={l.type}

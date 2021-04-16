@@ -16,7 +16,7 @@ import colors from '../config/colors';
 const log = () => console.log('this is an example method');
 
 type List1Data = {
-  title?: string;
+  title: string;
   icon: string;
 };
 const list1: List1Data[] = [
@@ -43,13 +43,13 @@ const list1: List1Data[] = [
 ];
 
 type List2Data = {
-  name?: string;
-  avatar_url?: string;
-  subtitle?: string;
-  linearGradientColors?: string[];
+  name: string;
+  avatar_url: string;
+  subtitle: string;
+  linearGradientColors: string[];
 };
 
-const list2: List2Data[] = [
+const list2: Partial<List2Data>[] = [
   {
     name: 'Amy Farha',
     avatar_url: 'https://uifaces.co/our-content/donated/XdLjsJX_.jpg',
@@ -159,7 +159,7 @@ const Lists2: React.FunctionComponent<ListComponentProps> = () => {
                   setExpanded(!expanded);
                 }}
               >
-                {list2.map((l: List2Data, i: React.Key) => (
+                {list2.map((l: Partial<List2Data>, i: React.Key) => (
                   <ListItem key={i} onPress={log} bottomDivider>
                     <Avatar title={l.name} source={{ uri: l.avatar_url }} />
                     <ListItem.Content>

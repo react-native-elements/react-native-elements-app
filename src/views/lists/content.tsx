@@ -4,13 +4,13 @@ import { Text, View, ScrollView } from 'react-native';
 import { Avatar, Button, Icon, Theme, withTheme } from 'react-native-elements';
 
 type UserData = {
-  name?: string;
-  avatar?: string;
-  value?: string;
-  positive?: boolean;
+  name: string;
+  avatar: string;
+  value: string;
+  positive: boolean;
 };
 
-const USERS = [
+const USERS: Partial<UserData>[] = [
   {
     name: 'John Smith',
     avatar: 'https://uifaces.co/our-content/donated/1H_7AxP0.jpg',
@@ -55,7 +55,7 @@ type ListContentType = {
 };
 
 const ListContent = (props: ListContentType) => {
-  const renderValue = (user: UserData) => {
+  const renderValue = (user: Partial<UserData>) => {
     const { value, positive } = user;
 
     if (positive) {
@@ -115,7 +115,7 @@ const ListContent = (props: ListContentType) => {
     }
   };
 
-  const renderCard = (user: UserData, index: React.Key) => {
+  const renderCard = (user: Partial<UserData>, index: React.Key) => {
     const { name, avatar } = user;
     return (
       <View

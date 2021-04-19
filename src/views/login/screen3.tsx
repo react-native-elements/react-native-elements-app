@@ -34,8 +34,12 @@ const TabSelector: React.FunctionComponent<TabSelectorProps> = ({
 };
 
 type LoginScreen3State = {};
+type LoginScreen3Props = {};
 
-const LoginScreen3: React.FunctionComponent<LoginScreen3State> = () => {
+const LoginScreen3: React.FunctionComponent<LoginScreen3State> = (
+  props: LoginScreen3Props
+) => {
+  const {} = props;
   const [isLoading, setLoading] = useState<boolean>(false);
   const [email, setEmail] = useState<string>('');
   const [isEmailValid, setEmailValid] = useState<boolean>(true);
@@ -53,13 +57,13 @@ const LoginScreen3: React.FunctionComponent<LoginScreen3State> = () => {
   const isLoginPage = selectedCategory === 0;
   const isSignUpPage = selectedCategory === 1;
 
-  const selectCategory = (selectedCategoryIndex) => {
+  const selectCategory = (selectedCategoryIndex: number) => {
     LayoutAnimation.easeInEaseOut();
     setLoading(false);
     setSelectedCategory(selectedCategoryIndex);
   };
 
-  const validateEmail = (testEmail) => {
+  const validateEmail = (testEmail: string) => {
     const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(testEmail);
   };
@@ -180,7 +184,7 @@ const LoginScreen3: React.FunctionComponent<LoginScreen3State> = () => {
               onSubmitEditing={() => passwordInput.current.focus()}
               onChangeText={(text) => setEmail(text)}
               errorMessage={
-                isEmailValid ? null : 'Please enter a valid email address'
+                isEmailValid ? '' : 'Please enter a valid email address'
               }
             />
             <Input
@@ -212,7 +216,7 @@ const LoginScreen3: React.FunctionComponent<LoginScreen3State> = () => {
               }}
               onChangeText={(text) => setPassword(text)}
               errorMessage={
-                isPasswordValid ? null : 'Please enter at least 8 characters'
+                isPasswordValid ? '' : 'Please enter at least 8 characters'
               }
             />
             {isSignUpPage && (
@@ -244,9 +248,7 @@ const LoginScreen3: React.FunctionComponent<LoginScreen3State> = () => {
                 onSubmitEditing={signUp}
                 onChangeText={(text) => setConfirmPassword(text)}
                 errorMessage={
-                  isConfirmPasswordValid
-                    ? null
-                    : 'Please enter the same password'
+                  isConfirmPasswordValid ? '' : 'Please enter the same password'
                 }
               />
             )}

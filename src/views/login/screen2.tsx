@@ -10,6 +10,9 @@ import {
   ScrollView,
   Text,
   View,
+  ImageSourcePropType,
+  TextInput,
+  TextInputProps,
 } from 'react-native';
 import { Input, Button, Icon, InputProps } from 'react-native-elements';
 import { LinearGradient } from '../../components/LinearGradient';
@@ -28,7 +31,7 @@ type LoginScreen2Props = {};
 
 const LoginScreen2: React.FunctionComponent<LoginScreen2Props> = () => {
   const [isLoading, setLoading] = useState<boolean>(false);
-  const [selectedType, setSelectedType] = useState<string>(null);
+  const [selectedType, setSelectedType] = useState<string>();
   const [username, setUsername] = useState<string>('');
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
@@ -99,7 +102,7 @@ const LoginScreen2: React.FunctionComponent<LoginScreen2Props> = () => {
     return confirmationPasswordCheck;
   };
 
-  const selectedTypeHandler = (value) => {
+  const selectedTypeHandler = (value: string) => {
     LayoutAnimation.easeInEaseOut();
     setSelectedType(value);
   };
@@ -139,10 +142,10 @@ const LoginScreen2: React.FunctionComponent<LoginScreen2Props> = () => {
           refInput={(input) => (usernameInput = input)}
           icon="user"
           value={username}
-          onChangeText={(text) => setUsername(text)}
+          onChangeText={(text: string) => setUsername(text)}
           placeholder="Username"
           returnKeyType="next"
-          errorMessage={validUsername ? null : "Your username can't be blank"}
+          errorMessage={validUsername ? '' : "Your username can't be blank"}
           onSubmitEditing={() => {
             validateUsername();
             emailInput.focus();
@@ -152,13 +155,11 @@ const LoginScreen2: React.FunctionComponent<LoginScreen2Props> = () => {
           refInput={(input) => (emailInput = input)}
           icon="envelope"
           value={email}
-          onChangeText={(text) => setEmail(text)}
+          onChangeText={(text: string) => setEmail(text)}
           placeholder="Email"
           keyboardType="email-address"
           returnKeyType="next"
-          errorMessage={
-            validEmail ? null : 'Please enter a valid email address'
-          }
+          errorMessage={validEmail ? '' : 'Please enter a valid email address'}
           onSubmitEditing={() => {
             validateEmail();
             passwordInput.focus();
@@ -168,12 +169,12 @@ const LoginScreen2: React.FunctionComponent<LoginScreen2Props> = () => {
           refInput={(input) => (passwordInput = input)}
           icon="lock"
           value={password}
-          onChangeText={(text) => setPassword(text)}
+          onChangeText={(text: string) => setPassword(text)}
           placeholder="Password"
           secureTextEntry
           returnKeyType="next"
           errorMessage={
-            validPassword ? null : 'Please enter at least 8 characters'
+            validPassword ? '' : 'Please enter at least 8 characters'
           }
           onSubmitEditing={() => {
             validatePassword();
@@ -184,12 +185,12 @@ const LoginScreen2: React.FunctionComponent<LoginScreen2Props> = () => {
           refInput={(input) => (confirmationPasswordInput = input)}
           icon="lock"
           value={confirmationPassword}
-          onChangeText={(text) => setConfirmationPassword(text)}
+          onChangeText={(text: string) => setConfirmationPassword(text)}
           placeholder="Confirm Password"
           secureTextEntry
           errorMessage={
             validConfirmationPassword
-              ? null
+              ? ''
               : 'The password fields are not identical'
           }
           returnKeyType="go"
@@ -232,7 +233,15 @@ const LoginScreen2: React.FunctionComponent<LoginScreen2Props> = () => {
 
 export default LoginScreen2;
 
-export const UserTypeItem = (props) => {
+type UserTypeItemType = {
+  image: ImageSourcePropType;
+  label?: string;
+  labelColor?: string;
+  selected?: boolean;
+  onPress?: () => void;
+};
+
+export const UserTypeItem = (props: UserTypeItemType) => {
   const { image, label, labelColor, selected, ...attributes } = props;
   return (
     <TouchableOpacity {...attributes}>
@@ -257,7 +266,13 @@ export const UserTypeItem = (props) => {
   );
 };
 
-export const FormInput = (props) => {
+type FormInputType = TextInputProps & {
+  icon: string;
+  refInput: React.Ref<TextInput>;
+  errorMessage: string;
+};
+
+export const FormInput = (props: FormInputType) => {
   const { icon, refInput, ...otherProps } = props;
 
   return (

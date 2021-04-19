@@ -2,22 +2,18 @@ import React from 'react';
 import { View, ScrollView, StyleSheet } from 'react-native';
 import { Chip, withTheme } from 'react-native-elements';
 import colors from '../config/colors';
-import { Header } from './header';
+import { Header } from '../components/header';
 
 type ChipsComponentProps = {};
 
 const Chips: React.FunctionComponent<ChipsComponentProps> = () => {
-
   return (
     <>
       <Header title="Chips" />
       <ScrollView>
         <View style={styles.contentView}>
           <View style={{ alignItems: 'center' }}>
-            <Chip
-              title="Solid Chip"
-              containerStyle={{ marginVertical: 15 }}
-            />
+            <Chip title="Solid Chip" containerStyle={{ marginVertical: 15 }} />
             <Chip
               title="Disabled Chip"
               disabled
@@ -63,7 +59,7 @@ const Chips: React.FunctionComponent<ChipsComponentProps> = () => {
                 size: 20,
                 color: colors.primary2,
               }}
-              onPress={() => console.log("Icon chip was pressed!")}
+              onPress={() => console.log('Icon chip was pressed!')}
               type="outline"
               containerStyle={{ marginVertical: 15 }}
             />
@@ -75,7 +71,7 @@ const Chips: React.FunctionComponent<ChipsComponentProps> = () => {
                 size: 20,
                 color: colors.primary2,
               }}
-              onPress={() => console.log("Icon chip was pressed!")}
+              onPress={() => console.log('Icon chip was pressed!')}
               iconRight
               type="outline"
               containerStyle={{ marginVertical: 15 }}

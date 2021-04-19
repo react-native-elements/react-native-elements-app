@@ -2278,7 +2278,14 @@
     "@types/react" "*"
     "@types/react-native" "*"
 
-"@types/react-native@*", "@types/react-native@^0.64.2":
+"@types/react-native@*":
+  version "0.64.4"
+  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.64.4.tgz#9f11bef7dd5520801884829c73b19d75aa42e73c"
+  integrity sha512-VqnlmadGkD5usREvnuyVpWDS1W8f6cCz6MP5fZdgONsaZ9/Ijfb9Iq9MZ5O3bnW1OyJixDX9HtSp3COsFSLD8Q==
+  dependencies:
+    "@types/react" "*"
+
+"@types/react-native@^0.64.2":
   version "0.64.2"
   resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.64.2.tgz#2e344aeec0b4eb21fb9eaa0ed8973245c5601d56"
   integrity sha512-w2y04h+GVLY+OMlFSmq4adPuS51XtEp1yUr83OvXf+moMQ4zDG1Q07HhyvYDXdc+BSS9ANHySBqVCz0hFxli9Q==
@@ -10104,7 +10111,7 @@ react-native-appearance@~0.3.4:
 
 "react-native-elements@https://github.com/react-native-elements/react-native-elements#dist":
   version "3.3.2"
-  resolved "https://github.com/react-native-elements/react-native-elements#2aa2681784cedad6f298d104ecaba0adf29738ec"
+  resolved "https://github.com/react-native-elements/react-native-elements#d1eb00090e627659b9ea543b6ac94907ddfffca6"
   dependencies:
     "@types/react-native-vector-icons" "^6.4.6"
     color "^3.1.2"

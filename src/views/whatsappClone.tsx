@@ -51,9 +51,21 @@ const WhatsappClone: React.FunctionComponent = () => {
             }}
             style={{ backgroundColor: 'transparent' }}
           >
-            <Tab.Item title="chat" titleStyle={{ color: '#fff' }} />
-            <Tab.Item title="status" titleStyle={{ color: '#fff' }} />
-            <Tab.Item title="calls" titleStyle={{ color: '#fff' }} />
+            <Tab.Item
+              title="chat"
+              titleStyle={{ color: '#fff' }}
+              containerStyle={{ backgroundColor: 'transparent' }}
+            />
+            <Tab.Item
+              title="status"
+              titleStyle={{ color: '#fff' }}
+              containerStyle={{ backgroundColor: 'transparent' }}
+            />
+            <Tab.Item
+              title="calls"
+              titleStyle={{ color: '#fff' }}
+              containerStyle={{ backgroundColor: 'transparent' }}
+            />
           </Tab>
         </View>
       </SafeAreaView>

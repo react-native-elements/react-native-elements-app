@@ -9,16 +9,29 @@ const Sliders: React.FunctionComponent<SlidersComponentProps> = () => {
   const [value, setValue] = useState(0);
   const [vertValue, setVertValue] = useState(0);
 
+  const interpolate = (start: number, end: number) => {
+    let k = (value - 0) / 10; // 0 =>min  && 10 => MAX
+    return Math.ceil((1 - k) * start + k * end) % 256;
+  };
+
+  const color = () => {
+    let r = interpolate(255, 0);
+    let g = interpolate(0, 255);
+    let b = interpolate(0, 0);
+    return `rgb(${r},${g},${b})`;
+  };
+
   return (
     <>
       <Header title="Slider" />
       <SubHeader title="Slider Horizontal" />
-      <View style={styles.contentView}>
+
+      <View style={[styles.contentView]}>
         <Slider
           value={value}
           onValueChange={setValue}
-          maximumValue={50}
-          minimumValue={20}
+          maximumValue={10}
+          minimumValue={0}
           step={1}
           allowTouchTrack
           trackStyle={{ height: 10, backgroundColor: 'transparent' }}
@@ -31,12 +44,12 @@ const Sliders: React.FunctionComponent<SlidersComponentProps> = () => {
                 size={20}
                 reverse
                 containerStyle={{ bottom: 20, right: 20 }}
-                color="#f50"
+                color={color()}
               />
             ),
           }}
         />
-        <Text style={{paddingTop: 20}}>Value: {value}</Text>
+        <Text style={{ paddingTop: 20 }}>Value: {value}</Text>
       </View>
       <SubHeader title="Slider Vertical" />
       <View style={styles.verticalContent}>
@@ -62,7 +75,7 @@ const Sliders: React.FunctionComponent<SlidersComponentProps> = () => {
           }}
         />
       </View>
-      <Text style={{paddingLeft: 25}}>Value: {vertValue}</Text>
+      <Text style={{ paddingLeft: 25 }}>Value: {vertValue}</Text>
     </>
   );
 };

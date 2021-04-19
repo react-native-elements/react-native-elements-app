@@ -1,8 +1,11 @@
 export const cacheImages = () => [];
 
-let cachedFonts = {};
+interface CacheFontType {
+  [key: string]: any;
+}
+let cachedFonts: CacheFontType = {};
 
-const cacheFont = (name, link) => {
+const cacheFont = (name: string, link: string) => {
   const styleBody = `@font-face { src: url(${link}); font-family: ${name}; }`;
   const style: HTMLStyleElement = document.createElement('style');
   style.type = 'text/css';

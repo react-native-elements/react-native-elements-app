@@ -3,12 +3,16 @@ import { View, Image } from 'react-native';
 import {
   DrawerContentScrollView,
   DrawerItemList,
+  DrawerContentComponentProps,
+  DrawerContentOptions,
 } from '@react-navigation/drawer';
 import { ThemeContext, Text, Divider, Switch } from 'react-native-elements';
 import { ThemeReducerContext } from '../helpers/ThemeReducer';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-function CustomContentComponent(props) {
+function CustomContentComponent(
+  props: DrawerContentComponentProps<DrawerContentOptions>
+) {
   const { ThemeState, dispatch } = useContext(ThemeReducerContext);
   const { theme } = useContext(ThemeContext);
 
@@ -17,7 +21,7 @@ function CustomContentComponent(props) {
       style={{
         flex: 1,
         height: '100%',
-        backgroundColor: theme.colors.grey5,
+        backgroundColor: theme?.colors?.grey5,
       }}
       edges={['right', 'left', 'bottom']}
     >
@@ -75,7 +79,9 @@ function CustomContentComponent(props) {
   );
 }
 
-function CustomDrawerContent(props) {
+function CustomDrawerContent(
+  props: DrawerContentComponentProps<DrawerContentOptions>
+) {
   return (
     <DrawerContentScrollView {...props}>
       <CustomContentComponent {...props} />

@@ -44,11 +44,15 @@ type LoginScreen2State = {
   passwordConfirmation: string;
 };
 
-export default class LoginScreen2 extends Component<{}, LoginScreen2State> {
+type LoginScreen2Props = {};
+export default class LoginScreen2 extends Component<
+  LoginScreen2Props,
+  LoginScreen2State
+> {
   emailInput: any;
   passwordInput: any;
   confirmationInput: any;
-  constructor(props) {
+  constructor(props: LoginScreen2Props) {
     super(props);
     this.state = {
       email: '',
@@ -65,7 +69,7 @@ export default class LoginScreen2 extends Component<{}, LoginScreen2State> {
     this.signUp = this.signUp.bind(this);
   }
 
-  selectCategory(selectedCategory) {
+  selectCategory(selectedCategory: number) {
     LayoutAnimation.easeInEaseOut();
     this.setState({
       selectedCategory,
@@ -73,7 +77,7 @@ export default class LoginScreen2 extends Component<{}, LoginScreen2State> {
     });
   }
 
-  validateEmail(email) {
+  validateEmail(email: string) {
     var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(email);
   }
@@ -89,8 +93,7 @@ export default class LoginScreen2 extends Component<{}, LoginScreen2State> {
         isEmailValid: this.validateEmail(email) || this.emailInput.shake(),
         isPasswordValid: password.length >= 8 || this.passwordInput.shake(),
       });
-      if(this.state.isEmailValid && 
-        this.state.isPasswordValid) 
+      if (this.state.isEmailValid && this.state.isPasswordValid)
         Alert.alert('🔥', 'Successfully Logged In');
     }, 1500);
   }
@@ -108,9 +111,11 @@ export default class LoginScreen2 extends Component<{}, LoginScreen2State> {
         isConfirmationValid:
           password === passwordConfirmation || this.confirmationInput.shake(),
       });
-      if(this.state.isEmailValid && 
-        this.state.isPasswordValid && 
-        this.state.isConfirmationValid) 
+      if (
+        this.state.isEmailValid &&
+        this.state.isPasswordValid &&
+        this.state.isConfirmationValid
+      )
         Alert.alert('🙏', 'Welcome');
     }, 1500);
   }
@@ -189,7 +194,7 @@ export default class LoginScreen2 extends Component<{}, LoginScreen2State> {
                 autoCorrect={false}
                 keyboardType="email-address"
                 returnKeyType="next"
-                inputStyle={{ marginLeft: 10, color: 'grey'}}
+                inputStyle={{ marginLeft: 10, color: 'grey' }}
                 placeholder={'Email'}
                 containerStyle={{
                   borderBottomColor: 'rgba(0, 0, 0, 0.38)',
@@ -198,7 +203,7 @@ export default class LoginScreen2 extends Component<{}, LoginScreen2State> {
                 onSubmitEditing={() => this.passwordInput.focus()}
                 onChangeText={(text) => this.setState({ email: text })}
                 errorMessage={
-                  isEmailValid ? null : 'Please enter a valid email address'
+                  isEmailValid ? '' : 'Please enter a valid email address'
                 }
               />
               <Input
@@ -230,9 +235,7 @@ export default class LoginScreen2 extends Component<{}, LoginScreen2State> {
                 }
                 onChangeText={(text) => this.setState({ password: text })}
                 errorMessage={
-                  isPasswordValid
-                  ? null
-                  : 'Please enter at least 8 characters'
+                  isPasswordValid ? '' : 'Please enter at least 8 characters'
                 }
               />
               {isSignUpPage && (
@@ -266,9 +269,7 @@ export default class LoginScreen2 extends Component<{}, LoginScreen2State> {
                     this.setState({ passwordConfirmation: text })
                   }
                   errorMessage={
-                    isConfirmationValid
-                      ? null
-                      : 'Please enter the same password'
+                    isConfirmationValid ? '' : 'Please enter the same password'
                   }
                 />
               )}
@@ -302,7 +303,7 @@ const styles = StyleSheet.create({
   container: {
     flexGrow: 1,
     paddingBottom: 20,
-    width:"100%",
+    width: '100%',
     height: SCREEN_HEIGHT,
     alignItems: 'center',
     justifyContent: 'space-around',
@@ -360,7 +361,7 @@ const styles = StyleSheet.create({
     flex: 1,
     top: 0,
     left: 0,
-    width:"100%",
+    width: '100%',
     height: SCREEN_HEIGHT,
     justifyContent: 'center',
     alignItems: 'center',

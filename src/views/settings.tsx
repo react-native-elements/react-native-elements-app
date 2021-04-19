@@ -26,6 +26,7 @@ type SettingData = {
   hideChevron?: boolean;
   checkbox?: boolean;
   rightTitle?: string;
+  type?: string;
 };
 
 type SettingsData = {
@@ -41,28 +42,33 @@ const sections: SettingsData[] = [
         backgroundColor: ORANGE,
         hideChevron: true,
         checkbox: true,
+        type: 'ionicon',
       },
       {
         title: 'Wi-Fi',
         backgroundColor: BLUE,
         icon: 'ios-wifi',
+        type: 'ionicon',
       },
       {
         title: 'Bluetooth',
         backgroundColor: BLUE,
         icon: 'ios-bluetooth',
         rightTitle: 'Off',
+        type: 'ionicon',
       },
       {
         title: 'Cellular',
         backgroundColor: GREEN,
         icon: 'ios-phone-portrait',
+        type: 'ionicon',
       },
       {
         title: 'Personal Hotspot',
         backgroundColor: GREEN,
         icon: 'ios-radio',
         rightTitle: 'Off',
+        type: 'ionicon',
       },
     ],
   },
@@ -72,16 +78,19 @@ const sections: SettingsData[] = [
         title: 'Notifications',
         icon: 'ios-notifications',
         backgroundColor: RED,
+        type: 'ionicon',
       },
       {
         title: 'Control Center',
         backgroundColor: GREY,
-        icon: 'ios-switch',
+        icon: 'switch',
+        type: 'entypo',
       },
       {
         title: 'Do Not Disturb',
         backgroundColor: PURPLE,
         icon: 'ios-moon',
+        type: 'ionicon',
       },
     ],
   },
@@ -91,41 +100,49 @@ const sections: SettingsData[] = [
         title: 'General',
         icon: 'ios-settings',
         backgroundColor: GREY,
+        type: 'ionicon',
       },
       {
         title: 'Display & Brightness',
         backgroundColor: BLUE,
         icon: 'ios-bulb',
+        type: 'ionicon',
       },
       {
         title: 'Wallpaper',
         backgroundColor: TEAL_BLUE,
         icon: 'ios-color-wand',
+        type: 'ionicon',
       },
       {
         title: 'Sounds',
         backgroundColor: RED,
         icon: 'ios-volume-high',
+        type: 'ionicon',
       },
       {
         title: 'Touch ID & Code',
         backgroundColor: RED,
         icon: 'ios-finger-print',
+        type: 'ionicon',
       },
       {
         title: 'Emergency Call',
         backgroundColor: ORANGE,
         icon: 'ios-medical',
+        type: 'ionicon',
       },
       {
         title: 'Battery',
         backgroundColor: GREEN,
         icon: 'ios-battery-full',
+        type: 'ionicon',
       },
       {
         title: 'Confidentiality',
         backgroundColor: GREY,
         icon: 'ios-hand-left',
+        type: 'ionicon',
       },
     ],
   },
@@ -146,13 +163,21 @@ const Settings: React.FunctionComponent<SetttingsComponentProps> = () => {
   const searchbarProps = {};
 
   const renderItem = ({
-    item: { title, backgroundColor, icon, rightTitle, hideChevron, checkbox },
+    item: {
+      title,
+      backgroundColor,
+      icon,
+      rightTitle,
+      hideChevron,
+      checkbox,
+      type,
+    },
   }: {
     item: SettingData;
   }) => (
     <ListItem containerStyle={{ paddingVertical: 8 }} key={title}>
       <Icon
-        type="ionicon"
+        type={type}
         name={icon}
         size={20}
         color="white"

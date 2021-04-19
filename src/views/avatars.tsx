@@ -33,27 +33,9 @@ const dataList: AvatarData[] = [
   },
 ];
 
-const theme1 = {
-  Button: {
-    titleStyle: {
-      color: 'white',
-    },
-  },
-};
-
-const theme2 = {
-  Button: {
-    titleStyle: {
-      color: 'red',
-    },
-  },
-};
-
 type AvatarComponentProps = {};
 
 const Avatars: React.FunctionComponent<AvatarComponentProps> = () => {
-  const [theme, setTheme] = useState(theme1);
-
   return (
     <>
       <Header title="Avatars" view="avatar" />

@@ -8,6 +8,7 @@ import Avatars from '../views/avatars';
 import Cards from '../views/cards';
 import Tiles from '../views/tiles';
 import Buttons from '../views/buttons';
+import Chips from '../views/chips';
 import Lists from '../views/lists';
 import Lists2 from '../views/lists2';
 import Inputs from '../views/inputs';
@@ -40,7 +41,8 @@ function RootNavigator() {
     <NavigationContainer
       theme={{
         colors: {
-          background: theme.colors.white,
+          background:
+            theme?.colors?.white !== undefined ? theme.colors.white : '',
           primary: '',
           card: '',
           text: '',
@@ -53,9 +55,9 @@ function RootNavigator() {
       <Drawer.Navigator
         drawerContent={DrawerNavigator}
         drawerContentOptions={{
-          activeTintColor: theme.colors.secondary,
+          activeTintColor: theme?.colors?.secondary,
           activeBackgroundColor: 'transparent',
-          inactiveTintColor: theme.colors.grey0,
+          inactiveTintColor: theme?.colors?.grey0,
           inactiveBackgroundColor: 'transparent',
           labelStyle: {
             fontSize: 15,
@@ -63,12 +65,13 @@ function RootNavigator() {
           },
         }}
         drawerStyle={{
-          backgroundColor: theme.colors.grey4,
+          backgroundColor: theme?.colors?.grey4,
         }}
       >
         <Drawer.Screen name="Avatars" component={Avatars} />
         <Drawer.Screen name="Badge" component={Badge} />
         <Drawer.Screen name="Buttons" component={Buttons} />
+        <Drawer.Screen name="Chips" component={Chips} />
         <Drawer.Screen name="Inputs" component={Inputs} />
         <Drawer.Screen name="Text" component={Text} />
         <Drawer.Screen name="Tabs" component={Tabs} />

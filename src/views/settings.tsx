@@ -18,7 +18,21 @@ const RED = '#FF3B30';
 const GREY = '#8E8E93';
 const PURPLE = '#5856D6';
 const TEAL_BLUE = '#5AC8FA';
-const sections = [
+
+type SettingData = {
+  title?: string;
+  icon: string;
+  backgroundColor?: string;
+  hideChevron?: boolean;
+  checkbox?: boolean;
+  rightTitle?: string;
+};
+
+type SettingsData = {
+  data: SettingData[];
+};
+
+const sections: SettingsData[] = [
   {
     data: [
       {
@@ -111,7 +125,7 @@ const sections = [
       {
         title: 'Confidentiality',
         backgroundColor: GREY,
-        icon: 'ios-hand',
+        icon: 'ios-hand-left',
       },
     ],
   },
@@ -125,7 +139,7 @@ const Settings: React.FunctionComponent<SetttingsComponentProps> = () => {
   const [switched, setSwitched] = useState(false);
   const { ThemeState } = useContext(ThemeReducerContext);
 
-  const onSwitchEventHandler = (value) => {
+  const onSwitchEventHandler = (value: boolean) => {
     setSwitched(value);
   };
 
@@ -133,6 +147,8 @@ const Settings: React.FunctionComponent<SetttingsComponentProps> = () => {
 
   const renderItem = ({
     item: { title, backgroundColor, icon, rightTitle, hideChevron, checkbox },
+  }: {
+    item: SettingData;
   }) => (
     <ListItem containerStyle={{ paddingVertical: 8 }} key={title}>
       <Icon
@@ -187,7 +203,12 @@ const Settings: React.FunctionComponent<SetttingsComponentProps> = () => {
     </View>
   );
 
-  const keyExtractor = (item, index) => index;
+  const keyExtractor: (item: SettingData, index: number) => string = (
+    item: SettingData,
+    index: React.Key
+  ) => {
+    return index.toString();
+  };
 
   return (
     <>

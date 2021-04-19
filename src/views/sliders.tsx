@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, StyleSheet } from 'react-native';
 import { Slider, Text, Icon } from 'react-native-elements';
-import { Header, SubHeader } from './header';
+import { Header, SubHeader } from '../components/header';
 
 type SlidersComponentProps = {};
 
@@ -23,7 +23,7 @@ const Sliders: React.FunctionComponent<SlidersComponentProps> = () => {
 
   return (
     <>
-      <Header title="Slider" />
+      <Header title="Slider" view="slider" />
       <SubHeader title="Slider Horizontal" />
 
       <View style={[styles.contentView]}>

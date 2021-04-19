@@ -72,7 +72,12 @@ const ListContent = (props: ListContentType) => {
             marginLeft: 10,
           }}
         >
-          <Icon name="md-arrow-dropup" type="ionicon" color="green" size={25} />
+          <Icon
+            name="caret-up-outline"
+            type="ionicon"
+            color="green"
+            size={25}
+          />
           <Text
             style={{
               color: 'green',
@@ -99,7 +104,12 @@ const ListContent = (props: ListContentType) => {
             marginLeft: 10,
           }}
         >
-          <Icon name="md-arrow-dropdown" type="ionicon" color="red" size={25} />
+          <Icon
+            name="caret-down-outline"
+            type="ionicon"
+            color="red"
+            size={25}
+          />
           <Text
             style={{
               color: 'red',

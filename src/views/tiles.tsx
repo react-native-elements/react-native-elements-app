@@ -1,14 +1,14 @@
 import React from 'react';
 import { View, ScrollView } from 'react-native';
 import { Text, Tile } from 'react-native-elements';
-import { Header } from './header';
+import { Header } from '../components/header';
 
 type TilesComponentProps = {};
 
 const Tiles: React.FunctionComponent<TilesComponentProps> = () => {
   return (
     <>
-      <Header title="Tiles" />
+      <Header title="Tiles" view="tile" />
       <View style={{ alignItems: 'center' }}>
         <ScrollView style={{ paddingVertical: 10 }}>
           <Tile

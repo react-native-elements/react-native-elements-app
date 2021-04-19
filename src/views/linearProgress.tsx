@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import { Header } from './header';
+import { Header } from '../components/header';
 import { Button, LinearProgress } from 'react-native-elements';
 
 const LinearProgressAPI: React.FunctionComponent = () => {
@@ -22,7 +22,7 @@ const LinearProgressAPI: React.FunctionComponent = () => {
 
   return (
     <View>
-      <Header title="LinearProgress" />
+      <Header title="LinearProgress" view="linearProgress" />
       <View
         style={{
           margin: 10,

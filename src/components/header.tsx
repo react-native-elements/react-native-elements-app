@@ -1,5 +1,13 @@
 import React from 'react';
-import { StyleSheet, View, Text, Linking } from 'react-native';
+import {
+  StyleSheet,
+  View,
+  Text,
+  Linking,
+  StyleProp,
+  TextStyle,
+  ViewStyle,
+} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { DrawerNavigationProp } from '@react-navigation/drawer';
 import { Header as HeaderRNE, HeaderProps, Icon } from 'react-native-elements';
@@ -56,10 +64,16 @@ const Header: React.FunctionComponent<HeaderComponentProps> = (props) => {
 
 type SubHeaderProps = {
   title: string;
+  textStyle?: StyleProp<TextStyle>;
+  containerStyle?: StyleProp<ViewStyle>;
 };
 
-const SubHeader = ({ title }: SubHeaderProps) => {
-  return <View style={styles.headerContainer}></View>;
+const SubHeader = ({ title, containerStyle, textStyle }: SubHeaderProps) => {
+  return (
+    <View style={[styles.headerContainer, containerStyle]}>
+      <Text style={[styles.heading, textStyle]}>{title}</Text>
+    </View>
+  );
 };
 
 const styles = StyleSheet.create({
@@ -80,6 +94,11 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     marginTop: 5,
+  },
+  subheaderText: {
+    color: 'white',
+    fontSize: 16,
+    fontWeight: 'bold',
   },
 });
 

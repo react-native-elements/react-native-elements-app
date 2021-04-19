@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, View, ScrollView } from 'react-native';
-import { Header } from '../header';
+import { Header } from '../../components/header';
 import LoginScreen2 from './screen2';
 import LoginScreen3 from './screen3';
 

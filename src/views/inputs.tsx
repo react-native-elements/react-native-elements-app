@@ -16,7 +16,7 @@ import {
   ThemeProvider,
   InputProps,
 } from 'react-native-elements';
-import { Header, SubHeader } from './header';
+import { Header, SubHeader } from '../components/header';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
 const dummySearchBarProps = {
@@ -53,7 +53,7 @@ const Inputs: React.FunctionComponent<InputsComponentProps> = () => {
       enabled
       keyboardVerticalOffset={Platform.OS === 'ios' ? 64 : 84}
     >
-      <Header title="Inputs" />
+      <Header title="Inputs" view="input" />
       <ScrollView keyboardShouldPersistTaps="handled">
         <View>
           <SubHeader title={'Search Bars'} />

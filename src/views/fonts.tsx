@@ -1,7 +1,7 @@
 import React from 'react';
 import { ScrollView, StyleSheet, Platform } from 'react-native';
 import { Text } from 'react-native-elements';
-import { Header } from './header';
+import { Header } from '../components/header';
 
 const iOS_fonts = [
   'Academy Engraved LET',

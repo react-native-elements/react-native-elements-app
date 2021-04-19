@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, Platform, ScrollView } from 'react-native';
 import { Rating, AirbnbRating, RatingProps } from 'react-native-ratings';
-import { Header } from './header';
+import { Header } from '../components/header';
 
 const WATER_IMAGE = require('../images/water.png');
 
@@ -15,7 +15,7 @@ const Ratings: React.FunctionComponent<RatingsComponentProps> = () => {
   const ratingProps = {};
   return (
     <View style={styles.container}>
-      <Header title="Ratings" />
+      <Header title="Ratings" view="rating" />
       <ScrollView style={styles.viewContainer}>
         <Text
           style={[

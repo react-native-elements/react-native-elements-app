@@ -10,7 +10,7 @@ import {
   Switch,
 } from 'react-native-elements';
 import { LinearGradient } from '../components/LinearGradient';
-import { Header } from './header';
+import { Header } from '../components/header';
 import colors from '../config/colors';
 
 const log = () => console.log('this is an example method');
@@ -107,7 +107,7 @@ const Lists2: React.FunctionComponent<ListComponentProps> = () => {
 
   return (
     <>
-      <Header title="Lists 2" />
+      <Header title="Lists 2" view="listitem" />
       <FlatList
         ListHeaderComponent={
           <>

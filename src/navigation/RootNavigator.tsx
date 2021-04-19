@@ -8,6 +8,7 @@ import Avatars from '../views/avatars';
 import Cards from '../views/cards';
 import Tiles from '../views/tiles';
 import Buttons from '../views/buttons';
+import Chips from '../views/chips';
 import Lists from '../views/lists';
 import Lists2 from '../views/lists2';
 import Inputs from '../views/inputs';
@@ -26,20 +27,22 @@ import Overlay from '../views/overlay';
 import CheckBox from '../views/checkbox';
 import FAB from '../views/fab';
 import Text from '../views/text';
+import Tabs from '../views/tabs';
 import Badge from '../views/badge';
 import WhatsappClone from '../views/whatsappClone';
 
 const Drawer = createDrawerNavigator();
 
 function RootNavigator() {
-  const { ThemeState, dispatch } = useContext(ThemeReducerContext);
+  const { ThemeState } = useContext(ThemeReducerContext);
   const { theme } = useContext(ThemeContext);
 
   return (
     <NavigationContainer
       theme={{
         colors: {
-          background: theme.colors.white,
+          background:
+            theme?.colors?.white !== undefined ? theme.colors.white : '',
           primary: '',
           card: '',
           text: '',
@@ -52,9 +55,9 @@ function RootNavigator() {
       <Drawer.Navigator
         drawerContent={DrawerNavigator}
         drawerContentOptions={{
-          activeTintColor: theme.colors.secondary,
+          activeTintColor: theme?.colors?.secondary,
           activeBackgroundColor: 'transparent',
-          inactiveTintColor: theme.colors.grey0,
+          inactiveTintColor: theme?.colors?.grey0,
           inactiveBackgroundColor: 'transparent',
           labelStyle: {
             fontSize: 15,
@@ -62,14 +65,16 @@ function RootNavigator() {
           },
         }}
         drawerStyle={{
-          backgroundColor: theme.colors.grey4,
+          backgroundColor: theme?.colors?.grey4,
         }}
       >
         <Drawer.Screen name="Avatars" component={Avatars} />
         <Drawer.Screen name="Badge" component={Badge} />
         <Drawer.Screen name="Buttons" component={Buttons} />
+        <Drawer.Screen name="Chips" component={Chips} />
         <Drawer.Screen name="Inputs" component={Inputs} />
         <Drawer.Screen name="Text" component={Text} />
+        <Drawer.Screen name="Tabs" component={Tabs} />
         <Drawer.Screen name="Lists" component={Lists} />
         <Drawer.Screen name="Lists2" component={Lists2} />
         <Drawer.Screen name="LinearProgress" component={LinearProgress} />

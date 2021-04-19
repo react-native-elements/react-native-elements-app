@@ -14,7 +14,12 @@ import { Header } from '../components/header';
 import colors from '../config/colors';
 
 const log = () => console.log('this is an example method');
-const list1 = [
+
+type List1Data = {
+  title: string;
+  icon: string;
+};
+const list1: List1Data[] = [
   {
     title: 'Appointments',
     icon: 'av-timer',
@@ -37,7 +42,14 @@ const list1 = [
   },
 ];
 
-const list2 = [
+type List2Data = {
+  name: string;
+  avatar_url: string;
+  subtitle: string;
+  linearGradientColors: string[];
+};
+
+const list2: Partial<List2Data>[] = [
   {
     name: 'Amy Farha',
     avatar_url: 'https://uifaces.co/our-content/donated/XdLjsJX_.jpg',
@@ -75,8 +87,10 @@ const list2 = [
 type ListComponentProps = ListItemProps;
 
 const Lists2: React.FunctionComponent<ListComponentProps> = () => {
+  const [expanded, setExpanded] = React.useState(false);
+
   const listItemProps = {};
-  const renderRow = ({ item }) => {
+  const renderRow = ({ item }: { item: List1Data }) => {
     return (
       <ListItem onPress={log} bottomDivider>
         <Icon name={item.icon} />
@@ -131,16 +145,31 @@ const Lists2: React.FunctionComponent<ListComponentProps> = () => {
             </View>
 
             <View style={styles.list}>
-              {list2.map((l, i) => (
-                <ListItem key={i} onPress={log} bottomDivider>
-                  <Avatar title={l.name[0]} source={{ uri: l.avatar_url }} />
-                  <ListItem.Content>
-                    <ListItem.Title>{l.name}</ListItem.Title>
-                    <ListItem.Subtitle>{l.subtitle}</ListItem.Subtitle>
-                  </ListItem.Content>
-                  <ListItem.Chevron />
-                </ListItem>
-              ))}
+              <ListItem.Accordion
+                content={
+                  <>
+                    <Icon name="place" size={30} />
+                    <ListItem.Content>
+                      <ListItem.Title>List Accordion</ListItem.Title>
+                    </ListItem.Content>
+                  </>
+                }
+                isExpanded={expanded}
+                onPress={() => {
+                  setExpanded(!expanded);
+                }}
+              >
+                {list2.map((l: Partial<List2Data>, i: React.Key) => (
+                  <ListItem key={i} onPress={log} bottomDivider>
+                    <Avatar title={l.name} source={{ uri: l.avatar_url }} />
+                    <ListItem.Content>
+                      <ListItem.Title>{l.name}</ListItem.Title>
+                      <ListItem.Subtitle>{l.subtitle}</ListItem.Subtitle>
+                    </ListItem.Content>
+                    <ListItem.Chevron />
+                  </ListItem>
+                ))}
+              </ListItem.Accordion>
             </View>
             <View style={styles.list}>
               {list2.map((l, i) => (
@@ -230,7 +259,7 @@ const Lists2: React.FunctionComponent<ListComponentProps> = () => {
           </>
         }
         data={list1}
-        keyExtractor={(a) => a.title}
+        keyExtractor={(a: List1Data, index: number) => index.toString()}
         renderItem={renderRow}
       />
     </>

@@ -1,10 +1,16 @@
 import React from 'react';
 import { View, ScrollView } from 'react-native';
-import _ from 'lodash';
 import { SocialIcon, SocialIconProps } from 'react-native-elements';
 import { Header } from '../components/header';
+import { SocialMediaType } from 'react-native-elements/dist/social/SocialIcon';
+import _ from 'lodash';
 
-const dataList = [
+type IconData = {
+  type: SocialMediaType;
+  iconType: string;
+};
+
+const dataList: Partial<IconData>[] = [
   {
     type: 'facebook',
   },
@@ -100,26 +106,28 @@ const SocialIcons: React.FunctionComponent<SocialIconsComponentProps> = () => {
     <>
       <Header title="Social Icons" view="social_icon" />
       <ScrollView>
-        {_.chunk(dataList, 3).map((chunk, chunkIndex) => (
-          <View
-            style={{
-              flexDirection: 'row',
-              justifyContent: 'space-around',
-              marginTop: 10,
-              backgroundColor: 'grey',
-            }}
-            key={chunkIndex}
-          >
-            {chunk.map((l, i) => (
-              <SocialIcon
-                {...(socialProps as SocialIconProps)}
-                type={l.type}
-                iconType={l.iconType}
-                key={`${chunkIndex}-${i}`}
-              />
-            ))}
-          </View>
-        ))}
+        {_.chunk(dataList, 3).map(
+          (chunk: Partial<IconData>[], chunkIndex: React.Key) => (
+            <View
+              style={{
+                flexDirection: 'row',
+                justifyContent: 'space-around',
+                marginTop: 10,
+                backgroundColor: 'grey',
+              }}
+              key={chunkIndex}
+            >
+              {chunk.map((l: Partial<IconData>, i: React.Key) => (
+                <SocialIcon
+                  {...(socialProps as SocialIconProps)}
+                  type={l.type}
+                  iconType={l.iconType ? l.iconType : 'font-awesome'}
+                  key={`${chunkIndex}-${i}`}
+                />
+              ))}
+            </View>
+          )
+        )}
       </ScrollView>
     </>
   );

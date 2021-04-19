@@ -47,7 +47,11 @@ const TooltipComponent: React.FunctionComponent<ToolTipComponentProps> = () => {
               {...(toolProps as TooltipProps)}
               containerStyle={{ width: 145, height: 130 }}
               popover={
-                <Text>{`Some big text full of important stuff for the super duper user that our design has been created for`}</Text>
+                <Text>
+                  {
+                    'Some big text full of important stuff for the super duper user that our design has been created for'
+                  }
+                </Text>
               }
             >
               <Text>HUGE</Text>

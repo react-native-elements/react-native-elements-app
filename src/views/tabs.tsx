@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text } from 'react-native';
-import { Header } from './header';
+import { Header } from '../components/header';
 import { Tab } from 'react-native-elements';
 
 export default () => {
@@ -20,14 +20,17 @@ export default () => {
       >
         <Tab.Item
           title="Recent"
+          titleStyle={{ fontSize: 12 }}
           icon={{ name: 'timer', type: 'ionicon', color: 'white' }}
         />
         <Tab.Item
           title="favourite"
+          titleStyle={{ fontSize: 12 }}
           icon={{ name: 'heart', type: 'ionicon', color: 'white' }}
         />
         <Tab.Item
           title="cart"
+          titleStyle={{ fontSize: 12 }}
           icon={{ name: 'cart', type: 'ionicon', color: 'white' }}
         />
       </Tab>

@@ -1,14 +1,14 @@
 import React from 'react';
 import { Text, View } from 'react-native';
 import { Avatar, Badge, Icon, withBadge } from 'react-native-elements';
-import { Header, SubHeader } from './header';
+import { Header, SubHeader } from '../components/header';
 
 const BadgedIcon = withBadge(5)(Icon);
 
 const badgeComponent = () => {
   return (
     <>
-      <Header title="Badge" />
+      <Header title="Badge" view="badge" />
       <SubHeader title={'Standard Badge'} />
       <View
         style={{

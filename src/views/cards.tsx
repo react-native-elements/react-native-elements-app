@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, ScrollView, StyleSheet, Image } from 'react-native';
 import { Text, Card, Button, Icon } from 'react-native-elements';
-import { Header } from './header';
+import { Header } from '../components/header';
 
 const users = [
   {
@@ -37,7 +37,7 @@ type CardsComponentsProps = {};
 const Cards: React.FunctionComponent<CardsComponentsProps> = () => {
   return (
     <>
-      <Header title="Cards" />
+      <Header title="Cards" view="card" />
       <ScrollView>
         <View style={styles.container}>
           <Card>

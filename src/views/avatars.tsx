@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { View, ScrollView } from 'react-native';
 import _ from 'lodash';
 import { Avatar } from 'react-native-elements';
-import { Header, SubHeader } from './header';
+import { Header, SubHeader } from '../components/header';
 
 type AvatarData = {
   image_url: string;
@@ -33,30 +33,12 @@ const dataList: AvatarData[] = [
   },
 ];
 
-const theme1 = {
-  Button: {
-    titleStyle: {
-      color: 'white',
-    },
-  },
-};
-
-const theme2 = {
-  Button: {
-    titleStyle: {
-      color: 'red',
-    },
-  },
-};
-
 type AvatarComponentProps = {};
 
 const Avatars: React.FunctionComponent<AvatarComponentProps> = () => {
-  const [theme, setTheme] = useState(theme1);
-
   return (
     <>
-      <Header title="Avatars" />
+      <Header title="Avatars" view="avatar" />
       <ScrollView>
         <SubHeader title={'Photo Avatars'} />
         {_.chunk(dataList, 3).map((chunk, chunkIndex) => (
@@ -195,9 +177,7 @@ const Avatars: React.FunctionComponent<AvatarComponentProps> = () => {
           <Avatar
             size={64}
             rounded
-            source={{
-              uri: 'https://randomuser.me/api/portraits/women/57.jpg',
-            }}
+            source={{ uri: 'https://randomuser.me/api/portraits/women/57.jpg' }}
             title="Bj"
             containerStyle={{ backgroundColor: 'grey' }}
           >

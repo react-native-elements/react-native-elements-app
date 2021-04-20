@@ -27,9 +27,9 @@ const USER_HP = require('../../../assets/images/user-hp.png');
 const SCREEN_WIDTH = Dimensions.get('window').width;
 const SCREEN_HEIGHT = Dimensions.get('window').height;
 
-type LoginScreen3Props = {};
+type LoginScreen2Props = {};
 
-const LoginScreen3: React.FunctionComponent<LoginScreen3Props> = () => {
+const LoginScreen2: React.FunctionComponent<LoginScreen2Props> = () => {
   const [isLoading, setLoading] = useState<boolean>(false);
   const [selectedType, setSelectedType] = useState<string>();
   const [username, setUsername] = useState<string>('');
@@ -231,7 +231,7 @@ const LoginScreen3: React.FunctionComponent<LoginScreen3Props> = () => {
   );
 };
 
-export default LoginScreen3;
+export default LoginScreen2;
 
 type UserTypeItemType = {
   image: ImageSourcePropType;

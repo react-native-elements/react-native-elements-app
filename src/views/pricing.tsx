@@ -1,7 +1,7 @@
 import React from 'react';
 import { ScrollView } from 'react-native';
 import colors from '../config/colors';
-import { Header } from './header';
+import { Header } from '../components/header';
 import { PricingCard } from 'react-native-elements';
 
 type PricingCardComponentProps = {};
@@ -9,7 +9,7 @@ type PricingCardComponentProps = {};
 const Pricing: React.FunctionComponent<PricingCardComponentProps> = () => {
   return (
     <>
-      <Header title="Pricing" />
+      <Header title="Pricing" view="pricing" />
       <ScrollView>
         <PricingCard
           color={colors.primary}

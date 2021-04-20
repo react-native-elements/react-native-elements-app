@@ -1,14 +1,14 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import { FAB } from 'react-native-elements';
-import { Header } from './header';
+import { Header } from '../components/header';
 
 export default () => {
   const [visible, setVisible] = React.useState(true);
 
   return (
     <>
-      <Header title="FAB" />
+      <Header title="FAB" view="fab" />
       <View
         style={{
           alignItems: 'center',

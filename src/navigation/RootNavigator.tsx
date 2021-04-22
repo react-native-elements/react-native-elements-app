@@ -13,6 +13,7 @@ import Lists from '../views/lists';
 import Lists2 from '../views/lists2';
 import Inputs from '../views/inputs';
 import LinearProgress from '../views/linearProgress';
+import CircularSlider from '../views/circularSlider';
 import Login from '../views/login';
 import Pricing from '../views/pricing';
 import Ratings from '../views/ratings';
@@ -71,6 +72,7 @@ function RootNavigator() {
         <Drawer.Screen name="Avatars" component={Avatars} />
         <Drawer.Screen name="Badge" component={Badge} />
         <Drawer.Screen name="Buttons" component={Buttons} />
+        <Drawer.Screen name="Circular Slider" component={CircularSlider} />
         <Drawer.Screen name="Chips" component={Chips} />
         <Drawer.Screen name="Inputs" component={Inputs} />
         <Drawer.Screen name="Text" component={Text} />

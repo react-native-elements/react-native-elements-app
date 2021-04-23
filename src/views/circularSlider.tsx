@@ -30,7 +30,7 @@ export default function () {
 
   return (
     <>
-      <Header title="Circular Slider" />
+      <Header title="Circular Slider" view="circularslider" />
       <View style={styles.container}>
         <CircularSlider
           value={value}

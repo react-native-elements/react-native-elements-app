@@ -9,7 +9,7 @@ import {
   Badge,
   Tab,
 } from 'react-native-elements';
-import { ScreenWidth } from 'react-native-elements/src/helpers';
+import { ScreenWidth } from 'react-native-elements/dist/helpers';
 
 const WhatsappClone: React.FunctionComponent = () => {
   const [index, setIndex] = React.useState(0);

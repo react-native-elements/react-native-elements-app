@@ -7,6 +7,7 @@ import {
   Icon,
   Badge,
   ListItemProps,
+  Button,
   Switch,
 } from 'react-native-elements';
 import { LinearGradient } from '../components/LinearGradient';
@@ -92,13 +93,36 @@ const Lists2: React.FunctionComponent<ListComponentProps> = () => {
   const listItemProps = {};
   const renderRow = ({ item }: { item: List1Data }) => {
     return (
-      <ListItem onPress={log} bottomDivider>
+      <ListItem.Swipable
+        onPress={log}
+        bottomDivider
+        leftColor="red"
+        rightColor="blue"
+        leftStyle={{
+          justifyContent: 'center',
+          backgroundColor: 'red',
+        }}
+        leftContent={
+          <Button
+            title="Info"
+            icon={{ name: 'info', color: 'white' }}
+            buttonStyle={{ minHeight: '100%' }}
+          />
+        }
+        rightContent={
+          <Button
+            title="Delete"
+            icon={{ name: 'delete', color: 'white' }}
+            buttonStyle={{ minHeight: '100%', backgroundColor: 'red' }}
+          />
+        }
+      >
         <Icon name={item.icon} />
         <ListItem.Content>
           <ListItem.Title>{item.title}</ListItem.Title>
         </ListItem.Content>
         <ListItem.Chevron />
-      </ListItem>
+      </ListItem.Swipable>
     );
   };
   const [switch1, setSwitch1] = useState(true);

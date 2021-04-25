@@ -30,6 +30,7 @@ import FAB from '../views/fab';
 import Text from '../views/text';
 import Tabs from '../views/tabs';
 import Badge from '../views/badge';
+import Image from '../views/image';
 import WhatsappClone from '../views/whatsappClone';
 
 const Drawer = createDrawerNavigator();
@@ -82,6 +83,7 @@ function RootNavigator() {
         <Drawer.Screen name="LinearProgress" component={LinearProgress} />
         <Drawer.Screen name="Cards" component={Cards} />
         <Drawer.Screen name="Tiles" component={Tiles} />
+        <Drawer.Screen name="Image" component={Image} />
         <Drawer.Screen name="Pricing" component={Pricing} />
         <Drawer.Screen name="Ratings" component={Ratings} />
         <Drawer.Screen name="FAB" component={FAB} />

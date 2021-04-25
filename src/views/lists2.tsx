@@ -96,12 +96,6 @@ const Lists2: React.FunctionComponent<ListComponentProps> = () => {
       <ListItem.Swipable
         onPress={log}
         bottomDivider
-        leftColor="red"
-        rightColor="blue"
-        leftStyle={{
-          justifyContent: 'center',
-          backgroundColor: 'red',
-        }}
         leftContent={
           <Button
             title="Info"

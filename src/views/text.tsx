@@ -1,7 +1,7 @@
 import React from 'react';
 import { Linking, StyleSheet, View } from 'react-native';
 import { Text, Button } from 'react-native-elements';
-import theme from 'react-native-elements/src/config/theme';
+import theme from 'react-native-elements/dist/config/theme';
 import { Header } from '../components/header';
 
 type TextComponentProps = {};

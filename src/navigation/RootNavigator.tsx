@@ -31,6 +31,7 @@ import Text from '../views/text';
 import Tabs from '../views/tabs';
 import Badge from '../views/badge';
 import WhatsappClone from '../views/whatsappClone';
+import Divider from '../views/Divider';
 
 const Drawer = createDrawerNavigator();
 
@@ -74,6 +75,7 @@ function RootNavigator() {
         <Drawer.Screen name="Buttons" component={Buttons} />
         <Drawer.Screen name="Circular Slider" component={CircularSlider} />
         <Drawer.Screen name="Chips" component={Chips} />
+        <Drawer.Screen name="Divider" component={Divider} />
         <Drawer.Screen name="Inputs" component={Inputs} />
         <Drawer.Screen name="Text" component={Text} />
         <Drawer.Screen name="Tabs" component={Tabs} />

@@ -71,30 +71,30 @@ function RootNavigator() {
       >
         <Drawer.Screen name="Avatars" component={Avatars} />
         <Drawer.Screen name="Badge" component={Badge} />
+        <Drawer.Screen name="BottomSheet" component={BottomSheet} />
         <Drawer.Screen name="Buttons" component={Buttons} />
-        <Drawer.Screen name="Circular Slider" component={CircularSlider} />
+        <Drawer.Screen name="Cards" component={Cards} />
+        <Drawer.Screen name="Checkbox" component={CheckBox} />
         <Drawer.Screen name="Chips" component={Chips} />
+        <Drawer.Screen name="Circular Slider" component={CircularSlider} />
+        <Drawer.Screen name="FAB" component={FAB} />
+        <Drawer.Screen name="Fonts" component={Fonts} />
         <Drawer.Screen name="Inputs" component={Inputs} />
-        <Drawer.Screen name="Text" component={Text} />
-        <Drawer.Screen name="Tabs" component={Tabs} />
+        <Drawer.Screen name="LinearProgress" component={LinearProgress} />
         <Drawer.Screen name="Lists" component={Lists} />
         <Drawer.Screen name="Lists2" component={Lists2} />
-        <Drawer.Screen name="LinearProgress" component={LinearProgress} />
-        <Drawer.Screen name="Cards" component={Cards} />
-        <Drawer.Screen name="Tiles" component={Tiles} />
+        <Drawer.Screen name="Login" component={Login} />
+        <Drawer.Screen name="Overlay" component={Overlay} />
         <Drawer.Screen name="Pricing" component={Pricing} />
         <Drawer.Screen name="Ratings" component={Ratings} />
-        <Drawer.Screen name="FAB" component={FAB} />
-        <Drawer.Screen name="Login" component={Login} />
-        <Drawer.Screen name="Speed Dial" component={SpeedDial} />
         <Drawer.Screen name="Settings" component={Settings} />
         <Drawer.Screen name="Slider" component={Sliders} />
         <Drawer.Screen name="Social Icons" component={SocialIcons} />
-        <Drawer.Screen name="Fonts" component={Fonts} />
-        <Drawer.Screen name="Overlay" component={Overlay} />
+        <Drawer.Screen name="Speed Dial" component={SpeedDial} />
+        <Drawer.Screen name="Tabs" component={Tabs} />
+        <Drawer.Screen name="Text" component={Text} />
+        <Drawer.Screen name="Tiles" component={Tiles} />
         <Drawer.Screen name="Tooltip" component={Tooltip} />
-        <Drawer.Screen name="BottomSheet" component={BottomSheet} />
-        <Drawer.Screen name="Checkbox" component={CheckBox} />
         <Drawer.Screen name="Whatsapp Clone" component={WhatsappClone} />
       </Drawer.Navigator>
     </NavigationContainer>

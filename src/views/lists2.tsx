@@ -93,7 +93,7 @@ const Lists2: React.FunctionComponent<ListComponentProps> = () => {
   const listItemProps = {};
   const renderRow = ({ item }: { item: List1Data }) => {
     return (
-      <ListItem.Swipable
+      <ListItem.Swipeable
         onPress={log}
         bottomDivider
         leftContent={
@@ -116,7 +116,7 @@ const Lists2: React.FunctionComponent<ListComponentProps> = () => {
           <ListItem.Title>{item.title}</ListItem.Title>
         </ListItem.Content>
         <ListItem.Chevron />
-      </ListItem.Swipable>
+      </ListItem.Swipeable>
     );
   };
   const [switch1, setSwitch1] = useState(true);

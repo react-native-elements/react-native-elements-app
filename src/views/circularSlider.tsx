@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { CircularSlider } from 'react-native-elements-universe';
-import { Header } from './header';
+import { Header } from '../components/header';
 
 export default function () {
   const [value, setValue] = React.useState(0);
@@ -30,13 +30,14 @@ export default function () {
 
   return (
     <>
-      <Header title="Circular Slider" />
+      <Header title="Circular Slider" view="circularslider" />
       <View style={styles.container}>
         <CircularSlider
           value={value}
           onChange={setValue}
           trackColor={color()}
           showThumbText
+          showText
         />
         <CircularSlider value={timer} noThumb showText />
       </View>

@@ -30,6 +30,7 @@ import FAB from '../views/fab';
 import Text from '../views/text';
 import Tabs from '../views/tabs';
 import Badge from '../views/badge';
+import Image from '../views/image';
 import WhatsappClone from '../views/whatsappClone';
 
 const Drawer = createDrawerNavigator();

@@ -96,42 +96,36 @@ const Dialogs: React.FunctionComponent<DialogComponentProps> = () => {
       <Dialog
         isVisible={visible1}
         onBackdropPress={toggleDialog1}
-        title="Dialog Title"
       >
+        <Dialog.Title title="Dialog Title"/>
         <Text>Dialog body text. Add relevant information here.</Text>
       </Dialog>
       <Dialog
         isVisible={visible2}
         onBackdropPress={toggleDialog2}
-        primary="Action 1"
-        primaryOnPress={() => console.log('Primary Action Clicked!')}
-        secondary="Action 2"
-        secondaryOnPress={() => console.log('Secondary Action Clicked!')}
-        title="Dialog Title"
       >
+        <Dialog.Title title="Dialog Title"/>
         <Text>Dialog body text. Add relevant information here.</Text>
+        <Dialog.Actions>
+          <Dialog.Button title="ACTION 1" onPress={() => console.log('Primary Action Clicked!')}/>
+          <Dialog.Button title="ACTION 2" onPress={() => console.log('Secondary Action Clicked!')}/>
+        </Dialog.Actions>
       </Dialog>
-      <Dialog isVisible={visible3} onBackdropPress={toggleDialog3} loading />
+      <Dialog isVisible={visible3} onBackdropPress={toggleDialog3}>
+        <Dialog.Loading />
+      </Dialog>
       <Dialog
         isVisible={visible4}
         onBackdropPress={toggleDialog4}
-        title="Dialog Title"
-        noButtons
       >
+        <Dialog.Title title="Dialog Title"/>
         <Text>Dialog body text. Add relevant information here.</Text>
       </Dialog>
       <Dialog
         isVisible={visible5}
         onBackdropPress={toggleDialog5}
-        primary="Confirm"
-        primaryOnPress={() => {
-          console.log(`Option ${checked} was selected!`);
-          toggleDialog5();
-        }}
-        secondary="Cancel"
-        secondaryOnPress={toggleDialog5}
-        title="Select Preference"
       >
+        <Dialog.Title title="Select Preference"/>
         {['Option 1', 'Option 2', 'Option 3'].map((l, i) => (
           <CheckBox
             key={i}
@@ -143,13 +137,23 @@ const Dialogs: React.FunctionComponent<DialogComponentProps> = () => {
             onPress={() => setChecked(i + 1)}
           />
         ))}
+        
+        <Dialog.Actions>
+          <Dialog.Button
+            title="CONFIRM"
+            onPress={() => {
+              console.log(`Option ${checked} was selected!`);
+              toggleDialog5();
+            }}
+          />
+          <Dialog.Button title="CANCEL" onPress={toggleDialog5} />
+        </Dialog.Actions>
       </Dialog>
       <Dialog
         isVisible={visible6}
         onBackdropPress={toggleDialog6}
-        title="Choose Account"
-        noButtons
       >
+        <Dialog.Title title="Choose Account"/>
         {userlist.map((l, i) => (
           <ListItem
             key={i}

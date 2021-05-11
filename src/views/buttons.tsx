@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, ScrollView, StyleSheet } from 'react-native';
 import { Button, ButtonGroup, withTheme, Text } from 'react-native-elements';
-import { Header, SubHeader } from './header';
+import { Header, SubHeader } from '../components/header';
 import { LinearGradient } from '../components/LinearGradient';
 
 type ButtonsComponentProps = {};
@@ -12,7 +12,7 @@ const Buttons: React.FunctionComponent<ButtonsComponentProps> = () => {
 
   return (
     <>
-      <Header title="Buttons" />
+      <Header title="Buttons" view="button" />
       <ScrollView>
         <View style={styles.contentView}>
           <SubHeader title="Basic Buttons" />
@@ -252,7 +252,7 @@ const Buttons: React.FunctionComponent<ButtonsComponentProps> = () => {
                   borderColor: 'rgba(78, 116, 289, 1)',
                 }}
                 type="outline"
-                raised="true"
+                raised
                 titleStyle={{ color: 'rgba(78, 116, 289, 1)' }}
                 containerStyle={{
                   width: 200,
@@ -378,4 +378,3 @@ const styles = StyleSheet.create({
 });
 
 export default withTheme(Buttons, '');
-

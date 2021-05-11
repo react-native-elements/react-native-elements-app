@@ -1,5 +1,5 @@
 import React from 'react';
-import { Header } from './header';
+import { Header } from '../components/header';
 import { SpeedDial } from 'react-native-elements';
 
 export default () => {
@@ -7,7 +7,7 @@ export default () => {
 
   return (
     <>
-      <Header title="Speed Dial" />
+      <Header title="Speed Dial" view="speeddial" />
       <SpeedDial
         isOpen={open}
         icon={{ name: 'edit', color: '#fff' }}

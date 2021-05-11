@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { Header } from './header';
 import { BottomSheet, Button, ListItem } from 'react-native-elements';
 import { StyleSheet } from 'react-native';
+import { Header } from '../components/header';
 
 type BottomSheetComponentProps = {};
 
@@ -20,7 +20,7 @@ const BottomSheetComponent: React.FunctionComponent<BottomSheetComponentProps> =
 
   return (
     <>
-      <Header title="BottomSheet" />
+      <Header title="BottomSheet" view="bottomsheet" />
       <Button
         title="Open Bottom Sheet"
         onPress={() => setIsVisible(true)}

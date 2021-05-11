@@ -8,9 +8,8 @@ import {
   SearchBarProps,
   Switch,
 } from 'react-native-elements';
-import { Header } from './header';
+import { Header } from '../components/header';
 import { ThemeReducerContext } from '../helpers/ThemeReducer';
-
 
 const ORANGE = '#FF9500';
 const BLUE = '#007AFF';
@@ -19,7 +18,22 @@ const RED = '#FF3B30';
 const GREY = '#8E8E93';
 const PURPLE = '#5856D6';
 const TEAL_BLUE = '#5AC8FA';
-const sections = [
+
+type SettingData = {
+  title?: string;
+  icon: string;
+  backgroundColor?: string;
+  hideChevron?: boolean;
+  checkbox?: boolean;
+  rightTitle?: string;
+  type?: string;
+};
+
+type SettingsData = {
+  data: SettingData[];
+};
+
+const sections: SettingsData[] = [
   {
     data: [
       {
@@ -28,28 +42,33 @@ const sections = [
         backgroundColor: ORANGE,
         hideChevron: true,
         checkbox: true,
+        type: 'ionicon',
       },
       {
         title: 'Wi-Fi',
         backgroundColor: BLUE,
         icon: 'ios-wifi',
+        type: 'ionicon',
       },
       {
         title: 'Bluetooth',
         backgroundColor: BLUE,
         icon: 'ios-bluetooth',
         rightTitle: 'Off',
+        type: 'ionicon',
       },
       {
         title: 'Cellular',
         backgroundColor: GREEN,
         icon: 'ios-phone-portrait',
+        type: 'ionicon',
       },
       {
         title: 'Personal Hotspot',
         backgroundColor: GREEN,
         icon: 'ios-radio',
         rightTitle: 'Off',
+        type: 'ionicon',
       },
     ],
   },
@@ -59,16 +78,19 @@ const sections = [
         title: 'Notifications',
         icon: 'ios-notifications',
         backgroundColor: RED,
+        type: 'ionicon',
       },
       {
         title: 'Control Center',
         backgroundColor: GREY,
-        icon: 'ios-switch',
+        icon: 'switch',
+        type: 'entypo',
       },
       {
         title: 'Do Not Disturb',
         backgroundColor: PURPLE,
         icon: 'ios-moon',
+        type: 'ionicon',
       },
     ],
   },
@@ -78,41 +100,49 @@ const sections = [
         title: 'General',
         icon: 'ios-settings',
         backgroundColor: GREY,
+        type: 'ionicon',
       },
       {
         title: 'Display & Brightness',
         backgroundColor: BLUE,
         icon: 'ios-bulb',
+        type: 'ionicon',
       },
       {
         title: 'Wallpaper',
         backgroundColor: TEAL_BLUE,
         icon: 'ios-color-wand',
+        type: 'ionicon',
       },
       {
         title: 'Sounds',
         backgroundColor: RED,
         icon: 'ios-volume-high',
+        type: 'ionicon',
       },
       {
         title: 'Touch ID & Code',
         backgroundColor: RED,
         icon: 'ios-finger-print',
+        type: 'ionicon',
       },
       {
         title: 'Emergency Call',
         backgroundColor: ORANGE,
         icon: 'ios-medical',
+        type: 'ionicon',
       },
       {
         title: 'Battery',
         backgroundColor: GREEN,
         icon: 'ios-battery-full',
+        type: 'ionicon',
       },
       {
         title: 'Confidentiality',
         backgroundColor: GREY,
-        icon: 'ios-hand',
+        icon: 'ios-hand-left',
+        type: 'ionicon',
       },
     ],
   },
@@ -126,18 +156,28 @@ const Settings: React.FunctionComponent<SetttingsComponentProps> = () => {
   const [switched, setSwitched] = useState(false);
   const { ThemeState } = useContext(ThemeReducerContext);
 
-  const onSwitchEventHandler = (value) => {
+  const onSwitchEventHandler = (value: boolean) => {
     setSwitched(value);
   };
 
   const searchbarProps = {};
 
   const renderItem = ({
-    item: { title, backgroundColor, icon, rightTitle, hideChevron, checkbox },
+    item: {
+      title,
+      backgroundColor,
+      icon,
+      rightTitle,
+      hideChevron,
+      checkbox,
+      type,
+    },
+  }: {
+    item: SettingData;
   }) => (
     <ListItem containerStyle={{ paddingVertical: 8 }} key={title}>
       <Icon
-        type="ionicon"
+        type={type}
         name={icon}
         size={20}
         color="white"
@@ -166,7 +206,13 @@ const Settings: React.FunctionComponent<SetttingsComponentProps> = () => {
   const renderSectionHeader = () => <View style={styles.headerSection} />;
 
   const ItemSeparatorComponent = () => (
-    <View style={[ThemeState.themeMode === 'dark'? styles.separatorComponentDark: styles.separatorComponentLight]}>
+    <View
+      style={[
+        ThemeState.themeMode === 'dark'
+          ? styles.separatorComponentDark
+          : styles.separatorComponentLight,
+      ]}
+    >
       <Divider style={styles.separator} />
     </View>
   );
@@ -182,7 +228,12 @@ const Settings: React.FunctionComponent<SetttingsComponentProps> = () => {
     </View>
   );
 
-  const keyExtractor = (item, index) => index;
+  const keyExtractor: (item: SettingData, index: number) => string = (
+    item: SettingData,
+    index: React.Key
+  ) => {
+    return index.toString();
+  };
 
   return (
     <>

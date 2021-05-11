@@ -1,21 +1,21 @@
 import React from 'react';
 import { StyleSheet, Text, View, Platform, ScrollView } from 'react-native';
 import { Rating, AirbnbRating, RatingProps } from 'react-native-ratings';
-import { Header } from './header';
+import { Header } from '../components/header';
 
 const WATER_IMAGE = require('../images/water.png');
 
 type RatingsComponentProps = {};
 
 const Ratings: React.FunctionComponent<RatingsComponentProps> = () => {
-  const ratingCompleted = (rating) => {
+  const ratingCompleted = (rating: number) => {
     console.log('Rating is: ' + rating);
   };
 
   const ratingProps = {};
   return (
     <View style={styles.container}>
-      <Header title="Ratings" />
+      <Header title="Ratings" view="rating" />
       <ScrollView style={styles.viewContainer}>
         <Text
           style={[
@@ -119,14 +119,14 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
     paddingVertical: 5,
-    fontFamily: Platform.OS === 'ios' ? 'Menlo-Bold' : null,
+    fontFamily: Platform.OS === 'ios' ? 'Menlo-Bold' : '',
     color: '#27ae60',
   },
   subtitleText: {
     fontSize: 18,
     fontWeight: '400',
     textAlign: 'center',
-    fontFamily: Platform.OS === 'ios' ? 'Trebuchet MS' : null,
+    fontFamily: Platform.OS === 'ios' ? 'Trebuchet MS' : '',
     color: '#34495e',
   },
   viewContainer: {

@@ -1,7 +1,10 @@
 import React from 'react';
 
 export const initialState = { themeMode: 'light' };
-export function ThemeReducer(state, action) {
+export function ThemeReducer(
+  state: { themeMode: string },
+  action: { type: string; payload: string }
+) {
   const { payload } = action;
   switch (action.type) {
     case 'set-theme':
@@ -12,4 +15,7 @@ export function ThemeReducer(state, action) {
 }
 
 // added null in the create context so that tsc issues are fixed. Refer https://stackoverflow.com/questions/54577865/react-createcontext-issue-in-typescript/54667477
-export const ThemeReducerContext = React.createContext(null);
+export const ThemeReducerContext = React.createContext({
+  ThemeState: { themeMode: 'light' },
+  dispatch: ({ type, payload }) => {},
+});

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { CheckBox, Icon } from 'react-native-elements';
-import { Header } from './header';
+import { Header } from '../components/header';
 
 type CheckboxComponentProps = {};
 
@@ -12,7 +12,7 @@ const CheckboxComponent: React.FunctionComponent<CheckboxComponentProps> = () =>
 
   return (
     <>
-      <Header title="Checkbox" />
+      <Header title="Checkbox" view="checkbox" />
 
       <CheckBox
         center

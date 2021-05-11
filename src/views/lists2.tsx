@@ -7,14 +7,20 @@ import {
   Icon,
   Badge,
   ListItemProps,
+  Button,
   Switch,
 } from 'react-native-elements';
 import { LinearGradient } from '../components/LinearGradient';
-import { Header } from './header';
+import { Header } from '../components/header';
 import colors from '../config/colors';
 
 const log = () => console.log('this is an example method');
-const list1 = [
+
+type List1Data = {
+  title: string;
+  icon: string;
+};
+const list1: List1Data[] = [
   {
     title: 'Appointments',
     icon: 'av-timer',
@@ -37,7 +43,14 @@ const list1 = [
   },
 ];
 
-const list2 = [
+type List2Data = {
+  name: string;
+  avatar_url: string;
+  subtitle: string;
+  linearGradientColors: string[];
+};
+
+const list2: Partial<List2Data>[] = [
   {
     name: 'Amy Farha',
     avatar_url: 'https://uifaces.co/our-content/donated/XdLjsJX_.jpg',
@@ -78,15 +91,32 @@ const Lists2: React.FunctionComponent<ListComponentProps> = () => {
   const [expanded, setExpanded] = React.useState(false);
 
   const listItemProps = {};
-  const renderRow = ({ item }) => {
+  const renderRow = ({ item }: { item: List1Data }) => {
     return (
-      <ListItem onPress={log} bottomDivider>
+      <ListItem.Swipeable
+        onPress={log}
+        bottomDivider
+        leftContent={
+          <Button
+            title="Info"
+            icon={{ name: 'info', color: 'white' }}
+            buttonStyle={{ minHeight: '100%' }}
+          />
+        }
+        rightContent={
+          <Button
+            title="Delete"
+            icon={{ name: 'delete', color: 'white' }}
+            buttonStyle={{ minHeight: '100%', backgroundColor: 'red' }}
+          />
+        }
+      >
         <Icon name={item.icon} />
         <ListItem.Content>
           <ListItem.Title>{item.title}</ListItem.Title>
         </ListItem.Content>
         <ListItem.Chevron />
-      </ListItem>
+      </ListItem.Swipeable>
     );
   };
   const [switch1, setSwitch1] = useState(true);
@@ -95,7 +125,7 @@ const Lists2: React.FunctionComponent<ListComponentProps> = () => {
 
   return (
     <>
-      <Header title="Lists 2" />
+      <Header title="Lists 2" view="listitem" />
       <FlatList
         ListHeaderComponent={
           <>
@@ -147,9 +177,9 @@ const Lists2: React.FunctionComponent<ListComponentProps> = () => {
                   setExpanded(!expanded);
                 }}
               >
-                {list2.map((l, i) => (
+                {list2.map((l: Partial<List2Data>, i: React.Key) => (
                   <ListItem key={i} onPress={log} bottomDivider>
-                    <Avatar title={l.name[0]} source={{ uri: l.avatar_url }} />
+                    <Avatar title={l.name} source={{ uri: l.avatar_url }} />
                     <ListItem.Content>
                       <ListItem.Title>{l.name}</ListItem.Title>
                       <ListItem.Subtitle>{l.subtitle}</ListItem.Subtitle>
@@ -247,7 +277,7 @@ const Lists2: React.FunctionComponent<ListComponentProps> = () => {
           </>
         }
         data={list1}
-        keyExtractor={(a) => a.title}
+        keyExtractor={(a: List1Data, index: number) => index.toString()}
         renderItem={renderRow}
       />
     </>

@@ -2,11 +2,11 @@
 
 # React Native Elements App
 
-**[Mobile App](https://expo.io/@monte9/react-native-elements-app)** | **[Web App](https://react-native-elements.github.io/react-native-elements-app)**
+**[Mobile App](https://expo.io/@monte9/react-native-elements-app)**
 
 This is the Demo app for [React Native Elements](https://github.com/react-native-elements/react-native-elements) built with [Expo](https://expo.io/). The purpose of this app is to demonstrate the usage of the various UI components that React Native Elements provides out of the box.
 
-This app also works on the `web` platform using [React Native Web](https://github.com/necolas/react-native-web). You can checkout the [live website here](https://react-native-elements.github.io/react-native-elements-app). If you are looking to build a React Native mobile app which can reuse the code to deploy it on the web, this is the right place to begin. We decided to use [Expo](https://expo.io/), which reduces the effort required to build an app once and deploy it anywhere.
+This app also works on the `web` platform using [React Native Web](https://github.com/necolas/react-native-web). You can check out the [live website here](https://react-native-elements.github.io/react-native-elements-app). If you are looking to build a React Native mobile app which can reuse the code to deploy it on the web, this is the right place to begin. We decided to use [Expo](https://expo.io/), which reduces the effort required to build an app once and deploy it anywhere.
 
 ## Getting Started
 
@@ -42,7 +42,7 @@ npm install
 
 ```
 # Using yarn
-yarn start 
+yarn start
 
 # Using npm
 npm start
@@ -58,7 +58,7 @@ yarn build:web
 
 Once you have built it, you can see generated `web-build` folder.
 
-This folder can be hosted as static website. For example you can publish on [Github Pages](https://pages.github.com/) via [gh-pages](https://github.com/tschaub/gh-pages) cli.
+This folder can be hosted as static website. For example, you can publish on [Github Pages](https://pages.github.com/) via [gh-pages](https://github.com/tschaub/gh-pages) cli.
 
 ```
 yarn deploy
@@ -72,7 +72,7 @@ The mobile app is built using Expo. If you would like to eject, you can run the 
 
 ```
 # Using Yarn
-yarn eject 
+yarn eject
 
 # Using npm
 npm run eject
@@ -96,7 +96,7 @@ You can install `react-native-elements` in your app using:
 
 ```
 # Using yarn
-yarn add react-native-elements 
+yarn add react-native-elements
 
 # Using npm
 npm install react-native-elements --save
@@ -104,4 +104,4 @@ npm install react-native-elements --save
 
 ## Feedback
 
-In case you run into any problems while running this app or have additional questions, please create a new issue on this repo and we will follow up with you.
+In case you run into any problems while running this app or have additional questions, please create a new issue on this repo, and we will follow up with you.

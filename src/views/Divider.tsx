@@ -1,12 +1,12 @@
-import React from 'react';
-import { Text, Divider } from 'react-native-elements';
+import React, { useContext } from 'react';
+import { Text, Divider, ThemeContext } from 'react-native-elements';
 import { ScrollView, StyleSheet, View } from 'react-native';
 import { Header, SubHeader } from '../components/header';
-import theme from 'react-native-elements/src/config/theme';
 
 type DividerViewTypes = {};
 
 const DividerView: React.FunctionComponent<DividerViewTypes> = (props) => {
+  const { theme } = useContext(ThemeContext);
   return (
     <>
       <Header title="Divider" view="divider" />
@@ -18,7 +18,7 @@ const DividerView: React.FunctionComponent<DividerViewTypes> = (props) => {
           <Text style={styles.horizontalText}>
             Horizontal Divider with width and color
           </Text>
-          <Divider width={5} color={theme.colors.primary} />
+          <Divider width={5} color={theme?.colors?.primary} />
         </View>
         <SubHeader title="Horizontal Divider with Inset" />
         <View style={styles.horizontal}>
@@ -53,7 +53,7 @@ const DividerView: React.FunctionComponent<DividerViewTypes> = (props) => {
           <Divider
             subHeader="Divider"
             inset={true}
-            subHeaderStyle={{ color: theme.colors.primary }}
+            subHeaderStyle={{ color: theme?.colors?.primary }}
           />
           <Text style={styles.horizontalText}>Right text</Text>
         </View>

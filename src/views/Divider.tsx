@@ -1,12 +1,12 @@
 import React, { useContext } from 'react';
-import { Text, Divider, ThemeContext } from 'react-native-elements';
+import { Text, Divider, useTheme } from 'react-native-elements';
 import { ScrollView, StyleSheet, View } from 'react-native';
 import { Header, SubHeader } from '../components/header';
 
 type DividerViewTypes = {};
 
 const DividerView: React.FunctionComponent<DividerViewTypes> = (props) => {
-  const { theme } = useContext(ThemeContext);
+  const { theme } = useTheme();
   return (
     <>
       <Header title="Divider" view="divider" />

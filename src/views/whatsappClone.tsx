@@ -1,5 +1,11 @@
 import React from 'react';
-import { View, ScrollView, StyleSheet, SafeAreaView } from 'react-native';
+import {
+  View,
+  ScrollView,
+  StyleSheet,
+  SafeAreaView,
+  Dimensions,
+} from 'react-native';
 import {
   Avatar,
   FAB,
@@ -9,7 +15,8 @@ import {
   Badge,
   Tab,
 } from 'react-native-elements';
-import { ScreenWidth } from 'react-native-elements/src/helpers';
+
+const ScreenWidth = Dimensions.get('window').width;
 
 const WhatsappClone: React.FunctionComponent = () => {
   const [index, setIndex] = React.useState(0);

@@ -16,6 +16,7 @@ import {
   ThemeProvider,
   InputProps,
 } from 'react-native-elements';
+import FloatingTextInput, { FloatingInputProps } from './floatingInput';
 import { Header, SubHeader } from '../components/header';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
@@ -46,6 +47,8 @@ const Inputs: React.FunctionComponent<InputsComponentProps> = () => {
   };
 
   const inputProps = {};
+  const floatingInputProps = {};
+
   return (
     <KeyboardAvoidingView
       style={styles.keyboardAvoidingView}
@@ -92,6 +95,11 @@ const Inputs: React.FunctionComponent<InputsComponentProps> = () => {
             containerStyle={styles.inputContainerStyle}
             placeholder="Simple input"
             style={InputFieldsStyle}
+          />
+          <FloatingTextInput
+            {...(floatingInputProps as FloatingInputProps)}
+            style={styles.textInputStyle}
+            label="Floating Label"
           />
           <Input
             {...(inputProps as InputProps)}
@@ -421,6 +429,9 @@ const styles = StyleSheet.create({
   inputContainerStyle: {
     marginTop: 16,
     width: '90%',
+  },
+  textInputStyle: {
+    margin: 20,
   },
   keyboardAvoidingView: {
     flex: 1,

@@ -14,10 +14,10 @@ const Tiles: React.FunctionComponent<TilesComponentProps> = () => {
           <Tile
             imageSrc={{
               uri:
-                'https://images.squarespace-cdn.com/content/v1/5477887ae4b07c97883111ab/1474363728860-6JTDG9X57ZWV4GPF22SB/ke17ZwdGBToddI8pDm48kCODrNtbcuYH7-tCzItriTR7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0geeCvn1f36QDdcifB7yxGil1S52LO7OFJ9VSg5prgfv6LcGlOWReXeb5jU_5wp_mQ/Porthmeor+Sunset+21.jpg?format=300w',
+                'https://www.mediastorehouse.com/p/191/sunset-porthmeor-beach-st-ives-cornwall-11702500.jpg.webp',
             }}
             title="When I admire the wonders of a sunset or the beauty of the moon, my soul expands in the worship of the creator."
-            titleStyle={{ fontSize: 20 }}
+            titleStyle={{ fontSize: 15 }}
             featured
             caption="Mahatma Gandhi"
             activeOpacity={1}

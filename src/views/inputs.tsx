@@ -11,12 +11,13 @@ import {
 import {
   Input,
   SearchBar,
+  FloatingTextInput,
   Icon,
   Button,
   ThemeProvider,
   InputProps,
+  FloatingInputProps,
 } from 'react-native-elements';
-import FloatingTextInput, { FloatingInputProps } from './floatingInput';
 import { Header, SubHeader } from '../components/header';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;

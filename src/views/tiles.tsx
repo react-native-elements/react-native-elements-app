@@ -50,7 +50,7 @@ const Tiles: React.FunctionComponent<TilesComponentProps> = () => {
                   'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Half_Dome_from_Glacier_Point%2C_Yosemite_NP_-_Diliff.jpg/320px-Half_Dome_from_Glacier_Point%2C_Yosemite_NP_-_Diliff.jpg',
               }}
               title="Half Dome, Yosemite"
-              titleStyle={{ fontSize: 20 }}
+              titleStyle={{ fontSize: 20, textAlign: 'center', paddingBottom: 5 }}
               activeOpacity={1}
               width={310}
               contentContainerStyle={{ height: 70 }}

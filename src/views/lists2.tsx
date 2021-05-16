@@ -174,7 +174,7 @@ const Lists2: React.FunctionComponent<ListComponentProps> = () => {
             <View style={styles.list}>
               {list2.map((l, i) => (
                 <ListItem key={i} bottomDivider>
-                  <Icon name="user-circle-o" type="font-awesome" color="blue" />
+                  <Icon name="user-circle-o" type="font-awesome" color="red" />
                   <ListItem.Content>
                     <ListItem.Title style={{ color: 'red' }}>
                       {l.name}

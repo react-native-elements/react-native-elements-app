@@ -7,7 +7,7 @@ import {
   Avatar,
 } from 'react-native-elements';
 import { View, Text, StyleSheet } from 'react-native';
-import { Header } from './header';
+import { Header } from '../components/header';
 
 type DialogComponentProps = {};
 

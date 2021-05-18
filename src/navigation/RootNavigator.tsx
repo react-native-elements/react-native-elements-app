@@ -24,6 +24,7 @@ import SocialIcons from '../views/social_icons';
 import Fonts from '../views/fonts';
 import BottomSheet from '../views/bottomsheet';
 import Tooltip from '../views/tooltip';
+import Dialogs from '../views/dialogs'
 import Overlay from '../views/overlay';
 import CheckBox from '../views/checkbox';
 import FAB from '../views/fab';
@@ -78,6 +79,7 @@ function RootNavigator() {
         <Drawer.Screen name="Cards" component={Cards} />
         <Drawer.Screen name="Checkbox" component={CheckBox} />
         <Drawer.Screen name="Chips" component={Chips} />
+        <Drawer.Screen name="Dialogs" component={Dialogs} />
         <Drawer.Screen name="Divider" component={Divider} />
         <Drawer.Screen name="Circular Slider" component={CircularSlider} />
         <Drawer.Screen name="FAB" component={FAB} />

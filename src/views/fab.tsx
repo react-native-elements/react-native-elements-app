@@ -31,7 +31,7 @@ export default () => {
         <FAB
           visible={visible}
           icon={{ name: 'add', color: 'white' }}
-          color="blue"
+          color="green"
         />
         <Text style={{ color: '#397af8', paddingVertical: 10 }}>
           Primary Color
@@ -60,7 +60,7 @@ export default () => {
           placement="right"
           title="Hide"
           icon={{ name: 'delete', color: 'white' }}
-          color="blue"
+          color="red"
         />
         <FAB
           visible={!visible}

@@ -34,7 +34,7 @@ const Sliders: React.FunctionComponent<SlidersComponentProps> = () => {
           minimumValue={0}
           step={1}
           allowTouchTrack
-          trackStyle={{ height: 10, backgroundColor: 'transparent' }}
+          trackStyle={{ height: 5, backgroundColor: 'transparent' }}
           thumbStyle={{ height: 20, width: 20, backgroundColor: 'transparent' }}
           thumbProps={{
             children: (

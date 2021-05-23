@@ -7,6 +7,7 @@ import {
   Dimensions,
   KeyboardAvoidingView,
   Platform,
+  Vibration,
 } from 'react-native';
 import {
   Input,
@@ -138,7 +139,7 @@ const Inputs: React.FunctionComponent<InputsComponentProps> = () => {
             rightIcon={
               <Button
                 title="Shake"
-                onPress={() => shakeInput && shakeInput.shake()}
+                onPress={() => {shakeInput && shakeInput.shake(); Vibration.vibrate(1000)}} 
               />
             }
             errorMessage="Shake me on error !"

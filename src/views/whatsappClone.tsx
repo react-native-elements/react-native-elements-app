@@ -15,6 +15,7 @@ import {
   Badge,
   Tab,
 } from 'react-native-elements';
+import { Header } from '../components/header';
 
 const ScreenWidth = Dimensions.get('window').width;
 
@@ -24,9 +25,10 @@ const WhatsappClone: React.FunctionComponent = () => {
 
   return (
     <>
+    <Header title="Whatsapp Clone" />
       <SafeAreaView style={styles.safeArea}>
         <View style={styles.header1}>
-          <Text style={{ color: '#fff', fontSize: 20, flexGrow: 1 }}>
+          <Text style={{ color: '#fff', fontSize: 20, flexGrow: 1, fontWeight: 'bold'}}>
             WhatsApp
           </Text>
           <Icon name="search" color="white" style={styles.icon} />
@@ -59,7 +61,7 @@ const WhatsappClone: React.FunctionComponent = () => {
             style={{ backgroundColor: 'transparent' }}
           >
             <Tab.Item
-              title="chat"
+              title="chats"
               titleStyle={{ color: '#fff' }}
               containerStyle={{ backgroundColor: 'transparent' }}
             />

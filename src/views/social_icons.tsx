@@ -113,7 +113,7 @@ const SocialIcons: React.FunctionComponent<SocialIconsComponentProps> = () => {
                 flexDirection: 'row',
                 justifyContent: 'space-around',
                 marginTop: 10,
-                backgroundColor: 'grey',
+                backgroundColor: '#4c4c4c',
               }}
               key={chunkIndex}
             >

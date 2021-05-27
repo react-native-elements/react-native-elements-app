@@ -7,6 +7,7 @@ import {
   Icon,
   Badge,
   ListItemProps,
+  Button,
   Switch,
 } from 'react-native-elements';
 import { LinearGradient } from '../components/LinearGradient';
@@ -92,13 +93,30 @@ const Lists2: React.FunctionComponent<ListComponentProps> = () => {
   const listItemProps = {};
   const renderRow = ({ item }: { item: List1Data }) => {
     return (
-      <ListItem onPress={log} bottomDivider>
+      <ListItem.Swipeable
+        onPress={log}
+        bottomDivider
+        leftContent={
+          <Button
+            title="Info"
+            icon={{ name: 'info', color: 'white' }}
+            buttonStyle={{ minHeight: '100%' }}
+          />
+        }
+        rightContent={
+          <Button
+            title="Delete"
+            icon={{ name: 'delete', color: 'white' }}
+            buttonStyle={{ minHeight: '100%', backgroundColor: 'red' }}
+          />
+        }
+      >
         <Icon name={item.icon} />
         <ListItem.Content>
           <ListItem.Title>{item.title}</ListItem.Title>
         </ListItem.Content>
         <ListItem.Chevron />
-      </ListItem>
+      </ListItem.Swipeable>
     );
   };
   const [switch1, setSwitch1] = useState(true);
@@ -174,7 +192,7 @@ const Lists2: React.FunctionComponent<ListComponentProps> = () => {
             <View style={styles.list}>
               {list2.map((l, i) => (
                 <ListItem key={i} bottomDivider>
-                  <Icon name="user-circle-o" type="font-awesome" color="blue" />
+                  <Icon name="user-circle-o" type="font-awesome" color="red" />
                   <ListItem.Content>
                     <ListItem.Title style={{ color: 'red' }}>
                       {l.name}

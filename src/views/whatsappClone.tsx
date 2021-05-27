@@ -1,5 +1,11 @@
 import React from 'react';
-import { View, ScrollView, StyleSheet, SafeAreaView } from 'react-native';
+import {
+  View,
+  ScrollView,
+  StyleSheet,
+  SafeAreaView,
+  Dimensions,
+} from 'react-native';
 import {
   Avatar,
   FAB,
@@ -9,7 +15,9 @@ import {
   Badge,
   Tab,
 } from 'react-native-elements';
-import { ScreenWidth } from 'react-native-elements/src/helpers';
+import { Header } from '../components/header';
+
+const ScreenWidth = Dimensions.get('window').width;
 
 const WhatsappClone: React.FunctionComponent = () => {
   const [index, setIndex] = React.useState(0);
@@ -17,9 +25,10 @@ const WhatsappClone: React.FunctionComponent = () => {
 
   return (
     <>
+    <Header title="Whatsapp Clone" />
       <SafeAreaView style={styles.safeArea}>
         <View style={styles.header1}>
-          <Text style={{ color: '#fff', fontSize: 20, flexGrow: 1 }}>
+          <Text style={{ color: '#fff', fontSize: 20, flexGrow: 1, fontWeight: 'bold'}}>
             WhatsApp
           </Text>
           <Icon name="search" color="white" style={styles.icon} />
@@ -52,7 +61,7 @@ const WhatsappClone: React.FunctionComponent = () => {
             style={{ backgroundColor: 'transparent' }}
           >
             <Tab.Item
-              title="chat"
+              title="chats"
               titleStyle={{ color: '#fff' }}
               containerStyle={{ backgroundColor: 'transparent' }}
             />

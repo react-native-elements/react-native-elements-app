@@ -12,6 +12,7 @@ import Chips from '../views/chips';
 import Lists from '../views/lists';
 import Lists2 from '../views/lists2';
 import Inputs from '../views/inputs';
+import Image from '../views/image';
 import LinearProgress from '../views/linearProgress';
 import CircularSlider from '../views/circularSlider';
 import Login from '../views/login';
@@ -24,7 +25,7 @@ import SocialIcons from '../views/social_icons';
 import Fonts from '../views/fonts';
 import BottomSheet from '../views/bottomsheet';
 import Tooltip from '../views/tooltip';
-import Dialogs from '../views/dialogs'
+import Dialogs from '../views/dialogs';
 import Overlay from '../views/overlay';
 import CheckBox from '../views/checkbox';
 import FAB from '../views/fab';
@@ -84,6 +85,7 @@ function RootNavigator() {
         <Drawer.Screen name="Circular Slider" component={CircularSlider} />
         <Drawer.Screen name="FAB" component={FAB} />
         <Drawer.Screen name="Fonts" component={Fonts} />
+        <Drawer.Screen name="Image" component={Image} />
         <Drawer.Screen name="Inputs" component={Inputs} />
         <Drawer.Screen name="LinearProgress" component={LinearProgress} />
         <Drawer.Screen name="Lists" component={Lists} />

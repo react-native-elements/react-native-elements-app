@@ -63,6 +63,10 @@ const dataList: Partial<IconData>[] = [
     type: 'github-alt',
   },
   {
+    type: 'microsoft',
+    iconType: 'material-community',
+  },
+  {
     type: 'twitch',
   },
   {

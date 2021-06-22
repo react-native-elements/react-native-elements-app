@@ -1,7 +1,6 @@
 import React from 'react';
-import { Text } from 'react-native';
 import { Header } from '../components/header';
-import { Tab } from 'react-native-elements';
+import { Tab, Text, TabView } from 'react-native-elements';
 
 export default () => {
   const [index, setIndex] = React.useState(0);
@@ -24,7 +23,7 @@ export default () => {
           icon={{ name: 'timer', type: 'ionicon', color: 'white' }}
         />
         <Tab.Item
-          title="favourite"
+          title="favorite"
           titleStyle={{ fontSize: 12 }}
           icon={{ name: 'heart', type: 'ionicon', color: 'white' }}
         />
@@ -34,18 +33,18 @@ export default () => {
           icon={{ name: 'cart', type: 'ionicon', color: 'white' }}
         />
       </Tab>
-      {(() => {
-        switch (index) {
-          case 0:
-            return <Text>Recent</Text>;
-          case 1:
-            return <Text>favourites</Text>;
-          case 2:
-            return <Text>Your Cart</Text>;
-          default:
-            return null;
-        }
-      })()}
+
+      <TabView value={index} onChange={setIndex} animationType="spring">
+        <TabView.Item style={{ backgroundColor: 'red', width: '100%' }}>
+          <Text h1>Recent</Text>
+        </TabView.Item>
+        <TabView.Item style={{ backgroundColor: 'blue', width: '100%' }}>
+          <Text h1>Favorite</Text>
+        </TabView.Item>
+        <TabView.Item style={{ backgroundColor: 'green', width: '100%' }}>
+          <Text h1>Cart</Text>
+        </TabView.Item>
+      </TabView>
     </>
   );
 };

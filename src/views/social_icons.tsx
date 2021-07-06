@@ -2,7 +2,7 @@ import React from 'react';
 import { View, ScrollView } from 'react-native';
 import { SocialIcon, SocialIconProps } from 'react-native-elements';
 import { Header } from '../components/header';
-import { SocialMediaType } from 'react-native-elements/dist/social/SocialIcon';
+import { SocialMediaType } from 'react-native-elements/dist/SocialIcon/SocialIcon';
 import _ from 'lodash';
 
 type IconData = {
@@ -61,6 +61,10 @@ const dataList: Partial<IconData>[] = [
   },
   {
     type: 'github-alt',
+  },
+  {
+    type: 'microsoft',
+    iconType: 'material-community',
   },
   {
     type: 'twitch',

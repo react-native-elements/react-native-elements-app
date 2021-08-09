@@ -11,9 +11,9 @@ const LinearProgressAPI: React.FunctionComponent = () => {
     if (progress < 1 && progress !== 0) {
       setTimeout(() => {
         if (subs) {
-          setProgress(progress + 0.1);
+          setProgress(progress + 0.3);
         }
-      }, 100);
+      }, 10);
     }
     return () => {
       subs = false;
@@ -28,15 +28,23 @@ const LinearProgressAPI: React.FunctionComponent = () => {
           margin: 10,
         }}
       >
-        <Text>Indeterminate Variant </Text>
+        <Text>Indeterminate Variant</Text>
         <LinearProgress style={{ marginVertical: 10 }} />
         <Text>Indeterminate Variant with color</Text>
         <LinearProgress style={{ marginVertical: 10 }} color="red" />
-        <Text>Determinate Variant</Text>
+        <Text>Determinate Variant without animation</Text>
+        <LinearProgress
+          style={{ marginVertical: 10 }}
+          animation={false}
+          value={0.3}
+        />
+        <Text>Determinate Variant with animation </Text>
+        <LinearProgress style={{ marginVertical: 10 }} value={progress} />
+        <Text>Determinate Variant with small duration </Text>
         <LinearProgress
           style={{ marginVertical: 10 }}
           value={progress}
-          variant="determinate"
+          animation={{ duration: 100 }}
         />
 
         <Button
